@@ -94,6 +94,7 @@
                 <configuration>
                     <suiteXmlFiles>
                         <suiteXmlFile>testng_Chrome.xml</suiteXmlFile>
+                        <suiteXmlFile>testng_Edge.xml</suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
             </plugin>
