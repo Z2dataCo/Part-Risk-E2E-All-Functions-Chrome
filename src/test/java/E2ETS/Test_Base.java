@@ -124,7 +124,7 @@ public class Test_Base {
         WebDriverWait Wait = new WebDriverWait(driver, 50);
         Wait.until(ExpectedConditions.invisibilityOf(element));
     }
-    public void Wait_Element_Invisibility2(String ClassName) {
+    public void Wait_Element_Located_By_Invisibility(String ClassName) {
         WebDriverWait Wait = new WebDriverWait(driver, 50);
         Wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className(ClassName)));
     }

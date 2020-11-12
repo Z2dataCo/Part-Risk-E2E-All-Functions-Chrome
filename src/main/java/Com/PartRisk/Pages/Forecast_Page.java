@@ -6,8 +6,6 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
@@ -15,11 +13,18 @@ import java.util.List;
 public class Forecast_Page extends Page_Base {
 
     @FindBy(xpath = "//tbody/tr[1]/td[2]/a")
-    public WebElement Active_Filter;
+    public WebElement First_Filter;
     @FindBy(xpath = "//tbody/tr[2]/td[5]/a")
-    public WebElement EOL_Filter;
+    public WebElement Second_Filter;
     @FindBy(xpath = "//tbody/tr[3]/td[4]/a")
-    public WebElement Unknown_Filter;
+    public WebElement Third_Filter;
+    @FindBy(xpath = "//tbody/tr[5]/td[2]/a")
+    public WebElement Fifth_Filter;
+    @FindBy(xpath = "//div[@class='z2tablemost']//tbody/tr[1]/td[1]//span")
+    public WebElement First_Table_Data;
+    @FindBy(xpath = "//*[@id=\"dropbg\"]/div/div/div[1]/div[1]/div[1]")
+    public WebElement File_Name;
+
     @FindBy(xpath = "//app-z2pagination/span/span[2]")
     public WebElement TotalValue;
     @FindBy(xpath = "//div[@style='border-color: silver silver silver rgb(51, 122, 183);']")
@@ -43,15 +48,21 @@ public class Forecast_Page extends Page_Base {
         Click_Button(ForeCast_Tab);
     }
 
-    public void Z2D_Click_on_Active_Filter() {
+    public void Z2D_Click_on_First_Filter() {
         Scroll_To_Middle();
-        Click_Button(Active_Filter); }
+        Click_Button(First_Filter); }
 
-    public void Z2D_Click_on_EOL_Filter() {
-        Click_Button(EOL_Filter);
+    public void Z2D_Click_on_Second_Filter() {
+        Click_Button(Second_Filter);
     }
-    public void Z2D_Click_on_Unknown_Filter() {
-        Click_Button(Unknown_Filter);
+    public void Z2D_Click_on_Third_Filter() {
+        Click_Button(Third_Filter);
+    }
+    public void Z2D_Click_on_Fifth_Filter() {
+        Click_Button(Fifth_Filter);
+    }
+    public void Z2D_Click_on_First_Result() {
+        Click_Button(First_Table_Data);
     }
     public void Get_Table_Data(WebDriver driver, String Assertion ) {
         WebDriverWait Wait = new WebDriverWait(driver, 30);
