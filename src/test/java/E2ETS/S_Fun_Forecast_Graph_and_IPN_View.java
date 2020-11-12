@@ -84,6 +84,7 @@ public class S_Fun_Forecast_Graph_and_IPN_View extends Test_Base {
             System.out.println(Opened_File_Name);
             System.out.println(First_Row_Name);
             Assert.assertTrue(Opened_File_Name.contains(First_Row_Name),"Opened File is the same as Selected");
+            Wait_Element_Visible(ObsoL_Opj.Close_Slide);
             ObsoL_Opj.Z2D_Close_Slide();
         }
     }

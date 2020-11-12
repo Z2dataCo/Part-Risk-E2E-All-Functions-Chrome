@@ -18,13 +18,9 @@ public class Page_Base {
         PageFactory.initElements(driver, this);
     }
     protected static void Click_Button(WebElement button) {
-        try {
-            button.click();
-        }
+        try { button.click(); }
         catch(org.openqa.selenium.StaleElementReferenceException ex)
-        {
-            button.click();
-        }
+       { button.click(); }
     }
     protected static void Set_Text_Element_Text(WebElement textElement, String value) {
         textElement.sendKeys(value);
