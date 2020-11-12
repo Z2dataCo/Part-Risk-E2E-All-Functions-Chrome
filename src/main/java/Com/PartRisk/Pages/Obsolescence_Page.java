@@ -1,8 +1,11 @@
 package Com.PartRisk.Pages;
 
+import junit.framework.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+
 
 import java.util.List;
 
@@ -24,6 +27,7 @@ public class Obsolescence_Page extends Page_Base {
     public WebElement Last_Buy_Parts;
 
     @FindBy(xpath = "//*[@id=\"dropbg\"]/div/div/div[2]/div[2]/div[2]/app-z2pagination/div/div/div/div/pagination/ul/li[9]/a")
+
     public WebElement Last;
 
     @FindBy(xpath = "//div[@id='dropbg']//li[@class='pagination-next page-item disabled']/preceding-sibling::li[position()<2]")
@@ -53,9 +57,23 @@ public class Obsolescence_Page extends Page_Base {
     @FindBy(xpath = "//*[@id=\"dropbg\"]/div/div/div[2]/div[1]/div[2]/app-z2pagination/span/span[2]")
     public WebElement Fixed_Number_For_5Y;
 
+    @FindBy(linkText = "All Obsolescence PCNs")
+    public WebElement AllObsolescence;
+
+    @FindBy(xpath = "//*[@id=\"z2-2cols-leftpanel\"]/ul/li[6]/a/div[2]")
+    public WebElement ProductChangeNotices;
+
+    @FindBy(xpath = "//*[@id=\"dropbg\"]/div/div/div[2]/div/div[2]/app-z2pagination/div/div/div/div/pagination/ul/li[9] ")
+    public WebElement LastPage_AllObs;
+
+
+    @FindBy(xpath = "//*[@id=\"dropbg\"]/div/div/div[2]/div/div[2]/app-z2pagination/span/span[2]")
+    public WebElement FixedNumForAllObs;
 
 
 
+@FindBy(xpath = "c")
+public List <WebElement> newdata;
 
     public void Z2D_Open_High_LifeCycle() {
         Click_Button(High_LifeCycle_Risk);
@@ -80,12 +98,32 @@ public class Obsolescence_Page extends Page_Base {
     public void Z2D_Get_Last_Page_For_3Y() {
         Click_Button(LastPage_3Y);
     }
-    public void Z2D_Close_Slide(){
+
+    public void Z2D_Close_Slide() {
         Click_Button(Close_Slide);
     }
 
-    public void Z2D_Get_Last_Page_For_5Y(){
+    public void Z2D_Get_Last_Page_For_5Y() {
         Click_Button(LastPage_5Y);
+    }
 
+    public void Z2D_All_Obsolescence() {
+        Click_Button(AllObsolescence);
+    }
+
+    public void ProductChange (){
+        Click_Button(ProductChangeNotices);
+    }
+
+    public void GetLastPageForAllObs(){
+        Click_Button(LastPage_AllObs);
+    }
+
+    public void tbl_data(WebDriver driver){
+        for(int i =1; i<=newdata.size();i++){
+            System.out.println(newdata);
+            String Data = driver.findElement(By.xpath("//table[@class='z2tableM table hoverrows table-bordered table-middle bigtitle text-left']/tbody/tr["+i+"]/td[3]")).getText();
+            Assert.assertTrue(Data.contains("Obsolescence"));
+        }
     }
 }
