@@ -46,8 +46,8 @@ public class Y_Fun_Obsolescence extends Test_Base {
         int SubTotal = CountOfTable * CountPage;
         int LastPage = Count - SubTotal;
         int AllOfRow = LastPage + SubTotal;
-        System.out.println("Actual Result For HighLifeCycle Tab: " + AllOfRow);
-        System.out.println("Expected Result For HighLifeCycle Tab: " + Count);
+        System.out.println("Actual Result  " + AllOfRow);
+        System.out.println("Expected Result  " + Count);
         Assert.assertEquals(Count, AllOfRow);
         Thread.sleep(2000);
         ObsoL_Opj.Z2D_NRND_Parts();
@@ -59,8 +59,8 @@ public class Y_Fun_Obsolescence extends Test_Base {
         int SubTotal0 = CountOfTable0 * CountPage0;
         int LastPage0 = Count0 - SubTotal0;
         int AllOfRow0 = LastPage0 + SubTotal0;
-        System.out.println("Actual Result For NRND Tab: " + AllOfRow0);
-        System.out.println("Expected Result For NRND Tab: " + Count0);
+        System.out.println("Actual Result " + AllOfRow0);
+        System.out.println("Expected Result " + Count0);
         Assert.assertEquals(Count0, AllOfRow0);
         ObsoL_Opj.Z2D_Obsolete_Parts();
         Wait_for_Element_to_Disappear(DManagementObj.Spinner);
@@ -71,8 +71,8 @@ public class Y_Fun_Obsolescence extends Test_Base {
         int SubTotal1 = CountOfTable1 * CountPage1;
         int LastPage1 = Count1 - SubTotal1;
         int AllOfRow1 = LastPage1 + SubTotal1;
-        System.out.println("Actual Result For Obsolete Parts Tab: " + AllOfRow1);
-        System.out.println("Expected Result For Obsolete Parts: " + Count1);
+        System.out.println("Actual Result  " + AllOfRow1);
+        System.out.println("Expected Result  " + Count1);
         Assert.assertEquals(Count1, AllOfRow1);
         ObsoL_Opj.Z2D_Last_by_Parts();
         Wait_for_Element_to_Disappear(DManagementObj.Spinner);
@@ -84,8 +84,8 @@ public class Y_Fun_Obsolescence extends Test_Base {
             int LastPage2 = Count2 - SubTotal2;
             int AllOfRow2 = LastPage2 + SubTotal2;
             Thread.sleep(1000);
-            System.out.println("Actual Result For Last Time Buy Parts Tab: " + AllOfRow2);
-            System.out.println("Expected Result For Last Time Buy Parts Tab: " + Count2);
+            System.out.println("Actual Result  " + AllOfRow2);
+            System.out.println("Expected Result  " + Count2);
             Assert.assertEquals(Count2, AllOfRow2);
         } else {
             int CountPage2 = CountPagination2 - 1;
@@ -93,8 +93,8 @@ public class Y_Fun_Obsolescence extends Test_Base {
             int LastPage2 = Count2 - SubTotal2;
             int AllOfRow2 = LastPage2 + SubTotal2;
             Thread.sleep(1000);
-            System.out.println("Actual Result For Last Time Buy Parts Tab: " + AllOfRow2);
-            System.out.println("Expected Result For Last Time Buy Parts Tab: " + Count2);
+            System.out.println("Actual Result  " + AllOfRow2);
+            System.out.println("Expected  " + Count2);
             Assert.assertEquals(Count2, AllOfRow2);
         }
         ObsoL_Opj.Z2D_Close_Slide();
@@ -172,8 +172,8 @@ public class Y_Fun_Obsolescence extends Test_Base {
         int SubTotal = CountOfTable * CountPage;
         int LastPage = Count - SubTotal;
         int AllOfRow = LastPage + SubTotal;
-        System.out.println("Actual Result For HighLifeCycle Tab: " + AllOfRow);
-        System.out.println("Expected Result For HighLifeCycle Tab: " + Count);
+        System.out.println("Actual Result:  " + AllOfRow);
+        System.out.println("Expected Result: " + Count);
         Assert.assertEquals(Count, AllOfRow);
         ObsoL_Opj.Z2D_Close_Slide();
     }

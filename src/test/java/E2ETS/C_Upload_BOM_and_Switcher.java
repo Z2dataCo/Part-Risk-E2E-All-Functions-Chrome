@@ -27,9 +27,9 @@ public class C_Upload_BOM_and_Switcher extends Test_Base {
         ForecastObj = new Forecast_Page(driver);
 
         LandObj.Z2D_Upload_BOM(Z2DataSwitcherStepFilePath);
-        Wait_Element_Clickable(UpBOMObj.Next);
+        Wait_Element_Visible(UpBOMObj.Next);
         UpBOMObj.Z2D_Click_Next();
-        Thread.sleep(2000);
+        Wait_for_Element_to_Disappear(LandObj.GeneralSpinner);
         UpBOMObj.Z2D_Select_Type();
          WaitAllElement();
         UpBOMObj.Z2D_Supplier_Selection();
@@ -45,8 +45,9 @@ public class C_Upload_BOM_and_Switcher extends Test_Base {
         UpBOMObj.Z2D_Select_Folder();
         UpBOMObj.Z2D_Selected_Folder();
         UpBOMObj.Z2D_Finish();
-
-        Wait_Element_Clickable(UpBOMObj.Dashboard_Tab);
+        //Wait_for_Element_to_Disappear(DManagementObj.Spinner);
+        Wait_for_Element_to_Disappear(LandObj.GeneralSpinner);
+        //Wait_Element_Clickable(UpBOMObj.Dashboard_Tab);
         Assert.assertEquals(UpBOMObj.Dashboard_Tab.getText(), "Dashboard");
         Wait_for_Element_to_Disappear(DManagementObj.Spinner);
 

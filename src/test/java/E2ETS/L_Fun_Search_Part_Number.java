@@ -14,7 +14,7 @@ public class L_Fun_Search_Part_Number extends Test_Base {
     @Test(priority = 12)
     @Severity(SeverityLevel.NORMAL)
     @Description("Validate To Search By Part Number")
-    public void Search_with_Part_Number() throws InterruptedException {
+    public void Search_with_Part_Number() {
         LandObj = new Landing_Page(driver);
         LandObj.Z2D_input_Search(Z2DataPartNumber);
         LandObj.Z2D_Click_Search();
