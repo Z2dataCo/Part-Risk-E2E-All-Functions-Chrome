@@ -137,7 +137,7 @@ public class Test_Base {
     public static void Wait_for_Element_to_Disappear(List element) throws InterruptedException {
         int count = 0;
         while (element.size() != 0 && count < 30) {
-            Thread.sleep(7000);
+            Thread.sleep(700);
             count++;
         }
     }
