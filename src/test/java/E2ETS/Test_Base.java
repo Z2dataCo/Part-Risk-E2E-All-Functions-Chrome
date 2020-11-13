@@ -7,6 +7,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeDriverService;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -54,6 +55,9 @@ public class Test_Base {
             ChromeOptions opt = new ChromeOptions();
             opt.setPageLoadStrategy(PageLoadStrategy.NORMAL);
             opt.setProxy(null);
+            opt.addArguments("--disable-remote-fonts");
+            opt.addArguments("--enable-precache");
+            opt.addArguments("--start-maximized");
             WebDriverManager.chromedriver().setup();
             driver = new ChromeDriver(opt);
         }
