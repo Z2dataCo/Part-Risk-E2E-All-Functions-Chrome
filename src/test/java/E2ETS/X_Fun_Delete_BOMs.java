@@ -1,7 +1,7 @@
 package E2ETS;
 
-import Com.PartRisk.Pages.DataManagement_Page;
-import Com.PartRisk.Pages.Delete_Bom_Page;
+import Com.PartRisk.Pages.Data_Management_Page;
+import Com.PartRisk.Pages.Delete_BOM_Page;
 import Com.PartRisk.Pages.Landing_Page;
 import io.qameta.allure.Description;
 import io.qameta.allure.Severity;
@@ -11,9 +11,9 @@ import org.testng.annotations.Test;
 
 public class X_Fun_Delete_BOMs extends Test_Base {
 
-    DataManagement_Page DManagementObj;
+    Data_Management_Page DManagementObj;
     Landing_Page LandObj;
-    Delete_Bom_Page DeleteOBJ;
+    Delete_BOM_Page DeleteOBJ;
 
     @Test(priority = 24)
     @Severity(SeverityLevel.CRITICAL)
@@ -21,8 +21,8 @@ public class X_Fun_Delete_BOMs extends Test_Base {
     public void Delete_BMS() throws InterruptedException {
 
         LandObj = new Landing_Page(driver);
-        DManagementObj = new DataManagement_Page(driver);
-        DeleteOBJ = new Delete_Bom_Page(driver);
+        DManagementObj = new Data_Management_Page(driver);
+        DeleteOBJ = new Delete_BOM_Page(driver);
 
         LandObj.Z2D_Open_Data_Management();
         Wait_Element_Clickable(DManagementObj.Search_Text_Input);
@@ -35,10 +35,10 @@ public class X_Fun_Delete_BOMs extends Test_Base {
             catch (StaleElementReferenceException e) {
                 staleElement = true; }
         }
-        DeleteOBJ.Click_on_Check_Box();
+        DeleteOBJ.Z2D_Click_on_Check_Box();
         int Rows_Size = DeleteOBJ.BOMs_Table.size();
         System.out.println(Rows_Size);
-        DeleteOBJ.Deleting_Boms(driver);
+        DeleteOBJ.Z2D_Deleting_BOMs(driver);
     System.out.println("All testing BOMs have been deleted successfully except : (TAP_Bom_Proud_Test)");
     }
 }

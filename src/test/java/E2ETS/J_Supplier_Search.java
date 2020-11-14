@@ -1,6 +1,6 @@
 package E2ETS;
 
-import Com.PartRisk.Pages.DataManagement_Page;
+import Com.PartRisk.Pages.Data_Management_Page;
 import Com.PartRisk.Pages.Landing_Page;
 import Com.PartRisk.Pages.Suppliers_Page;
 import io.qameta.allure.Description;
@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 public class J_Supplier_Search extends Test_Base {
     Suppliers_Page SuppliersObj;
     Landing_Page LandObj;
-    DataManagement_Page DManagementObj;
+    Data_Management_Page DManagementObj;
 
     @Test(priority = 10)
     @Severity(SeverityLevel.NORMAL)
@@ -20,7 +20,7 @@ public class J_Supplier_Search extends Test_Base {
     public void Search_for_Supplier() throws InterruptedException {
         LandObj = new Landing_Page(driver);
         SuppliersObj = new Suppliers_Page(driver);
-        DManagementObj = new DataManagement_Page(driver);
+        DManagementObj = new Data_Management_Page(driver);
         LandObj.Z2D_More_Menu();
         LandObj.Z2D_Select_Supplier();
         Wait_for_Element_to_Disappear(DManagementObj.Spinner);

@@ -28,43 +28,52 @@ public class Forecast_Page extends Page_Base {
     @FindBy(xpath = "//app-z2pagination/span/span[2]")
     public WebElement TotalValue;
     @FindBy(xpath = "//div[@style='border-color: silver silver silver rgb(51, 122, 183);']")
-    public List <WebElement> Spinner;
+    public List<WebElement> Spinner;
     @FindBy(xpath = "//div[@class='z2tablemost']//table/tbody/tr[1]/td")
     public List<WebElement> Table_Columns;
     @FindBy(xpath = "//div[@class='z2tablemost']//table/tbody/tr")
     public List<WebElement> Table_Rows;
     @FindBy(xpath = "//a[contains(text(),'Forecast')]")
     public WebElement ForeCast_Tab;
-    @FindBy(className ="jtoggler-control")
+    @FindBy(className = "jtoggler-control")
     WebElement Forecast_Switchers;
     //"//*[@id=\"RemainMainPage\"]/app-risk-manager/div[2]/div/div/div/div/label/div")
 
     public Forecast_Page(WebDriver driver) {
         super(driver);
-        jse = (JavascriptExecutor) driver; }
+        jse = (JavascriptExecutor) driver;
+    }
 
-    public void Z2D_Select_Switcher() { Click_Button(Forecast_Switchers); }
+    public void Z2D_Select_Switcher() {
+        Click_Button(Forecast_Switchers);
+    }
+
     public void Z2D_Click_on_Forecast_Tab() {
         Click_Button(ForeCast_Tab);
     }
 
     public void Z2D_Click_on_First_Filter() {
         Scroll_To_Middle();
-        Click_Button(First_Filter); }
+        Click_Button(First_Filter);
+    }
 
     public void Z2D_Click_on_Second_Filter() {
         Click_Button(Second_Filter);
     }
+
     public void Z2D_Click_on_Third_Filter() {
         Click_Button(Third_Filter);
     }
+
     public void Z2D_Click_on_Fifth_Filter() {
         Click_Button(Fifth_Filter);
     }
+
     public void Z2D_Click_on_First_Result() {
         Click_Button(First_Table_Data);
     }
-    public void Get_Table_Data(WebDriver driver, String Assertion ) {
+
+    public void Z2D_Get_Table_Data(WebDriver driver, String Assertion) {
         WebDriverWait Wait = new WebDriverWait(driver, 30);
         int Row_Size = Table_Rows.size();
         int Column_Size = Table_Columns.size();
@@ -72,7 +81,7 @@ public class Forecast_Page extends Page_Base {
         System.out.println("number of Columns are" + Column_Size);
         // String Life_Cycle_Column_Data = null;
         for (int i = 1; i <= Row_Size; i++) {
-            String  Life_Cycle_Column_Data = driver.findElement(By.xpath("//div[@class='z2tablemost']//table/tbody/tr[" + i + "]/td[14]")).getText();
+            String Life_Cycle_Column_Data = driver.findElement(By.xpath("//div[@class='z2tablemost']//table/tbody/tr[" + i + "]/td[14]")).getText();
             Assert.assertEquals(Life_Cycle_Column_Data, Assertion);
         }
     }

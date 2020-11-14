@@ -1,6 +1,6 @@
 package E2ETS;
 
-import Com.PartRisk.Pages.DataManagement_Page;
+import Com.PartRisk.Pages.Data_Management_Page;
 import Com.PartRisk.Pages.Landing_Page;
 import Com.PartRisk.Pages.Parts_Page;
 import io.qameta.allure.Description;
@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 
 public class P_Fun_MPN_View extends Test_Base {
     Landing_Page LandObj;
-    DataManagement_Page DManagementObj;
+    Data_Management_Page DManagementObj;
     Parts_Page PartPageObj;
 
     @Test(priority = 16)
@@ -20,7 +20,7 @@ public class P_Fun_MPN_View extends Test_Base {
     @Description("Check selecting any status will affect on forecast graph ( MPN View )")
     public void MPN_View() throws InterruptedException {
         LandObj = new Landing_Page(driver);
-        DManagementObj = new DataManagement_Page(driver);
+        DManagementObj = new Data_Management_Page(driver);
         PartPageObj = new Parts_Page(driver);
         Actions action = new Actions(driver);
         LandObj.Z2D_Open_Data_Management();

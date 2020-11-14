@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DataManagement_Page extends Page_Base {
+public class Data_Management_Page extends Page_Base {
 
     @FindBy(xpath = "//*[@id=\"z2page-head-bar\"]/div/h1/span/span")
     public WebElement Verification;
@@ -47,7 +47,7 @@ public class DataManagement_Page extends Page_Base {
     @FindBy(xpath = "//*[@id=\"reportToHide\"]/div[2]/div[2]/div[3]/table/thead/tr/th[6]")
     public WebElement of_Suppliers;
     @FindBy(xpath = "//*[@id=\"divSearchFolders\"]/input")
-    public WebElement Search_Text_Input ;
+    public WebElement Search_Text_Input;
     @FindBy(xpath = "//*[@id=\"z2page-head-bar\"]/div/app-create-alert/button/span")
     public WebElement Followed_Text;
     @FindBy(xpath = "//body[1]/div[9]/div[1]/div[1]/div[2]/form[1]/table[1]/tbody[1]/tr[1]/td[2]/input[1]")
@@ -59,11 +59,11 @@ public class DataManagement_Page extends Page_Base {
     @FindBy(xpath = "//*[@id=\"DMCreatefolder\"]/span/span")
     public WebElement Create_Folder;
     @FindBy(id = "FolderAutoCompleteSearch")
-    WebElement Search_btn;
+    WebElement Search_Btn;
     @FindBy(xpath = "//strong[contains(text(),'TAP_BOM')]")
-    public  WebElement Search_Result;
+    public WebElement Search_Result;
     @FindBy(xpath = "//tbody/tr[3]//a")
-    WebElement  Select_BOM;
+    WebElement Select_BOM;
     @FindBy(xpath = "//a[contains(text(),'TAP_BOM_Proud_Test')]")
     public WebElement Select_Proud_Test_BOM;
     @FindBy(xpath = "//a[contains(text(),'Parts')]")
@@ -82,14 +82,14 @@ public class DataManagement_Page extends Page_Base {
     WebElement BOM_Folder;
     @FindBy(xpath = "//tbody/tr[1]/td[2]/a[1]")
     WebElement BOM;
-    @FindBy(partialLinkText="TAP_BOM_Proud_Te")
-    public WebElement Bom_ProdTest;
+    @FindBy(partialLinkText = "TAP_BOM_Proud_Te")
+    public WebElement BOM_Prod_Test;
     @FindBy(xpath = "//a[contains(text(),'Compliance')]")
     WebElement Compliance_Tab;
     @FindBy(xpath = "//div[@id='z2page-head-bar']/div/app-create-alert/div[1]/a[2]")
     public WebElement Unfollow_Btn;
     @FindBy(linkText = "Parts")
-   public WebElement Parts;
+    public WebElement Parts;
     @FindBy(linkText = "Forecast")
     public WebElement Forecast;
     @FindBy(linkText = "Mitigation")
@@ -97,24 +97,24 @@ public class DataManagement_Page extends Page_Base {
     @FindBy(linkText = "Scrub")
     WebElement Scrub;
     @FindBy(xpath = "//*[@id=\"RemainMainPage\"]/app-risk-manager/app-risk-parts/app-riskpartsmpn/ngx-loading/div/div[2]/div")
-    public List<WebElement>Spinner;
+    public List<WebElement> Spinner;
 
     @FindBy(xpath = "//*[@id=\"RemainMainPage\"]/app-risk-manager/app-risk-parts/app-riskpartsmpn/ngx-loading/div/div[2]/div")
-    public  WebElement Spinner2;
+    public WebElement Spinner2;
 
     @FindBy(id = "toast-container")
-    public WebElement ToastContainer;
+    public WebElement Toast_Container;
 
     @FindBy(xpath = "//*[@id=\"scrub_content\"]/div/table/tbody/tr")
-    public List<WebElement>Table_Rows;
+    public List<WebElement> Table_Rows;
 
     @FindBy(xpath = "//*[@id=\"scrub_content\"]/div/div[2]/div[2]/app-z2pagination/div/div/div/div/pagination/ul/li[5]/a")
-    public WebElement NextPage;
+    public WebElement Next_Page;
 
     @FindBy(linkText = "Next")
-    public WebElement next_BTN;
+    public WebElement Next_Btn;
 
-    public DataManagement_Page(WebDriver driver) {
+    public Data_Management_Page(WebDriver driver) {
         super(driver);
         action = new Actions(driver);
         jse = (JavascriptExecutor) driver;
@@ -137,7 +137,7 @@ public class DataManagement_Page extends Page_Base {
     }
 
     public void Z2D_Click_Search() {
-        Click_Button(Search_btn);
+        Click_Button(Search_Btn);
     }
 
     public void Z2D_Open_Folders() {
@@ -222,23 +222,39 @@ public class DataManagement_Page extends Page_Base {
         Thread.sleep(2000);
         action.click().build().perform();
     }
-    public void Z2D_Click_on_Compliance_Tab() { Click_Button(Compliance_Tab); }
+
+    public void Z2D_Click_on_Compliance_Tab() {
+        Click_Button(Compliance_Tab);
+    }
+
     public void Z2D_Click_Followed_Btn() {
         Click_Button(Followed_Text);
     }
-    public void Z2D_Click_Unfollow_Btn() { Click_Button(Unfollow_Btn); }
+
+    public void Z2D_Click_Unfollow_Btn() {
+        Click_Button(Unfollow_Btn);
+    }
+
     public void Z2D_Search(String Value) {
         Set_Text_Element_Text(Search_Text_Input, Value);
     }
-    public void Z2D_Counter(){
-    }
-    public void NextPagination(){
-        Click_Button(next_BTN);
+
+    public void Z2D_Counter() {
     }
 
-    public  void Bom_Pro(){
-        Click_Button(Bom_ProdTest);
+    public void NextPagination() {
+        Click_Button(Next_Btn);
     }
-    public void Z2D_Click_on_BOM(){Click_Button(Select_Proud_Test_BOM);}
-    public void Z2D_Move_To_Prod_BOM(WebDriver driver){driver.get("https://parts.z2data.com/RiskManager?BomId=119090");}
+
+    public void Bom_Pro() {
+        Click_Button(BOM_Prod_Test);
+    }
+
+    public void Z2D_Click_on_BOM() {
+        Click_Button(Select_Proud_Test_BOM);
+    }
+
+    public void Z2D_Move_To_Prod_BOM(WebDriver driver) {
+        driver.get("https://parts.z2data.com/RiskManager?BomId=119090");
+    }
 }

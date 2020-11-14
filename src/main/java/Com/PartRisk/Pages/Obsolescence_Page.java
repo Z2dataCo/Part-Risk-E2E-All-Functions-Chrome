@@ -6,7 +6,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-
 import java.util.List;
 
 public class Obsolescence_Page extends Page_Base {
@@ -58,22 +57,21 @@ public class Obsolescence_Page extends Page_Base {
     public WebElement Fixed_Number_For_5Y;
 
     @FindBy(linkText = "All Obsolescence PCNs")
-    public WebElement AllObsolescence;
+    public WebElement All_Obsolescence;
 
     @FindBy(xpath = "//*[@id=\"z2-2cols-leftpanel\"]/ul/li[6]/a/div[2]")
-    public WebElement ProductChangeNotices;
+    public WebElement Product_Change_Notices;
 
     @FindBy(xpath = "//*[@id=\"dropbg\"]/div/div/div[2]/div/div[2]/app-z2pagination/div/div/div/div/pagination/ul/li[9] ")
-    public WebElement LastPage_AllObs;
+    public WebElement Last_Page_All_Obs;
 
 
     @FindBy(xpath = "//*[@id=\"dropbg\"]/div/div/div[2]/div/div[2]/app-z2pagination/span/span[2]")
-    public WebElement FixedNumForAllObs;
+    public WebElement Fixed_Number_for_All_Obs;
 
 
-
-@FindBy(xpath = "c")
-public List <WebElement> newdata;
+    @FindBy(xpath = "c")
+    public List<WebElement> New_Data;
 
     public void Z2D_Open_High_LifeCycle() {
         Click_Button(High_LifeCycle_Risk);
@@ -108,21 +106,21 @@ public List <WebElement> newdata;
     }
 
     public void Z2D_All_Obsolescence() {
-        Click_Button(AllObsolescence);
+        Click_Button(All_Obsolescence);
     }
 
-    public void ProductChange (){
-        Click_Button(ProductChangeNotices);
+    public void Z2D_Product_Change() {
+        Click_Button(Product_Change_Notices);
     }
 
-    public void GetLastPageForAllObs(){
-        Click_Button(LastPage_AllObs);
+    public void Z2D_Get_Last_Page_for_All_Obs() {
+        Click_Button(Last_Page_All_Obs);
     }
 
-    public void tbl_data(WebDriver driver){
-        for(int i =1; i<=newdata.size();i++){
-            System.out.println(newdata);
-            String Data = driver.findElement(By.xpath("//table[@class='z2tableM table hoverrows table-bordered table-middle bigtitle text-left']/tbody/tr["+i+"]/td[3]")).getText();
+    public void Z2D_Table_of_Data(WebDriver driver) {
+        for (int i = 1; i <= New_Data.size(); i++) {
+            System.out.println(New_Data);
+            String Data = driver.findElement(By.xpath("//table[@class='z2tableM table hoverrows table-bordered table-middle bigtitle text-left']/tbody/tr[" + i + "]/td[3]")).getText();
             Assert.assertTrue(Data.contains("Obsolescence"));
         }
     }

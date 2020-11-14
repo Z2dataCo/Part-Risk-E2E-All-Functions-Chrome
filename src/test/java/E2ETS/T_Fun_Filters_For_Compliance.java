@@ -1,7 +1,7 @@
 package E2ETS;
 
 import Com.PartRisk.Pages.Compliance_Page;
-import Com.PartRisk.Pages.DataManagement_Page;
+import Com.PartRisk.Pages.Data_Management_Page;
 import Com.PartRisk.Pages.Forecast_Page;
 import Com.PartRisk.Pages.Landing_Page;
 import io.qameta.allure.Description;
@@ -13,7 +13,7 @@ import org.testng.annotations.Test;
 
 public class T_Fun_Filters_For_Compliance extends Test_Base {
     Compliance_Page CompliancePageObj;
-    DataManagement_Page DManagementObj;
+    Data_Management_Page DManagementObj;
     Landing_Page LandObj;
     Forecast_Page ForeCastObj;
 
@@ -22,7 +22,7 @@ public class T_Fun_Filters_For_Compliance extends Test_Base {
     @Description("Validate Filter on Compliance Page &  Check table's data")
     public void Filters_For_Compliance() throws InterruptedException {
         LandObj = new Landing_Page(driver);
-        DManagementObj = new DataManagement_Page(driver);
+        DManagementObj = new Data_Management_Page(driver);
         CompliancePageObj = new Compliance_Page(driver);
         ForeCastObj = new Forecast_Page(driver);
 

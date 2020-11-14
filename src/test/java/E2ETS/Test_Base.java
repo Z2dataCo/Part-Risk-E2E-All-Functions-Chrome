@@ -7,7 +7,6 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeDriverService;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -148,7 +147,7 @@ public class Test_Base {
 
     public static void login() {
         LogObj = new Login_Page(driver);
-        LogObj.Z2D_Sign_IN(Z2DataUsername, Z2DataPassword);
+        LogObj.Z2D_SignIn(Z2DataUsername, Z2DataPassword);
     }
 
     public void WaitAllElement() {
@@ -159,8 +158,8 @@ public class Test_Base {
     public static void ClickLogOut() throws InterruptedException {
         page = new Landing_Page(driver);
         Thread.sleep(2000);
-        page.ClickMyAccount();
-        page.LogOut();
+        page.Z2D_Click_My_Account();
+        page.Z2D_Logout();
     }
 
     public static void Wait_for_Element_to_Disappear2(WebElement element) throws Exception {

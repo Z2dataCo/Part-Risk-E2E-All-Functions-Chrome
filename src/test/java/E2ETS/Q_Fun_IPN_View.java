@@ -1,20 +1,18 @@
 package E2ETS;
 
-import Com.PartRisk.Pages.DataManagement_Page;
+import Com.PartRisk.Pages.Data_Management_Page;
 import Com.PartRisk.Pages.Landing_Page;
-import Com.PartRisk.Pages.Login_Page;
 import Com.PartRisk.Pages.Parts_Page;
 import io.qameta.allure.Description;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
-import org.aeonbits.owner.Config;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class Q_Fun_IPN_View extends Test_Base {
     Parts_Page PartPageObj;
-    DataManagement_Page DManagementObj;
+    Data_Management_Page DManagementObj;
     Landing_Page LandObj;
 
     @Test(priority = 17)
@@ -22,7 +20,7 @@ public class Q_Fun_IPN_View extends Test_Base {
     @Description("Check that parts tab have data appear and count of uploaded IPN (IPN View)")
     public void IPN_View() throws InterruptedException {
         LandObj = new Landing_Page(driver);
-        DManagementObj = new DataManagement_Page(driver);
+        DManagementObj = new Data_Management_Page(driver);
         PartPageObj = new Parts_Page(driver);
         LandObj.Z2D_Open_Data_Management();
         Wait_Element_Visible(DManagementObj.Search_Text_Input);

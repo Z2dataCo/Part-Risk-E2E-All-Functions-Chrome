@@ -1,6 +1,6 @@
 package E2ETS;
 
-import Com.PartRisk.Pages.DataManagement_Page;
+import Com.PartRisk.Pages.Data_Management_Page;
 import Com.PartRisk.Pages.Landing_Page;
 import Com.PartRisk.Pages.Scrub_Page;
 import io.qameta.allure.Description;
@@ -10,18 +10,16 @@ import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import java.util.concurrent.TimeUnit;
-
 public class O_Fun_Count_Of_Exact_Match extends Test_Base {
     Landing_Page LandObj;
-    DataManagement_Page DManagementObj;
+    Data_Management_Page DManagementObj;
     Scrub_Page ScrubPageObj;
 
     @Test(priority = 15)
     @Severity(SeverityLevel.NORMAL)
     @Description("Validate To Count Exact Match in Scrub Page ")
     public void Count_Exact_Match_in_Scrub() throws InterruptedException {
-        DManagementObj = new DataManagement_Page(driver);
+        DManagementObj = new Data_Management_Page(driver);
         LandObj = new Landing_Page(driver);
         ScrubPageObj = new Scrub_Page(driver);
         LandObj.Z2D_Open_Data_Management();

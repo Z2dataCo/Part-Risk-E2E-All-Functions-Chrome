@@ -15,7 +15,7 @@ public class U_Fun_Create_Report extends Test_Base {
     String Name = faker.name().firstName();
     Dashboard_Page DashboardPageObj;
     Report_Page ReportPageObj;
-    DataManagement_Page DManagementObj;
+    Data_Management_Page DManagementObj;
     Landing_Page LandObj;
 
     @Test(priority = 21)
@@ -23,7 +23,7 @@ public class U_Fun_Create_Report extends Test_Base {
     @Description("Validate To Create , Review Report And Download ")
     public void Create_Report_Download() throws InterruptedException {
         LandObj = new Landing_Page(driver);
-        DManagementObj = new DataManagement_Page(driver);
+        DManagementObj = new Data_Management_Page(driver);
         DashboardPageObj = new Dashboard_Page(driver);
         ReportPageObj = new Report_Page(driver);
         LandObj.Z2D_Open_Data_Management();

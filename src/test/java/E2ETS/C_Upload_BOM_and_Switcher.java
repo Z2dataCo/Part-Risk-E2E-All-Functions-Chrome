@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 public class C_Upload_BOM_and_Switcher extends Test_Base {
     Landing_Page LandObj;
     Upload_BOM_Page UpBOMObj;
-    DataManagement_Page DManagementObj;
+    Data_Management_Page DManagementObj;
     Mitigation_Page MitigationObj;
     Parts_Page PartsObj;
     Forecast_Page ForecastObj;
@@ -21,7 +21,7 @@ public class C_Upload_BOM_and_Switcher extends Test_Base {
     public void User_Upload_BOM() throws Throwable {
         LandObj = new Landing_Page(driver);
         UpBOMObj = new Upload_BOM_Page(driver);
-        DManagementObj = new DataManagement_Page(driver);
+        DManagementObj = new Data_Management_Page(driver);
         MitigationObj = new Mitigation_Page(driver);
         PartsObj = new Parts_Page(driver);
         ForecastObj = new Forecast_Page(driver);

@@ -1,19 +1,17 @@
 package E2ETS;
 
-import Com.PartRisk.Pages.DataManagement_Page;
+import Com.PartRisk.Pages.Data_Management_Page;
 import Com.PartRisk.Pages.Landing_Page;
-import Com.PartRisk.Pages.Login_Page;
 import io.qameta.allure.Description;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import org.openqa.selenium.StaleElementReferenceException;
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class G_Create_Alert_LifeCycle_Litigation extends Test_Base {
 
-    DataManagement_Page DManagementObj;
+    Data_Management_Page DManagementObj;
     Landing_Page LandObj;
 
     @Test(priority = 7)
@@ -21,7 +19,7 @@ public class G_Create_Alert_LifeCycle_Litigation extends Test_Base {
     @Description("Validate creating alert by selecting LifeCycle & Litigation")
     public void Create_Alert_LifeCycle_Litigation() throws InterruptedException {
         LandObj = new Landing_Page(driver);
-        DManagementObj = new DataManagement_Page(driver);
+        DManagementObj = new Data_Management_Page(driver);
 
         LandObj.Z2D_Open_Data_Management();
         Wait_Element_Clickable(DManagementObj.Search_Text_Input);
@@ -43,7 +41,7 @@ public class G_Create_Alert_LifeCycle_Litigation extends Test_Base {
             DManagementObj.Z2D_Click_Followed_Btn();
             Wait_Element_Clickable(DManagementObj.Unfollow_Btn);
             DManagementObj.Z2D_Click_Unfollow_Btn();
-            Wait_Element_Invisibility(DManagementObj.ToastContainer);
+            Wait_Element_Invisibility(DManagementObj.Toast_Container);
             DManagementObj.Z2D_Click_on_Create_Alert(driver); }
         else {
             DManagementObj.Z2D_Click_on_Create_Alert(driver); }
@@ -52,7 +50,7 @@ public class G_Create_Alert_LifeCycle_Litigation extends Test_Base {
         DManagementObj.Z2D_Click_on_LifeCycle();
         DManagementObj.Z2D_Click_on_Litigation();
         DManagementObj.Z2D_Click_on_Submit_Btn();
-        Wait_Element_Invisibility(DManagementObj.ToastContainer);
+        Wait_Element_Invisibility(DManagementObj.Toast_Container);
         // Wait_Element_Invisibility(DManagementObj.ToastContainer);
        // Wait_Element_Clickable(DManagementObj.Followed_Text);
         String Status = DManagementObj.Followed_Text.getText();

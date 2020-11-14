@@ -1,9 +1,8 @@
 package E2ETS;
 
-import Com.PartRisk.Pages.DataManagement_Page;
+import Com.PartRisk.Pages.Data_Management_Page;
 import Com.PartRisk.Pages.Forecast_Page;
 import Com.PartRisk.Pages.Landing_Page;
-import Com.PartRisk.Pages.Obsolescence_Page;
 import io.qameta.allure.Description;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
@@ -12,7 +11,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class R_Fun_Forecast_Graph_and_MPN_View extends Test_Base {
-    DataManagement_Page DManagementObj;
+    Data_Management_Page DManagementObj;
     Landing_Page LandObj;
     Forecast_Page ForeCastObj;
 
@@ -21,7 +20,7 @@ public class R_Fun_Forecast_Graph_and_MPN_View extends Test_Base {
     @Description("Validate affecting Forecast Graph by filtering the Status & Check table's data ")
     public void Status_with_Forecast_Graph_MPN_View() throws Exception {
         LandObj = new Landing_Page(driver);
-        DManagementObj = new DataManagement_Page(driver);
+        DManagementObj = new Data_Management_Page(driver);
         ForeCastObj = new Forecast_Page(driver);
 
         LandObj.Z2D_Open_Data_Management();
@@ -45,7 +44,7 @@ public class R_Fun_Forecast_Graph_and_MPN_View extends Test_Base {
         System.out.println("ActiveFilterValue" + ActiveFilterValue);
         ForeCastObj.Z2D_Click_on_First_Filter();
         Wait_for_Element_to_Disappear(ForeCastObj.Spinner);
-        ForeCastObj.Get_Table_Data(driver, "Active");
+        ForeCastObj.Z2D_Get_Table_Data(driver, "Active");
         String TotalFilterValue = ForeCastObj.TotalValue.getText();
         System.out.println("Total Filter Value : " + TotalFilterValue);
         Assert.assertEquals(TotalFilterValue, ActiveFilterValue);
@@ -54,7 +53,7 @@ public class R_Fun_Forecast_Graph_and_MPN_View extends Test_Base {
         System.out.println("EOLFilterValue" + EOLFilterValue);
         ForeCastObj.Z2D_Click_on_Second_Filter();
         Wait_for_Element_to_Disappear(ForeCastObj.Spinner);
-        ForeCastObj.Get_Table_Data(driver, "EOL");
+        ForeCastObj.Z2D_Get_Table_Data(driver, "EOL");
         String TotalFilterValue2 = ForeCastObj.TotalValue.getText();
         System.out.println("TotalFilterValue2 : " + TotalFilterValue2);
         Assert.assertEquals(TotalFilterValue2, EOLFilterValue);
@@ -63,7 +62,7 @@ public class R_Fun_Forecast_Graph_and_MPN_View extends Test_Base {
         System.out.println("UnknownFilterValue" + UnknownFilterValue);
         ForeCastObj.Z2D_Click_on_Third_Filter();
         Wait_for_Element_to_Disappear(ForeCastObj.Spinner);
-        ForeCastObj.Get_Table_Data(driver, "Unknown");
+        ForeCastObj.Z2D_Get_Table_Data(driver, "Unknown");
         String TotalFilterValue3 = ForeCastObj.TotalValue.getText();
         System.out.println("TotalFilterValue3 : " + TotalFilterValue3);
         Assert.assertEquals(TotalFilterValue3, UnknownFilterValue);

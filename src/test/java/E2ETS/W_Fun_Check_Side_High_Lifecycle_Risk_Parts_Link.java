@@ -9,7 +9,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class W_Fun_Check_Side_High_Lifecycle_Risk_Parts_Link extends Test_Base {
-    DataManagement_Page DManagementObj;
+    Data_Management_Page DManagementObj;
     Landing_Page LandOpj;
     Dashboard_Page DashOpj;
     Report_Page ReportOpj;
@@ -23,7 +23,7 @@ public class W_Fun_Check_Side_High_Lifecycle_Risk_Parts_Link extends Test_Base {
         LandOpj = new Landing_Page(driver);
         DashOpj = new Dashboard_Page(driver);
         ReportOpj = new Report_Page(driver);
-        DManagementObj = new DataManagement_Page(driver);
+        DManagementObj = new Data_Management_Page(driver);
         ObsoL_Opj = new Obsolescence_Page(driver);
         LandOpj.Z2D_Open_Data_Management();
         Wait_Element_Visible(DManagementObj.Search_Text_Input);

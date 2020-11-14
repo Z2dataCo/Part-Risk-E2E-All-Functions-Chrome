@@ -1,6 +1,6 @@
 package E2ETS;
 
-import Com.PartRisk.Pages.DataManagement_Page;
+import Com.PartRisk.Pages.Data_Management_Page;
 import Com.PartRisk.Pages.Forecast_Page;
 import Com.PartRisk.Pages.Landing_Page;
 import Com.PartRisk.Pages.Obsolescence_Page;
@@ -11,7 +11,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class S_Fun_Forecast_Graph_and_IPN_View extends Test_Base {
-    DataManagement_Page DManagementObj;
+    Data_Management_Page DManagementObj;
     Landing_Page LandObj;
     Forecast_Page ForeCastObj;
     Obsolescence_Page ObsoL_Opj;
@@ -22,7 +22,7 @@ public class S_Fun_Forecast_Graph_and_IPN_View extends Test_Base {
 
     public void ForeCast_Graph() throws InterruptedException {
         LandObj = new Landing_Page(driver);
-        DManagementObj = new DataManagement_Page(driver);
+        DManagementObj = new Data_Management_Page(driver);
         ForeCastObj = new Forecast_Page(driver);
         ObsoL_Opj = new Obsolescence_Page(driver);
 

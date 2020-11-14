@@ -164,10 +164,10 @@ public class Landing_Page extends Page_Base {
         Click_Button(btn_search);
     }
 
-    public void ClickMyAccount() {
+    public void Z2D_Click_My_Account() {
         Click_Button(MY_Account);
     }
-    public void LogOut() {
+    public void Z2D_Logout() {
         Click_Button(Logout);
     }
 }
