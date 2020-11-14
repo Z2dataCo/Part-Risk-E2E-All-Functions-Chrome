@@ -35,11 +35,11 @@ public class Test_Base {
     public String Z2DataCompare_2 = "bav20";
     public String Z2DataSupplier = "Toshiba";
     public String Z2DataFolderName = "TAP_BOM";
-    public String Z2datafoldernamef = "fady";
-    public String Z2dataSpinnerClassName ="spinner-circle full-screen";
+    //public String Z2datafoldernamef = "fady";
+    //public String Z2dataSpinnerClassName ="spinner-circle full-screen";
     Faker faker = new Faker();
     public String Z2DataFakerFolder = faker.name().firstName();
-    public String Z2DataFilePath = System.getProperty("user.dir") + "\\src\\test\\resources\\BOMs\\TABOM1.xlsx";
+    //public String Z2DataFilePath = System.getProperty("user.dir") + "\\src\\test\\resources\\BOMs\\TABOM1.xlsx";
     public String Z2DataSwitcherStepFilePath = System.getProperty("user.dir") + "\\src\\test\\resources\\BOMs\\TABOM2.xlsx";
     public static Login_Page LogObj;
     public static Landing_Page page;
@@ -127,17 +127,7 @@ public class Test_Base {
         WebDriverWait Wait = new WebDriverWait(driver, 50);
         Wait.until(ExpectedConditions.invisibilityOf(element));
     }
-    public void Wait_Element_Located_By_Invisibility(String ClassName) {
-        WebDriverWait Wait = new WebDriverWait(driver, 50);
-        Wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className(ClassName)));
-    }
-
-    public void Wait_Element_Staleness(WebElement element) {
-        WebDriverWait WebWait = new WebDriverWait(driver, 50);
-        WebWait.until(ExpectedConditions.stalenessOf(element));
-    }
-
-    public static void Wait_for_Element_to_Disappear(List element) throws InterruptedException {
+       public static void Wait_for_Element_to_Disappear(List element) throws InterruptedException {
         int count = 0;
         while (element.size() != 0 && count < 30) {
             Thread.sleep(700);
