@@ -42,7 +42,8 @@ public class F_Create_Alert_Litigation extends Test_Base {
             DManagementObj.Z2D_Click_Unfollow_Btn();
             Wait_Element_Invisibility(DManagementObj.Toast_Container);
             DManagementObj.Z2D_Click_on_Create_Alert(driver);
-        } else {
+        }
+        else {
             DManagementObj.Z2D_Click_on_Create_Alert(driver);
         }
         Wait_Element_Visible(DManagementObj.LifeCycle_Btn);

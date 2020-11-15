@@ -13,9 +13,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.ITestResult;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Parameters;
+import org.testng.annotations.*;
 
 import java.io.File;
 import java.text.SimpleDateFormat;
@@ -45,20 +43,24 @@ public class Test_Base {
     public static Landing_Page page;
 
     @SuppressWarnings("unused")
-    @BeforeMethod
+    @BeforeSuite
     @Parameters("browser")
     public static void SetUp(String browser) throws Exception {
 
         //Check if parameter passed from TestNG is 'chrome'
         if (browser.equalsIgnoreCase("Chrome")) {
-            ChromeOptions opt = new ChromeOptions();
-            opt.setPageLoadStrategy(PageLoadStrategy.NORMAL);
-            opt.setProxy(null);
-            opt.addArguments("--disable-remote-fonts");
-            opt.addArguments("--enable-precache");
-            opt.addArguments("--start-maximized");
+            ChromeOptions options = new ChromeOptions();
+            options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
+            options.setProxy(null);
+            options.addArguments("--disable-remote-fonts");
+            options.addArguments("--enable-precache");
+            options.addArguments("--start-maximized");
+            //options.addArguments("--disable-gl-drawing-for-tests ");
+            options.addArguments("--disable-extensions");
+            options.addArguments("--disable-modal-animations");
+
             WebDriverManager.chromedriver().setup();
-            driver = new ChromeDriver(opt);
+            driver = new ChromeDriver(options);
         }
         //Check if parameter passed as 'firefox'
         else if (browser.equalsIgnoreCase("Firefox")) {
@@ -81,24 +83,29 @@ public class Test_Base {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         //driver.navigate().to("https://test.z2data.com/");
-        driver.navigate().to("https://parts.z2data.com/");
+        driver.get("https://parts.z2data.com");
         login();
-        JavascriptExecutor js = (JavascriptExecutor) driver;
+        //JavascriptExecutor js = (JavascriptExecutor) driver;
     }
 
     @AfterMethod
+    public void Back_To_Landing(){
+        driver.get("https://parts.z2data.com/");
+    }
+
+    @AfterSuite
     public void TearDown(ITestResult result) throws InterruptedException {
         String filename = new SimpleDateFormat("ddMMhhmm").format(new Date());
-        if (ITestResult.FAILURE == result.getStatus()) {
-            try {
-                TakesScreenshot ts = (TakesScreenshot) driver;
+       if (ITestResult.FAILURE == result.getStatus()) {
+           try {
+               TakesScreenshot ts = (TakesScreenshot) driver;
                 File source = ts.getScreenshotAs(OutputType.FILE);
                 FileUtils.copyFile(source, new File(System.getProperty("user.dir") + "/Screenshots/" + result.getName() + filename + ".png"));
-            } catch (Exception e) {
+          } catch (Exception e) {
                 System.out.println("Exception while taking screenshot " + e.getMessage());
             }
-        }
-        ClickLogOut();
+       }
+       // ClickLogOut();
         driver.quit();
     }
 

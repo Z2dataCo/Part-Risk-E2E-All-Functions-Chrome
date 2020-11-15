@@ -39,9 +39,9 @@ public class E_Create_Alert_LifeCycle extends Test_Base {
             Wait_Element_Clickable(DManagementObj.Unfollow_Btn);
             DManagementObj.Z2D_Click_Unfollow_Btn();
             Wait_Element_Invisibility(DManagementObj.Toast_Container);
-            DManagementObj.Z2D_Click_on_Create_Alert(driver); }
-        else {
             DManagementObj.Z2D_Click_on_Create_Alert(driver);
+        }
+        else { DManagementObj.Z2D_Click_on_Create_Alert(driver);
         }
         Wait_Element_Visible(DManagementObj.LifeCycle_Btn);
         Wait_Element_Clickable(DManagementObj.LifeCycle_Btn);
