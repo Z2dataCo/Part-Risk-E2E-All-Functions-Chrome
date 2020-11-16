@@ -79,17 +79,17 @@ public class Test_Base {
             //If no browser passed throw exception
             throw new Exception("Browser is not correct");
         }
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
 
         //driver.navigate().to("https://test.z2data.com/");
         driver.get("https://parts.z2data.com");
         login();
+        WaitAllElement();
         //JavascriptExecutor js = (JavascriptExecutor) driver;
     }
 
     @AfterMethod
-    public void Back_To_Landing(ITestResult result){
+    public void Back_To_Landing(ITestResult result) throws InterruptedException {
         String filename = new SimpleDateFormat("ddMMhhmm").format(new Date());
         if (ITestResult.FAILURE == result.getStatus()) {
             try {
@@ -100,7 +100,8 @@ public class Test_Base {
                 System.out.println("Exception while taking screenshot " + e.getMessage());
             }
         }
-                driver.get("https://parts.z2data.com/");
+        Thread.sleep(2000);
+        driver.get("https://parts.z2data.com/");
     }
 
     @AfterSuite
@@ -125,7 +126,7 @@ public class Test_Base {
     }
 
     public void Wait_Element_Visible(WebElement element) {
-        WebDriverWait WebWait = new WebDriverWait(driver, 50);
+        WebDriverWait WebWait = new WebDriverWait(driver, 60);
         WebWait.until(ExpectedConditions.visibilityOf(element));
     }
 
@@ -133,10 +134,11 @@ public class Test_Base {
         WebDriverWait Wait = new WebDriverWait(driver, 50);
         Wait.until(ExpectedConditions.invisibilityOf(element));
     }
-       public static void Wait_for_Element_to_Disappear(List element) throws InterruptedException {
+
+    public static void Wait_for_Element_to_Disappear(List element) throws InterruptedException {
         int count = 0;
         while (element.size() != 0 && count < 30) {
-            Thread.sleep(700);
+            Thread.sleep(1000);
             count++;
         }
     }
@@ -146,7 +148,7 @@ public class Test_Base {
         LogObj.Z2D_SignIn(Z2DataUsername, Z2DataPassword);
     }
 
-    public void WaitAllElement() {
+    public static void WaitAllElement() {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
     }

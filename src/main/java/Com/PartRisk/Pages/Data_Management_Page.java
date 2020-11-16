@@ -1,5 +1,6 @@
 package Com.PartRisk.Pages;
 
+import junit.framework.Test;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
@@ -256,5 +257,13 @@ public class Data_Management_Page extends Page_Base {
 
     public void Z2D_Move_To_Prod_BOM(WebDriver driver) {
         driver.get("https://parts.z2data.com/RiskManager?BomId=119090");
+    }
+
+    public void SetFile(){
+        Click_Button(Test_Folder);
+    }
+
+    public void SetSearchVaue(){
+        Click_Button(Search_Result);
     }
 }

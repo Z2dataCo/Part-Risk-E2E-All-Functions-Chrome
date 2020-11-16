@@ -24,9 +24,8 @@ public class R_Fun_Forecast_Graph_and_MPN_View extends Test_Base {
         ForeCastObj = new Forecast_Page(driver);
 
         LandObj.Z2D_Open_Data_Management();
-        Wait_Element_Clickable(DManagementObj.Search_Text_Input);
         DManagementObj.Z2D_Type_Folder_Name(Z2DataFolderName);
-        Wait_Element_Clickable(DManagementObj.Search_Result);
+        Thread.sleep(1000);
         DManagementObj.Z2D_Select_Folder();
         boolean staleElement = true;
         while (staleElement) {

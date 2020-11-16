@@ -29,8 +29,7 @@ public class W_Fun_Check_Side_High_Lifecycle_Risk_Parts_Link extends Test_Base {
         Wait_Element_Visible(DManagementObj.Search_Text_Input);
         Thread.sleep(1000);
         DManagementObj.Z2D_Search(Z2DataFolderName);
-        Actions action = new Actions(driver);
-        action.moveToElement(DManagementObj.Test_Folder).click().perform();
+       DManagementObj.SetFile();
         if (!(" TAP_BOM_Proud_Test" == driver.getPageSource())) {
             DManagementObj.Z2D_Move_To_Prod_BOM(driver);
         } else {

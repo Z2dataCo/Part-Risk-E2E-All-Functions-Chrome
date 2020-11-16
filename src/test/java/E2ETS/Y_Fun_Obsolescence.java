@@ -51,6 +51,7 @@ public class Y_Fun_Obsolescence extends Test_Base {
         Assert.assertEquals(Count, AllOfRow);
         Thread.sleep(2000);
         ObsoL_Opj.Z2D_NRND_Parts();
+        Thread.sleep(2000);
         Wait_for_Element_to_Disappear(DManagementObj.Spinner);
         int CountOfTable0 = ObsoL_Opj.Table_Size.size();
         int Count0 = Integer.parseInt(ObsoL_Opj.Fixed_Number.getText());
@@ -110,11 +111,9 @@ public class Y_Fun_Obsolescence extends Test_Base {
         DManagementObj = new Data_Management_Page(driver);
         ObsoL_Opj = new Obsolescence_Page(driver);
         LandOpj.Z2D_Open_Data_Management();
-        Wait_Element_Visible(DManagementObj.Search_Text_Input);
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         DManagementObj.Z2D_Search(Z2DataFolderName);
-        Actions action = new Actions(driver);
-        action.moveToElement(DManagementObj.Test_Folder).click().perform();
+        DManagementObj.SetFile();
         if (!(" TAP_BOM_Proud_Test" == driver.getPageSource())) {
             DManagementObj.Z2D_Move_To_Prod_BOM(driver);
         } else {
@@ -153,8 +152,7 @@ public class Y_Fun_Obsolescence extends Test_Base {
         Wait_Element_Visible(DManagementObj.Search_Text_Input);
         Thread.sleep(1000);
         DManagementObj.Z2D_Search(Z2DataFolderName);
-        Actions action = new Actions(driver);
-        action.moveToElement(DManagementObj.Test_Folder).click().perform();
+       DManagementObj.SetFile();
         if (!(" TAP_BOM_Proud_Test" == driver.getPageSource())) {
             DManagementObj.Z2D_Move_To_Prod_BOM(driver);
         } else {
