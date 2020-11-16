@@ -263,7 +263,7 @@ public class Data_Management_Page extends Page_Base {
         Click_Button(Test_Folder);
     }
 
-    public void SetSearchVaue(){
+    public void SetSearchValue(){
         Click_Button(Search_Result);
     }
 }

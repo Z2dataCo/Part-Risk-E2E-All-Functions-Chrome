@@ -25,6 +25,9 @@ public class Forecast_Page extends Page_Base {
     @FindBy(xpath = "//*[@id=\"dropbg\"]/div/div/div[1]/div[1]/div[1]")
     public WebElement File_Name;
 
+    @FindBy(xpath = "//*[@id=\"dashboard_content\"]/div/div/div[1]/app-dashboard-risk/div/div[1]")
+    public WebElement Graph2;
+
     @FindBy(xpath = "//app-z2pagination/span/span[2]")
     public WebElement TotalValue;
     @FindBy(xpath = "//div[@style='border-color: silver silver silver rgb(51, 122, 183);']")

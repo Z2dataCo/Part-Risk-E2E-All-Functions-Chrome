@@ -55,6 +55,7 @@ public class D_PCN_Manager extends Test_Base {
         } else {
             System.out.println("Assertion for PCNs Tab First PCN Notification Z2 PCN_ID is Failed");
         }
+        Thread.sleep(1000);
         PCN_ManagerObj.Z2D_Open_PCNs_Tab();
 
         PCN_ManagerObj.Z2D_Open_Impacted_Parts_Tab();

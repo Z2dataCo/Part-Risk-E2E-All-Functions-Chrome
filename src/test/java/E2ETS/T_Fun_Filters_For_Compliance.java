@@ -27,7 +27,7 @@ public class T_Fun_Filters_For_Compliance extends Test_Base {
         ForeCastObj = new Forecast_Page(driver);
 
         LandObj.Z2D_Open_Data_Management();
-        Wait_Element_Clickable(DManagementObj.Search_Text_Input);
+        Thread.sleep(4000);
         DManagementObj.Z2D_Type_Folder_Name(Z2DataFolderName);
         DManagementObj.Z2D_Select_Folder();
         boolean staleElement = true;
@@ -40,6 +40,7 @@ public class T_Fun_Filters_For_Compliance extends Test_Base {
             }
         }
         Switch_Tabs();
+        Thread.sleep(2000);
         DManagementObj.Z2D_Click_on_Compliance_Tab();
         Wait_Element_Clickable(CompliancePageObj.First_Check_Box_Filter);
         CompliancePageObj.Z2D_Click_on_First_Filter();
