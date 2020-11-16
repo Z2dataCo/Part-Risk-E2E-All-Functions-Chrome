@@ -21,8 +21,8 @@ public class F_Create_Alert_Litigation extends Test_Base {
         DManagementObj = new Data_Management_Page(driver);
 
         LandObj.Z2D_Open_Data_Management();
-        DManagementObj.Z2D_Type_Folder_Name(Z2DataFolderName);
         Wait_Element_Clickable(DManagementObj.Search_Text_Input);
+        DManagementObj.Z2D_Type_Folder_Name(Z2DataFolderName);
         Wait_Element_Clickable(DManagementObj.Search_Result);
         DManagementObj.Z2D_Select_Folder();
         boolean staleElement = true;

@@ -89,23 +89,22 @@ public class Test_Base {
     }
 
     @AfterMethod
-    public void Back_To_Landing(){
-        driver.get("https://parts.z2data.com/");
+    public void Back_To_Landing(ITestResult result){
+        String filename = new SimpleDateFormat("ddMMhhmm").format(new Date());
+        if (ITestResult.FAILURE == result.getStatus()) {
+            try {
+                TakesScreenshot ts = (TakesScreenshot) driver;
+                File source = ts.getScreenshotAs(OutputType.FILE);
+                FileUtils.copyFile(source, new File(System.getProperty("user.dir") + "/Screenshots/" + result.getName() + filename + ".png"));
+            } catch (Exception e) {
+                System.out.println("Exception while taking screenshot " + e.getMessage());
+            }
+        }
+                driver.get("https://parts.z2data.com/");
     }
 
     @AfterSuite
-    public void TearDown(ITestResult result) throws InterruptedException {
-        String filename = new SimpleDateFormat("ddMMhhmm").format(new Date());
-       if (ITestResult.FAILURE == result.getStatus()) {
-           try {
-               TakesScreenshot ts = (TakesScreenshot) driver;
-                File source = ts.getScreenshotAs(OutputType.FILE);
-                FileUtils.copyFile(source, new File(System.getProperty("user.dir") + "/Screenshots/" + result.getName() + filename + ".png"));
-          } catch (Exception e) {
-                System.out.println("Exception while taking screenshot " + e.getMessage());
-            }
-       }
-        ClickLogOut();
+    public void TearDown() throws InterruptedException {
         driver.quit();
     }
 
