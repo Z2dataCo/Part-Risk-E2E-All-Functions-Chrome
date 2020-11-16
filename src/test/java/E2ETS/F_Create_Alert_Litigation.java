@@ -20,20 +20,7 @@ public class F_Create_Alert_Litigation extends Test_Base {
         LandObj = new Landing_Page(driver);
         DManagementObj = new Data_Management_Page(driver);
 
-        LandObj.Z2D_Open_Data_Management();
-        Wait_Element_Clickable(DManagementObj.Search_Text_Input);
-        DManagementObj.Z2D_Type_Folder_Name(Z2DataFolderName);
-        Wait_Element_Clickable(DManagementObj.Search_Result);
-        DManagementObj.Z2D_Select_Folder();
-        boolean staleElement = true;
-        while (staleElement) {
-            try {
-                DManagementObj.Z2D_Click_on_BOM_File();
-                staleElement = false; }
-            catch (StaleElementReferenceException e) {
-                staleElement = true; }
-        }
-        Switch_Tabs();
+        DManagementObj.Z2D_Move_To_Prod_BOM(driver);
         Wait_Element_Clickable(DManagementObj.Followed_Text);
         //Wait_Element_Clickable(DManagementObj.Graph);
         if (DManagementObj.Followed_Text.getText().equals("Followed")) {

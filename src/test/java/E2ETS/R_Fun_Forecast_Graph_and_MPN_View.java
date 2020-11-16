@@ -10,11 +10,11 @@ import org.openqa.selenium.StaleElementReferenceException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+
 public class R_Fun_Forecast_Graph_and_MPN_View extends Test_Base {
     Data_Management_Page DManagementObj;
     Landing_Page LandObj;
     Forecast_Page ForeCastObj;
-
     @Test(priority = 18)
     @Severity(value = SeverityLevel.NORMAL)
     @Description("Validate affecting Forecast Graph by filtering the Status & Check table's data ")
@@ -23,23 +23,11 @@ public class R_Fun_Forecast_Graph_and_MPN_View extends Test_Base {
         DManagementObj = new Data_Management_Page(driver);
         ForeCastObj = new Forecast_Page(driver);
 
-        LandObj.Z2D_Open_Data_Management();
-        Wait_Element_Clickable(DManagementObj.Search_Text_Input);
-        DManagementObj.Z2D_Type_Folder_Name(Z2DataFolderName);
-        Wait_Element_Clickable(DManagementObj.Search_Result);
-        DManagementObj.Z2D_Select_Folder();
-        boolean staleElement = true;
-        while (staleElement) {
-            try {
-                DManagementObj.Z2D_Click_on_BOM_File();
-                staleElement = false;
-            } catch (StaleElementReferenceException e) {
-                staleElement = true;
-            }
-        }
-        Switch_Tabs();
+        DManagementObj.Z2D_Move_To_Prod_BOM(driver);
+        Wait_for_Element_to_Disappear(ForeCastObj.Spinner);
+        Wait_Element_Clickable(ForeCastObj.Graph2);
         ForeCastObj.Z2D_Click_on_Forecast_Tab();
-
+        Wait_for_Element_to_Disappear(ForeCastObj.Spinner);
         String ActiveFilterValue = ForeCastObj.First_Filter.getText();
         System.out.println("ActiveFilterValue" + ActiveFilterValue);
         ForeCastObj.Z2D_Click_on_First_Filter();
@@ -48,7 +36,6 @@ public class R_Fun_Forecast_Graph_and_MPN_View extends Test_Base {
         String TotalFilterValue = ForeCastObj.TotalValue.getText();
         System.out.println("Total Filter Value : " + TotalFilterValue);
         Assert.assertEquals(TotalFilterValue, ActiveFilterValue);
-
         String EOLFilterValue = ForeCastObj.Second_Filter.getText();
         System.out.println("EOLFilterValue" + EOLFilterValue);
         ForeCastObj.Z2D_Click_on_Second_Filter();
@@ -57,7 +44,6 @@ public class R_Fun_Forecast_Graph_and_MPN_View extends Test_Base {
         String TotalFilterValue2 = ForeCastObj.TotalValue.getText();
         System.out.println("TotalFilterValue2 : " + TotalFilterValue2);
         Assert.assertEquals(TotalFilterValue2, EOLFilterValue);
-
         String UnknownFilterValue = ForeCastObj.Third_Filter.getText();
         System.out.println("UnknownFilterValue" + UnknownFilterValue);
         ForeCastObj.Z2D_Click_on_Third_Filter();

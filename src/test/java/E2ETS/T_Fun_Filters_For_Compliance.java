@@ -26,20 +26,9 @@ public class T_Fun_Filters_For_Compliance extends Test_Base {
         CompliancePageObj = new Compliance_Page(driver);
         ForeCastObj = new Forecast_Page(driver);
 
-        LandObj.Z2D_Open_Data_Management();
-        Wait_Element_Clickable(DManagementObj.Search_Text_Input);
-        DManagementObj.Z2D_Type_Folder_Name(Z2DataFolderName);
-        DManagementObj.Z2D_Select_Folder();
-        boolean staleElement = true;
-        while (staleElement) {
-            try {
-                DManagementObj.Z2D_Click_on_BOM_File();
-                staleElement = false;
-            } catch (StaleElementReferenceException e) {
-                staleElement = true;
-            }
-        }
-        Switch_Tabs();
+        DManagementObj.Z2D_Move_To_Prod_BOM(driver);
+        Wait_for_Element_to_Disappear(ForeCastObj.Spinner);
+        Wait_Element_Clickable(ForeCastObj.Graph2);
         DManagementObj.Z2D_Click_on_Compliance_Tab();
         Wait_Element_Clickable(CompliancePageObj.First_Check_Box_Filter);
         CompliancePageObj.Z2D_Click_on_First_Filter();

@@ -38,6 +38,8 @@ public class Forecast_Page extends Page_Base {
     @FindBy(className = "jtoggler-control")
     WebElement Forecast_Switchers;
     //"//*[@id=\"RemainMainPage\"]/app-risk-manager/div[2]/div/div/div/div/label/div")
+    @FindBy(xpath = "//*[@id=\"dashboard_content\"]/div/div/div[1]/app-dashboard-risk/div/div[1]")
+    public WebElement Graph2;
 
     public Forecast_Page(WebDriver driver) {
         super(driver);
@@ -46,6 +48,9 @@ public class Forecast_Page extends Page_Base {
 
     public void Z2D_Select_Switcher() {
         Click_Button(Forecast_Switchers);
+    }
+    public void Z2D_Click_on_Graph(){
+        Click_Button(Graph2);
     }
 
     public void Z2D_Click_on_Forecast_Tab() {
