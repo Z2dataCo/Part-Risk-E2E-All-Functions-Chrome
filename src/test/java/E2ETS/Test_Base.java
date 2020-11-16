@@ -105,7 +105,7 @@ public class Test_Base {
                 System.out.println("Exception while taking screenshot " + e.getMessage());
             }
        }
-       // ClickLogOut();
+        ClickLogOut();
         driver.quit();
     }
 
