@@ -100,11 +100,11 @@ public class Test_Base {
                 System.out.println("Exception while taking screenshot " + e.getMessage());
             }
         }
-                driver.get("https://parts.z2data.com/");
+        driver.get("https://parts.z2data.com/");
     }
 
     @AfterSuite
-    public void TearDown() throws InterruptedException {
+    public void TearDown(){
         driver.quit();
     }
 

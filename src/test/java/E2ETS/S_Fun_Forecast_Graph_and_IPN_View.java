@@ -28,10 +28,10 @@ public class S_Fun_Forecast_Graph_and_IPN_View extends Test_Base {
 
         DManagementObj.Z2D_Move_To_Prod_BOM(driver);
         Wait_for_Element_to_Disappear(ForeCastObj.Spinner);
-        Wait_Element_Clickable(ForeCastObj.Graph2);
         ForeCastObj.Z2D_Click_on_Forecast_Tab();
         Wait_for_Element_to_Disappear(ForeCastObj.Spinner);
         ForeCastObj.Z2D_Select_Switcher();
+
         String Multi_Source_Filter_Value = ForeCastObj.First_Filter.getText();
         System.out.println("Multi_Source_Filter_Value : " + Multi_Source_Filter_Value);
         ForeCastObj.Z2D_Click_on_First_Filter();
