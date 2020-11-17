@@ -44,7 +44,7 @@ public class PCN_Manager_Page extends Page_Base {
     @FindBy(xpath = "//div[@class='z2-boxstyle1-header-left']//a")
     public WebElement PCNs_Notification_Back;
 
-    @FindBy(xpath = "//body/div[@id='main_start_page']/div[1]/div[2]/div[1]/div[1]/ul[1]/li[4]/a[1]")
+    @FindBy(linkText = "Impacted Parts")
     public WebElement Impacted_Parts_Tab;
 
     @FindBy(xpath = "//*[@id=\"DivAlertsFilterPCN\"]/div[1]/div[2]/div[1]/div")
