@@ -13,6 +13,7 @@ public class W_Fun_Check_Side_High_Lifecycle_Risk_Parts_Link extends Test_Base {
     Landing_Page LandOpj;
     Dashboard_Page DashOpj;
     Report_Page ReportOpj;
+    Scrub_Page ScrubPageObj;
     Obsolescence_Page ObsoL_Opj;
 
     @Test(priority = 23)
