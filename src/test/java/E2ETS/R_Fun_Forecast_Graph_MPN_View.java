@@ -11,7 +11,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 
-public class R_Fun_Forecast_Graph_and_MPN_View extends Test_Base {
+public class R_Fun_Forecast_Graph_MPN_View extends Test_Base {
     Data_Management_Page DManagementObj;
     Landing_Page LandObj;
     Forecast_Page ForeCastObj;
@@ -22,6 +22,7 @@ public class R_Fun_Forecast_Graph_and_MPN_View extends Test_Base {
         LandObj = new Landing_Page(driver);
         DManagementObj = new Data_Management_Page(driver);
         ForeCastObj = new Forecast_Page(driver);
+
         DManagementObj.Z2D_Move_To_Prod_BOM(driver);
         Wait_for_Element_to_Disappear(ForeCastObj.Spinner);
         Wait_Element_Clickable(ForeCastObj.Graph2);

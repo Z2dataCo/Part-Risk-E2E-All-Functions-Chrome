@@ -258,6 +258,9 @@ public class Data_Management_Page extends Page_Base {
     public void Z2D_Move_To_Prod_BOM(WebDriver driver) {
         driver.get("https://parts.z2data.com/RiskManager?BomId=119090");
     }
+    public void Z2D_Move_to_Mitigation_Bom(WebDriver driver){
+        driver.get("https://parts.z2data.com/RiskManager/Mitigation?BomId=119090");
+    }
 
     public void SetFile(){
         Click_Button(Test_Folder);
