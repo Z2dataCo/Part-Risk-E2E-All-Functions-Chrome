@@ -10,7 +10,7 @@ import io.qameta.allure.SeverityLevel;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class Za_Mitigation_Filiters_and_Data_MPN_View extends Test_Base{
+public class ZA_Mitigation_Filters_and_Data_MPN_View extends Test_Base{
     Landing_Page LandObj;
     Data_Management_Page DManagementObj;
     Forecast_Page ForeCastObj;
@@ -18,8 +18,8 @@ public class Za_Mitigation_Filiters_and_Data_MPN_View extends Test_Base{
 
     @Test(priority = 29)
     @Severity(SeverityLevel.NORMAL)
-    @Description("Check Mitigation Filiters & Data in MPN View")
-    public void Mitigation_Filiters_and_Data_MPN_View() throws InterruptedException {
+    @Description("Check Mitigation Filters & Data in MPN View")
+    public void Mitigation_Filters_and_Data_MPN_View() throws InterruptedException {
         LandObj = new Landing_Page(driver);
         DManagementObj = new Data_Management_Page(driver);
         ForeCastObj = new Forecast_Page(driver);

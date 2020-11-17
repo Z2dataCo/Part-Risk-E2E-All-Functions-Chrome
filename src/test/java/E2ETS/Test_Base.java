@@ -47,7 +47,6 @@ public class Test_Base {
     @Parameters("browser")
     public static void SetUp(String browser) throws Exception {
 
-        //Check if parameter passed from TestNG is 'chrome'
         if (browser.equalsIgnoreCase("Chrome")) {
             ChromeOptions options = new ChromeOptions();
             options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
@@ -55,31 +54,22 @@ public class Test_Base {
             options.addArguments("--disable-remote-fonts");
             options.addArguments("--enable-precache");
             options.addArguments("--start-maximized");
-            //options.addArguments("--disable-gl-drawing-for-tests ");
             options.addArguments("--disable-extensions");
             options.addArguments("--disable-modal-animations");
 
             WebDriverManager.chromedriver().setup();
             driver = new ChromeDriver(options);
         }
-        //Check if parameter passed as 'firefox'
         else if (browser.equalsIgnoreCase("Firefox")) {
-            //set path to chromedriver.exe
             WebDriverManager.firefoxdriver().setup();
-            //create chrome instance
             driver = new FirefoxDriver();
         }
-        //Check if parameter passed as 'Edge'
         else if (browser.equalsIgnoreCase("Edge")) {
-            //set path to Edge.exe
             WebDriverManager.edgedriver().setup();
-            //create Edge instance
             driver = new EdgeDriver();
         } else {
-            //If no browser passed throw exception
             throw new Exception("Browser is not correct");
         }
-
 
         //driver.navigate().to("https://test.z2data.com/");
         driver.get("https://parts.z2data.com");
