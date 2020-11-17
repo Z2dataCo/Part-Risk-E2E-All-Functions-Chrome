@@ -1,1 +1,0 @@
-{"uuid":"41b8d24d-54d9-480a-a3ce-14d7cb1b4ce5","name":"Default Suite","children":["054c9120-968d-4715-a744-b335b0cc1247"],"befores":[],"afters":[{"name":"TearDown","status":"broken","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1605539591245,"stop":1605539591245}],"links":[],"start":1605539590346,"stop":1605539591245}
