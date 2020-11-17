@@ -29,7 +29,8 @@ public class Delete_BOM_Page extends Page_Base {
     public WebElement Total_Results_Shown;
     @FindBy(xpath = "//span[contains(text(),'Create Sub Folder')]")
     public WebElement Creat_Sub_Folder_Button;
-
+    @FindBy(xpath = "//table[@class='table table-bordered table-striped bg-white mt-05 mb-0']/tbody")
+    public WebElement Table_Body;
 
     public Delete_BOM_Page(WebDriver driver) {
         super(driver);
