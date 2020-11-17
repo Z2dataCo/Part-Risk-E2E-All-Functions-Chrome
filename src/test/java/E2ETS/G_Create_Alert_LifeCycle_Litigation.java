@@ -36,7 +36,7 @@ public class G_Create_Alert_LifeCycle_Litigation extends Test_Base {
         DManagementObj.Z2D_Click_on_LifeCycle();
         DManagementObj.Z2D_Click_on_Litigation();
         DManagementObj.Z2D_Click_on_Submit_Btn();
-        Wait_Element_Invisibility(DManagementObj.Toast_Container);
+        //Wait_Element_Invisibility(DManagementObj.Toast_Container);
         // Wait_Element_Invisibility(DManagementObj.ToastContainer);
        // Wait_Element_Clickable(DManagementObj.Followed_Text);
         String Status = DManagementObj.Followed_Text.getText();
