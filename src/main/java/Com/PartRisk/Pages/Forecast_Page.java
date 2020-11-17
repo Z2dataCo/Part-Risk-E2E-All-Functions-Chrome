@@ -25,6 +25,9 @@ public class Forecast_Page extends Page_Base {
     @FindBy(xpath = "//*[@id=\"dropbg\"]/div/div/div[1]/div[1]/div[1]")
     public WebElement File_Name;
 
+    @FindBy(xpath = "//*[@id=\"dashboard_content\"]/div/div/div[1]/app-dashboard-risk/div/div[1]")
+    public WebElement Graph2;
+
     @FindBy(xpath = "//app-z2pagination/span/span[2]")
     public WebElement TotalValue;
     @FindBy(xpath = "//div[@style='border-color: silver silver silver rgb(51, 122, 183);']")
@@ -38,8 +41,6 @@ public class Forecast_Page extends Page_Base {
     @FindBy(className = "jtoggler-control")
     WebElement Forecast_Switchers;
     //"//*[@id=\"RemainMainPage\"]/app-risk-manager/div[2]/div/div/div/div/label/div")
-    @FindBy(xpath = "//*[@id=\"dashboard_content\"]/div/div/div[1]/app-dashboard-risk/div/div[1]")
-    public WebElement Graph2;
 
     public Forecast_Page(WebDriver driver) {
         super(driver);

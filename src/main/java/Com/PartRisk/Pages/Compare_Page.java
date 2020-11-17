@@ -14,7 +14,7 @@ public class Compare_Page extends Page_Base {
     @FindBy(xpath = "//*[@id=\"box_one\"]/div/div/app-ipn-scorecard/div/div[1]/div/div[1]/div[1]/div[1]")
     public WebElement MSG;
     @FindBy(id = "part_autocom_1")
-    WebElement Compare2;
+   public  WebElement Compare2;
     @FindBy(xpath = "//*[@id=\"headerEl\"]/div/div/a[2]")
     WebElement Differences;
     @FindBy(xpath = "//*[@id=\"headerEl\"]/div/div/a[3]")
@@ -36,7 +36,18 @@ public class Compare_Page extends Page_Base {
     public void Z2D_Select_Differences() {
         Click_Button(Differences);
     }
+
     public void Z2D_Select_Similarities() {
         Click_Button(Similarities);
+    }
+
+    public void SetValue1() {
+        Click_Button(Value_Compare1);
+    }
+
+
+    public void SetValue2() {
+        Click_Button(Value_Compare2);
+
     }
 }

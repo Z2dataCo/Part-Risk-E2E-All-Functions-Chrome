@@ -41,7 +41,7 @@ public class PCN_Manager_Page extends Page_Base {
     @FindBy(xpath = "//td[contains(text(),'Z2 PCN_ID')]")
     public WebElement PCNs_First_PCN_Notification_PCN_ID;
 
-    @FindBy(xpath = "//*[@id=\"PCNManagerPCNTab\"]/div[3]/div/div/div/div[1]/div/div[1]/div[1]/h4/a")
+    @FindBy(xpath = "//div[@class='z2-boxstyle1-header-left']//a")
     public WebElement PCNs_Notification_Back;
 
     @FindBy(xpath = "//body/div[@id='main_start_page']/div[1]/div[2]/div[1]/div[1]/ul[1]/li[4]/a[1]")
