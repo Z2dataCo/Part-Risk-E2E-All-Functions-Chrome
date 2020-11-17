@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Chrome E2ETS Test Suite">
-    <test verbose="2" preserve-order="true" name="Chrome Main Function E2ETS">
-        <parameter name="browser" value="Chrome"/>
+    <parameter name="browser" value="Chrome"/>
+    <test verbose="2"  name="Chrome Main Function E2ETS">
         <classes>
             <class name="E2ETS.A_Parametric_Search">
                 <methods>
@@ -57,8 +57,7 @@
         </classes>
     </test>
 
-    <test verbose="2" preserve-order="true" name="Chrome Sub Function E2ETS">
-        <parameter name="browser" value="Chrome"/>
+    <test verbose="2"  name="Chrome Sub Function E2ETS">
         <classes>
             <class name="E2ETS.L_Fun_Search_Part_Number">
                 <methods>
@@ -130,6 +129,16 @@
                     <include name="Check_Side_Panel_High_Risk"/>
                     <include name="Obsolete_Parts_in_3_Years"/>
                     <include name="Obsolete_Part_IN_5_Years"/>
+                </methods>
+            </class>
+            <class name="E2ETS.ZA_Mitigation_Filters_and_Data_MPN_View">
+                <methods>
+                    <include name="Mitigation_Filters_and_Data_MPN_View"/>
+                </methods>
+            </class>
+            <class name="E2ETS.Z_Fun_All_Obsolescence">
+                <methods>
+                    <include name="All_ObsolescencePage"/>
                 </methods>
             </class>
         </classes>
