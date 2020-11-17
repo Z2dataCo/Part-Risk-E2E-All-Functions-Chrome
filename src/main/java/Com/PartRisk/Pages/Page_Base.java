@@ -34,6 +34,11 @@ public class Page_Base {
         jse.executeScript("window.scrollBy(0,2000)");
     }
 
+    public void Scroll_to_Element(WebElement element) throws InterruptedException {
+        jse.executeScript("arguments[0].scrollIntoView(true);",element);
+        Thread.sleep(500);
+    }
+
     public void Clear_Text(WebElement element) {
         element.clear();
     }

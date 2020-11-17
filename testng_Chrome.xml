@@ -90,12 +90,12 @@
                     <include name="IPN_View"/>
                 </methods>
             </class>
-            <class name="E2ETS.R_Fun_Forecast_Graph_and_MPN_View">
+            <class name="E2ETS.R_Fun_Forecast_Graph_MPN_View">
                 <methods>
                     <include name="Status_with_Forecast_Graph_MPN_View"/>
                 </methods>
             </class>
-            <class name="E2ETS.S_Fun_Forecast_Graph_and_IPN_View">
+            <class name="E2ETS.S_Fun_Forecast_Graph_IPN_View">
                 <methods>
                     <include name="ForeCast_Graph"/>
                 </methods>

@@ -12,12 +12,12 @@ public class    Mitigation_Page extends Page_Base {
     WebElement Drop_Crosses;
     @FindBy(xpath = "//*[@id=\"dropbg\"]/div/div/div[2]/table[2]/tbody/tr[2]/td[1]/button")
     WebElement Add_Crosses;
-    @FindBy(xpath = "//*[@id=\"RemainMainPage\"]/app-risk-manager/app-risk-mitigation/app-riskmitigationipn/div[1]/div[1]/div/div/div[1]")
-    WebElement Total_Filter;
+   // @FindBy(xpath = "//*[@id=\"RemainMainPage\"]/app-risk-manager/app-risk-mitigation/app-riskmitigationipn/div[1]/div[1]/div/div/div[1]")
+   // WebElement Total_Filter;
     @FindBy(className = "nav-link active")
     public WebElement Mitigation_Tab;
-    @FindBy(xpath = "//div[@class='z2-scorecard scorecard-parts']/div[1]/div[2]/div[1]")
-    public WebElement Total_Parts;
+   // @FindBy(xpath = "//div[@class='z2-scorecard scorecard-parts']/div[1]/div[2]/div[1]")
+   // public WebElement Total_Parts;
     @FindBy(xpath = "//div[@class='z2-scorecard scorecard-parts']/div[2]/div[2]/div[1]")
     public WebElement Active_Parts;
     @FindBy(xpath = "//div[@class='z2-scorecard scorecard-parts']/div[3]/div[2]/div[1]")
@@ -27,7 +27,7 @@ public class    Mitigation_Page extends Page_Base {
     @FindBy(xpath = "//tbody//tr[10]/td[1]//a/span")
     public WebElement Selected_Part_Number;
     @FindBy(xpath = "//tbody//tr[10]/td[4]//div[1]/a")
-    public WebElement View_Drop_Crossed_Button;
+    public WebElement View_Drop_Crosses_Button;
     @FindBy(xpath = "//tbody//tr[10]/td[4]//div[2]/a")
     public WebElement View_Replacement_Button;
     @FindBy(xpath = "//div[@id='dropbg']//table[2]/tbody/tr[1]/td[2]/div")
@@ -35,11 +35,11 @@ public class    Mitigation_Page extends Page_Base {
     @FindBy(xpath = "//div[@id='dropbg']//table[2]/tbody/tr[1]/td[1]/button")
     public WebElement Add_Part_Button;
     @FindBy(xpath = "//tbody//tr[10]/td[3]//ul/div[2]//a/span")
-    public WebElement Added_Crosses_Part;
-    @FindBy(xpath = "//tbody//tr[10]/td[3]//ul/div[3]//a/span")
-    public WebElement Added_Replacement_Part;
-    @FindBy(className = "//tbody/tr[10]/td[3]//div[1]/div[1]/span[1]")
+    public WebElement Added_Part_Label;
+    @FindBy(xpath = "//tbody/tr[10]/td[3]//div[1]/div[1]/span[1]")
     public WebElement Card_Close_Button;
+    @FindBy(xpath = "//table[@class='table table-bordered table-middle text-left bg-white tablehascards']//tbody")
+    public WebElement Table_Body;
 
 
 
@@ -68,7 +68,17 @@ public class    Mitigation_Page extends Page_Base {
     public void Z2D_Add_Crosses() {
         Click_Button(Add_Crosses);
     }
-    public void Z2D_Filter() {
-        Click_Button(Total_Filter);
+
+    public void Z2D_Click_on_Mitigation_Tab(){ Click_Button(Mitigation_Tab);}
+  //  public void Z2D_Click_on_Total_Filter(){Click_Button(Total_Parts);}
+    public void Z2D_Click_on_Active_Filter(){Click_Button(Active_Parts);}
+    public void Z2D_Click_on_NRND_Filter(){Click_Button(NRND_Parts);}
+    public void Z2D_Click_on_EndofLife_Filter(){Click_Button(End_Of_Life_Parts);}
+    public void Z2D_Click_on_DropinCrosses() throws InterruptedException {
+     Scroll_to_Element(View_Drop_Crosses_Button);
+     Click_Button(View_Drop_Crosses_Button);
     }
+    public void Z2D_Click_on_Add_Part_Button(){Click_Button(Add_Part_Button);}
+    public void Z2D_Click_on_Close_Button(){Click_Button(Card_Close_Button);}
+    public void Z2D_Click_on_View_Replacement_Button(){Click_Button(View_Replacement_Button);}
 }
