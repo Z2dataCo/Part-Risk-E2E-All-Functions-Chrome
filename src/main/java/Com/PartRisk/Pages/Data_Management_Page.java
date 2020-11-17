@@ -202,8 +202,9 @@ public class Data_Management_Page extends Page_Base {
         Click_Button(Litigation_Btn);
     }
 
-    public void Z2D_Click_on_Submit_Btn() {
+    public void Z2D_Click_on_Submit_Btn() throws InterruptedException {
         Click_Button(Submit_Btn);
+        Thread.sleep(3000);
     }
 
     public void Z2D_Hover_to_Status(WebDriver driver) throws InterruptedException, IOException {
