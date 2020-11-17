@@ -14,7 +14,7 @@ public class B_Data_Management extends Test_Base {
 
     @Test(priority = 2)
     @Severity(SeverityLevel.NORMAL)
-    @Description("Validate To Open Data Management Page ")
+    @Description("Validate To Open Data Management Page")
     public void Data_Management() {
         DManagementObj = new Data_Management_Page(driver);
         LandObj = new Landing_Page(driver);

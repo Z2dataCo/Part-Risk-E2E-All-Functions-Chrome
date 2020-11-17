@@ -55,6 +55,7 @@ public class U_Fun_Create_Report extends Test_Base {
         Thread.sleep(3500);
         String ExpectedResult = index.getOptions().get(1).getText();
         String ActualResult = Name;
+        Thread.sleep(2000);
         Assert.assertEquals(ActualResult, ExpectedResult);
         System.out.println("This Is Actual Result: " + ActualResult);
         ReportPageObj.Z2D_Preview_Report();

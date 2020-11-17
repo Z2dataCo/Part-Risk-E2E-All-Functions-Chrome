@@ -25,35 +25,33 @@ public class O_Fun_Count_Of_Exact_Match extends Test_Base {
         LandObj.Z2D_Open_Data_Management();
         Wait_Element_Visible(DManagementObj.Search_Text_Input);
         DManagementObj.Z2D_Search(Z2DataFolderName);
-        Actions action = new Actions(driver);
-        action.moveToElement(DManagementObj.Test_Folder).click().perform();
+        Thread.sleep(3000);
+        DManagementObj.SetFile();
         Thread.sleep(1000);
         DManagementObj.Z2D_Open_BOM();
         Thread.sleep(2000);
         Switch_Tabs();
         Wait_for_Element_to_Disappear(DManagementObj.Spinner);
         DManagementObj.Z2D_Open_Scrub();
-        Thread.sleep(5000);
-
+        Thread.sleep(10000);
         int FixedNum = Integer.parseInt(ScrubPageObj.FixedNumber.getText());
-
-        if(!(ScrubPageObj.Last.isEnabled())) {
-                int tableRows = DManagementObj.Table_Rows.size();
-                int PaginationSize = Integer.parseInt(ScrubPageObj.LastPage.getText());
-                int Pagination = PaginationSize - 1;
-                int SupTotal = Pagination * tableRows;
-                int lastPageSize = FixedNum - SupTotal;
-                int AllTableRows = lastPageSize + SupTotal;
-                Assert.assertEquals(AllTableRows, FixedNum);
-                System.out.println(AllTableRows);
-                System.out.println(FixedNum);
-            }
-
-        else{
+        if (ScrubPageObj.Last.isEnabled()) {
             int tableRows = DManagementObj.Table_Rows.size();
+            Thread.sleep(3000);
             ScrubPageObj.Z2D_Last_Pagination();
+            Thread.sleep(3000);
             int PaginationSize = Integer.parseInt(ScrubPageObj.LastPage.getText());
             int Pagination = PaginationSize - 1;
+            int SupTotal = Pagination * tableRows;
+            int lastPageSize = FixedNum - SupTotal;
+            int AllTableRows = lastPageSize + SupTotal;
+            Assert.assertEquals(AllTableRows, FixedNum);
+            System.out.println(AllTableRows);
+            System.out.println(FixedNum);
+        } else {
+            int tableRows = DManagementObj.Table_Rows.size();
+            int PaginationSize = Integer.parseInt(ScrubPageObj.LastPage.getText());
+            int Pagination = PaginationSize;
             int SupTotal = Pagination * tableRows;
             int lastPageSize = FixedNum - SupTotal;
             int AllTableRows = lastPageSize + SupTotal;

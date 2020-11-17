@@ -25,8 +25,8 @@ public class Q_Fun_IPN_View extends Test_Base {
         LandObj.Z2D_Open_Data_Management();
         Wait_Element_Visible(DManagementObj.Search_Text_Input);
         DManagementObj.Z2D_Search(Z2DataFolderName);
-        Actions actions = new Actions(driver);
-        actions.moveToElement(DManagementObj.Search_Result).click().perform();
+        DManagementObj.SetSearchValue();
+        Thread.sleep(2000);
         DManagementObj.Z2D_Open_BOM();
         Switch_Tabs();
         Thread.sleep(1000);
