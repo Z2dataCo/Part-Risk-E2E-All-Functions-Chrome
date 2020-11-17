@@ -35,6 +35,7 @@ public class R_Fun_Forecast_Graph_and_MPN_View extends Test_Base {
         String TotalFilterValue = ForeCastObj.TotalValue.getText();
         System.out.println("Total Filter Value : " + TotalFilterValue);
         Assert.assertEquals(TotalFilterValue, ActiveFilterValue);
+
         String EOLFilterValue = ForeCastObj.Second_Filter.getText();
         System.out.println("EOLFilterValue" + EOLFilterValue);
         ForeCastObj.Z2D_Click_on_Second_Filter();
@@ -43,6 +44,7 @@ public class R_Fun_Forecast_Graph_and_MPN_View extends Test_Base {
         String TotalFilterValue2 = ForeCastObj.TotalValue.getText();
         System.out.println("TotalFilterValue2 : " + TotalFilterValue2);
         Assert.assertEquals(TotalFilterValue2, EOLFilterValue);
+
         String UnknownFilterValue = ForeCastObj.Third_Filter.getText();
         System.out.println("UnknownFilterValue" + UnknownFilterValue);
         ForeCastObj.Z2D_Click_on_Third_Filter();
