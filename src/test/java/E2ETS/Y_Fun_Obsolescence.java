@@ -111,7 +111,8 @@ public class Y_Fun_Obsolescence extends Test_Base {
         DManagementObj = new Data_Management_Page(driver);
         ObsoL_Opj = new Obsolescence_Page(driver);
         LandOpj.Z2D_Open_Data_Management();
-        Thread.sleep(2000);
+        Wait_Element_Visible(DManagementObj.Search_Text_Input);
+        Thread.sleep(1000);
         DManagementObj.Z2D_Search(Z2DataFolderName);
         DManagementObj.SetFile();
         if (!(" TAP_BOM_Proud_Test" == driver.getPageSource())) {
@@ -152,7 +153,7 @@ public class Y_Fun_Obsolescence extends Test_Base {
         Wait_Element_Visible(DManagementObj.Search_Text_Input);
         Thread.sleep(1000);
         DManagementObj.Z2D_Search(Z2DataFolderName);
-       DManagementObj.SetFile();
+        DManagementObj.SetFile();
         if (!(" TAP_BOM_Proud_Test" == driver.getPageSource())) {
             DManagementObj.Z2D_Move_To_Prod_BOM(driver);
         } else {
