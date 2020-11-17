@@ -23,12 +23,12 @@ public class U_Fun_Create_Report extends Test_Base {
     @Description("Validate To Create , Review Report And Download ")
     public void Create_Report_Download() throws InterruptedException {
         LandObj = new Landing_Page(driver);
-        DManagementObj = new Data_Management_Page(driver);
+        DManagementObj   = new Data_Management_Page(driver);
         DashboardPageObj = new Dashboard_Page(driver);
-        ReportPageObj = new Report_Page(driver);
+        ReportPageObj    = new Report_Page(driver);
         LandObj.Z2D_Open_Data_Management();
-        DManagementObj.Z2D_Type_Folder_Name(Z2DataFolderName);
-        DManagementObj.Z2D_Select_Folder();
+        DManagementObj.Z2D_Search(Z2DataFolderName);
+        DManagementObj.SetFile();
         boolean staleElement = true;
         while (staleElement) {
             try {
@@ -55,7 +55,7 @@ public class U_Fun_Create_Report extends Test_Base {
         Thread.sleep(3500);
         String ExpectedResult = index.getOptions().get(1).getText();
         String ActualResult = Name;
-        Thread.sleep(2000);
+        Thread.sleep(4000);
         Assert.assertEquals(ActualResult, ExpectedResult);
         System.out.println("This Is Actual Result: " + ActualResult);
         ReportPageObj.Z2D_Preview_Report();

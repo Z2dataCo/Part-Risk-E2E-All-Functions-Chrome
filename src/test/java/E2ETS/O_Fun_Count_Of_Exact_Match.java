@@ -23,9 +23,8 @@ public class O_Fun_Count_Of_Exact_Match extends Test_Base {
         LandObj = new Landing_Page(driver);
         ScrubPageObj = new Scrub_Page(driver);
         LandObj.Z2D_Open_Data_Management();
-        Wait_Element_Visible(DManagementObj.Search_Text_Input);
+        Thread.sleep(4000);
         DManagementObj.Z2D_Search(Z2DataFolderName);
-        Thread.sleep(3000);
         DManagementObj.SetFile();
         Thread.sleep(1000);
         DManagementObj.Z2D_Open_BOM();

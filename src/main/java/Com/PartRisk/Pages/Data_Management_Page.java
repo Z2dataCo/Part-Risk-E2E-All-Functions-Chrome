@@ -47,7 +47,7 @@ public class Data_Management_Page extends Page_Base {
     public WebElement My_BOM;
     @FindBy(xpath = "//*[@id=\"reportToHide\"]/div[2]/div[2]/div[3]/table/thead/tr/th[6]")
     public WebElement of_Suppliers;
-    @FindBy(xpath = "//*[@id=\"divSearchFolders\"]/input")
+    @FindBy(css = "#divSearchFolders > input")
     public WebElement Search_Text_Input;
     @FindBy(xpath = "//*[@id=\"z2page-head-bar\"]/div/app-create-alert/button/span")
     public WebElement Followed_Text;

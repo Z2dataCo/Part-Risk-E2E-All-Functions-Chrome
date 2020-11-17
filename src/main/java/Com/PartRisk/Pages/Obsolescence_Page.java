@@ -16,7 +16,7 @@ public class Obsolescence_Page extends Page_Base {
     @FindBy(xpath = "//*[@id=\"dropbg\"]/div/div/div[2]/div[1]/div[1]")
     public WebElement High_LifeCycle_Risk;
 
-    @FindBy(xpath = "/html[1]/body[1]/div[9]/div[1]/div[1]/div[2]/div[1]/div[2]")
+    @FindBy(css = "#dropbg > div > div > div.sidepanel-content.mt-1 > div.z2-scorecard.scorecard-parts.d-flex.align-items-start > div.z2-scorecard-each.risk-red.max-width-200.filterinScrub.NRND")
     public WebElement NRND_Parts;
 
     @FindBy(xpath = "//*[@id=\"dropbg\"]/div/div/div[2]/div[1]/div[3]")

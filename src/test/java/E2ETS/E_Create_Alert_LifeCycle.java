@@ -21,6 +21,7 @@ public class E_Create_Alert_LifeCycle extends Test_Base {
         DManagementObj = new Data_Management_Page(driver);
 
         DManagementObj.Z2D_Move_To_Prod_BOM(driver);
+        Thread.sleep(200);
         Wait_Element_Clickable(DManagementObj.Followed_Text);
         if (DManagementObj.Followed_Text.getText().equals("Followed")) {
             DManagementObj.Z2D_Click_Followed_Btn();
@@ -30,6 +31,7 @@ public class E_Create_Alert_LifeCycle extends Test_Base {
             DManagementObj.Z2D_Click_on_Create_Alert(driver);
         }
         else { DManagementObj.Z2D_Click_on_Create_Alert(driver);
+
         }
         Wait_Element_Visible(DManagementObj.LifeCycle_Btn);
         Wait_Element_Clickable(DManagementObj.LifeCycle_Btn);

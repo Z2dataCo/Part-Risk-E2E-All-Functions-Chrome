@@ -21,7 +21,6 @@ public class D_PCN_Manager extends Test_Base {
 
         LandObj.Z2D_Open_PCN_Manager();
         Wait_for_Element_to_Disappear(LandObj.GeneralSpinner);
-        PCN_ManagerObj.Z2D_Open_Dashboard_Tab();
         Wait_Element_Visible(PCN_ManagerObj.Dashboard_Tab_Total_PCNs);
 
         if (PCN_ManagerObj.Dashboard_Tab_Total_PCNs.isDisplayed()) {
@@ -56,8 +55,6 @@ public class D_PCN_Manager extends Test_Base {
             System.out.println("Assertion for PCNs Tab First PCN Notification Z2 PCN_ID is Failed");
         }
         Thread.sleep(1000);
-        PCN_ManagerObj.Z2D_Open_PCNs_Tab();
-
         PCN_ManagerObj.Z2D_Open_Impacted_Parts_Tab();
         Wait_for_Element_to_Disappear(LandObj.GeneralSpinner);
         if (PCN_ManagerObj.Impacted_Parts_Tab_Filter_Table.isDisplayed()) {
