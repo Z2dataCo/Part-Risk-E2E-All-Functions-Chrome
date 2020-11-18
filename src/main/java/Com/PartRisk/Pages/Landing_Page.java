@@ -59,6 +59,8 @@ public class Landing_Page extends Page_Base {
     public WebElement Supp_ChkBox;
     @FindBy(xpath = "//*[@id=\"btnautoSearch\"]/i")
     WebElement btn_search;
+    @FindBy(id = "progressDiv")
+    public WebElement SpinnerZezo;
 
     @FindBy(xpath = "//div//div[@class='usericon']")
     public WebElement MY_Account;
