@@ -27,15 +27,18 @@ public class ZB_PCN_Search extends Test_Base {
         PCN_ManagerObj = new PCN_Manager_Page(driver);
 
         LandObj.Z2D_Open_PCN_Manager();
-        Wait_for_Element_to_Disappear(LandObj.GeneralSpinner);
+        Wait_Element_Invisibility(LandObj.SpinnerZezo);
         Wait_Element_Visible(PCN_ManagerObj.Dashboard_Tab_Total_PCNs);
         PCN_ManagerObj.Z2D_Open_PCNs_Tab();
-        Wait_for_Element_to_Disappear(LandObj.GeneralSpinner);
+        Wait_Element_Invisibility(LandObj.SpinnerZezo);
         PCN_ManagerObj.Z2D_Search("PD22748X");
-        Wait_for_Element_to_Disappear(LandObj.GeneralSpinner);
+        Wait_Element_Invisibility(LandObj.SpinnerZezo);
         Wait_Element_Visible(PCN_ManagerObj.Results_Table);
+        Wait_Text_To_be(PCN_ManagerObj.First_Search_Result,"PCN #:PD22748X");
         String Search_Result = PCN_ManagerObj.First_Search_Result.getText();
         Assert.assertTrue(Search_Result.contains("PD22748X"));
+
+
 
 
     }
