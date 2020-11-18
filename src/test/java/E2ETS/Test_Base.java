@@ -44,7 +44,7 @@ public class Test_Base {
 
     @SuppressWarnings("unused")
     @BeforeSuite
-    public static void SetUp( )   {
+    public static void SetUp( ) throws InterruptedException {
 
 
             ChromeOptions options = new ChromeOptions();
