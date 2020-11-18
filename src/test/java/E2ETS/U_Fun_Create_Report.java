@@ -27,6 +27,7 @@ public class U_Fun_Create_Report extends Test_Base {
         DashboardPageObj = new Dashboard_Page(driver);
         ReportPageObj = new Report_Page(driver);
         LandObj.Z2D_Open_Data_Management();
+        WaitAllElement();
         DManagementObj.Z2D_Type_Folder_Name(Z2DataFolderName);
         DManagementObj.Z2D_Select_Folder();
         boolean staleElement = true;

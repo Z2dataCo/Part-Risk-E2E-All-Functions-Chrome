@@ -5,7 +5,6 @@ import Com.PartRisk.Pages.Landing_Page;
 import io.qameta.allure.Description;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
-import org.openqa.selenium.StaleElementReferenceException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -41,6 +40,7 @@ public class F_Create_Alert_Litigation extends Test_Base {
        // Wait_Element_Clickable(DManagementObj.Followed_Text);
        // Wait_Element_Invisibility(DManagementObj.Toast_Container);
         String Status = DManagementObj.Followed_Text.getText();
+        WaitAllElement();
         Assert.assertEquals(Status, "Followed");
         DManagementObj.Z2D_Click_Followed_Btn();
         Wait_Element_Clickable(DManagementObj.Unfollow_Btn);

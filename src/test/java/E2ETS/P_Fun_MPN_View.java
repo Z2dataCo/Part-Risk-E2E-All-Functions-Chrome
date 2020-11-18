@@ -29,7 +29,6 @@ public class P_Fun_MPN_View extends Test_Base {
         Thread.sleep(1000);
         action.moveToElement(DManagementObj.Test_Folder).click().perform();
         DManagementObj.Z2D_Open_BOM();
-        Thread.sleep(2000);
         Switch_Tabs();
         Wait_Element_Clickable(DManagementObj.Parts);
         DManagementObj.Z2D_Open_Parts();

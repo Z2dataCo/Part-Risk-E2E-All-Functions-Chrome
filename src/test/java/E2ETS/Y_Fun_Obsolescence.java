@@ -114,7 +114,7 @@ public class Y_Fun_Obsolescence extends Test_Base {
         Wait_Element_Visible(DManagementObj.Search_Text_Input);
         Thread.sleep(1000);
         DManagementObj.Z2D_Search(Z2DataFolderName);
-        DManagementObj.SetFile();
+        DManagementObj.Z2D_Select_Folder();
         if (!(" TAP_BOM_Proud_Test" == driver.getPageSource())) {
             DManagementObj.Z2D_Move_To_Prod_BOM(driver);
         } else {

@@ -37,6 +37,7 @@ public class C_Upload_BOM_and_Switcher extends Test_Base {
         UpBOMObj.Z2D_Select_Type();
         UpBOMObj.Z2D_MPN_Select();
         UpBOMObj.Z2D_Open_Column();
+        WaitAllElement();
         UpBOMObj.Z2D_Supplier_Selection();
         UpBOMObj.Z2D_Open_Column();
         Wait_Element_Clickable(UpBOMObj.Mapped_IPN);
