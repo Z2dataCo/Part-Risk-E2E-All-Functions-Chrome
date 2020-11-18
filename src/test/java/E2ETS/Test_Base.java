@@ -117,6 +117,12 @@ public class Test_Base {
         Wait.until(ExpectedConditions.not(ExpectedConditions.textToBePresentInElement(element,Text)));
     }
 
+    public void Wait_Text_To_be(WebElement element, String Text){
+        WebDriverWait Wait = new WebDriverWait(driver, 7);
+        Wait.until(ExpectedConditions.textToBePresentInElement(element,Text));
+    }
+
+
     public static void Wait_for_Element_to_Disappear(List element) throws InterruptedException {
         int count = 0;
         while (element.size() != 0 && count < 40) {

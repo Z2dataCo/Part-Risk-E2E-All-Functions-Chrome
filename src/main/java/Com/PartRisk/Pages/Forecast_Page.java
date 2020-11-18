@@ -44,6 +44,9 @@ public class Forecast_Page extends Page_Base {
     @FindBy(xpath = "//div[@style='border-color: silver silver silver rgb(51, 122, 183);']")
     public WebElement Spinner2;
 
+    @FindBy(xpath = "//div[@class='z2tablemost']//table/tbody/tr[1]/td[14]")
+    public WebElement First_Row_Text;
+
 
     public Forecast_Page(WebDriver driver) {
         super(driver);
