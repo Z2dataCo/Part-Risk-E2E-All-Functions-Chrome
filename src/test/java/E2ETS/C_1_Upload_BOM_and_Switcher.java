@@ -7,6 +7,8 @@ import io.qameta.allure.SeverityLevel;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.awt.*;
+
 public class C_1_Upload_BOM_and_Switcher extends Test_Base {
     Landing_Page LandObj;
     Upload_BOM_Page UpBOMObj;
@@ -15,10 +17,10 @@ public class C_1_Upload_BOM_and_Switcher extends Test_Base {
     Parts_Page PartsObj;
     Forecast_Page ForecastObj;
 
-    @Test(priority = 3,enabled = false)
+    @Test(priority = 3)
     @Severity(SeverityLevel.CRITICAL)
     @Description("Validate User Upload BOM")
-    public void User_Upload_BOM() throws Throwable {
+    public void Upload_BOM_and_Switcher() throws AWTException, InterruptedException {
         LandObj = new Landing_Page(driver);
         UpBOMObj = new Upload_BOM_Page(driver);
         DManagementObj = new Data_Management_Page(driver);
