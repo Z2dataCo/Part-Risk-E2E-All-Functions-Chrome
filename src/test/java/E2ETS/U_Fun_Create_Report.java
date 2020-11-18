@@ -27,7 +27,7 @@ public class U_Fun_Create_Report extends Test_Base {
         DashboardPageObj = new Dashboard_Page(driver);
         ReportPageObj = new Report_Page(driver);
         LandObj.Z2D_Open_Data_Management();
-        WaitAllElement();
+        Wait_Element_Visible(DManagementObj.Search_Text_Input);
         DManagementObj.Z2D_Type_Folder_Name(Z2DataFolderName);
         DManagementObj.Z2D_Select_Folder();
         boolean staleElement = true;
@@ -56,22 +56,41 @@ public class U_Fun_Create_Report extends Test_Base {
         Thread.sleep(3500);
         String ExpectedResult = index.getOptions().get(1).getText();
         String ActualResult = Name;
-        Thread.sleep(2000);
-        Assert.assertEquals(ActualResult, ExpectedResult);
-        System.out.println("This Is Actual Result: " + ActualResult);
-        ReportPageObj.Z2D_Preview_Report();
-        Wait_Element_Clickable(ReportPageObj.Close_Preview);
-        Thread.sleep(5000);
-        ReportPageObj.Z2D_Close_Preview();
-        Assert.assertTrue(driver.getCurrentUrl().contains("https://parts.z2data.com/RiskManager/Report?BomId="));
-        index.selectByIndex(1);
-        Thread.sleep(2000);
-        ReportPageObj.Z2D_Preview_Report();
-        Assert.assertTrue(ReportPageObj.Download_Btn.getText().contains("Download"));
-        Thread.sleep(2000);
-        ReportPageObj.Z2D_Download_Report();
-        Thread.sleep(3000);
-        ReportPageObj.Z2D_Close_Preview();
-        Wait_for_Element_to_Disappear(DManagementObj.Spinner);
+        if (!(ExpectedResult == ActualResult)) {
+            WaitAllElement();
+            Assert.assertEquals(ActualResult, ExpectedResult);
+            System.out.println("This Is Actual Result: " + ActualResult);
+            ReportPageObj.Z2D_Preview_Report();
+            Wait_Element_Clickable(ReportPageObj.Close_Preview);
+            Thread.sleep(5000);
+            ReportPageObj.Z2D_Close_Preview();
+            Assert.assertTrue(driver.getCurrentUrl().contains("https://parts.z2data.com/RiskManager/Report?BomId="));
+            index.selectByIndex(1);
+            Thread.sleep(2000);
+            ReportPageObj.Z2D_Preview_Report();
+            Assert.assertTrue(ReportPageObj.Download_Btn.getText().contains("Download"));
+            Thread.sleep(2000);
+            ReportPageObj.Z2D_Download_Report();
+            Thread.sleep(3000);
+            ReportPageObj.Z2D_Close_Preview();
+            Wait_for_Element_to_Disappear(DManagementObj.Spinner);
+        } else {
+            Assert.assertEquals(ActualResult, ExpectedResult);
+            System.out.println("This Is Actual Result: " + ActualResult);
+            ReportPageObj.Z2D_Preview_Report();
+            Wait_Element_Clickable(ReportPageObj.Close_Preview);
+            Thread.sleep(5000);
+            ReportPageObj.Z2D_Close_Preview();
+            Assert.assertTrue(driver.getCurrentUrl().contains("https://parts.z2data.com/RiskManager/Report?BomId="));
+            index.selectByIndex(1);
+            Thread.sleep(2000);
+            ReportPageObj.Z2D_Preview_Report();
+            Assert.assertTrue(ReportPageObj.Download_Btn.getText().contains("Download"));
+            Thread.sleep(2000);
+            ReportPageObj.Z2D_Download_Report();
+            Thread.sleep(3000);
+            ReportPageObj.Z2D_Close_Preview();
+            Wait_for_Element_to_Disappear(DManagementObj.Spinner);
+        }
     }
 }
