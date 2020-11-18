@@ -16,7 +16,7 @@ public class W_Fun_Check_Side_High_Lifecycle_Risk_Parts_Link extends Test_Base {
     Scrub_Page ScrubPageObj;
     Obsolescence_Page ObsoL_Opj;
 
-    @Test(priority = 23)
+    @Test(priority = 23,enabled = false)
     @Severity(SeverityLevel.NORMAL)
     @Description("Check that side panel of Obsolete Parts in 3 Years shows parts that have forecast up to 3 years")
     public void Check_Side_Panel_High_Risk() throws InterruptedException {
@@ -27,9 +27,12 @@ public class W_Fun_Check_Side_High_Lifecycle_Risk_Parts_Link extends Test_Base {
         ObsoL_Opj = new Obsolescence_Page(driver);
         LandOpj.Z2D_Open_Data_Management();
         Wait_Element_Visible(DManagementObj.Search_Text_Input);
-        Thread.sleep(1000);
         DManagementObj.Z2D_Search(Z2DataFolderName);
-       DManagementObj.SetFile();
+        Thread.sleep(3000);
+        DManagementObj.SetFile();
+        Thread.sleep(1000);
+        DManagementObj.Z2D_Open_BOM();
+        Thread.sleep(2000);
         if (!(" TAP_BOM_Proud_Test" == driver.getPageSource())) {
             DManagementObj.Z2D_Move_To_Prod_BOM(driver);
         } else {

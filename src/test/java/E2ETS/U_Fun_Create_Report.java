@@ -23,9 +23,9 @@ public class U_Fun_Create_Report extends Test_Base {
     @Description("Validate To Create , Review Report And Download ")
     public void Create_Report_Download() throws InterruptedException {
         LandObj = new Landing_Page(driver);
-        DManagementObj = new Data_Management_Page(driver);
+        DManagementObj   = new Data_Management_Page(driver);
         DashboardPageObj = new Dashboard_Page(driver);
-        ReportPageObj = new Report_Page(driver);
+        ReportPageObj    = new Report_Page(driver);
         LandObj.Z2D_Open_Data_Management();
         Wait_Element_Visible(DManagementObj.Search_Text_Input);
         DManagementObj.Z2D_Type_Folder_Name(Z2DataFolderName);

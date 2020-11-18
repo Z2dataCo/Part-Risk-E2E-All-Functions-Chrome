@@ -27,7 +27,8 @@ public class ZA_Mitigation_Filters_and_Data_MPN_View extends Test_Base{
 
         DManagementObj.Z2D_Move_to_Mitigation_Bom(driver);
         Wait_for_Element_to_Disappear(ForeCastObj.Spinner);
-
+        while (MitigationObj.Added_Part_Label_List.size()!=0){
+            MitigationObj.Z2D_Click_on_Close_Button(); }
         MitigationObj.Z2D_Click_on_DropinCrosses();
         Wait_for_Element_to_Disappear(ForeCastObj.Spinner);
         Wait_Element_Visible(MitigationObj.Table_Body);
@@ -70,10 +71,5 @@ public class ZA_Mitigation_Filters_and_Data_MPN_View extends Test_Base{
         String TotalFilterValue3 = ForeCastObj.TotalValue.getText();
         System.out.println("Total Filter Value : " + TotalFilterValue3);
         Assert.assertEquals(TotalFilterValue3+ " Parts",EndofLife_Parts);
-
-
  }
-
-
-
 }

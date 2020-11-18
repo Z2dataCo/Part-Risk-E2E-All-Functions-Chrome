@@ -25,7 +25,6 @@ public class X_Fun_Delete_BOMs extends Test_Base {
         DeleteOBJ = new Delete_BOM_Page(driver);
 
         LandObj.Z2D_Open_Data_Management();
-        Wait_Element_Clickable(DManagementObj.Search_Text_Input);
         DManagementObj.Z2D_Type_Folder_Name(Z2DataFolderName);
         boolean staleElement = true;
         while (staleElement) {

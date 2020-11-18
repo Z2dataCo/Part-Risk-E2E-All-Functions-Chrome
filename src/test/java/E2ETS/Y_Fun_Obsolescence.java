@@ -27,8 +27,8 @@ public class Y_Fun_Obsolescence extends Test_Base {
         LandOpj.Z2D_Open_Data_Management();
         Wait_Element_Visible(DManagementObj.Search_Text_Input);
         DManagementObj.Z2D_Search(Z2DataFolderName);
-        Actions action = new Actions(driver);
-        action.moveToElement(DManagementObj.Test_Folder).click().perform();
+        Thread.sleep(1000);
+        DManagementObj.SetFile();
         if (!(" TAP_BOM_Proud_Test" == driver.getPageSource())) {
             DManagementObj.Z2D_Move_To_Prod_BOM(driver);
         } else {

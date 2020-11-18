@@ -55,14 +55,13 @@ public class Test_Base {
             options.addArguments("--start-maximized");
             options.addArguments("--disable-extensions");
             options.addArguments("--disable-modal-animations");
-
             WebDriverManager.chromedriver().setup();
             driver = new ChromeDriver(options);
 
         //driver.navigate().to("https://test.z2data.com/");
         driver.get("https://parts.z2data.com");
         login();
-        WaitAllElement();
+       Thread.sleep(2000);
         //JavascriptExecutor js = (JavascriptExecutor) driver;
     }
 
@@ -78,12 +77,12 @@ public class Test_Base {
                 System.out.println("Exception while taking screenshot " + e.getMessage());
             }
         }
-        Thread.sleep(2000);
+        WaitAllElement();
         driver.get("https://parts.z2data.com/");
     }
 
     @AfterSuite
-    public void TearDown(){
+    public void TearDown() {
         driver.quit();
     }
 
@@ -152,6 +151,11 @@ public class Test_Base {
 
     private static void fail(String timeout) {
 
+    }
+
+    @BeforeMethod
+    public void WaitElement() {
+        WaitAllElement();
     }
 
 
