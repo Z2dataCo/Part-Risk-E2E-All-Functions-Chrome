@@ -5,7 +5,6 @@ import Com.PartRisk.Pages.Landing_Page;
 import io.qameta.allure.Description;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
-import org.openqa.selenium.StaleElementReferenceException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -33,11 +32,10 @@ public class F_Create_Alert_Litigation extends Test_Base {
         else {
             DManagementObj.Z2D_Click_on_Create_Alert(driver);
         }
-        Wait_Element_Visible(DManagementObj.LifeCycle_Btn);
         Wait_Element_Clickable(DManagementObj.LifeCycle_Btn);
         DManagementObj.Z2D_Click_on_Litigation();
         DManagementObj.Z2D_Click_on_Submit_Btn();
-        Wait_Text_To_be(DManagementObj.Followed_Text,"Followed");
+        Wait_Text_Not_To_be(DManagementObj.Followed_Text,"Create Alert");
         String Status = DManagementObj.Followed_Text.getText();
         Assert.assertEquals(Status, "Followed");
         DManagementObj.Z2D_Click_Followed_Btn();

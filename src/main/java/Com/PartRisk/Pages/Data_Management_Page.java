@@ -71,7 +71,7 @@ public class Data_Management_Page extends Page_Base {
     WebElement Parts_Btn;
     @FindBy(xpath = "//div[@id='z2page-head-bar']/div//button/span[contains(text(),'Create Alert')]")
     WebElement Create_Alert_Btn;
-    @FindBy(xpath = "//body/div[@id='dropbg']/div[@id='sidepanelCreateAlert']/div[1]/div[2]/div[2]/fieldset[1]/div[2]/div[1]")
+    @FindBy(xpath = "//div[@id='sidepanelCreateAlert']//span[contains(text(),'Lifecycle')]")
     public WebElement LifeCycle_Btn;
     @FindBy(xpath = "//div[@id='sidepanelCreateAlert']//span[contains(text(),'Litigation')]")
     WebElement Litigation_Btn;
@@ -114,6 +114,8 @@ public class Data_Management_Page extends Page_Base {
 
     @FindBy(linkText = "Next")
     public WebElement Next_Btn;
+
+
 
     public Data_Management_Page(WebDriver driver) {
         super(driver);
@@ -195,13 +197,14 @@ public class Data_Management_Page extends Page_Base {
     }
 
     public void Z2D_Click_on_LifeCycle() {
-        if ( !LifeCycle_Btn.isSelected() )
-        { Click_Button(LifeCycle_Btn); } }
+       while (!LifeCycle_Btn.isSelected()){
+        Click_Button(LifeCycle_Btn);
+       break;}}
 
     public void Z2D_Click_on_Litigation() {
-        if ( !Litigation_Btn.isSelected() )
-        { Click_Button(Litigation_Btn); } }
-
+       while (!Litigation_Btn.isSelected()){
+           Click_Button(Litigation_Btn);
+           break;} }
 
     public void Z2D_Click_on_Submit_Btn(){
         Click_Button(Submit_Btn);

@@ -44,10 +44,9 @@ public class Test_Base {
 
     @SuppressWarnings("unused")
     @BeforeSuite
-    @Parameters("browser")
-    public static void SetUp(String browser) throws Exception {
+    public static void SetUp( ) throws InterruptedException {
 
-        if (browser.equalsIgnoreCase("Chrome")) {
+
             ChromeOptions options = new ChromeOptions();
             options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
             options.setProxy(null);
@@ -58,17 +57,6 @@ public class Test_Base {
             options.addArguments("--disable-modal-animations");
             WebDriverManager.chromedriver().setup();
             driver = new ChromeDriver(options);
-        }
-        else if (browser.equalsIgnoreCase("Firefox")) {
-            WebDriverManager.firefoxdriver().setup();
-            driver = new FirefoxDriver();
-        }
-        else if (browser.equalsIgnoreCase("Edge")) {
-            WebDriverManager.edgedriver().setup();
-            driver = new EdgeDriver();
-        } else {
-            throw new Exception("Browser is not correct");
-        }
 
         //driver.navigate().to("https://test.z2data.com/");
         driver.get("https://parts.z2data.com");
@@ -124,10 +112,9 @@ public class Test_Base {
         Wait.until(ExpectedConditions.invisibilityOf(element));
     }
 
-    public void Wait_Text_To_be(WebElement element,String Text){
+    public void Wait_Text_Not_To_be(WebElement element, String Text){
         WebDriverWait Wait = new WebDriverWait(driver, 7);
-        Wait.until(ExpectedConditions.textToBePresentInElement(element,Text));
-
+        Wait.until(ExpectedConditions.not(ExpectedConditions.textToBePresentInElement(element,Text)));
     }
 
     public static void Wait_for_Element_to_Disappear(List element) throws InterruptedException {
