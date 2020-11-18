@@ -17,6 +17,18 @@ public class Report_Page extends Page_Base {
     public WebElement Close_Preview;
     @FindBy(xpath = "//*[@id=\"dropbg\"]/div/div/button")
     public WebElement Download_Btn;
+    @FindBy(xpath = "//*[@id=\"z2-2cols-leftpanel\"]/ul/li[5]/a/div[2]")
+    public WebElement Obsolescence;
+    @FindBy(xpath = "//a[contains(text(),'High Lifecycle Risk Parts')]")
+    public WebElement High_Lifecycle_RiskParts;
+    @FindBy(linkText = "Obsolete Parts in 3 Years")
+    public WebElement ObsoleteParts_3Y;
+    @FindBy(linkText = "Obsolete Parts in 5 Years")
+    public WebElement ObsoleteParts_5Y;
+    @FindBy(xpath = "//*[@id=\"dropbg\"]/div/div/div[2]/div/div[2]/table/tbody/tr[32]/td[5]/div")
+    public WebElement Row_Active;
+    @FindBy(xpath = "//*[@id=\"dropbg\"]/div/div/div[2]/div/div[2]/table/tbody/tr[18]/td[8]/div")
+    public WebElement Row_3Y;
     @FindBy(xpath = "//*[@id=\"z2-2cols-leftpanel\"]/ul/li[3]/a/div[2]")
     WebElement Create_Report;
     @FindBy(xpath = "//body/div[@id='main_start_page']/app-root[1]/div[3]/app-risk-manager[1]/app-riskreport[1]/div[1]/app-riskreportmpn[1]/div[1]/div[2]/div[1]/div[1]/div[1]/app-createreport[1]/app-run-create-reports[1]/div[1]/div[1]/div[1]/button[1]")
@@ -27,23 +39,6 @@ public class Report_Page extends Page_Base {
     WebElement Confirm_Report;
     @FindBy(xpath = "//*[@id=\"z2-2cols-sub-2cols-left\"]/div/app-createreport/app-run-create-reports/div[1]/div[1]/div[1]/button[3]")
     WebElement Preview;
-    @FindBy(xpath = "//*[@id=\"z2-2cols-leftpanel\"]/ul/li[5]/a/div[2]")
-    public WebElement Obsolescence;
-    @FindBy(xpath = "//a[contains(text(),'High Lifecycle Risk Parts')]")
-    public WebElement High_Lifecycle_RiskParts;
-
-
-    @FindBy(linkText = "Obsolete Parts in 3 Years")
-    public WebElement ObsoleteParts_3Y;
-
-    @FindBy(linkText = "Obsolete Parts in 5 Years")
-    public WebElement ObsoleteParts_5Y;
-
-    @FindBy(xpath = "//*[@id=\"dropbg\"]/div/div/div[2]/div/div[2]/table/tbody/tr[32]/td[5]/div")
-    public WebElement Row_Active;
-
-    @FindBy(xpath = "//*[@id=\"dropbg\"]/div/div/div[2]/div/div[2]/table/tbody/tr[18]/td[8]/div")
-    public WebElement Row_3Y;
 
     public Report_Page(WebDriver driver) {
         super(driver);

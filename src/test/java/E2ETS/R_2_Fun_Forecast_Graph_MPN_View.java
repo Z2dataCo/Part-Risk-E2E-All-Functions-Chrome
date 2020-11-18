@@ -6,7 +6,6 @@ import Com.PartRisk.Pages.Landing_Page;
 import io.qameta.allure.Description;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
-import org.openqa.selenium.StaleElementReferenceException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -15,6 +14,7 @@ public class R_2_Fun_Forecast_Graph_MPN_View extends Test_Base {
     Data_Management_Page DManagementObj;
     Landing_Page LandObj;
     Forecast_Page ForeCastObj;
+
     @Test(priority = 18)
     @Severity(value = SeverityLevel.NORMAL)
     @Description("Validate affecting Forecast Graph by filtering the Status & Check table's data ")

@@ -17,11 +17,15 @@ public class Page_Base {
     public Page_Base(WebDriver driver) {
         PageFactory.initElements(driver, this);
     }
+
     protected static void Click_Button(WebElement button) {
-        try { button.click(); }
-        catch(org.openqa.selenium.StaleElementReferenceException ex)
-       { button.click(); }
+        try {
+            button.click();
+        } catch (org.openqa.selenium.StaleElementReferenceException ex) {
+            button.click();
+        }
     }
+
     protected static void Set_Text_Element_Text(WebElement textElement, String value) {
         textElement.sendKeys(value);
     }
@@ -35,7 +39,7 @@ public class Page_Base {
     }
 
     public void Scroll_to_Element(WebElement element) throws InterruptedException {
-        jse.executeScript("arguments[0].scrollIntoView(true);",element);
+        jse.executeScript("arguments[0].scrollIntoView(true);", element);
         Thread.sleep(500);
     }
 

@@ -38,11 +38,11 @@ public class Forecast_Page extends Page_Base {
     public List<WebElement> Table_Rows;
     @FindBy(xpath = "//a[contains(text(),'Forecast')]")
     public WebElement ForeCast_Tab;
-    @FindBy(className = "jtoggler-control")
-    WebElement Forecast_Switchers;
     //"//*[@id=\"RemainMainPage\"]/app-risk-manager/div[2]/div/div/div/div/label/div")
     @FindBy(xpath = "//div[@style='border-color: silver silver silver rgb(51, 122, 183);']")
     public WebElement Spinner2;
+    @FindBy(className = "jtoggler-control")
+    WebElement Forecast_Switchers;
 
 
     public Forecast_Page(WebDriver driver) {
@@ -53,7 +53,8 @@ public class Forecast_Page extends Page_Base {
     public void Z2D_Select_Switcher() {
         Click_Button(Forecast_Switchers);
     }
-    public void Z2D_Click_on_Graph(){
+
+    public void Z2D_Click_on_Graph() {
         Click_Button(Graph2);
     }
 

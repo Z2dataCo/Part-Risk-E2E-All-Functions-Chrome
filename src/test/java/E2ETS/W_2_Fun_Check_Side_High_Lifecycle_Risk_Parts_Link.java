@@ -4,7 +4,6 @@ import Com.PartRisk.Pages.*;
 import io.qameta.allure.Description;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
-import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -13,10 +12,9 @@ public class W_2_Fun_Check_Side_High_Lifecycle_Risk_Parts_Link extends Test_Base
     Landing_Page LandOpj;
     Dashboard_Page DashOpj;
     Report_Page ReportOpj;
-    Scrub_Page ScrubPageObj;
     Obsolescence_Page ObsoL_Opj;
 
-    @Test(priority = 23,enabled = false)
+    @Test(priority = 23)
     @Severity(SeverityLevel.NORMAL)
     @Description("Check that side panel of Obsolete Parts in 3 Years shows parts that have forecast up to 3 years")
     public void Check_Side_Panel_High_Risk() throws InterruptedException {
@@ -70,14 +68,12 @@ public class W_2_Fun_Check_Side_High_Lifecycle_Risk_Parts_Link extends Test_Base
         int CountPagination0 = Integer.parseInt(ObsoL_Opj.Next_Page.getText());
         int CountPage0 = CountPagination0 - 1;
         int SubTotal0 = CountOfTable0 * CountPage0;
-        int LastPage0= Count0 - SubTotal0;
+        int LastPage0 = Count0 - SubTotal0;
         int AllOfRow0 = LastPage0 + SubTotal0;
         System.out.println(AllOfRow0);
         System.out.println(Count0);
         Assert.assertEquals(Count0, AllOfRow0);
     }
-
-
 
 
 }

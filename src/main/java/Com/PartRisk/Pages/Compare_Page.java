@@ -14,7 +14,7 @@ public class Compare_Page extends Page_Base {
     @FindBy(xpath = "//*[@id=\"box_one\"]/div/div/app-ipn-scorecard/div/div[1]/div/div[1]/div[1]/div[1]")
     public WebElement MSG;
     @FindBy(id = "part_autocom_1")
-   public  WebElement Compare2;
+    public WebElement Compare2;
     @FindBy(xpath = "//*[@id=\"headerEl\"]/div/div/a[2]")
     WebElement Differences;
     @FindBy(xpath = "//*[@id=\"headerEl\"]/div/div/a[3]")

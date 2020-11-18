@@ -9,69 +9,48 @@ import org.openqa.selenium.support.FindBy;
 import java.util.List;
 
 public class Obsolescence_Page extends Page_Base {
-    public Obsolescence_Page(WebDriver driver) {
-        super(driver);
-    }
-
     @FindBy(xpath = "//*[@id=\"dropbg\"]/div/div/div[2]/div[1]/div[1]")
     public WebElement High_LifeCycle_Risk;
-
     @FindBy(css = "#dropbg > div > div > div.sidepanel-content.mt-1 > div.z2-scorecard.scorecard-parts.d-flex.align-items-start > div.z2-scorecard-each.risk-red.max-width-200.filterinScrub.NRND")
     public WebElement NRND_Parts;
-
     @FindBy(xpath = "//*[@id=\"dropbg\"]/div/div/div[2]/div[1]/div[3]")
     public WebElement Obsolete_Parts;
-
     @FindBy(xpath = "//*[@id=\"dropbg\"]/div/div/div[2]/div[1]/div[4]")
     public WebElement Last_Buy_Parts;
-
     @FindBy(xpath = "//*[@id=\"dropbg\"]/div/div/div[2]/div[2]/div[2]/app-z2pagination/div/div/div/div/pagination/ul/li[9]/a")
 
     public WebElement Last;
-
     @FindBy(xpath = "//div[@id='dropbg']//li[@class='pagination-next page-item disabled']/preceding-sibling::li[position()<2]")
     public WebElement Next_Page;
-
     @FindBy(xpath = "//*[@id=\"dropbg\"]/div/div/div[2]/div[2]/div[2]/app-z2pagination/span/span[2]")
     public WebElement Fixed_Number;
-
     @FindBy(xpath = "//table/tbody/tr")
     public List<WebElement> Table_Size;
-
-
     @FindBy(xpath = "//*[@id=\"dropbg\"]/div/div/div[2]/div/div[1]/div[2]/app-z2pagination/div/div/div/div/pagination/ul/li[9]/a")
     public WebElement LastPage_3Y;
-
     @FindBy(xpath = "//*[@id=\"dropbg\"]/div/div/div[2]/div[1]/div[2]/app-z2pagination/div/div/div/div/pagination/ul/li[9]/a")
     public WebElement LastPage_5Y;
-
-
     @FindBy(xpath = "//*[@id=\"dropbg\"]/div/div/div[2]/div/div[1]/div[2]/app-z2pagination/span/span[2]")
     public WebElement Fixed_Number_For_3Y;
-
     @FindBy(xpath = "//*[@id=\"dropbg\"]/div/div/div[1]/div[2]/i")
     public WebElement Close_Slide;
-
-
     @FindBy(xpath = "//*[@id=\"dropbg\"]/div/div/div[2]/div[1]/div[2]/app-z2pagination/span/span[2]")
     public WebElement Fixed_Number_For_5Y;
-
     @FindBy(linkText = "All Obsolescence PCNs")
     public WebElement All_Obsolescence;
-
     @FindBy(xpath = "//*[@id=\"z2-2cols-leftpanel\"]/ul/li[6]/a/div[2]")
     public WebElement Product_Change_Notices;
-
     @FindBy(xpath = "//*[@id=\"dropbg\"]/div/div/div[2]/div/div[2]/app-z2pagination/div/div/div/div/pagination/ul/li[9] ")
     public WebElement Last_Page_All_Obs;
-
-
     @FindBy(xpath = "//*[@id=\"dropbg\"]/div/div/div[2]/div/div[2]/app-z2pagination/span/span[2]")
     public WebElement Fixed_Number_for_All_Obs;
-
-
     @FindBy(xpath = "c")
     public List<WebElement> New_Data;
+
+
+    public Obsolescence_Page(WebDriver driver) {
+        super(driver);
+    }
 
     public void Z2D_Open_High_LifeCycle() {
         Click_Button(High_LifeCycle_Risk);

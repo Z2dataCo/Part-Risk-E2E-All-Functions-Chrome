@@ -11,10 +11,6 @@ import org.openqa.selenium.support.FindBy;
 import java.util.List;
 
 public class Delete_BOM_Page extends Page_Base {
-    Actions Action;
-    int i = 2;
-
-
     @FindBy(xpath = "/html/body/modal-container/div/div/div/button[1]")
     public WebElement Yes_Button;
     //@FindBy(className = "btn btn-primary")
@@ -31,6 +27,8 @@ public class Delete_BOM_Page extends Page_Base {
     public WebElement Creat_Sub_Folder_Button;
     @FindBy(xpath = "//table[@class='table table-bordered table-striped bg-white mt-05 mb-0']/tbody")
     public WebElement Table_Body;
+    Actions Action;
+    int i = 2;
 
     public Delete_BOM_Page(WebDriver driver) {
         super(driver);

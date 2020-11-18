@@ -39,14 +39,13 @@ public class S_2_Fun_Forecast_Graph_IPN_View extends Test_Base {
         String TotalFilterValue = ForeCastObj.TotalValue.getText();
         System.out.println("Total Filter Value : " + TotalFilterValue);
         Assert.assertEquals(TotalFilterValue, Multi_Source_Filter_Value);
-        if (TotalFilterValue.equals("0")){
+        if (TotalFilterValue.equals("0")) {
             System.out.println("No Data for the Selected Filter");
-        }
-        else {
+        } else {
             String First_Row_Name = ForeCastObj.First_Table_Data.getText();
             ForeCastObj.Z2D_Click_on_First_Result();
             String Opened_File_Name = ForeCastObj.File_Name.getText();
-            Assert.assertTrue(Opened_File_Name.contains(First_Row_Name),"Opened File is the same as Selected");
+            Assert.assertTrue(Opened_File_Name.contains(First_Row_Name), "Opened File is the same as Selected");
         }
 
 
@@ -57,14 +56,13 @@ public class S_2_Fun_Forecast_Graph_IPN_View extends Test_Base {
         String TotalFilterValue2 = ForeCastObj.TotalValue.getText();
         System.out.println("Total Filter Value : " + TotalFilterValue2);
         Assert.assertEquals(TotalFilterValue2, Single_Source_Filter_Value);
-        if (TotalFilterValue2.equals("0")){
+        if (TotalFilterValue2.equals("0")) {
             System.out.println("No Data for the Selected Filter");
-        }
-        else {
+        } else {
             String First_Row_Name = ForeCastObj.First_Table_Data.getText();
             ForeCastObj.Z2D_Click_on_First_Result();
             String Opened_File_Name = ForeCastObj.File_Name.getText();
-            Assert.assertTrue(Opened_File_Name.contains(First_Row_Name),"Opened File is the same as Selected");
+            Assert.assertTrue(Opened_File_Name.contains(First_Row_Name), "Opened File is the same as Selected");
         }
 
         String NA_Source_Filter_Value = ForeCastObj.Fifth_Filter.getText();
@@ -74,16 +72,15 @@ public class S_2_Fun_Forecast_Graph_IPN_View extends Test_Base {
         String TotalFilterValue3 = ForeCastObj.TotalValue.getText();
         System.out.println("Total Filter Value : " + TotalFilterValue3);
         Assert.assertEquals(TotalFilterValue3, NA_Source_Filter_Value);
-        if (TotalFilterValue3.equals("0")){
+        if (TotalFilterValue3.equals("0")) {
             System.out.println("No Data for the Selected Filter");
-        }
-        else {
+        } else {
             String First_Row_Name = ForeCastObj.First_Table_Data.getText();
             ForeCastObj.Z2D_Click_on_First_Result();
             String Opened_File_Name = ForeCastObj.File_Name.getText();
             System.out.println(Opened_File_Name);
             System.out.println(First_Row_Name);
-            Assert.assertTrue(Opened_File_Name.contains(First_Row_Name),"Opened File is the same as Selected");
+            Assert.assertTrue(Opened_File_Name.contains(First_Row_Name), "Opened File is the same as Selected");
             Wait_Element_Visible(ObsoL_Opj.Close_Slide);
             ObsoL_Opj.Z2D_Close_Slide();
         }

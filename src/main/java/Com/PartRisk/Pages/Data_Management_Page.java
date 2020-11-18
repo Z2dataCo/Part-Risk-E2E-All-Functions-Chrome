@@ -1,6 +1,5 @@
 package Com.PartRisk.Pages;
 
-import junit.framework.Test;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
@@ -59,20 +58,42 @@ public class Data_Management_Page extends Page_Base {
     public WebElement Graph;
     @FindBy(xpath = "//*[@id=\"DMCreatefolder\"]/span/span")
     public WebElement Create_Folder;
-    @FindBy(id = "FolderAutoCompleteSearch")
-    WebElement Search_Btn;
     @FindBy(xpath = "//strong[contains(text(),'TAP_BOM')]")
     public WebElement Search_Result;
-    @FindBy(xpath = "//tbody/tr[2]//td[2]/a[1]")
-    WebElement Select_BOM;
     @FindBy(xpath = "//a[contains(text(),'TAP_BOM_Proud_Test')]")
     public WebElement Select_Proud_Test_BOM;
+    @FindBy(xpath = "//body/div[@id='dropbg']/div[@id='sidepanelCreateAlert']/div[1]/div[2]/div[2]/fieldset[1]/div[2]/div[1]")
+    public WebElement LifeCycle_Btn;
+    @FindBy(partialLinkText = "TAP_BOM_Proud_Te")
+    public WebElement BOM_Prod_Test;
+    @FindBy(xpath = "//div[@id='z2page-head-bar']/div/app-create-alert/div[1]/a[2]")
+    public WebElement Unfollow_Btn;
+    @FindBy(linkText = "Parts")
+    public WebElement Parts;
+    @FindBy(linkText = "Forecast")
+    public WebElement Forecast;
+    @FindBy(linkText = "Mitigation")
+    public WebElement Mitigation;
+    @FindBy(xpath = "//*[@id=\"RemainMainPage\"]/app-risk-manager/app-risk-parts/app-riskpartsmpn/ngx-loading/div/div[2]/div")
+    public List<WebElement> Spinner;
+    @FindBy(xpath = "//*[@id=\"RemainMainPage\"]/app-risk-manager/app-risk-parts/app-riskpartsmpn/ngx-loading/div/div[2]/div")
+    public WebElement Spinner2;
+    @FindBy(id = "toast-container")
+    public WebElement Toast_Container;
+    @FindBy(xpath = "//*[@id=\"scrub_content\"]/div/table/tbody/tr")
+    public List<WebElement> Table_Rows;
+    @FindBy(xpath = "//*[@id=\"scrub_content\"]/div/div[2]/div[2]/app-z2pagination/div/div/div/div/pagination/ul/li[5]/a")
+    public WebElement Next_Page;
+    @FindBy(linkText = "Next")
+    public WebElement Next_Btn;
+    @FindBy(id = "FolderAutoCompleteSearch")
+    WebElement Search_Btn;
+    @FindBy(xpath = "//tbody/tr[2]//td[2]/a[1]")
+    WebElement Select_BOM;
     @FindBy(xpath = "//a[contains(text(),'Parts')]")
     WebElement Parts_Btn;
     @FindBy(xpath = "//div[@id='z2page-head-bar']/div//button/span[contains(text(),'Create Alert')]")
     WebElement Create_Alert_Btn;
-    @FindBy(xpath = "//body/div[@id='dropbg']/div[@id='sidepanelCreateAlert']/div[1]/div[2]/div[2]/fieldset[1]/div[2]/div[1]")
-    public WebElement LifeCycle_Btn;
     @FindBy(xpath = "//div[@id='sidepanelCreateAlert']//span[contains(text(),'Litigation')]")
     WebElement Litigation_Btn;
     @FindBy(xpath = "//button[contains(text(),'Create Alert')]")
@@ -83,37 +104,10 @@ public class Data_Management_Page extends Page_Base {
     WebElement BOM_Folder;
     @FindBy(xpath = "//tbody/tr[1]/td[2]/a[1]")
     WebElement BOM;
-    @FindBy(partialLinkText = "TAP_BOM_Proud_Te")
-    public WebElement BOM_Prod_Test;
     @FindBy(xpath = "//a[contains(text(),'Compliance')]")
     WebElement Compliance_Tab;
-    @FindBy(xpath = "//div[@id='z2page-head-bar']/div/app-create-alert/div[1]/a[2]")
-    public WebElement Unfollow_Btn;
-    @FindBy(linkText = "Parts")
-    public WebElement Parts;
-    @FindBy(linkText = "Forecast")
-    public WebElement Forecast;
-    @FindBy(linkText = "Mitigation")
-    public WebElement Mitigation;
     @FindBy(linkText = "Scrub")
     WebElement Scrub;
-    @FindBy(xpath = "//*[@id=\"RemainMainPage\"]/app-risk-manager/app-risk-parts/app-riskpartsmpn/ngx-loading/div/div[2]/div")
-    public List<WebElement> Spinner;
-
-    @FindBy(xpath = "//*[@id=\"RemainMainPage\"]/app-risk-manager/app-risk-parts/app-riskpartsmpn/ngx-loading/div/div[2]/div")
-    public WebElement Spinner2;
-
-    @FindBy(id = "toast-container")
-    public WebElement Toast_Container;
-
-    @FindBy(xpath = "//*[@id=\"scrub_content\"]/div/table/tbody/tr")
-    public List<WebElement> Table_Rows;
-
-    @FindBy(xpath = "//*[@id=\"scrub_content\"]/div/div[2]/div[2]/app-z2pagination/div/div/div/div/pagination/ul/li[5]/a")
-    public WebElement Next_Page;
-
-    @FindBy(linkText = "Next")
-    public WebElement Next_Btn;
 
     public Data_Management_Page(WebDriver driver) {
         super(driver);
@@ -195,15 +189,19 @@ public class Data_Management_Page extends Page_Base {
     }
 
     public void Z2D_Click_on_LifeCycle() {
-        if ( !LifeCycle_Btn.isSelected() )
-        { Click_Button(LifeCycle_Btn); } }
+        if (!LifeCycle_Btn.isSelected()) {
+            Click_Button(LifeCycle_Btn);
+        }
+    }
 
     public void Z2D_Click_on_Litigation() {
-        if ( !Litigation_Btn.isSelected() )
-        { Click_Button(Litigation_Btn); } }
+        if (!Litigation_Btn.isSelected()) {
+            Click_Button(Litigation_Btn);
+        }
+    }
 
 
-    public void Z2D_Click_on_Submit_Btn(){
+    public void Z2D_Click_on_Submit_Btn() {
         Click_Button(Submit_Btn);
     }
 
@@ -259,15 +257,16 @@ public class Data_Management_Page extends Page_Base {
     public void Z2D_Move_To_Prod_BOM(WebDriver driver) {
         driver.get("https://parts.z2data.com/RiskManager?BomId=119090");
     }
-    public void Z2D_Move_to_Mitigation_Bom(WebDriver driver){
+
+    public void Z2D_Move_to_Mitigation_Bom(WebDriver driver) {
         driver.get("https://parts.z2data.com/RiskManager/Mitigation?BomId=119090");
     }
 
-    public void SetFile(){
+    public void SetFile() {
         Click_Button(Test_Folder);
     }
 
-    public void SetSearchValue(){
+    public void SetSearchValue() {
         Click_Button(Search_Result);
     }
 }

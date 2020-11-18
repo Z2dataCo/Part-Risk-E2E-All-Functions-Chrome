@@ -33,7 +33,7 @@ public class F_1_Create_Alert_Litigation extends Test_Base {
         Wait_Element_Clickable(DManagementObj.LifeCycle_Btn);
         DManagementObj.Z2D_Click_on_Litigation();
         DManagementObj.Z2D_Click_on_Submit_Btn();
-        Wait_Text_To_Be(DManagementObj.Followed_Text,"Followed");
+        Wait_Text_To_Be(DManagementObj.Followed_Text, "Followed");
         String Status = DManagementObj.Followed_Text.getText();
         Assert.assertEquals(Status, "Followed");
         DManagementObj.Z2D_Click_Followed_Btn();

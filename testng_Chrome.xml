@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Chrome E2ETS Test Suite">
-    <test verbose="2"  name="Chrome Main Function E2ETS">
+    <test verbose="2" name="Chrome Main Function E2ETS">
         <classes>
             <class name="E2ETS.A_1_Parametric_Search">
                 <methods>
@@ -60,8 +60,7 @@
             </class>
         </classes>
     </test>
-
-    <test verbose="2"  name="Chrome Sub Function E2ETS">
+    <test verbose="2" name="Chrome Sub Function E2ETS">
         <classes>
             <class name="E2ETS.L_2_Fun_Search_Part_Number">
                 <methods>
@@ -125,7 +124,7 @@
             </class>
             <class name="E2ETS.X_2_Fun_Delete_BOMs">
                 <methods>
-                    <include name="Delete_BMS"/>
+                    <include name="Delete_BOMs"/>
                 </methods>
             </class>
             <class name="E2ETS.Y_2_Fun_Obsolescence">

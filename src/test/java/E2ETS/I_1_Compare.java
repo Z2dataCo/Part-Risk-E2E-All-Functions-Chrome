@@ -6,7 +6,6 @@ import io.qameta.allure.Description;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import org.openqa.selenium.interactions.Actions;
-import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 public class I_1_Compare extends Test_Base {

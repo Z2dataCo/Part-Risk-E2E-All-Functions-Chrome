@@ -91,8 +91,8 @@ public class PCN_Manager_Page extends Page_Base {
         Click_Button(PCNs_Select_First_PCN_Notification);
     }
 
-    public void Z2D_Search(String SeacrhWith){
-        Set_Text_Element_Text(Search_Field,SeacrhWith);
+    public void Z2D_Search(String SeacrhWith) {
+        Set_Text_Element_Text(Search_Field, SeacrhWith);
         Click_Button(Search_button);
     }
 

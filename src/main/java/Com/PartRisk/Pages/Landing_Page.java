@@ -23,10 +23,25 @@ public class Landing_Page extends Page_Base {
     public WebElement PartName;
     @FindBy(xpath = "//*[@id=\"progressDiv\"]/div/div/div[2]")
     public List<WebElement> GeneralSpinner;
+    @FindBy(id = "txtMainBarSearch")
+    public WebElement Search_Input;
+    @FindBy(linkText = "Data Management")
+    public WebElement Data_Management;
+    @FindBy(xpath = "//*[@id=\"ui-id-3\"]")
+    public WebElement Value;
+    @FindBy(xpath = "/html[1]/body[1]/ul[2]/li[2]/a[1]")
+    public WebElement IPN_Value;
+    @FindBy(xpath = "//*[@id=\"z2parametric-all\"]/div/div[2]/div[2]/div[1]/label/span[1]")
+    public WebElement Supp_ChkBox;
+    @FindBy(id = "progressDiv")
+    public WebElement SpinnerZezo;
+    @FindBy(xpath = "//div//div[@class='usericon']")
+    public WebElement MY_Account;
+    //@FindBy(xpath = "/html[1]/body[1]/div[9]/div[1]/div[2]/div[2]/a[3]")
+    @FindBy(xpath = "//body/div[@id='dropbg']/div[1]/div[2]/div[2]/a[3]/span[1]")
+    public WebElement Logout;
     @FindBy(xpath = "//*[@id=\"main-search-bar\"]/div[1]")
     WebElement DDL_Type_Of_Search;
-    @FindBy(id = "txtMainBarSearch")
-   public WebElement Search_Input;
     @FindBy(xpath = "//div[@id='dropbg']//a[contains(text(),'Part Number')]")
     WebElement Part_Number;
     @FindBy(xpath = "//button[@id='btnautoSearch']")
@@ -37,16 +52,10 @@ public class Landing_Page extends Page_Base {
     WebElement Product;
     @FindBy(xpath = "//*[@id=\"ca1_Semiconductors\"]/ul/li[1]/ul/li/div[1]/div/div/a")
     WebElement SupElement;
-    @FindBy(linkText = "Data Management")
-    public WebElement Data_Management;
     @FindBy(xpath = "//*[@id=\"scopeOptionDiv\"]/ul/li[6]/a")
     WebElement Adv_Crosses_Value;
-    @FindBy(xpath = "//*[@id=\"ui-id-3\"]")
-    public WebElement Value;
     @FindBy(xpath = "//*[@id=\"scopeOptionDiv\"]/ul/li[2]/a")
     WebElement IPN;
-    @FindBy(xpath = "/html[1]/body[1]/ul[2]/li[2]/a[1]")
-    public WebElement IPN_Value;
     @FindBy(xpath = "//body/div[3]/div[1]/ul[1]/li[6]/a[1]")
     WebElement Compare_Tab;
     @FindBy(xpath = "//body/div[3]/div[1]/ul[1]/li[7]/a[1]")
@@ -55,19 +64,8 @@ public class Landing_Page extends Page_Base {
     WebElement Suppliers;
     @FindBy(xpath = "//body/div[3]/div[1]/ul[1]/li[3]/a[1]")
     WebElement PCN_Manager_Tab;
-    @FindBy(xpath = "//*[@id=\"z2parametric-all\"]/div/div[2]/div[2]/div[1]/label/span[1]")
-    public WebElement Supp_ChkBox;
     @FindBy(xpath = "//*[@id=\"btnautoSearch\"]/i")
     WebElement btn_search;
-    @FindBy(id = "progressDiv")
-    public WebElement SpinnerZezo;
-
-    @FindBy(xpath = "//div//div[@class='usericon']")
-    public WebElement MY_Account;
-
-    //@FindBy(xpath = "/html[1]/body[1]/div[9]/div[1]/div[2]/div[2]/a[3]")
-    @FindBy(xpath = "//body/div[@id='dropbg']/div[1]/div[2]/div[2]/a[3]/span[1]")
-    public WebElement Logout;
 
 
     public Landing_Page(WebDriver driver) {
@@ -169,6 +167,7 @@ public class Landing_Page extends Page_Base {
     public void Z2D_Click_My_Account() {
         Click_Button(MY_Account);
     }
+
     public void Z2D_Logout() {
         Click_Button(Logout);
     }

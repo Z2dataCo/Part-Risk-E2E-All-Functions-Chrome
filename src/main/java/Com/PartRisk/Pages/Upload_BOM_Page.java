@@ -44,12 +44,12 @@ public class Upload_BOM_Page extends Page_Base {
     public WebElement Selection;
     @FindBy(xpath = "//*[@id=\"DivUploadBomMapCols\"]/div[1]/div[3]/div/button[2]")
     public WebElement Next_Step;
+    @FindBy(xpath = "//*[@id=\"bommapUL\"]/li[4]/a")
+    public WebElement Mapped_IPN;
     @FindBy(id = "37753_anchor")
     WebElement Selected_Folder;
     @FindBy(xpath = "//*[@id=\"DivUploadBomMapCols\"]/div[3]/table/thead/tr/td[3]")
     WebElement Column2;
-    @FindBy(xpath = "//*[@id=\"bommapUL\"]/li[4]/a")
-   public WebElement Mapped_IPN;
 
     public Upload_BOM_Page(WebDriver driver) {
         super(driver);
