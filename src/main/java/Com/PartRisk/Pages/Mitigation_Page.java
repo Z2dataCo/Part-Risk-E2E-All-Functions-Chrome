@@ -4,6 +4,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import java.util.List;
 
 public class    Mitigation_Page extends Page_Base {
     @FindBy(xpath = "//*[@id=\"RemainMainPage\"]/app-risk-manager/div[2]/div/div/div/div/label/div")
@@ -40,7 +41,8 @@ public class    Mitigation_Page extends Page_Base {
     public WebElement Card_Close_Button;
     @FindBy(xpath = "//table[@class='table table-bordered table-middle text-left bg-white tablehascards']//tbody")
     public WebElement Table_Body;
-
+    @FindBy(xpath = "//tbody//tr[10]/td[3]//ul/div[2]//a/span")
+    public List<WebElement> Added_Part_Label_List;
 
 
 

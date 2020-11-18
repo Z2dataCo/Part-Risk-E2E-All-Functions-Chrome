@@ -41,6 +41,9 @@ public class Forecast_Page extends Page_Base {
     @FindBy(className = "jtoggler-control")
     WebElement Forecast_Switchers;
     //"//*[@id=\"RemainMainPage\"]/app-risk-manager/div[2]/div/div/div/div/label/div")
+    @FindBy(xpath = "//div[@style='border-color: silver silver silver rgb(51, 122, 183);']")
+    public WebElement Spinner2;
+
 
     public Forecast_Page(WebDriver driver) {
         super(driver);
