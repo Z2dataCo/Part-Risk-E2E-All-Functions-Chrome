@@ -40,7 +40,6 @@ public class E_Create_Alert_LifeCycle extends Test_Base {
         //Wait_Element_Clickable(DManagementObj.Followed_Text);
         //Wait_Element_Visible(DManagementObj.ToastContainer);
         String Status = DManagementObj.Followed_Text.getText();
-        WaitAllElement();
         Assert.assertEquals(Status, "Followed");
         DManagementObj.Z2D_Click_Followed_Btn();
         Wait_Element_Clickable(DManagementObj.Unfollow_Btn);
