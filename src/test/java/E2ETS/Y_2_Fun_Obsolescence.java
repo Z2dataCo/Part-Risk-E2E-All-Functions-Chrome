@@ -8,7 +8,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class Y_Fun_Obsolescence extends Test_Base {
+public class Y_2_Fun_Obsolescence extends Test_Base {
     Data_Management_Page DManagementObj;
     Landing_Page LandOpj;
     Dashboard_Page DashOpj;

@@ -8,7 +8,7 @@ import io.qameta.allure.SeverityLevel;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class B_Data_Management extends Test_Base {
+public class B_1_Data_Management extends Test_Base {
     Data_Management_Page DManagementObj;
     Landing_Page LandObj;
 

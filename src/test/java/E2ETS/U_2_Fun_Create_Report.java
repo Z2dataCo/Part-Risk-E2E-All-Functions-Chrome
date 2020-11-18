@@ -10,7 +10,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class U_Fun_Create_Report extends Test_Base {
+public class U_2_Fun_Create_Report extends Test_Base {
     Faker faker = new Faker();
     String Name = faker.name().firstName();
     Dashboard_Page DashboardPageObj;

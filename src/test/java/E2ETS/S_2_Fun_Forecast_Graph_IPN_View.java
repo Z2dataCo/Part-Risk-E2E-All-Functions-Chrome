@@ -10,7 +10,7 @@ import io.qameta.allure.SeverityLevel;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class S_Fun_Forecast_Graph_IPN_View extends Test_Base {
+public class S_2_Fun_Forecast_Graph_IPN_View extends Test_Base {
     Data_Management_Page DManagementObj;
     Landing_Page LandObj;
     Forecast_Page ForeCastObj;

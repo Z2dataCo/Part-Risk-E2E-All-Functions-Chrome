@@ -10,7 +10,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class P_Fun_MPN_View extends Test_Base {
+public class P_2_Fun_MPN_View extends Test_Base {
     Landing_Page LandObj;
     Data_Management_Page DManagementObj;
     Parts_Page PartPageObj;

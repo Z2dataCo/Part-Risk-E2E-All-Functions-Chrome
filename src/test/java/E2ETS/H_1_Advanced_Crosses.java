@@ -8,7 +8,7 @@ import io.qameta.allure.SeverityLevel;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class H_Advanced_Crosses extends Test_Base {
+public class H_1_Advanced_Crosses extends Test_Base {
     Advanced_Crosses_Page AdvCrosObj;
     Landing_Page LandObj;
 

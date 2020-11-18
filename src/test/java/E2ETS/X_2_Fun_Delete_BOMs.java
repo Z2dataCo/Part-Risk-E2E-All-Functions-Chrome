@@ -9,7 +9,7 @@ import io.qameta.allure.SeverityLevel;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.testng.annotations.Test;
 
-public class X_Fun_Delete_BOMs extends Test_Base {
+public class X_2_Fun_Delete_BOMs extends Test_Base {
 
     Data_Management_Page DManagementObj;
     Landing_Page LandObj;

@@ -7,7 +7,7 @@ import io.qameta.allure.SeverityLevel;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class C_Upload_BOM_and_Switcher extends Test_Base {
+public class C_1_Upload_BOM_and_Switcher extends Test_Base {
     Landing_Page LandObj;
     Upload_BOM_Page UpBOMObj;
     Data_Management_Page DManagementObj;

@@ -10,7 +10,7 @@ import io.qameta.allure.SeverityLevel;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class ZA_Mitigation_Filters_and_Data_MPN_View extends Test_Base{
+public class ZA_2_Fun_Mitigation_Filters_and_Data_MPN_View extends Test_Base{
     Landing_Page LandObj;
     Data_Management_Page DManagementObj;
     Forecast_Page ForeCastObj;

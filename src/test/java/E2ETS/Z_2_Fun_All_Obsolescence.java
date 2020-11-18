@@ -8,7 +8,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class Z_Fun_All_Obsolescence extends Test_Base {
+public class Z_2_Fun_All_Obsolescence extends Test_Base {
     Data_Management_Page DManagementObj;
     Report_Page ReportObj;
     Landing_Page LandObj;

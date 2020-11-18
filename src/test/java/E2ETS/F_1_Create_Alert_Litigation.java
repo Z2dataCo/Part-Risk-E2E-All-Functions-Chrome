@@ -8,7 +8,7 @@ import io.qameta.allure.SeverityLevel;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class F_Create_Alert_Litigation extends Test_Base {
+public class F_1_Create_Alert_Litigation extends Test_Base {
     Data_Management_Page DManagementObj;
     Landing_Page LandObj;
 

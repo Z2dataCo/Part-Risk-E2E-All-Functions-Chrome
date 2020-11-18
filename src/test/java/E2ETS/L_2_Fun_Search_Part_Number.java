@@ -8,7 +8,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 
-public class L_Fun_Search_Part_Number extends Test_Base {
+public class L_2_Fun_Search_Part_Number extends Test_Base {
     Landing_Page LandObj;
 
     @Test(priority = 12)

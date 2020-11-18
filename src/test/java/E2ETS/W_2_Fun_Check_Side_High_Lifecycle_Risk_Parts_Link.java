@@ -8,7 +8,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class W_Fun_Check_Side_High_Lifecycle_Risk_Parts_Link extends Test_Base {
+public class W_2_Fun_Check_Side_High_Lifecycle_Risk_Parts_Link extends Test_Base {
     Data_Management_Page DManagementObj;
     Landing_Page LandOpj;
     Dashboard_Page DashOpj;

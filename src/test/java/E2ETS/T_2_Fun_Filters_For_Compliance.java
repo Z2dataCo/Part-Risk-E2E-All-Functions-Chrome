@@ -11,7 +11,7 @@ import org.openqa.selenium.StaleElementReferenceException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class T_Fun_Filters_For_Compliance extends Test_Base {
+public class T_2_Fun_Filters_For_Compliance extends Test_Base {
     Compliance_Page CompliancePageObj;
     Data_Management_Page DManagementObj;
     Landing_Page LandObj;

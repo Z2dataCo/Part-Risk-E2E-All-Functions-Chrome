@@ -9,7 +9,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 
-public class M_Fun_Search_IPN extends Test_Base {
+public class M_2_Fun_Search_IPN extends Test_Base {
     Login_Page LogObj;
     Landing_Page LandObj;
 

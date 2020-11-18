@@ -9,7 +9,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-public class I_Compare extends Test_Base {
+public class I_1_Compare extends Test_Base {
     Compare_Page CompareObj;
     Landing_Page LandObj;
 

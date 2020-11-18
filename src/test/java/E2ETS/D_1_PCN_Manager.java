@@ -8,7 +8,7 @@ import io.qameta.allure.SeverityLevel;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class D_PCN_Manager extends Test_Base {
+public class D_1_PCN_Manager extends Test_Base {
     PCN_Manager_Page PCN_ManagerObj;
     Landing_Page LandObj;
 

@@ -9,7 +9,7 @@ import io.qameta.allure.SeverityLevel;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class N_Fun_Impacted_Parts extends Test_Base {
+public class N_2_Fun_Impacted_Parts extends Test_Base {
     Landing_Page LandObj;
     PCN_Manager_Page PCN_ManagerObj;
     Impacted_Parts_Page impacted_PartsPageObj;

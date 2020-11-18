@@ -9,7 +9,7 @@ import org.openqa.selenium.StaleElementReferenceException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class G_Create_Alert_LifeCycle_Litigation extends Test_Base {
+public class G_1_Create_Alert_LifeCycle_Litigation extends Test_Base {
 
     Data_Management_Page DManagementObj;
     Landing_Page LandObj;

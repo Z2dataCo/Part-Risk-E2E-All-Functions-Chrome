@@ -11,7 +11,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 
-public class R_Fun_Forecast_Graph_MPN_View extends Test_Base {
+public class R_2_Fun_Forecast_Graph_MPN_View extends Test_Base {
     Data_Management_Page DManagementObj;
     Landing_Page LandObj;
     Forecast_Page ForeCastObj;

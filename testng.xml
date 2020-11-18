@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Chrome E2ETS Test Suite">
-    <test verbose="2"  name="Chrome Main Function E2ETS">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="D:/IdeaProjects/Part-Risk-E2E-Prod-POM/src/test/java/E2ETS">
         <classes>
             <class name="E2ETS.A_1_Parametric_Search">
                 <methods>
@@ -53,16 +53,6 @@
                     <include name="Search_for_Supplier"/>
                 </methods>
             </class>
-            <class name="E2ETS.ZB_1_PCN_Search">
-                <methods>
-                    <include name="PCN_Search"/>
-                </methods>
-            </class>
-        </classes>
-    </test>
-
-    <test verbose="2"  name="Chrome Sub Function E2ETS">
-        <classes>
             <class name="E2ETS.L_2_Fun_Search_Part_Number">
                 <methods>
                     <include name="Search_with_Part_Number"/>
@@ -138,6 +128,11 @@
             <class name="E2ETS.ZA_2_Fun_Mitigation_Filters_and_Data_MPN_View">
                 <methods>
                     <include name="Mitigation_Filters_and_Data_MPN_View"/>
+                </methods>
+            </class>
+            <class name="E2ETS.ZB_1_PCN_Search">
+                <methods>
+                    <include name="PCN_Search"/>
                 </methods>
             </class>
             <class name="E2ETS.Z_2_Fun_All_Obsolescence">

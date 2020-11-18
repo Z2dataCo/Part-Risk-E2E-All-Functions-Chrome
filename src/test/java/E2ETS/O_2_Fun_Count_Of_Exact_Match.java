@@ -10,7 +10,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class O_Fun_Count_Of_Exact_Match extends Test_Base {
+public class O_2_Fun_Count_Of_Exact_Match extends Test_Base {
     Landing_Page LandObj;
     Data_Management_Page DManagementObj;
     Scrub_Page ScrubPageObj;

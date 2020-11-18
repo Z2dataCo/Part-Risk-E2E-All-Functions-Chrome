@@ -9,7 +9,7 @@ import io.qameta.allure.SeverityLevel;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class J_Supplier_Search extends Test_Base {
+public class J_1_Supplier_Search extends Test_Base {
     Suppliers_Page SuppliersObj;
     Landing_Page LandObj;
     Data_Management_Page DManagementObj;

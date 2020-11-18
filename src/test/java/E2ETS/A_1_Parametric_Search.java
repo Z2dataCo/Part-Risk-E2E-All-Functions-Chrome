@@ -7,7 +7,7 @@ import io.qameta.allure.SeverityLevel;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class A_Parametric_Search extends Test_Base {
+public class A_1_Parametric_Search extends Test_Base {
     Landing_Page LandObj;
 
     @Test(priority = 1)

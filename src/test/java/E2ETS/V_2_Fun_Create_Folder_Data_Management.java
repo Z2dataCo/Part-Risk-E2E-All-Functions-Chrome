@@ -8,7 +8,7 @@ import io.qameta.allure.SeverityLevel;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class V_Fun_Create_Folder_Data_Management extends Test_Base {
+public class V_2_Fun_Create_Folder_Data_Management extends Test_Base {
 
     Landing_Page LandObj;
     Data_Management_Page DManagementObj;
