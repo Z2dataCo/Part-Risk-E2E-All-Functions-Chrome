@@ -195,12 +195,13 @@ public class Data_Management_Page extends Page_Base {
     }
 
     public void Z2D_Click_on_LifeCycle() {
-        Click_Button(LifeCycle_Btn);
-    }
+        if ( !LifeCycle_Btn.isSelected() )
+        { Click_Button(LifeCycle_Btn); } }
 
     public void Z2D_Click_on_Litigation() {
-        Click_Button(Litigation_Btn);
-    }
+        if ( !Litigation_Btn.isSelected() )
+        { Click_Button(Litigation_Btn); } }
+
 
     public void Z2D_Click_on_Submit_Btn() throws InterruptedException {
         Click_Button(Submit_Btn);
