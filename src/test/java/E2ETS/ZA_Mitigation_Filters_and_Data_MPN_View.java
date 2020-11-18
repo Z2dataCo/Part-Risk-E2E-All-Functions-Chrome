@@ -71,10 +71,5 @@ public class ZA_Mitigation_Filters_and_Data_MPN_View extends Test_Base{
         String TotalFilterValue3 = ForeCastObj.TotalValue.getText();
         System.out.println("Total Filter Value : " + TotalFilterValue3);
         Assert.assertEquals(TotalFilterValue3+ " Parts",EndofLife_Parts);
-
-
  }
-
-
-
 }

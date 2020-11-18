@@ -50,6 +50,18 @@ public class PCN_Manager_Page extends Page_Base {
     @FindBy(xpath = "//*[@id=\"DivAlertsFilterPCN\"]/div[1]/div[2]/div[1]/div")
     public WebElement Impacted_Parts_Tab_Filter_Table;
 
+    @FindBy(id = "PCNSearchText")
+    public WebElement Search_Field;
+
+    @FindBy(xpath = "//*[@id=\"DivPcnsTabFilterPCN\"]/div[3]/div/div/span/a")
+    public WebElement Search_button;
+
+    @FindBy(id = "tblPagePCN")
+    public WebElement Results_Table;
+
+    @FindBy(xpath = "//table[@id='tblPagePCN']/tbody/tr[1]/td[4]/div[1]/span")
+    public WebElement First_Search_Result;
+
 
     public PCN_Manager_Page(WebDriver driver) {
         super(driver);
@@ -78,5 +90,13 @@ public class PCN_Manager_Page extends Page_Base {
     public void Z2D_PCNs_First_PCN_Notification() {
         Click_Button(PCNs_Select_First_PCN_Notification);
     }
+
+    public void Z2D_Search(String SeacrhWith){
+        Set_Text_Element_Text(Search_Field,SeacrhWith);
+        Click_Button(Search_button);
+    }
+
 }
+
+
 
