@@ -44,10 +44,9 @@ public class Test_Base {
 
     @SuppressWarnings("unused")
     @BeforeSuite
-    @Parameters("browser")
-    public static void SetUp(String browser) throws Exception {
+    public static void SetUp( )   {
 
-        if (browser.equalsIgnoreCase("Chrome")) {
+
             ChromeOptions options = new ChromeOptions();
             options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
             options.setProxy(null);
@@ -59,17 +58,6 @@ public class Test_Base {
 
             WebDriverManager.chromedriver().setup();
             driver = new ChromeDriver(options);
-        }
-        else if (browser.equalsIgnoreCase("Firefox")) {
-            WebDriverManager.firefoxdriver().setup();
-            driver = new FirefoxDriver();
-        }
-        else if (browser.equalsIgnoreCase("Edge")) {
-            WebDriverManager.edgedriver().setup();
-            driver = new EdgeDriver();
-        } else {
-            throw new Exception("Browser is not correct");
-        }
 
         //driver.navigate().to("https://test.z2data.com/");
         driver.get("https://parts.z2data.com");
