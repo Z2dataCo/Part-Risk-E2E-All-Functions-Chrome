@@ -16,7 +16,7 @@
             </class>
             <class name="E2ETS.C_1_Upload_BOM_and_Switcher">
                 <methods>
-                    <include name="User_Upload_BOM"/>
+                    <include name="Upload_BOM_and_Switcher"/>
                 </methods>
             </class>
             <class name="E2ETS.D_1_PCN_Manager">
