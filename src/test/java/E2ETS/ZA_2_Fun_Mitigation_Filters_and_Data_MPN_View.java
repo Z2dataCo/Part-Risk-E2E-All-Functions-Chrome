@@ -52,7 +52,7 @@ public class ZA_2_Fun_Mitigation_Filters_and_Data_MPN_View extends Test_Base {
         System.out.println("Active_Filter_Value : " + Active_Parts);
         MitigationObj.Z2D_Click_on_Active_Filter();
         Wait_Element_Invisibility(LandObj.SpinnerZezo);
-        Wait_Text_To_be(ForeCastObj.TotalValue,Active_Parts);
+        Wait_Text_To_Be(ForeCastObj.TotalValue,Active_Parts);
         String TotalFilterValue = ForeCastObj.TotalValue.getText();
         System.out.println("Total Filter Value : " + TotalFilterValue);
         Assert.assertEquals(TotalFilterValue + " Parts",Active_Parts );
@@ -61,7 +61,7 @@ public class ZA_2_Fun_Mitigation_Filters_and_Data_MPN_View extends Test_Base {
         System.out.println("NRND_Filter_Value : " + NRND_Parts);
         MitigationObj.Z2D_Click_on_NRND_Filter();
         Wait_Element_Invisibility(LandObj.SpinnerZezo);
-        Wait_Text_To_be(ForeCastObj.TotalValue,NRND_Parts);
+        Wait_Text_To_Be(ForeCastObj.TotalValue,NRND_Parts);
         String TotalFilterValue2 = ForeCastObj.TotalValue.getText();
         System.out.println("Total Filter Value : " + TotalFilterValue2);
         Assert.assertEquals(TotalFilterValue2+ " Parts",NRND_Parts);
@@ -70,7 +70,7 @@ public class ZA_2_Fun_Mitigation_Filters_and_Data_MPN_View extends Test_Base {
         System.out.println("End_Of_Life_Parts : " + EndofLife_Parts);
         MitigationObj.Z2D_Click_on_EndofLife_Filter();
         Wait_for_Element_to_Disappear(ForeCastObj.Spinner);
-        Wait_Text_To_be(ForeCastObj.TotalValue,EndofLife_Parts);
+        Wait_Text_To_Be(ForeCastObj.TotalValue,EndofLife_Parts);
         String TotalFilterValue3 = ForeCastObj.TotalValue.getText();
         System.out.println("Total Filter Value : " + TotalFilterValue3);
         Assert.assertEquals(TotalFilterValue3+ " Parts",EndofLife_Parts);
