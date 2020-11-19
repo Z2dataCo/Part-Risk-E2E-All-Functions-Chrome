@@ -8,13 +8,16 @@ import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
+import org.openqa.selenium.firefox.FirefoxBinary;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.ITestResult;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.*;
 
 import java.io.File;
 import java.text.SimpleDateFormat;
@@ -48,9 +51,10 @@ public class Test_Base {
 
     @SuppressWarnings("unused")
     @BeforeSuite
-    public static void SetUp() throws InterruptedException {
+    @Parameters("Browser")
+    public static void SetUp(String Browser) throws Exception {
 
-
+        if(Browser.equalsIgnoreCase("Chrome")){
             ChromeOptions options = new ChromeOptions();
             options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
             options.setProxy(null);
@@ -61,7 +65,28 @@ public class Test_Base {
             options.addArguments("--disable-modal-animations");
             WebDriverManager.chromedriver().setup();
             driver = new ChromeDriver(options);
+        }
+        else if(Browser.equalsIgnoreCase("Firefox")){
 
+            WebDriverManager.firefoxdriver().setup();
+            File pathBinary = new File("C:\\Program Files\\Mozilla Firefox\\firefox.exe");
+            FirefoxBinary firefoxBinary = new FirefoxBinary(pathBinary);
+            DesiredCapabilities desired = DesiredCapabilities.firefox();
+            FirefoxOptions options = new FirefoxOptions();
+            desired.setCapability(FirefoxOptions.FIREFOX_OPTIONS, options.setBinary(firefoxBinary));
+            driver = new FirefoxDriver();
+        }
+        else if(Browser.equalsIgnoreCase("Edge")){
+            WebDriverManager.edgedriver().setup();
+            ChromeOptions chromeOptions = new ChromeOptions();
+            chromeOptions.setBinary(
+                    "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe");
+            EdgeOptions edgeOptions = new EdgeOptions().merge(chromeOptions);
+            driver = new EdgeDriver();
+        }
+        else{
+            throw new Exception("Browser is not correct");
+        }
         //driver.navigate().to("https://test.z2data.com/");
         driver.get("https://parts.z2data.com");
         login();

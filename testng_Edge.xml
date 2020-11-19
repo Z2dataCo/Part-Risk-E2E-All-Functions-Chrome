@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Chrome E2ETS Test Suite">
-    <parameter name="Browser" value="Chrome" />
-    <test verbose="2" name="Chrome Main Function E2ETS">
+    <parameter name="Browser" value="Edge" />
+    <test verbose="2" name="Edge Main Function E2ETS">
         <classes>
             <class name="E2ETS.A_1_Parametric_Search">
                 <methods>
@@ -61,7 +61,7 @@
             </class>
         </classes>
     </test>
-    <test verbose="2" name="Chrome Sub Function E2ETS">
+    <test verbose="2" name="Edge Sub Function E2ETS">
         <classes>
             <class name="E2ETS.L_2_Fun_Search_Part_Number">
                 <methods>
