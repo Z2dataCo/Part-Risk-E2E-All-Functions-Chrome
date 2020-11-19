@@ -42,6 +42,9 @@ public class Test_Base {
     //public String Z2dataSpinnerClassName ="spinner-circle full-screen";
     Faker faker = new Faker();
     public String Z2DataFakerFolder = faker.name().firstName();
+    public String Z2DataPCNID = "PD22748X";
+    public String Z2DataMPNID = "FSP012-FHEN2";
+
 
     @SuppressWarnings("unused")
     @BeforeSuite

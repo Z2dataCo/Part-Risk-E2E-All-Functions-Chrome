@@ -66,7 +66,7 @@ public class PCN_Manager_Page extends Page_Base {
     @FindBy(xpath = "//div[@id=\"PCNManagerPCNTab\"]/div[2]/div[1]/div[1]/div/span[1]")
     public WebElement Showing_Of_Total;
 
-    @FindBy(xpath = "//*[@id=\"dataconfigrationtableTableView\"]/tr[48]/td[2]/span[1]")
+    @FindBy(xpath = "//*[@id=\"dataconfigrationtableTableView\"]/tr[48]/td[2]")
     public WebElement Impacted_MPN_Results;
 
     @FindBy(xpath = "//*[@id=\"PCNManagerPCNTab\"]/div[3]/div/div/div/div[1]/div/div[2]/h4/span[2]")
