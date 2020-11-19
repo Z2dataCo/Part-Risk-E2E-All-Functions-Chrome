@@ -11,9 +11,11 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
+import org.testng.xml.internal.TestNamesMatcher;
 
 import java.io.File;
 import java.text.SimpleDateFormat;
@@ -21,6 +23,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
+import java.util.function.Function;
 
 public class Test_Base {
     public static WebDriver driver;
@@ -44,25 +47,25 @@ public class Test_Base {
 
     @SuppressWarnings("unused")
     @BeforeSuite
-    public static void SetUp( )   {
+    public static void SetUp() {
 
 
-            ChromeOptions options = new ChromeOptions();
-            options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
-            options.setProxy(null);
-            options.addArguments("--disable-remote-fonts");
-            options.addArguments("--enable-precache");
-            options.addArguments("--start-maximized");
-            options.addArguments("--disable-extensions");
-            options.addArguments("--disable-modal-animations");
+        ChromeOptions options = new ChromeOptions();
+        options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
+        options.setProxy(null);
+        options.addArguments("--disable-remote-fonts");
+        options.addArguments("--enable-precache");
+        options.addArguments("--start-maximized");
+        options.addArguments("--disable-extensions");
+        options.addArguments("--disable-modal-animations");
 
-            WebDriverManager.chromedriver().setup();
-            driver = new ChromeDriver(options);
 
+        WebDriverManager.chromedriver().setup();
+        driver = new ChromeDriver(options);
         //driver.navigate().to("https://test.z2data.com/");
         driver.get("https://parts.z2data.com");
         login();
-        WaitAllElement();
+        DeleteCookies();
         //JavascriptExecutor js = (JavascriptExecutor) driver;
     }
 
@@ -78,13 +81,24 @@ public class Test_Base {
                 System.out.println("Exception while taking screenshot " + e.getMessage());
             }
         }
-        Thread.sleep(2000);
+
         driver.get("https://parts.z2data.com/");
+        Refresh();
+        WaitAllElement();
+        if (ITestResult.FAILURE == result.getStatus()) {
+            System.out.println("Scenario Fail");
+        } else if (ITestResult.SUCCESS == result.getStatus()) {
+            System.out.println("Scenario Pass");
+        } else if (ITestResult.SKIP == result.getStatus()) {
+            System.out.println("Scenario Skip");
+
+        }
+
     }
 
     @AfterSuite
-    public void TearDown(){
-        driver.quit();
+    public void TearDown() {
+        // driver.quit();
     }
 
     public static void Switch_Tabs() {
@@ -154,5 +168,21 @@ public class Test_Base {
 
     }
 
+    public static void Refresh() {
+        driver.navigate().refresh();
+    }
+
+    public static void DeleteCookies() {
+        driver.manage().deleteAllCookies();
+    }
+
+    @BeforeMethod
+    public void WaitElementAppear() {
+        WaitAllElement();
+    }
+
+    public void ClearInput(WebElement element){
+        element.clear();
+    }
 
 }

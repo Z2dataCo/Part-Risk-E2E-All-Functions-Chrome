@@ -10,7 +10,7 @@ public class Dashboard_Page extends Page_Base {
     @FindBy(xpath = "//*[@id=\"dashboard_content\"]/div/div/div[1]/div[2]/div[1]/app-dashboard-forecast/div/div[1]/div[2]/div/label/div")
     WebElement Switches_Dashboard;
     @FindBy(linkText = "Reports")
-    WebElement Reports;
+  public  WebElement Reports;
 
     public Dashboard_Page(WebDriver driver) {
         super(driver);

@@ -22,11 +22,24 @@ public class V_Fun_Create_Folder_Data_Management extends Test_Base {
         LandObj.Z2D_Open_Data_Management();
         Wait_Element_Clickable(DManagementObj.Create_Folder);
         DManagementObj.Z2D_Create_Folder();
+        Wait_Element_Visible(DManagementObj.Folder_Name_Input);
+        DManagementObj.Folder_Name_Input.click();
         DManagementObj.Z2D_Folder_Name(Z2DataFakerFolder);
         DManagementObj.Z2D_Submit_Folder();
         Thread.sleep(2000);
         Assert.assertEquals(driver.getPageSource().contains(Z2DataFakerFolder), Z2DataFakerFolder.contains(Z2DataFakerFolder));
         Wait_Element_Invisibility(DManagementObj.Toast_Container);
-        //Wait_Element_Visible(LandObj.MY_Account);
+        String istRow = DManagementObj.istRow.getText();
+        if (istRow.equals(Z2DataFakerFolder)) {
+            DManagementObj.DeleteBom();
+            DManagementObj.DeleteConfirmation();
+            if (!driver.getPageSource().contains(Z2DataFakerFolder)) {
+                Assert.assertNotEquals(istRow, Z2DataFakerFolder);
+            }
+
+        } else {
+            System.out.println("Folder not Exist");
+        }
+
     }
 }

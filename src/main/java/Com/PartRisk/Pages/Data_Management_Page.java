@@ -47,7 +47,7 @@ public class Data_Management_Page extends Page_Base {
     public WebElement My_BOM;
     @FindBy(xpath = "//*[@id=\"reportToHide\"]/div[2]/div[2]/div[3]/table/thead/tr/th[6]")
     public WebElement of_Suppliers;
-    @FindBy(xpath = "//*[@id=\"divSearchFolders\"]/input")
+    @FindBy(xpath = "//*[@Class='form-control ui-autocomplete-input autocomplete ng-pristine ng-valid ng-touched']")
     public WebElement Search_Text_Input;
     @FindBy(xpath = "//*[@id=\"z2page-head-bar\"]/div/app-create-alert/button/span")
     public WebElement Followed_Text;
@@ -64,7 +64,7 @@ public class Data_Management_Page extends Page_Base {
     @FindBy(xpath = "//strong[contains(text(),'TAP_BOM')]")
     public WebElement Search_Result;
     @FindBy(xpath = "//tbody/tr[2]//td[2]/a[1]")
-    WebElement Select_BOM;
+    public WebElement Select_BOM;
     @FindBy(xpath = "//a[contains(text(),'TAP_BOM_Proud_Test')]")
     public WebElement Select_Proud_Test_BOM;
     @FindBy(xpath = "//a[contains(text(),'Parts')]")
@@ -114,6 +114,15 @@ public class Data_Management_Page extends Page_Base {
 
     @FindBy(linkText = "Next")
     public WebElement Next_Btn;
+
+    @FindBy(xpath = "//*[@class='table-responsive']//tbody/tr[1]/td[2]/a")
+    public WebElement istRow;
+
+    @FindBy(xpath = "//*[@id=\"reportToHide\"]/div[2]/div[2]/div[3]/table/tbody/tr[1]/td[8]/div/app-datamanagement-boms-popups/div[1]/a[2]")
+    public WebElement Delete;
+
+    @FindBy(xpath = "/html/body/modal-container/div/div/div/button[1]")
+    public WebElement Yes_Delete;
 
     public Data_Management_Page(WebDriver driver) {
         super(driver);
@@ -170,7 +179,7 @@ public class Data_Management_Page extends Page_Base {
     }
 
     public void Z2D_Open_BOM() {
-        Click_Button(Select_BOM);
+        Click_Button(Select_Proud_Test_BOM);
     }
 
     public void Z2D_Type_Folder_Name(String text) {
@@ -259,15 +268,24 @@ public class Data_Management_Page extends Page_Base {
     public void Z2D_Move_To_Prod_BOM(WebDriver driver) {
         driver.get("https://parts.z2data.com/RiskManager?BomId=119090");
     }
-    public void Z2D_Move_to_Mitigation_Bom(WebDriver driver){
+
+    public void Z2D_Move_to_Mitigation_Bom(WebDriver driver) {
         driver.get("https://parts.z2data.com/RiskManager/Mitigation?BomId=119090");
     }
 
-    public void SetFile(){
+    public void SetFile() {
         Click_Button(Test_Folder);
     }
 
-    public void SetSearchValue(){
+    public void SetSearchValue() {
         Click_Button(Search_Result);
+    }
+
+    public void DeleteBom() {
+        Click_Button(Delete);
+    }
+
+    public void DeleteConfirmation() {
+        Click_Button(Yes_Delete);
     }
 }

@@ -8,6 +8,7 @@ import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
+import org.testng.ITestResult;
 import org.testng.annotations.Test;
 
 public class O_Fun_Count_Of_Exact_Match extends Test_Base {
@@ -23,11 +24,12 @@ public class O_Fun_Count_Of_Exact_Match extends Test_Base {
         LandObj = new Landing_Page(driver);
         ScrubPageObj = new Scrub_Page(driver);
         LandObj.Z2D_Open_Data_Management();
+        Refresh();
         Wait_Element_Visible(DManagementObj.Search_Text_Input);
-        DManagementObj.Z2D_Search(Z2DataFolderName);
-        Thread.sleep(3000);
+        DManagementObj.Z2D_Type_Folder_Name(Z2DataFolderName);
+        Wait_Element_Visible(DManagementObj.Test_Folder);
         DManagementObj.SetFile();
-        Thread.sleep(1000);
+        Wait_Element_Clickable(DManagementObj.BOM_Prod_Test);
         DManagementObj.Z2D_Open_BOM();
         Thread.sleep(2000);
         Switch_Tabs();

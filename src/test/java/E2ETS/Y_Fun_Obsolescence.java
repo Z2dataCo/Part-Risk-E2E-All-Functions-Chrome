@@ -27,8 +27,9 @@ public class Y_Fun_Obsolescence extends Test_Base {
         LandOpj.Z2D_Open_Data_Management();
         Wait_Element_Visible(DManagementObj.Search_Text_Input);
         DManagementObj.Z2D_Search(Z2DataFolderName);
-        Actions action = new Actions(driver);
-        action.moveToElement(DManagementObj.Test_Folder).click().perform();
+        Wait_Element_Visible(DManagementObj.Test_Folder);
+        DManagementObj.SetFile();
+        Wait_Element_Clickable(DManagementObj.BOM_Prod_Test);
         if (!(" TAP_BOM_Proud_Test" == driver.getPageSource())) {
             DManagementObj.Z2D_Move_To_Prod_BOM(driver);
         } else {
@@ -111,10 +112,13 @@ public class Y_Fun_Obsolescence extends Test_Base {
         DManagementObj = new Data_Management_Page(driver);
         ObsoL_Opj = new Obsolescence_Page(driver);
         LandOpj.Z2D_Open_Data_Management();
+        Refresh();
         Wait_Element_Visible(DManagementObj.Search_Text_Input);
         Thread.sleep(1000);
         DManagementObj.Z2D_Search(Z2DataFolderName);
-        DManagementObj.Z2D_Select_Folder();
+        Wait_Element_Visible(DManagementObj.Test_Folder);
+        Wait_Element_Clickable(DManagementObj.BOM_Prod_Test);
+        DManagementObj.SetFile();
         if (!(" TAP_BOM_Proud_Test" == driver.getPageSource())) {
             DManagementObj.Z2D_Move_To_Prod_BOM(driver);
         } else {
@@ -150,9 +154,11 @@ public class Y_Fun_Obsolescence extends Test_Base {
         DManagementObj = new Data_Management_Page(driver);
         ObsoL_Opj = new Obsolescence_Page(driver);
         LandOpj.Z2D_Open_Data_Management();
-        Wait_Element_Visible(DManagementObj.Search_Text_Input);
-        Thread.sleep(1000);
-        DManagementObj.Z2D_Search(Z2DataFolderName);
+        Refresh();
+        Wait_Element_Clickable(DManagementObj.Search_Text_Input);
+        DManagementObj.Search_Text_Input.click();
+        DManagementObj.Z2D_Type_Folder_Name(Z2DataFolderName);
+        Wait_Element_Visible(DManagementObj.Test_Folder);
         DManagementObj.SetFile();
         if (!(" TAP_BOM_Proud_Test" == driver.getPageSource())) {
             DManagementObj.Z2D_Move_To_Prod_BOM(driver);

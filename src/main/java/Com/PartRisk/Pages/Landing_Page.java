@@ -67,6 +67,9 @@ public class Landing_Page extends Page_Base {
     @FindBy(xpath = "//body/div[@id='dropbg']/div[1]/div[2]/div[2]/a[3]/span[1]")
     public WebElement Logout;
 
+    @FindBy(id = "progressDiv")
+    public WebElement SpinnerZezo;
+
 
     public Landing_Page(WebDriver driver) {
         super(driver);
@@ -170,4 +173,6 @@ public class Landing_Page extends Page_Base {
     public void Z2D_Logout() {
         Click_Button(Logout);
     }
+
+
 }

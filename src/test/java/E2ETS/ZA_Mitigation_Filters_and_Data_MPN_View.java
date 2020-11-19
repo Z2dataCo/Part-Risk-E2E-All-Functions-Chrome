@@ -33,6 +33,7 @@ public class ZA_Mitigation_Filters_and_Data_MPN_View extends Test_Base{
         Wait_Element_Visible(MitigationObj.Table_Body);
         String Crosses_Part_Label = MitigationObj.Suggested_Part_Label.getText();
         MitigationObj.Z2D_Click_on_Add_Part_Button();
+        WaitAllElement();
         String Added_part_Label = MitigationObj.Added_Part_Label.getText();
         Assert.assertEquals(Crosses_Part_Label,Added_part_Label);
         Wait_Element_Invisibility(DManagementObj.Toast_Container);

@@ -15,7 +15,7 @@ public class C_Upload_BOM_and_Switcher extends Test_Base {
     Parts_Page PartsObj;
     Forecast_Page ForecastObj;
 
-    @Test(priority = 3)
+    @Test(priority = 3,enabled = false)
     @Severity(SeverityLevel.CRITICAL)
     @Description("Validate User Upload BOM")
     public void User_Upload_BOM() throws Throwable {

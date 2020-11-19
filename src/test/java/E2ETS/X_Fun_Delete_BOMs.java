@@ -15,7 +15,7 @@ public class X_Fun_Delete_BOMs extends Test_Base {
     Landing_Page LandObj;
     Delete_BOM_Page DeleteOBJ;
 
-    @Test(priority = 24)
+    @Test(priority = 28)
     @Severity(SeverityLevel.CRITICAL)
     @Description("Deleting Created BOMs")
     public void Delete_BMS() throws InterruptedException {

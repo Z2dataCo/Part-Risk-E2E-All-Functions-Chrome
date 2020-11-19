@@ -15,7 +15,7 @@ public class Z_Fun_All_Obsolescence extends Test_Base {
     Obsolescence_Page ObsolescenceObj;
     Dashboard_Page DashboardObj;
 
-    @Test(priority = 28)
+    @Test(priority = 24)
     @Severity(SeverityLevel.NORMAL)
     @Description("Check that side panel of All Obsolescence PCNs shows all PCNs on the BOM")
     public void All_ObsolescencePage() throws InterruptedException {
@@ -25,10 +25,12 @@ public class Z_Fun_All_Obsolescence extends Test_Base {
         DManagementObj = new Data_Management_Page(driver);
         ObsolescenceObj = new Obsolescence_Page(driver);
         LandObj.Z2D_Open_Data_Management();
+        Refresh();
         Wait_Element_Visible(DManagementObj.Search_Text_Input);
         DManagementObj.Z2D_Search(Z2DataFolderName);
-        Actions action = new Actions(driver);
-        action.moveToElement(DManagementObj.Test_Folder).click().perform();
+        Wait_Element_Visible(DManagementObj.BOM_Prod_Test);
+        DManagementObj.SetFile();
+        Wait_Element_Clickable(DManagementObj.BOM_Prod_Test);
         if (!(" TAP_BOM_Proud_Test" == driver.getPageSource())) {
             DManagementObj.Z2D_Move_To_Prod_BOM(driver);
         } else {

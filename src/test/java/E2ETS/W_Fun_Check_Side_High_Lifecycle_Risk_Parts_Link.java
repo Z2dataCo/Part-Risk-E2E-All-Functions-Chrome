@@ -26,27 +26,21 @@ public class W_Fun_Check_Side_High_Lifecycle_Risk_Parts_Link extends Test_Base {
         DManagementObj = new Data_Management_Page(driver);
         ObsoL_Opj = new Obsolescence_Page(driver);
         LandOpj.Z2D_Open_Data_Management();
-        Wait_Element_Visible(DManagementObj.Search_Text_Input);
-        Thread.sleep(1000);
-        DManagementObj.Z2D_Search(Z2DataFolderName);
-       DManagementObj.SetFile();
+        Refresh();
+        Wait_Element_Clickable(DManagementObj.Search_Text_Input);
+        DManagementObj.Z2D_Type_Folder_Name(Z2DataFolderName);
+        Wait_Element_Clickable(DManagementObj.BOM_Prod_Test);
+        DManagementObj.SetFile();
         if (!(" TAP_BOM_Proud_Test" == driver.getPageSource())) {
             DManagementObj.Z2D_Move_To_Prod_BOM(driver);
         } else {
             DManagementObj.Z2D_Click_on_BOM();
         }
+        Wait_Element_Visible(DashOpj.Reports);
         DashOpj.Z2D_Open_Reports();
         ReportOpj.Z2D_Open_Obsolescence();
         ReportOpj.Z2D_Open_High_LifeCycle();
-
-        if ("High Lifecycle Risk Parts" == driver.getPageSource()) {
-            if (ObsoL_Opj.Last.isEnabled())
-                ObsoL_Opj.Z2D_Open_High_LifeCycle();
-
-        } else {
-
-        }
-        Wait_for_Element_to_Disappear(DManagementObj.Spinner);
+        Wait_Element_Visible(ObsoL_Opj.Last);
         ObsoL_Opj.Z2D_Get_Last_Page();
         int CountOfTable = ObsoL_Opj.Table_Size.size();
         int Count = Integer.parseInt(ObsoL_Opj.Fixed_Number.getText());
@@ -59,7 +53,6 @@ public class W_Fun_Check_Side_High_Lifecycle_Risk_Parts_Link extends Test_Base {
         System.out.println(Count);
         Assert.assertEquals(Count, AllOfRow);
         Thread.sleep(2000);
-
         ObsoL_Opj.Z2D_NRND_Parts();
         Wait_for_Element_to_Disappear(DManagementObj.Spinner);
         int CountOfTable0 = ObsoL_Opj.Table_Size.size();
@@ -67,7 +60,7 @@ public class W_Fun_Check_Side_High_Lifecycle_Risk_Parts_Link extends Test_Base {
         int CountPagination0 = Integer.parseInt(ObsoL_Opj.Next_Page.getText());
         int CountPage0 = CountPagination0 - 1;
         int SubTotal0 = CountOfTable0 * CountPage0;
-        int LastPage0= Count0 - SubTotal0;
+        int LastPage0 = Count0 - SubTotal0;
         int AllOfRow0 = LastPage0 + SubTotal0;
         System.out.println(AllOfRow0);
         System.out.println(Count0);
@@ -75,10 +68,7 @@ public class W_Fun_Check_Side_High_Lifecycle_Risk_Parts_Link extends Test_Base {
     }
 
 
-
-
 }
-
 
 
 

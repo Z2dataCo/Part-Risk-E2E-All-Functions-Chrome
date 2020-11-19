@@ -21,6 +21,7 @@ public class H_Advanced_Crosses extends Test_Base {
         LandObj.Z2D_Open_DDL_Menu();
         LandObj.Z2D_Adv_Crosses();
         LandObj.Z2D_input_Search(Z2DataAdvCrosses);
+        WaitAllElement();
         LandObj.Z2D_Adv_Product();
         Thread.sleep(3000);
         Assert.assertTrue(AdvCrosObj.Total.getText().contains("Total"));

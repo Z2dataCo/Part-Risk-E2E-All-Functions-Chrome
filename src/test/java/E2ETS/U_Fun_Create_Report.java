@@ -27,19 +27,14 @@ public class U_Fun_Create_Report extends Test_Base {
         DashboardPageObj = new Dashboard_Page(driver);
         ReportPageObj = new Report_Page(driver);
         LandObj.Z2D_Open_Data_Management();
-        Wait_Element_Visible(DManagementObj.Search_Text_Input);
+        Refresh();
+        Wait_Element_Clickable(DManagementObj.Search_Text_Input);
+        DManagementObj.Search_Text_Input.click();
         DManagementObj.Z2D_Type_Folder_Name(Z2DataFolderName);
-        DManagementObj.Z2D_Select_Folder();
-        boolean staleElement = true;
-        while (staleElement) {
-            try {
-                DManagementObj.Z2D_Open_BOM();
-                staleElement = false;
-            } catch (StaleElementReferenceException e) {
-                staleElement = true;
-            }
-        }
-        Implicitly();
+        Wait_Element_Visible(DManagementObj.Test_Folder);
+        DManagementObj.SetFile();
+        Thread.sleep(2000);
+        DManagementObj.Z2D_Open_BOM();
         Switch_Tabs();
         Implicitly();
         DashboardPageObj.Z2D_Open_Reports();
@@ -51,7 +46,7 @@ public class U_Fun_Create_Report extends Test_Base {
         ReportPageObj.Z2D_Save_Report();
         ReportPageObj.Z2D_Enter_Report_Name(Name);
         ReportPageObj.Z2D_Confirm_Report();
-        Implicitly();
+        WaitAllElement();
         Select index = new Select(ReportPageObj.DDL_Report);
         Thread.sleep(3500);
         String ExpectedResult = index.getOptions().get(1).getText();
