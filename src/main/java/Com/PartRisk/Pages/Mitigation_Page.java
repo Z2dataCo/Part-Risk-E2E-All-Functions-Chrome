@@ -33,7 +33,7 @@ public class    Mitigation_Page extends Page_Base {
     public WebElement View_Replacement_Button;
     @FindBy(xpath = "//div[@id='dropbg']//table[2]/tbody/tr[1]/td[2]/div")
     public WebElement Suggested_Part_Label;
-    @FindBy(xpath = "//div[@id='dropbg']//table[2]/tbody/tr[1]/td[1]/button")
+    @FindBy(xpath = "//*[@id]//tr[1]//button[contains(text(),'Add Part ')]")
     public WebElement Add_Part_Button;
     @FindBy(xpath = "//tbody//tr[10]/td[3]//ul/div[2]//a/span")
     public WebElement Added_Part_Label;
@@ -80,7 +80,11 @@ public class    Mitigation_Page extends Page_Base {
      Scroll_to_Element(View_Drop_Crosses_Button);
      Click_Button(View_Drop_Crosses_Button);
     }
-    public void Z2D_Click_on_Add_Part_Button(){Click_Button(Add_Part_Button);}
-    public void Z2D_Click_on_Close_Button(){Click_Button(Card_Close_Button);}
+    public void Z2D_Click_on_Add_Part_Button() throws InterruptedException {
+        Thread.sleep(1000);
+        Click_Button(Add_Part_Button);}
+    public void Z2D_Click_on_Close_Button() throws InterruptedException {
+        Click_Button(Card_Close_Button);
+        Thread.sleep(200);}
     public void Z2D_Click_on_View_Replacement_Button(){Click_Button(View_Replacement_Button);}
 }

@@ -5,12 +5,14 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
 
 public class Forecast_Page extends Page_Base {
+
 
     @FindBy(xpath = "//tbody/tr[1]/td[2]/a")
     public WebElement First_Filter;
@@ -38,8 +40,8 @@ public class Forecast_Page extends Page_Base {
     public List<WebElement> Table_Rows;
     @FindBy(xpath = "//a[contains(text(),'Forecast')]")
     public WebElement ForeCast_Tab;
-    @FindBy(className = "jtoggler-control")
-    WebElement Forecast_Switchers;
+    @FindBy(xpath = "//*[@id=\"RemainMainPage\"]//label/div ")
+    public WebElement Forecast_Switchers;
     //"//*[@id=\"RemainMainPage\"]/app-risk-manager/div[2]/div/div/div/div/label/div")
     @FindBy(xpath = "//div[@style='border-color: silver silver silver rgb(51, 122, 183);']")
     public WebElement Spinner2;
@@ -51,9 +53,11 @@ public class Forecast_Page extends Page_Base {
     public Forecast_Page(WebDriver driver) {
         super(driver);
         jse = (JavascriptExecutor) driver;
+        action = new Actions(driver);
     }
 
-    public void Z2D_Select_Switcher() {
+    public void Z2D_Select_Switcher() throws InterruptedException {
+       Thread.sleep(1000);
         Click_Button(Forecast_Switchers);
     }
     public void Z2D_Click_on_Graph(){

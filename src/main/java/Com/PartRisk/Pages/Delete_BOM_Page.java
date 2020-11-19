@@ -47,7 +47,7 @@ public class Delete_BOM_Page extends Page_Base {
             System.out.println("Looping Here1");
             System.out.println((Total_Results_Shown.getText()));
             while (!driver.findElement(By.xpath("//table[@class='table table-bordered table-striped bg-white mt-05 mb-0']/tbody/tr[" + i + "]/td[2]/a[1]")).getText().equals("TAP_BOM_Proud_Test")) {
-                if (Creat_Sub_Folder_Button.isDisplayed()) {
+                if (driver.getPageSource().contains(" My folder2")) {
                     String Button_Label = Creat_Sub_Folder_Button.getText();
                     Assert.assertEquals("Create Sub Folder", Button_Label);
                     System.out.println("Looping Here2");

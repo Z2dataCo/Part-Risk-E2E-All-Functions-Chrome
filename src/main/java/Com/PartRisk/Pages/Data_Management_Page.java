@@ -196,14 +196,16 @@ public class Data_Management_Page extends Page_Base {
         Click_Button(Create_Alert_Btn);
     }
 
-    public void Z2D_Click_on_LifeCycle() {
+    public void Z2D_Click_on_LifeCycle() throws InterruptedException {
        while (!LifeCycle_Btn.isSelected()){
         Click_Button(LifeCycle_Btn);
+        Thread.sleep(200);
        break;}}
 
-    public void Z2D_Click_on_Litigation() {
+    public void Z2D_Click_on_Litigation() throws InterruptedException {
        while (!Litigation_Btn.isSelected()){
            Click_Button(Litigation_Btn);
+           Thread.sleep(200);
            break;} }
 
     public void Z2D_Click_on_Submit_Btn(){
@@ -265,6 +267,13 @@ public class Data_Management_Page extends Page_Base {
     public void Z2D_Move_to_Mitigation_Bom(WebDriver driver){
         driver.get("https://parts.z2data.com/RiskManager/Mitigation?BomId=119090");
     }
+        public void Z2D_Move_to_Forecast_Bom(WebDriver driver){
+        driver.get("https://parts.z2data.com/RiskManager/Forecast?BomId=119090");
+    }
+    public void Z2D_Move_to_Compliance_Bom(WebDriver driver){
+        driver.get("https://parts.z2data.com/RiskManager/Compliance?BomId=119090");
+    }
+
 
     public void SetFile(){
         Click_Button(Test_Folder);
