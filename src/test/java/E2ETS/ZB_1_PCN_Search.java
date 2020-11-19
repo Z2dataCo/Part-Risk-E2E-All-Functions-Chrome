@@ -48,7 +48,6 @@ public class ZB_1_PCN_Search extends Test_Base {
         Wait_Text_To_Be(PCN_ManagerObj.FSP_Text,"FSP Power Solution GmbH");
         PCN_ManagerObj.Z2D_Move_To_Impacted_MPN();
         String Impacted_MPN_Data = PCN_ManagerObj.Impacted_MPN_Results.getText();
-        System.out.println(Impacted_MPN_Data);
         Assert.assertTrue(Impacted_MPN_Data.contains(Z2DataMPNID));
     }
 }
