@@ -22,7 +22,6 @@ public class F_1_Create_Alert_Litigation extends Test_Base {
 
         DManagementObj.Z2D_Move_To_Prod_BOM(driver);
         Wait_Element_Clickable(DManagementObj.Followed_Text);
-        //Wait_Element_Clickable(DManagementObj.Graph);
         if (DManagementObj.Followed_Text.getText().equals("Followed")) {
             DManagementObj.Z2D_Click_Followed_Btn();
             Wait_Element_Clickable(DManagementObj.Unfollow_Btn);

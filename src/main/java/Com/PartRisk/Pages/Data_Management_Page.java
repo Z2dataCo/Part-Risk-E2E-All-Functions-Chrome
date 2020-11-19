@@ -258,18 +258,22 @@ public class Data_Management_Page extends Page_Base {
         Click_Button(Select_Proud_Test_BOM);
     }
 
-    public void Z2D_Move_To_Prod_BOM(WebDriver driver) {
+    public void Z2D_Move_To_Prod_BOM(WebDriver driver) throws InterruptedException {
         driver.get("https://parts.z2data.com/RiskManager?BomId=119090");
+        Thread.sleep(200);
     }
 
-    public void Z2D_Move_to_Mitigation_Bom(WebDriver driver) {
+    public void Z2D_Move_to_Mitigation_Bom(WebDriver driver) throws InterruptedException {
         driver.get("https://parts.z2data.com/RiskManager/Mitigation?BomId=119090");
+        Thread.sleep(200);
     }
-        public void Z2D_Move_to_Forecast_Bom(WebDriver driver){
+        public void Z2D_Move_to_Forecast_Bom(WebDriver driver) throws InterruptedException {
         driver.get("https://parts.z2data.com/RiskManager/Forecast?BomId=119090");
-    }
-    public void Z2D_Move_to_Compliance_Bom(WebDriver driver){
+            Thread.sleep(200);
+        }
+    public void Z2D_Move_to_Compliance_Bom(WebDriver driver) throws InterruptedException {
         driver.get("https://parts.z2data.com/RiskManager/Compliance?BomId=119090");
+        Thread.sleep(200);
     }
 
 

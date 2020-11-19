@@ -26,8 +26,6 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER" level="application" />
     <orderEntry type="library" name="org.testng.TESTNG_CONTAINER" level="application" />
-    <orderEntry type="library" name="Maven: net.sourceforge.tcljava:com.springsource.tcl.lang.jacl:1.4.1" level="project" />
-    <orderEntry type="library" name="Maven: net.sourceforge.tcljava:com.springsource.tcl.lang:1.4.1" level="project" />
     <orderEntry type="library" name="Maven: io.github.mohabmohie:SHAFT_ENGINE:4.4.20201006" level="project" />
     <orderEntry type="library" name="Maven: io.appium:java-client:7.3.0" level="project" />
     <orderEntry type="library" name="Maven: cglib:cglib:3.2.12" level="project" />
@@ -113,6 +111,8 @@
     <orderEntry type="library" name="Maven: com.github.cverges:expect4j:1.9" level="project" />
     <orderEntry type="library" name="Maven: org.apache.servicemix.bundles:org.apache.servicemix.bundles.oro:2.0.8_6" level="project" />
     <orderEntry type="library" name="Maven: commons-net:commons-net:3.3" level="project" />
+    <orderEntry type="library" name="Maven: net.sourceforge.tcljava:com.springsource.tcl.lang.jacl:1.4.1" level="project" />
+    <orderEntry type="library" name="Maven: net.sourceforge.tcljava:com.springsource.tcl.lang:1.4.1" level="project" />
     <orderEntry type="library" name="Maven: mysql:mysql-connector-java:8.0.21" level="project" />
     <orderEntry type="library" name="Maven: com.google.protobuf:protobuf-java:3.11.4" level="project" />
     <orderEntry type="library" name="Maven: com.microsoft.sqlserver:mssql-jdbc:8.4.1.jre14" level="project" />
