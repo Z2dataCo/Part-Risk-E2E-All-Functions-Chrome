@@ -150,12 +150,12 @@ public class Test_Base {
     }
 
     public void Wait_Element_Invisibility(WebElement element) {
-        WebDriverWait Wait = new WebDriverWait(driver, 50);
+        WebDriverWait Wait = new WebDriverWait(driver, 60);
         Wait.until(ExpectedConditions.invisibilityOf(element));
     }
 
     public void Wait_Text_To_Be(WebElement element, String Text) {
-        WebDriverWait Wait = new WebDriverWait(driver, 10);
+        WebDriverWait Wait = new WebDriverWait(driver, 20);
         Wait.until(ExpectedConditions.textToBePresentInElement(element, Text));
 
     }
