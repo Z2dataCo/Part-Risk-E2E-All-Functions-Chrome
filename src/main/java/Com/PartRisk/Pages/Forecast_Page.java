@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -38,19 +39,24 @@ public class Forecast_Page extends Page_Base {
     public List<WebElement> Table_Rows;
     @FindBy(xpath = "//a[contains(text(),'Forecast')]")
     public WebElement ForeCast_Tab;
+    @FindBy(xpath = "//*[@id=\"RemainMainPage\"]//label/div ")
+    public WebElement Forecast_Switchers;
     //"//*[@id=\"RemainMainPage\"]/app-risk-manager/div[2]/div/div/div/div/label/div")
     @FindBy(xpath = "//div[@style='border-color: silver silver silver rgb(51, 122, 183);']")
     public WebElement Spinner2;
-    @FindBy(className = "jtoggler-control")
-    WebElement Forecast_Switchers;
+
+    @FindBy(xpath = "//div[@class='z2tablemost']//table/tbody/tr[1]/td[14]")
+    public WebElement First_Row_Text;
 
 
     public Forecast_Page(WebDriver driver) {
         super(driver);
         jse = (JavascriptExecutor) driver;
+        action = new Actions(driver);
     }
 
-    public void Z2D_Select_Switcher() {
+    public void Z2D_Select_Switcher() throws InterruptedException {
+       Thread.sleep(1000);
         Click_Button(Forecast_Switchers);
     }
 

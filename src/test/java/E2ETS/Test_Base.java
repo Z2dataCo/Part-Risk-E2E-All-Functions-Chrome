@@ -48,16 +48,16 @@ public class Test_Base {
     public static void SetUp() throws InterruptedException {
 
 
-        ChromeOptions options = new ChromeOptions();
-        options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
-        options.setProxy(null);
-        options.addArguments("--disable-remote-fonts");
-        options.addArguments("--enable-precache");
-        options.addArguments("--start-maximized");
-        options.addArguments("--disable-extensions");
-        options.addArguments("--disable-modal-animations");
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver(options);
+            ChromeOptions options = new ChromeOptions();
+            options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
+            options.setProxy(null);
+            options.addArguments("--disable-remote-fonts");
+            options.addArguments("--enable-precache");
+            options.addArguments("--start-maximized");
+            options.addArguments("--disable-extensions");
+            options.addArguments("--disable-modal-animations");
+            WebDriverManager.chromedriver().setup();
+            driver = new ChromeDriver(options);
 
         //driver.navigate().to("https://test.z2data.com/");
         driver.get("https://parts.z2data.com");
@@ -158,6 +158,10 @@ public class Test_Base {
         WebDriverWait Wait = new WebDriverWait(driver, 10);
         Wait.until(ExpectedConditions.textToBePresentInElement(element, Text));
 
+    }
+    public void Wait_Text_Not_To_be(WebElement element, String Text){
+        WebDriverWait Wait = new WebDriverWait(driver, 7);
+        Wait.until(ExpectedConditions.not(ExpectedConditions.textToBePresentInElement(element,Text)));
     }
 
     @BeforeMethod

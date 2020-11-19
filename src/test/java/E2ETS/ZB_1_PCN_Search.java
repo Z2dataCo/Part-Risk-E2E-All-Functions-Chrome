@@ -18,7 +18,7 @@ public class ZB_1_PCN_Search extends Test_Base {
     @Test(priority = 30)
     @Severity(SeverityLevel.NORMAL)
     @Description("Check MPN Search Functionality using PCN Id & MPN ")
-    public void PCN_Search() throws InterruptedException {
+    public void PCN_Search (){
 
         LandObj = new Landing_Page(driver);
         DManagementObj = new Data_Management_Page(driver);
@@ -31,10 +31,11 @@ public class ZB_1_PCN_Search extends Test_Base {
         Wait_Element_Visible(PCN_ManagerObj.Dashboard_Tab_Total_PCNs);
         PCN_ManagerObj.Z2D_Open_PCNs_Tab();
         Wait_Element_Invisibility(LandObj.SpinnerZezo);
+        String Before_Search = PCN_ManagerObj.First_Search_Result.getText();
         PCN_ManagerObj.Z2D_Search("PD22748X");
         Wait_Element_Invisibility(LandObj.SpinnerZezo);
         Wait_Element_Visible(PCN_ManagerObj.Results_Table);
-        Wait_Text_To_Be(PCN_ManagerObj.First_Search_Result, "PCN #:PD22748X");
+        Wait_Text_Not_To_be(PCN_ManagerObj.First_Search_Result,Before_Search);
         String Search_Result = PCN_ManagerObj.First_Search_Result.getText();
         Assert.assertTrue(Search_Result.contains("PD22748X"));
 

@@ -49,4 +49,8 @@ public class Page_Base {
 
     public void Action() {
     }
+
+    public void Move_To_Element_CLick(WebElement element){
+        action.moveToElement(element).click(element).build().perform();
+    }
 }
