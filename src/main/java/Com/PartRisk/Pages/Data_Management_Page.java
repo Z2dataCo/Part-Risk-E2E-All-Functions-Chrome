@@ -114,6 +114,13 @@ public class Data_Management_Page extends Page_Base {
     @FindBy(linkText = "Next")
     public WebElement Next_Btn;
 
+    @FindBy(xpath = "//*[@class='table-responsive']//tbody/tr[1]/td[2]/a")
+    public WebElement istRow;
+    @FindBy(xpath = "//*[@id=\"reportToHide\"]/div[2]/div[2]/div[3]/table/tbody/tr[1]/td[8]/div/app-datamanagement-boms-popups/div[1]/a[2]")
+    public WebElement Delete;
+    @FindBy(xpath = "/html/body/modal-container/div/div/div/button[1]")
+    public WebElement Yes_Delete;
+
     public Data_Management_Page(WebDriver driver) {
         super(driver);
         action = new Actions(driver);
@@ -179,6 +186,14 @@ public class Data_Management_Page extends Page_Base {
     public void Z2D_Select_Folder() throws InterruptedException {
         Thread.sleep(2000);
         Click_Button(Search_Result);
+    }
+
+
+    public void DeleteBom() {
+        Click_Button(Delete);
+    }
+    public void DeleteConfirmation() {
+        Click_Button(Yes_Delete);
     }
 
     public void Z2D_Click_on_BOM_File() {
