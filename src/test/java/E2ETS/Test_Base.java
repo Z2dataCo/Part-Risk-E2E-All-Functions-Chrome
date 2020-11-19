@@ -160,7 +160,7 @@ public class Test_Base {
 
     }
     public void Wait_Text_Not_To_be(WebElement element, String Text){
-        WebDriverWait Wait = new WebDriverWait(driver, 7);
+        WebDriverWait Wait = new WebDriverWait(driver, 30);
         Wait.until(ExpectedConditions.not(ExpectedConditions.textToBePresentInElement(element,Text)));
     }
 

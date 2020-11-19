@@ -1,5 +1,6 @@
 package Com.PartRisk.Pages;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -62,9 +63,19 @@ public class PCN_Manager_Page extends Page_Base {
     @FindBy(xpath = "//table[@id='tblPagePCN']/tbody/tr[1]/td[4]/div[1]/span")
     public WebElement First_Search_Result;
 
+    @FindBy(xpath = "//div[@id=\"PCNManagerPCNTab\"]/div[2]/div[1]/div[1]/div/span[1]")
+    public WebElement Showing_Of_Total;
+
+    @FindBy(xpath = "//*[@id=\"dataconfigrationtableTableView\"]/tr[48]/td[2]/span[1]")
+    public WebElement Impacted_MPN_Results;
+
+    @FindBy(xpath = "//*[@id=\"PCNManagerPCNTab\"]/div[3]/div/div/div/div[1]/div/div[2]/h4/span[2]")
+    public WebElement FSP_Text;
+
 
     public PCN_Manager_Page(WebDriver driver) {
         super(driver);
+        jse = (JavascriptExecutor) driver;
     }
 
     public void Z2D_Open_Dashboard_Tab() {
@@ -91,11 +102,16 @@ public class PCN_Manager_Page extends Page_Base {
         Click_Button(PCNs_Select_First_PCN_Notification);
     }
 
+    public void Z2D_Open_First_Search_Result(){Click_Button(First_Search_Result);}
+
     public void Z2D_Search(String SeacrhWith) {
+        Search_Field.clear();
         Set_Text_Element_Text(Search_Field, SeacrhWith);
         Click_Button(Search_button);
     }
-
+public void Z2D_Move_To_Impacted_MPN() throws InterruptedException {
+        Scroll_to_Element(Impacted_MPN_Results);
+}
 }
 
 
