@@ -19,7 +19,7 @@ public class T_2_Fun_Filters_For_Compliance extends Test_Base {
     @Test(priority = 20)
     @Severity(value = SeverityLevel.NORMAL)
     @Description("Validate Filter on Compliance Page &  Check table's data")
-    public void Filters_For_Compliance() {
+    public void Filters_For_Compliance() throws InterruptedException {
         LandObj = new Landing_Page(driver);
         DManagementObj = new Data_Management_Page(driver);
         CompliancePageObj = new Compliance_Page(driver);
@@ -31,7 +31,7 @@ public class T_2_Fun_Filters_For_Compliance extends Test_Base {
         CompliancePageObj.Z2D_Click_on_First_Filter();
         Wait_Element_Invisibility(LandObj.SpinnerZezo);
         String FirstTotal = CompliancePageObj.First_Filter_Total.getText();
-        Wait_Text_To_be(CompliancePageObj.Total_Filter_Results,FirstTotal);
+        Wait_Text_To_Be(CompliancePageObj.Total_Filter_Results,FirstTotal);
         String AllTotal = CompliancePageObj.Total_Filter_Results.getText();
         Assert.assertEquals(FirstTotal, AllTotal);
 
@@ -39,7 +39,7 @@ public class T_2_Fun_Filters_For_Compliance extends Test_Base {
         CompliancePageObj.Z2D_Click_on_Second_Filter();
         Wait_Element_Invisibility(LandObj.SpinnerZezo);
         String SecTotal = CompliancePageObj.Second_Filter_Total.getText();
-        Wait_Text_To_be(CompliancePageObj.Total_Filter_Results,SecTotal);
+        Wait_Text_To_Be(CompliancePageObj.Total_Filter_Results,SecTotal);
         String AllTotal2 = CompliancePageObj.Total_Filter_Results.getText();
         Assert.assertEquals(SecTotal, AllTotal2);
     }
