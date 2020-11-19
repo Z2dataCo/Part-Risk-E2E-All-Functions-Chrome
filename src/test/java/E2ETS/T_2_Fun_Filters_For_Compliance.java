@@ -27,6 +27,7 @@ public class T_2_Fun_Filters_For_Compliance extends Test_Base {
 
         DManagementObj.Z2D_Move_to_Compliance_Bom(driver);
         Wait_Element_Invisibility(LandObj.SpinnerZezo);
+
         Wait_Element_Clickable(CompliancePageObj.First_Check_Box_Filter);
         CompliancePageObj.Z2D_Click_on_First_Filter();
         Wait_Element_Invisibility(LandObj.SpinnerZezo);
@@ -39,7 +40,7 @@ public class T_2_Fun_Filters_For_Compliance extends Test_Base {
         CompliancePageObj.Z2D_Click_on_Second_Filter();
         Wait_Element_Invisibility(LandObj.SpinnerZezo);
         String SecTotal = CompliancePageObj.Second_Filter_Total.getText();
-        Wait_Text_To_Be(CompliancePageObj.Total_Filter_Results,SecTotal);
+        Wait_Text_To_Be(CompliancePageObj.Total_Filter_Results,"0");
         String AllTotal2 = CompliancePageObj.Total_Filter_Results.getText();
         Assert.assertEquals(SecTotal, AllTotal2);
     }
