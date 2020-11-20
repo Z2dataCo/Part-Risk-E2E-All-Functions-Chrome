@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Chrome E2ETS Test Suite">
+<suite name="Firefox E2ETS Test Suite">
     <parameter name="Browser" value="Firefox" />
     <test verbose="2" name="Firefox Main Function E2ETS">
         <classes>

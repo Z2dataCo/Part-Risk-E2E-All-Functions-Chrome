@@ -65,6 +65,7 @@ public class Test_Base {
             options.addArguments("--disable-modal-animations");
             WebDriverManager.chromedriver().setup();
             driver = new ChromeDriver(options);
+            driver.manage().window().maximize();
         }
         else if(Browser.equalsIgnoreCase("Firefox")){
 
@@ -75,6 +76,7 @@ public class Test_Base {
             FirefoxOptions options = new FirefoxOptions();
             desired.setCapability(FirefoxOptions.FIREFOX_OPTIONS, options.setBinary(firefoxBinary));
             driver = new FirefoxDriver();
+            driver.manage().window().maximize();
         }
         else if(Browser.equalsIgnoreCase("Edge")){
             WebDriverManager.edgedriver().setup();
@@ -83,7 +85,12 @@ public class Test_Base {
                     "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe");
             EdgeOptions edgeOptions = new EdgeOptions().merge(chromeOptions);
             driver = new EdgeDriver();
+            driver.manage().window().maximize();
         }
+        /*else if(){
+            WebDriverManager.().setup();
+
+        }*/
         else{
             throw new Exception("Browser is not correct");
         }
