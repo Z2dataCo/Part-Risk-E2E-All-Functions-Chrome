@@ -47,6 +47,7 @@ public class D_1_PCN_Manager extends Test_Base {
         } else {
             System.out.println("Assertion for PCNs Tab Filter Table is Failed");
         }
+        WaitAllElement();
         PCN_ManagerObj.Z2D_PCNs_First_PCN_Notification();
 
         if (PCN_ManagerObj.PCNs_First_PCN_Notification_PCN_ID.isDisplayed()) {
