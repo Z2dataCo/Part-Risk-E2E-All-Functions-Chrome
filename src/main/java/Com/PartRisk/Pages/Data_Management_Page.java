@@ -60,7 +60,7 @@ public class Data_Management_Page extends Page_Base {
     public WebElement Create_Folder;
     @FindBy(id = "FolderAutoCompleteSearch")
     WebElement Search_Btn;
-    @FindBy(xpath = "//strong[contains(text(),'TAP_BOM')]")
+    @FindBy(xpath = "//*[@id='divSearchFolders']//li[2]/a")
     public WebElement Search_Result;
     @FindBy(xpath = "//tbody/tr[2]//td[2]/a[1]")
     WebElement Select_BOM;
