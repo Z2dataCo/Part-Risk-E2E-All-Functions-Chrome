@@ -76,7 +76,7 @@ public class Parts_Page extends Page_Base {
     @FindBy(xpath = "//*[@id=\"z2parametric-all\"]/div/div[2]/div[2]/div[2]/label/span[1]")
     WebElement Fuses_Filter;
     @FindBy(xpath = "//*[@id=\"RemainMainPage\"]/app-risk-manager/div[2]/div/div/div/div/label/div")
-    WebElement Parts_Switchers;
+    public WebElement Parts_Switchers;
 
     public Parts_Page(WebDriver driver) {
         super(driver);
@@ -90,7 +90,8 @@ public class Parts_Page extends Page_Base {
         Click_Button(Fuses_Filter);
     }
 
-    public void Z2D_Select_Switcher() {
+    public void Z2D_Select_Switcher() throws InterruptedException {
+        Thread.sleep(3000);
         Click_Button(Parts_Switchers);
     }
 }
