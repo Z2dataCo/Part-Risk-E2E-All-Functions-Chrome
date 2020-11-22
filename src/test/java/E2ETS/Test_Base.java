@@ -14,6 +14,7 @@ import org.openqa.selenium.firefox.FirefoxBinary;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.opera.OperaDriver;
+import org.openqa.selenium.opera.OperaOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.safari.SafariOptions;
@@ -90,7 +91,9 @@ public class Test_Base {
 
         } else if (Browser.equalsIgnoreCase("Opera")) {
             WebDriverManager.operadriver().setup();
-            driver = new OperaDriver();
+            OperaOptions options = new OperaOptions();
+            options.setBinary("C:\\Users\\muhammad.sultan\\AppData\\Local\\Programs\\Opera\\launcher.exe");
+            driver = new OperaDriver(options);
             driver.manage().window().maximize();
 
         } else {
