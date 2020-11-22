@@ -6,12 +6,15 @@ import io.qameta.allure.Description;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import org.testng.Assert;
+import org.testng.annotations.Optional;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 
 public class M_2_Fun_Search_IPN extends Test_Base {
     Login_Page LogObj;
     Landing_Page LandObj;
+
 
     @Test(priority = 13)
     @Severity(SeverityLevel.NORMAL)

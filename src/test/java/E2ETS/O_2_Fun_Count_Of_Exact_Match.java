@@ -54,8 +54,8 @@ public class O_2_Fun_Count_Of_Exact_Match extends Test_Base {
             int lastPageSize = FixedNum - SupTotal;
             int AllTableRows = lastPageSize + SupTotal;
             Assert.assertEquals(AllTableRows, FixedNum);
-            System.out.println(AllTableRows);
-            System.out.println(FixedNum);
+            System.out.println("Expected Result Is: "+AllTableRows);
+            System.out.println("Actual Result Is: "+FixedNum);
 
         }
 

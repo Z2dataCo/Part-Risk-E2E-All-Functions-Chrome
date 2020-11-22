@@ -14,6 +14,7 @@ import org.openqa.selenium.firefox.FirefoxBinary;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.opera.OperaDriver;
+import org.openqa.selenium.opera.OperaOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.safari.SafariOptions;
@@ -23,6 +24,7 @@ import org.testng.ITestResult;
 import org.testng.annotations.*;
 
 import java.io.File;
+import java.sql.Ref;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -55,7 +57,7 @@ public class Test_Base {
     @SuppressWarnings("unused")
     @BeforeSuite
     @Parameters("Browser")
-    public static void SetUp(String Browser) throws Exception {
+    public static void SetUp(@Optional("Chrome") String Browser) throws Exception {
 
         if (Browser.equalsIgnoreCase("Chrome")) {
             ChromeOptions options = new ChromeOptions();
@@ -90,7 +92,9 @@ public class Test_Base {
 
         } else if (Browser.equalsIgnoreCase("Opera")) {
             WebDriverManager.operadriver().setup();
-            driver = new OperaDriver();
+            OperaOptions options = new OperaOptions();
+            //options.setBinary("C:\\Program Files\\Opera\\launcher.exe");
+            driver = new OperaDriver(options);
             driver.manage().window().maximize();
 
         } else {
@@ -99,7 +103,8 @@ public class Test_Base {
         //driver.navigate().to("https://test.z2data.com/");
         driver.get("https://parts.z2data.com");
         login();
-        Thread.sleep(2000);
+        DeleteCookies();
+        WaitAllElement();
         //JavascriptExecutor js = (JavascriptExecutor) driver;
     }
 
@@ -162,10 +167,20 @@ public class Test_Base {
             } catch (Exception e) {
                 System.out.println("Exception while taking screenshot " + e.getMessage());
             }
+
         }
         WaitAllElement();
         driver.get("https://parts.z2data.com/");
+
+        if (ITestResult.SUCCESS == result.getStatus()) {
+            System.out.println("Test Scenario: " + result.getMethod().getMethodName() + "  ==========> (Scenario Pass)");
+        } else if (ITestResult.FAILURE == result.getStatus()) {
+            System.out.println("Test Scenario: " + result.getMethod().getMethodName() + "  ==========> (Scenario Fail)");
+        } else {
+            System.out.println("Test Scenario: " + result.getMethod().getMethodName() + "  ==========> (Scenario Skip)");
+        }
     }
+
 
     @AfterSuite
     public void TearDown() {
@@ -204,8 +219,15 @@ public class Test_Base {
 
     @BeforeMethod
     public void WaitElement() {
+        Refresh();
         WaitAllElement();
     }
 
+    public static void DeleteCookies() {
+        driver.manage().deleteAllCookies();
+    }
 
+    public static void Refresh() {
+        driver.navigate().refresh();
+    }
 }
