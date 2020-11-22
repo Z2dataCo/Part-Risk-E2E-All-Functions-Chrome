@@ -92,7 +92,7 @@ public class Test_Base {
         } else if (Browser.equalsIgnoreCase("Opera")) {
             WebDriverManager.operadriver().setup();
             OperaOptions options = new OperaOptions();
-            options.setBinary("C:\\Users\\muhammad.sultan\\AppData\\Local\\Programs\\Opera\\launcher.exe");
+            //options.setBinary("C:\\Program Files\\Opera\\launcher.exe");
             driver = new OperaDriver(options);
             driver.manage().window().maximize();
 
