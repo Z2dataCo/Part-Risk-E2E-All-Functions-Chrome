@@ -25,6 +25,7 @@ public class X_2_Fun_Delete_BOMs extends Test_Base {
         DeleteOBJ = new Delete_BOM_Page(driver);
 
         LandObj.Z2D_Open_Data_Management();
+        Wait_Element_Clickable(DManagementObj.Search_Text_Input);
         DManagementObj.Z2D_Type_Folder_Name(Z2DataFolderName);
         boolean staleElement = true;
         while (staleElement) {
@@ -37,10 +38,10 @@ public class X_2_Fun_Delete_BOMs extends Test_Base {
         }
         DeleteOBJ.Z2D_Click_on_Check_Box();
         int Rows_Size = DeleteOBJ.BOMs_Table.size();
-        System.out.println("Number of Tables Row : " + Rows_Size);
+        //System.out.println("Number of Tables Row : " + Rows_Size);
         Wait_Element_Visible(DeleteOBJ.Table_Body);
         DeleteOBJ.Z2D_Deleting_BOMs(driver);
-        System.out.println("All testing BOMs have been deleted successfully except : (TAP_Bom_Proud_Test)");
+        //System.out.println("All testing BOMs have been deleted successfully except : (TAP_Bom_Proud_Test)");
     }
 }
 
