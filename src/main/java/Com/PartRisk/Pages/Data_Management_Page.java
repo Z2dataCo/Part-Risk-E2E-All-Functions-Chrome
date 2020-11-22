@@ -283,7 +283,7 @@ public class Data_Management_Page extends Page_Base {
         Thread.sleep(200);
     }
         public void Z2D_Move_to_Forecast_Bom(WebDriver driver) throws InterruptedException {
-        driver.get("https://parts.z2data.com/RiskManager/Forecast?BomId=119157");
+        driver.get("https://parts.z2data.com/RiskManager/Forecast?BomId=119090");
             Thread.sleep(200);
         }
     public void Z2D_Move_to_Compliance_Bom(WebDriver driver) throws InterruptedException {

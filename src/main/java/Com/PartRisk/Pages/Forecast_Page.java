@@ -1,10 +1,7 @@
 package Com.PartRisk.Pages;
 
 import junit.framework.Assert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -39,7 +36,7 @@ public class Forecast_Page extends Page_Base {
     public List<WebElement> Table_Rows;
     @FindBy(xpath = "//a[contains(text(),'Forecast')]")
     public WebElement ForeCast_Tab;
-    @FindBy(xpath = "//*[@id=\"RemainMainPage\"]//label/div ")
+    @FindBy(xpath = "//*[@id=\"RemainMainPage\"]/app-risk-manager/div[2]/div/div/div/div/label/div/div")
     public WebElement Forecast_Switchers;
     //"//*[@id=\"RemainMainPage\"]/app-risk-manager/div[2]/div/div/div/div/label/div")
     @FindBy(xpath = "//div[@style='border-color: silver silver silver rgb(51, 122, 183);']")
@@ -57,7 +54,17 @@ public class Forecast_Page extends Page_Base {
 
     public void Z2D_Select_Switcher() throws InterruptedException {
        Thread.sleep(1000);
-        Click_Button(Forecast_Switchers);
+//       action.moveToElement(Forecast_Switchers).click().build().perform();
+        boolean Intercepted = true;
+        while (Intercepted) {
+            try {
+                Click_Button(Forecast_Switchers);
+                Intercepted = false;
+            } catch (ElementClickInterceptedException e) {
+                Intercepted = true;
+            }
+
+        }
     }
 
     public void Z2D_Click_on_Graph() {
@@ -82,7 +89,16 @@ public class Forecast_Page extends Page_Base {
     }
 
     public void Z2D_Click_on_Fifth_Filter() {
-        Click_Button(Fifth_Filter);
+        boolean Intercepted = true;
+        while (Intercepted) {
+            try {
+                Click_Button(Fifth_Filter);
+                Intercepted = false;
+            } catch (ElementClickInterceptedException e) {
+                Intercepted = true;
+            }
+
+        }
     }
 
     public void Z2D_Click_on_First_Result() {

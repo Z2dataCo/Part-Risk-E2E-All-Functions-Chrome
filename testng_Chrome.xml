@@ -22,7 +22,7 @@
             </class>
             <class name="E2ETS.D_1_PCN_Manager">
                 <methods>
-                    <include name="PCN_Manager"/>
+                    <include name="PCN_Tab"/>
                 </methods>
             </class>
             <class name="E2ETS.E_1_Create_Alert_LifeCycle">
@@ -101,7 +101,7 @@
             </class>
             <class name="E2ETS.S_2_Fun_Forecast_Graph_IPN_View">
                 <methods>
-                    <include name="ForeCast_Graph"/>
+                    <include name="ForeCast_Graph_IPN_View"/>
                 </methods>
             </class>
             <class name="E2ETS.T_2_Fun_Filters_For_Compliance">
@@ -151,6 +151,11 @@
                 <include name="PCN_Search"/>
             </methods>
         </class>
+            <class name="E2ETS.ZA_2_Fun_Mitigation_Filters_and_Data_MPN_View">
+                <methods>
+                    <include name="Mitigation_Filters_and_Data_MPN_View"/>
+                </methods>
+            </class>
         </classes>
     </test>
 </suite>

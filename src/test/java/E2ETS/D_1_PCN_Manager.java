@@ -33,7 +33,7 @@ public class D_1_PCN_Manager extends Test_Base {
         }
 
         PCN_ManagerObj.Z2D_Open_Inbox_Tab();
-        Wait_for_Element_to_Disappear(LandObj.GeneralSpinner);
+       Wait_Element_Invisibility(LandObj.SpinnerZezo);
         if (PCN_ManagerObj.Inbox_Tab_Filter_Table.isDisplayed()) {
             Assert.assertTrue((PCN_ManagerObj.Inbox_Tab_Filter_Table.isDisplayed()));
         } else {
@@ -41,7 +41,7 @@ public class D_1_PCN_Manager extends Test_Base {
         }
 
         PCN_ManagerObj.Z2D_Open_PCNs_Tab();
-        Wait_for_Element_to_Disappear(LandObj.GeneralSpinner);
+        Wait_Element_Invisibility(LandObj.SpinnerZezo);
         if (PCN_ManagerObj.PCNs_Tab_Filter_Table.isDisplayed()) {
             Assert.assertTrue((PCN_ManagerObj.PCNs_Tab_Filter_Table.isDisplayed()));
         } else {
@@ -57,7 +57,7 @@ public class D_1_PCN_Manager extends Test_Base {
         }
         Thread.sleep(1000);
         PCN_ManagerObj.Z2D_Open_Impacted_Parts_Tab();
-        Wait_for_Element_to_Disappear(LandObj.GeneralSpinner);
+        Wait_Element_Invisibility(LandObj.SpinnerZezo);
         if (PCN_ManagerObj.Impacted_Parts_Tab_Filter_Table.isDisplayed()) {
             Assert.assertTrue((PCN_ManagerObj.Impacted_Parts_Tab_Filter_Table.isDisplayed()));
         } else {
