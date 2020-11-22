@@ -274,7 +274,7 @@ public class Data_Management_Page extends Page_Base {
     }
 
     public void Z2D_Move_To_Prod_BOM(WebDriver driver) throws InterruptedException {
-        driver.get("https://parts.z2data.com/RiskManager?BomId=119090");
+        driver.get("https://parts.z2data.com/RiskManager?BomId=119157");
         Thread.sleep(200);
     }
 
