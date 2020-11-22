@@ -11,8 +11,10 @@ public class Compliance_Page extends Page_Base {
     public WebElement First_Filter_Total;
     @FindBy(xpath = "//*[@id=\"z2parametric-all\"]/div/div[3]/div[2]/div[2]/label/span[2]")
     public WebElement Second_Filter_Total;
-    @FindBy(xpath = "//*[@id=\"Information\"]/app-z2pagination/span/span[2]")
+    @FindBy(className = "CrossRef_2_InfoTotal")
     public WebElement Total_Filter_Results;
+    @FindBy(className = "CrossRef_2_Info")
+    public WebElement Showing_Of;
     @FindBy(xpath = "//*[@id=\"z2parametric-all\"]/div/div[1]/div[2]/div[1]/label/span[1]")
     public WebElement First_Check_Box_Filter;
     @FindBy(xpath = "//*[@id=\"z2parametric-all\"]/div/div[3]/div[2]/div[2]/label/span[1]")

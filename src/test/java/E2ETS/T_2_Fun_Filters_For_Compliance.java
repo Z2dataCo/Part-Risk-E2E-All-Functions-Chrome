@@ -40,8 +40,8 @@ public class T_2_Fun_Filters_For_Compliance extends Test_Base {
         CompliancePageObj.Z2D_Click_on_Second_Filter();
         Wait_Element_Invisibility(LandObj.SpinnerZezo);
         String SecTotal = CompliancePageObj.Second_Filter_Total.getText();
-        Wait_Text_Not_To_be(CompliancePageObj.Total_Filter_Results,AllTotal);
+        Wait_Text_To_Be(CompliancePageObj.Showing_Of,"Showing 1-0 of ");
         String AllTotal2 = CompliancePageObj.Total_Filter_Results.getText();
-        Assert.assertEquals(SecTotal, AllTotal2);
+        Assert.assertEquals(AllTotal2,SecTotal);
     }
 }
