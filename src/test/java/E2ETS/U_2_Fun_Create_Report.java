@@ -62,7 +62,7 @@ public class U_2_Fun_Create_Report extends Test_Base {
         if (!(ExpectedResult == ActualResult)) {
             WaitAllElement();
             Assert.assertEquals(ActualResult, ExpectedResult);
-            System.out.println("This Is Actual Result: " + ActualResult);
+            //System.out.println("This Is Actual Result: " + ActualResult);
             ReportPageObj.Z2D_Preview_Report();
             Wait_Element_Clickable(ReportPageObj.Close_Preview);
             Thread.sleep(5000);
@@ -79,7 +79,7 @@ public class U_2_Fun_Create_Report extends Test_Base {
             Wait_for_Element_to_Disappear(DManagementObj.Spinner);
         } else {
             Assert.assertEquals(ActualResult, ExpectedResult);
-            System.out.println("This Is Actual Result: " + ActualResult);
+            //System.out.println("This Is Actual Result: " + ActualResult);
             ReportPageObj.Z2D_Preview_Report();
             Wait_Element_Clickable(ReportPageObj.Close_Preview);
             Thread.sleep(5000);

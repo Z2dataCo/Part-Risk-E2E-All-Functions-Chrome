@@ -1,10 +1,12 @@
 package E2ETS;
 
 import Com.PartRisk.Pages.Landing_Page;
+import com.codeborne.selenide.Browser;
 import io.qameta.allure.Description;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import org.testng.Assert;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 public class A_1_Parametric_Search extends Test_Base {

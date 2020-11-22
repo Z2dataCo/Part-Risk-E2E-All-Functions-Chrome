@@ -15,7 +15,7 @@ public class D_1_PCN_Manager extends Test_Base {
     @Test(priority = 4)
     @Severity(SeverityLevel.NORMAL)
     @Description("Validate To Open PCN Tab")
-    public void PCN_Tab() throws InterruptedException {
+    public void PCN_Manager() throws InterruptedException {
         LandObj = new Landing_Page(driver);
         PCN_ManagerObj = new PCN_Manager_Page(driver);
 

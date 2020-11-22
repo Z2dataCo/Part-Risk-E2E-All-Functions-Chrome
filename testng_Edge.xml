@@ -21,7 +21,7 @@
             </class>
             <class name="E2ETS.D_1_PCN_Manager">
                 <methods>
-                    <include name="PCN_Tab"/>
+                    <include name="PCN_Manager"/>
                 </methods>
             </class>
             <class name="E2ETS.E_1_Create_Alert_LifeCycle">
@@ -143,6 +143,11 @@
             <class name="E2ETS.Z_2_Fun_All_Obsolescence">
                 <methods>
                     <include name="All_ObsolescencePage"/>
+                </methods>
+            </class>
+            <class name="E2ETS.ZB_1_PCN_Search">
+                <methods>
+                    <include name="PCN_Search"/>
                 </methods>
             </class>
         </classes>
