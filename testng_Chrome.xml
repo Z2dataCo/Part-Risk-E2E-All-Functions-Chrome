@@ -101,7 +101,7 @@
             </class>
             <class name="E2ETS.S_2_Fun_Forecast_Graph_IPN_View">
                 <methods>
-                    <include name="ForeCast_Graph"/>
+                    <include name="ForeCast_Graph_IPN_View"/>
                 </methods>
             </class>
             <class name="E2ETS.T_2_Fun_Filters_For_Compliance">
