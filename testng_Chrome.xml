@@ -22,7 +22,7 @@
             </class>
             <class name="E2ETS.D_1_PCN_Manager">
                 <methods>
-                    <include name="PCN_Tab"/>
+                    <include name="PCN_Manager"/>
                 </methods>
             </class>
             <class name="E2ETS.E_1_Create_Alert_LifeCycle">
