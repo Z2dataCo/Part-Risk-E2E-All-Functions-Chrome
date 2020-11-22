@@ -24,6 +24,7 @@ import org.testng.ITestResult;
 import org.testng.annotations.*;
 
 import java.io.File;
+import java.sql.Ref;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -56,7 +57,7 @@ public class Test_Base {
     @SuppressWarnings("unused")
     @BeforeSuite
     @Parameters("Browser")
-    public static void SetUp(String Browser) throws Exception {
+    public static void SetUp(@Optional("Chrome") String Browser) throws Exception {
 
         if (Browser.equalsIgnoreCase("Chrome")) {
             ChromeOptions options = new ChromeOptions();
@@ -218,6 +219,7 @@ public class Test_Base {
 
     @BeforeMethod
     public void WaitElement() {
+        Refresh();
         WaitAllElement();
     }
 
@@ -225,5 +227,7 @@ public class Test_Base {
         driver.manage().deleteAllCookies();
     }
 
-
+    public static void Refresh() {
+        driver.navigate().refresh();
+    }
 }
