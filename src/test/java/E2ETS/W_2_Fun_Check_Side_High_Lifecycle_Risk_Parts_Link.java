@@ -56,8 +56,8 @@ public class W_2_Fun_Check_Side_High_Lifecycle_Risk_Parts_Link extends Test_Base
         int SubTotal = CountOfTable * CountPage;
         int LastPage = Count - SubTotal;
         int AllOfRow = LastPage + SubTotal;
-        System.out.println(AllOfRow);
-        System.out.println(Count);
+        //System.out.println(AllOfRow);
+        //System.out.println(Count);
         Assert.assertEquals(Count, AllOfRow);
         Thread.sleep(2000);
 
@@ -70,8 +70,8 @@ public class W_2_Fun_Check_Side_High_Lifecycle_Risk_Parts_Link extends Test_Base
         int SubTotal0 = CountOfTable0 * CountPage0;
         int LastPage0 = Count0 - SubTotal0;
         int AllOfRow0 = LastPage0 + SubTotal0;
-        System.out.println(AllOfRow0);
-        System.out.println(Count0);
+        //System.out.println(AllOfRow0);
+        //System.out.println(Count0);
         Assert.assertEquals(Count0, AllOfRow0);
     }
 

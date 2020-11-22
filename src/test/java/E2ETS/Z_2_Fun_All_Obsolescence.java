@@ -44,8 +44,8 @@ public class Z_2_Fun_All_Obsolescence extends Test_Base {
         int SubTotal = CountOfTable * CountPage;
         int LastPage = Count - SubTotal;
         int AllOfRow = LastPage + SubTotal;
-        System.out.println("Actual Result  " + AllOfRow);
-        System.out.println("Expected Result  " + Count);
+        //System.out.println("Actual Result  " + AllOfRow);
+        //System.out.println("Expected Result  " + Count);
         Assert.assertEquals(Count, AllOfRow);
         Thread.sleep(3000);
         ObsolescenceObj.Z2D_Table_of_Data(driver);
