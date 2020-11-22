@@ -73,6 +73,7 @@ public class W_2_Fun_Check_Side_High_Lifecycle_Risk_Parts_Link extends Test_Base
         System.out.println(AllOfRow0);
         System.out.println(Count0);
         Assert.assertEquals(Count0, AllOfRow0);
+        Switch_Tabs();
     }
 
 
