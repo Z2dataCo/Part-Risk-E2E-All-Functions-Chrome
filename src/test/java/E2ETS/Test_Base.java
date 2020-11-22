@@ -102,7 +102,8 @@ public class Test_Base {
         //driver.navigate().to("https://test.z2data.com/");
         driver.get("https://parts.z2data.com");
         login();
-        Thread.sleep(2000);
+        DeleteCookies();
+        WaitAllElement();
         //JavascriptExecutor js = (JavascriptExecutor) driver;
     }
 
@@ -165,10 +166,20 @@ public class Test_Base {
             } catch (Exception e) {
                 System.out.println("Exception while taking screenshot " + e.getMessage());
             }
+
         }
         WaitAllElement();
         driver.get("https://parts.z2data.com/");
+
+        if (ITestResult.SUCCESS == result.getStatus()) {
+            System.out.println("Test Scenario: " + result.getMethod().getMethodName() + "  ==========> (Scenario Pass)");
+        } else if (ITestResult.FAILURE == result.getStatus()) {
+            System.out.println("Test Scenario: " + result.getMethod().getMethodName() + "  ==========> (Scenario Fail)");
+        } else {
+            System.out.println("Test Scenario: " + result.getMethod().getMethodName() + "  ==========> (Scenario Skip)");
+        }
     }
+
 
     @AfterSuite
     public void TearDown() {
@@ -208,6 +219,10 @@ public class Test_Base {
     @BeforeMethod
     public void WaitElement() {
         WaitAllElement();
+    }
+
+    public static void DeleteCookies() {
+        driver.manage().deleteAllCookies();
     }
 
 

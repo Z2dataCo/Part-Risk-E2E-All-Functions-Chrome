@@ -1,5 +1,6 @@
 package Com.PartRisk.Pages;
 
+import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -26,6 +27,15 @@ public class Compliance_Page extends Page_Base {
     }
 
     public void Z2D_Click_on_Second_Filter() {
-        Click_Button(Second_Check_Box_Filter);
+        boolean Intercepted = true;
+        while (Intercepted) {
+            try {
+                Click_Button(Second_Check_Box_Filter);
+                Intercepted = false;
+            } catch (ElementClickInterceptedException e) {
+                Intercepted = true;
+            }
+
+        }
     }
 }
