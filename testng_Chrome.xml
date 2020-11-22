@@ -2,7 +2,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Chrome E2ETS Test Suite">
     <test name="E2ETest"></test>
-    <parameter name="Browser" value="Chrome" />
+    <parameter name="Browser" value="Chrome"/>
     <test verbose="2" name="Chrome Main Function E2ETS">
         <classes>
             <class name="E2ETS.A_1_Parametric_Search">
@@ -144,6 +144,16 @@
             <class name="E2ETS.Z_2_Fun_All_Obsolescence">
                 <methods>
                     <include name="All_ObsolescencePage"/>
+                </methods>
+            </class>
+            <class name="E2ETS.ZA_2_Fun_Mitigation_Filters_and_Data_MPN_View">
+                <methods>
+                    <include name="Mitigation_Filters_and_Data_MPN_View"/>
+                </methods>
+            </class>
+            <class name="E2ETS.ZB_1_PCN_Search">
+                <methods>
+                    <include name=" PCN_Search"/>
                 </methods>
             </class>
         </classes>
