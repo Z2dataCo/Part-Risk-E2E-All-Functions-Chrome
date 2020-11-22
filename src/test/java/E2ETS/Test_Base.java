@@ -46,8 +46,6 @@ public class Test_Base {
     public String Z2DataFolderName = "TAP_BOM";
     //public String Z2DataFilePath = System.getProperty("user.dir") + "\\src\\test\\resources\\BOMs\\TABOM1.xlsx";
     public String Z2DataSwitcherStepFilePath = System.getProperty("user.dir") + "\\src\\test\\resources\\BOMs\\TABOM2.xlsx";
-    //public String Z2datafoldernamef = "fady";
-    //public String Z2dataSpinnerClassName ="spinner-circle full-screen";
     Faker faker = new Faker();
     public String Z2DataFakerFolder = faker.name().firstName();
     public String Z2DataPCNID = "PD22748X";

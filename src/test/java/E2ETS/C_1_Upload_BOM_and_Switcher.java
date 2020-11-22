@@ -29,6 +29,7 @@ public class C_1_Upload_BOM_and_Switcher extends Test_Base {
         ForecastObj = new Forecast_Page(driver);
 
         LandObj.Z2D_Upload_BOM(Z2DataSwitcherStepFilePath);
+        Wait_Element_Visible(UpBOMObj.Next);
         Wait_Element_Clickable(UpBOMObj.Next);
         UpBOMObj.Z2D_Click_Next();
         Thread.sleep(5000);
