@@ -31,7 +31,7 @@ public class ZA_2_Fun_Mitigation_Filters_and_Data_MPN_View extends Test_Base {
             MitigationObj.Z2D_Click_on_Close_Button(); }
         MitigationObj.Z2D_Click_on_DropinCrosses();
         Wait_Element_Invisibility(LandObj.SpinnerZezo);
-        Wait_Element_Visible(MitigationObj.Table_Body);
+        Wait_Text_To_Be(MitigationObj.Suggested_Part_Label,"MG18X105K100CT");
         String Crosses_Part_Label = MitigationObj.Suggested_Part_Label.getText();
         MitigationObj.Z2D_Click_on_Add_Part_Button();
         String Added_part_Label = MitigationObj.Added_Part_Label.getText();
@@ -41,6 +41,7 @@ public class ZA_2_Fun_Mitigation_Filters_and_Data_MPN_View extends Test_Base {
 
         MitigationObj.Z2D_Click_on_View_Replacement_Button();
         Wait_Element_Invisibility(LandObj.SpinnerZezo);
+        Wait_Text_To_Be(MitigationObj.Suggested_Part_Label,"GRT155R61E105ME01D");
         String Replacement_Part_Label = MitigationObj.Suggested_Part_Label.getText();
         MitigationObj.Z2D_Click_on_Add_Part_Button();
         String Added_part_Label2 = MitigationObj.Added_Part_Label.getText();
