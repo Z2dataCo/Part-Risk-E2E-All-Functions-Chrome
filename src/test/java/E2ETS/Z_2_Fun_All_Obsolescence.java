@@ -26,6 +26,7 @@ public class Z_2_Fun_All_Obsolescence extends Test_Base {
         LandObj.Z2D_Open_Data_Management();
         Wait_Element_Visible(DManagementObj.Search_Text_Input);
         DManagementObj.Z2D_Search(Z2DataFolderName);
+        Wait_Element_Clickable(DManagementObj.Test_Folder);
         DManagementObj.SetFile();
         if (!(" TAP_BOM_Proud_Test" == driver.getPageSource())) {
             DManagementObj.Z2D_Move_To_Prod_BOM(driver);
