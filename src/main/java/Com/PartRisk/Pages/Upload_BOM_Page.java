@@ -1,5 +1,7 @@
 package Com.PartRisk.Pages;
 
+import org.openqa.selenium.ElementClickInterceptedException;
+import org.openqa.selenium.ElementNotInteractableException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -56,7 +58,17 @@ public class Upload_BOM_Page extends Page_Base {
     }
 
     public void Z2D_Click_Next() {
-        Click_Button(Next);
+        boolean Intercepted = true;
+        while (Intercepted) {
+            try {
+                Click_Button(Next);
+                Intercepted = false;
+            } catch (ElementNotInteractableException e) {
+                Intercepted = true;
+            }
+
+        }
+        //Click_Button(Next);
     }
 
     public void Z2D_Select_Type() {
