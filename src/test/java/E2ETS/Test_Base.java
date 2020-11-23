@@ -13,11 +13,7 @@ import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxBinary;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
-import org.openqa.selenium.opera.OperaDriver;
-import org.openqa.selenium.opera.OperaOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.safari.SafariDriver;
-import org.openqa.selenium.safari.SafariOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.ITestResult;
@@ -46,7 +42,7 @@ public class Test_Base {
     //public String Z2DataFilePath = System.getProperty("user.dir") + "\\src\\test\\resources\\BOMs\\TABOM1.xlsx";
     public String Z2DataSwitcherStepFilePath = System.getProperty("user.dir") + "\\src\\test\\resources\\BOMs\\TABOM2.xlsx";
     Faker faker = new Faker();
-    public String Z2DataFakerFolder = faker.name().firstName()+"1";
+    public String Z2DataFakerFolder = faker.name().firstName() + "1";
     public String Z2DataPCNID = "PD22748X";
     public String Z2DataMPNID = "FSP012-FHEN2";
 
@@ -54,7 +50,7 @@ public class Test_Base {
     @SuppressWarnings("unused")
     @BeforeSuite
     @Parameters("Browser")
-    public static void SetUp(@Optional("Chrome")String Browser) throws Exception {
+    public static void SetUp(@Optional("Chrome") String Browser) throws Exception {
 
         if (Browser.equalsIgnoreCase("Chrome")) {
             ChromeOptions options = new ChromeOptions();
@@ -85,13 +81,6 @@ public class Test_Base {
                     "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe");
             EdgeOptions edgeOptions = new EdgeOptions().merge(chromeOptions);
             driver = new EdgeDriver();
-            driver.manage().window().maximize();
-
-        } else if (Browser.equalsIgnoreCase("Opera")) {
-            WebDriverManager.operadriver().setup();
-            OperaOptions options = new OperaOptions();
-            //options.setBinary("C:\\Program Files\\Opera\\launcher.exe");
-            driver = new OperaDriver(options);
             driver.manage().window().maximize();
 
         } else {

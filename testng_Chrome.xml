@@ -1,10 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Chrome E2ETS Test Suite">
-    <test name="E2ETest"></test>
     <parameter name="Browser" value="Chrome" />
     <test verbose="2" name="Chrome Main Function E2ETS">
         <classes>
+            <class name="E2ETS.AB_1_PCN_Search">
+                <methods>
+                    <include name="PCN_Search"/>
+                </methods>
+            </class>
+            <class name="E2ETS.AC_1_Upload_BOM_and_Switcher">
+                <methods>
+                    <include name="Upload_BOM_and_Switcher"/>
+                </methods>
+            </class>
             <class name="E2ETS.A_1_Parametric_Search">
                 <methods>
                     <include name="Parametric_Search"/>
@@ -15,14 +24,14 @@
                     <include name="Data_Management"/>
                 </methods>
             </class>
-            <class name="E2ETS.AC_1_Upload_BOM_and_Switcher">
+            <class name="E2ETS.C_1_Existing_BOM_and_Switcher">
                 <methods>
-                    <include name="Upload_BOM_and_Switcher"/>
+                    <include name="Existing_BOM_and_Switcher"/>
                 </methods>
             </class>
             <class name="E2ETS.D_1_PCN_Manager">
                 <methods>
-                    <include name="PCN_Tab"/>
+                    <include name="PCN_Manager"/>
                 </methods>
             </class>
             <class name="E2ETS.E_1_Create_Alert_LifeCycle">
@@ -53,11 +62,6 @@
             <class name="E2ETS.J_1_Supplier_Search">
                 <methods>
                     <include name="Search_for_Supplier"/>
-                </methods>
-            </class>
-            <class name="E2ETS.AB_1_PCN_Search">
-                <methods>
-                    <include name="PCN_Search"/>
                 </methods>
             </class>
         </classes>
@@ -136,21 +140,11 @@
                     <include name="Obsolete_Part_IN_5_Years"/>
                 </methods>
             </class>
-            <class name="E2ETS.AA_2_Fun_Mitigation_Filters_and_Data_MPN_View">
-                <methods>
-                    <include name="Mitigation_Filters_and_Data_MPN_View"/>
-                </methods>
-            </class>
             <class name="E2ETS.Z_2_Fun_All_Obsolescence">
                 <methods>
                     <include name="All_ObsolescencePage"/>
                 </methods>
             </class>
-        <class name="E2ETS.AB_1_PCN_Search">
-            <methods>
-                <include name="PCN_Search"/>
-            </methods>
-        </class>
             <class name="E2ETS.AA_2_Fun_Mitigation_Filters_and_Data_MPN_View">
                 <methods>
                     <include name="Mitigation_Filters_and_Data_MPN_View"/>
