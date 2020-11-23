@@ -46,7 +46,7 @@ public class Test_Base {
     //public String Z2DataFilePath = System.getProperty("user.dir") + "\\src\\test\\resources\\BOMs\\TABOM1.xlsx";
     public String Z2DataSwitcherStepFilePath = System.getProperty("user.dir") + "\\src\\test\\resources\\BOMs\\TABOM2.xlsx";
     Faker faker = new Faker();
-    public String Z2DataFakerFolder = faker.name().firstName();
+    public String Z2DataFakerFolder = faker.name().firstName()+"1";
     public String Z2DataPCNID = "PD22748X";
     public String Z2DataMPNID = "FSP012-FHEN2";
 
