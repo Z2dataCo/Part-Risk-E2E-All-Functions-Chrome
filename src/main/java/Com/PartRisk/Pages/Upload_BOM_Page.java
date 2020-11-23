@@ -2,16 +2,14 @@ package Com.PartRisk.Pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 
 public class Upload_BOM_Page extends Page_Base {
-    Actions action;
 
-    @FindBy(xpath = "//*[@id=\"DivUploadBomFile\"]/div[1]/div[3]/div/button[2]")
+    //@FindBy(css = "body.NewPortalDes.ng-scope:nth-child(2) div.ng-scope:nth-child(13) div.pagecontent div.bomupload-full div:nth-child(1) div.bomupload-dragdrop:nth-child(6) div.forcenextbtm > button.bomupload-next.btnNext-step1")
+    @FindBy(xpath = "//body/div[@id='DivUploadBOM']/div[1]/div[1]/div[1]/div[2]/div[1]/button[1]")
+    // @FindBy(linkText = "Next")
     public WebElement Next;
-    @FindBy(xpath = "//*[@id=\"bomdropzone\"]")
-    public WebElement Image;
     @FindBy(xpath = "//*[@id=\"bommapUL\"]/li[1]/a")
     public WebElement MPN;
     @FindBy(xpath = "//*[@id=\"selectedFolderName\"]")
@@ -58,7 +56,7 @@ public class Upload_BOM_Page extends Page_Base {
     }
 
     public void Z2D_Click_Next() {
-       Click_Button(Next);
+        Click_Button(Next);
     }
 
     public void Z2D_Select_Type() {

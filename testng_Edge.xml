@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="All Test Suite">
-    <test verbose="2"  name="Part Risk E2E All Functions CB">
+<suite name="Edge E2ETS Test Suite">
+    <parameter name="Browser" value="Edge" />
+    <test verbose="2" name="Edge Main Function E2ETS">
         <classes>
-            <class name="E2ETS.AA_2_Fun_Mitigation_Filters_and_Data_MPN_View">
-                <methods>
-                    <include name="Mitigation_Filters_and_Data_MPN_View"/>
-                </methods>
-            </class>
             <class name="E2ETS.AB_1_PCN_Search">
                 <methods>
                     <include name="PCN_Search"/>
@@ -68,6 +64,15 @@
                     <include name="Search_for_Supplier"/>
                 </methods>
             </class>
+        </classes>
+    </test>
+    <test verbose="2" name="Edge Sub Function E2ETS">
+        <classes>
+            <class name="E2ETS.K_2_Fun_Filters_For_Compliance">
+                <methods>
+                    <include name="Filters_For_Compliance"/>
+                </methods>
+            </class>
             <class name="E2ETS.L_2_Fun_Search_Part_Number">
                 <methods>
                     <include name="Search_with_Part_Number"/>
@@ -100,17 +105,12 @@
             </class>
             <class name="E2ETS.R_2_Fun_Forecast_Graph_MPN_View">
                 <methods>
-                    <include name="Status_with_Forecast_Graph_MPN_View"/>
+                    <include name="Forecast_Graph_MPN_View"/>
                 </methods>
             </class>
             <class name="E2ETS.S_2_Fun_Forecast_Graph_IPN_View">
                 <methods>
                     <include name="ForeCast_Graph_IPN_View"/>
-                </methods>
-            </class>
-            <class name="E2ETS.K_2_Fun_Filters_For_Compliance">
-                <methods>
-                    <include name="Filters_For_Compliance"/>
                 </methods>
             </class>
             <class name="E2ETS.U_2_Fun_Create_Report">
@@ -143,6 +143,11 @@
             <class name="E2ETS.Z_2_Fun_All_Obsolescence">
                 <methods>
                     <include name="All_ObsolescencePage"/>
+                </methods>
+            </class>
+            <class name="E2ETS.AA_2_Fun_Mitigation_Filters_and_Data_MPN_View">
+                <methods>
+                    <include name="Mitigation_Filters_and_Data_MPN_View"/>
                 </methods>
             </class>
         </classes>

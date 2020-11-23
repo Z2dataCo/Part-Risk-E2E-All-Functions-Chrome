@@ -4,7 +4,6 @@ import Com.PartRisk.Pages.*;
 import io.qameta.allure.Description;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
-import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -17,7 +16,7 @@ public class AC_1_Upload_BOM_and_Switcher extends Test_Base {
     Mitigation_Page MitigationObj;
     Parts_Page PartsObj;
     Forecast_Page ForecastObj;
-    Actions action;
+
     @Test(priority = 31)
     @Severity(SeverityLevel.CRITICAL)
     @Description("Validate User Upload BOM")
@@ -28,14 +27,13 @@ public class AC_1_Upload_BOM_and_Switcher extends Test_Base {
         MitigationObj = new Mitigation_Page(driver);
         PartsObj = new Parts_Page(driver);
         ForecastObj = new Forecast_Page(driver);
-        Actions action = new Actions(driver);
 
         LandObj.Z2D_Upload_BOM(Z2DataSwitcherStepFilePath);
+        Wait_Element_Visible(UpBOMObj.Next);
         //Wait_Element_Visible(LandObj.Remove_File);
-        if (LandObj.Progress.isDisplayed()){
-
+        Wait_Text_Not_To_be(LandObj.Remove_File,"Cancel upload");
        // Wait_Element_Clickable(UpBOMObj.Next); // hna
-        UpBOMObj.Z2D_Click_Next();}
+        UpBOMObj.Z2D_Click_Next();
         Wait_for_Element_to_Disappear(LandObj.GeneralSpinner);
         UpBOMObj.Z2D_Select_Type();
         WaitAllElement();
