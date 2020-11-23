@@ -49,10 +49,7 @@ public class Test_Base {
 
     @SuppressWarnings("unused")
     @BeforeSuite
-    @Parameters("Browser")
-    public static void SetUp(@Optional("Chrome") String Browser) throws Exception {
-
-        if (Browser.equalsIgnoreCase("Chrome")) {
+    public static void SetUp( )   {
             ChromeOptions options = new ChromeOptions();
             options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
             options.setProxy(null);
@@ -67,28 +64,7 @@ public class Test_Base {
             WebDriverManager.chromedriver().setup();
             driver = new ChromeDriver(options);
             driver.manage().window().maximize();
-        } else if (Browser.equalsIgnoreCase("Firefox")) {
 
-            WebDriverManager.firefoxdriver().setup();
-            File pathBinary = new File("C:\\Program Files\\Mozilla Firefox\\firefox.exe");
-            FirefoxBinary firefoxBinary = new FirefoxBinary(pathBinary);
-            DesiredCapabilities desired = DesiredCapabilities.firefox();
-            FirefoxOptions options = new FirefoxOptions();
-            desired.setCapability(FirefoxOptions.FIREFOX_OPTIONS, options.setBinary(firefoxBinary));
-            driver = new FirefoxDriver();
-            driver.manage().window().maximize();
-        } else if (Browser.equalsIgnoreCase("Edge")) {
-            WebDriverManager.edgedriver().setup();
-            ChromeOptions chromeOptions = new ChromeOptions();
-            chromeOptions.setBinary(
-                    "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe");
-            EdgeOptions edgeOptions = new EdgeOptions().merge(chromeOptions);
-            driver = new EdgeDriver();
-            driver.manage().window().maximize();
-
-        } else {
-            throw new Exception("Browser is not correct");
-        }
         //driver.navigate().to("https://test.z2data.com/");
         driver.get("https://parts.z2data.com");
         login();
