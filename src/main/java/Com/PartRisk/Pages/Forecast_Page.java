@@ -54,7 +54,6 @@ public class Forecast_Page extends Page_Base {
 
     public void Z2D_Select_Switcher() throws InterruptedException {
        Thread.sleep(1000);
-//       action.moveToElement(Forecast_Switchers).click().build().perform();
         boolean Intercepted = true;
         while (Intercepted) {
             try {
