@@ -1,25 +1,22 @@
 package Com.PartRisk.Pages;
 
-import org.openqa.selenium.ElementNotInteractableException;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import java.util.List;
 
 public class Mitigation_Page extends Page_Base {
     @FindBy(xpath = "//*[@id=\"RemainMainPage\"]/app-risk-manager/div[2]/div/div/div/div/label/div")
-   public WebElement Switchers;
+    public WebElement Switchers;
     @FindBy(xpath = "/tbody/tr[10]/td[4]/div[1]/a[1]")
     WebElement Drop_Crosses;
     @FindBy(xpath = "//*[@id=\"dropbg\"]/div/div/div[2]/table[2]/tbody/tr[2]/td[1]/button")
     WebElement Add_Crosses;
-   // @FindBy(xpath = "//*[@id=\"RemainMainPage\"]/app-risk-manager/app-risk-mitigation/app-riskmitigationipn/div[1]/div[1]/div/div/div[1]")
-   // WebElement Total_Filter;
+    // @FindBy(xpath = "//*[@id=\"RemainMainPage\"]/app-risk-manager/app-risk-mitigation/app-riskmitigationipn/div[1]/div[1]/div/div/div[1]")
+    // WebElement Total_Filter;
     @FindBy(className = "nav-link active")
     public WebElement Mitigation_Tab;
-   // @FindBy(xpath = "//div[@class='z2-scorecard scorecard-parts']/div[1]/div[2]/div[1]")
-   // public WebElement Total_Parts;
+    // @FindBy(xpath = "//div[@class='z2-scorecard scorecard-parts']/div[1]/div[2]/div[1]")
+    // public WebElement Total_Parts;
     @FindBy(xpath = "//div[@class='z2-scorecard scorecard-parts']/div[2]/div[2]/div[1]")
     public WebElement Active_Parts;
     @FindBy(xpath = "//div[@class='z2-scorecard scorecard-parts']/div[3]/div[2]/div[1]")
@@ -44,13 +41,6 @@ public class Mitigation_Page extends Page_Base {
     public WebElement Table_Body;
     @FindBy(xpath = "//tbody//tr[10]/td[3]//ul/div[2]//a/span")
     public List<WebElement> Added_Part_Label_List;
-
-
-
-
-
-
-
 
 
     public Mitigation_Page(WebDriver driver) {
@@ -90,21 +80,48 @@ public class Mitigation_Page extends Page_Base {
     }
 
     public void Z2D_Click_on_DropinCrosses() throws InterruptedException {
-     Scroll_to_Element(View_Drop_Crosses_Button);
-     Click_Button(View_Drop_Crosses_Button);
+        boolean Intercepted = true;
+        while (Intercepted) {
+            try {
+                Scroll_to_Element(View_Drop_Crosses_Button);
+                Click_Button(View_Drop_Crosses_Button);
+                Thread.sleep(200);
+                Intercepted = false;
+            } catch (ElementClickInterceptedException e) {
+                Intercepted = true;
+            }
+        }
     }
+
     public void Z2D_Click_on_Add_Part_Button() throws InterruptedException {
         Thread.sleep(1000);
-        Click_Button(Add_Part_Button);}
+        Click_Button(Add_Part_Button);
+    }
+
     public void Z2D_Click_on_Close_Button() throws InterruptedException {
         boolean Intercepted = true;
         while (Intercepted) {
-            try { Click_Button(Card_Close_Button);
+            try {
+                Click_Button(Card_Close_Button);
                 Thread.sleep(200);
-                Intercepted = false; }
-            catch (ElementNotInteractableException e) {
-                Intercepted = true; }
+                Intercepted = false;
+            } catch (ElementNotInteractableException e) {
+                Intercepted = true;
+            }
         }
+    }
+
+    public void Z2D_Click_on_View_Replacement_Button() {
+        boolean Intercepted = true;
+        while (Intercepted) {
+            try {
+                Click_Button(View_Replacement_Button);
+                Thread.sleep(200);
+                Intercepted = false;
+            } catch (ElementClickInterceptedException | InterruptedException e) {
+                Intercepted = true;
+            }
         }
-    public void Z2D_Click_on_View_Replacement_Button(){Click_Button(View_Replacement_Button);}
+
+    }
 }

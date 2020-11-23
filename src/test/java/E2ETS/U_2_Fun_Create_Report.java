@@ -61,7 +61,7 @@ public class U_2_Fun_Create_Report extends Test_Base {
         String ActualResult = Name;
         if (!(ExpectedResult == ActualResult)) {
             WaitAllElement();
-            Assert.assertEquals(ActualResult, ExpectedResult);
+            Assert.assertEquals(ActualResult, ExpectedResult); // hna
             //System.out.println("This Is Actual Result: " + ActualResult);
             ReportPageObj.Z2D_Preview_Report();
             Wait_Element_Clickable(ReportPageObj.Close_Preview);

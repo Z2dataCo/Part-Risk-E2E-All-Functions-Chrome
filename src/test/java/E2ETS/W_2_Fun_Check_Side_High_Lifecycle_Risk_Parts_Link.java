@@ -23,7 +23,7 @@ public class W_2_Fun_Check_Side_High_Lifecycle_Risk_Parts_Link extends Test_Base
         ReportOpj = new Report_Page(driver);
         DManagementObj = new Data_Management_Page(driver);
         ObsoL_Opj = new Obsolescence_Page(driver);
-        LandOpj.Z2D_Open_Data_Management();
+        LandOpj.Z2D_Open_Data_Management();//hna
         Wait_Element_Visible(DManagementObj.Search_Text_Input);
         DManagementObj.Z2D_Search(Z2DataFolderName);
         Thread.sleep(3000);

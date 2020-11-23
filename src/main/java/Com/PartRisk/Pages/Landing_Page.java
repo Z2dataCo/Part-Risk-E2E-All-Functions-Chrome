@@ -67,7 +67,7 @@ public class Landing_Page extends Page_Base {
     @FindBy(xpath = "//*[@id=\"btnautoSearch\"]/i")
     WebElement btn_search;
 
-    @FindBy(xpath = "//*[@id=\"bomdropzone\"]/div[2]/a")
+    @FindBy(xpath = "//a[contains(text(),'Remove file')]")
     public WebElement Remove_File;
 
 

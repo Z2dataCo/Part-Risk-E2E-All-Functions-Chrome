@@ -55,7 +55,7 @@ public class D_1_PCN_Manager extends Test_Base {
             System.out.println("Assertion for PCNs Tab First PCN Notification Z2 PCN_ID is Failed");
         }
         WaitAllElement();
-        PCN_ManagerObj.Z2D_Open_Impacted_Parts_Tab();
+        PCN_ManagerObj.Z2D_Open_Impacted_Parts_Tab(); // hna
         Wait_Element_Invisibility(LandObj.SpinnerZezo);
         if (PCN_ManagerObj.Impacted_Parts_Tab_Filter_Table.isDisplayed()) {
             Assert.assertTrue((PCN_ManagerObj.Impacted_Parts_Tab_Filter_Table.isDisplayed()));
