@@ -50,7 +50,7 @@ public class Test_Base {
         ChromeOptions options = new ChromeOptions();
         options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
         options.setProxy(null);
-        options.addArguments("--headless");
+        //options.addArguments("--headless");
         // options.addArguments("--disable-gpu");
         // options.addArguments("--window-size=1400,800");
         options.addArguments("--disable-remote-fonts");
@@ -61,6 +61,7 @@ public class Test_Base {
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--no-sandbox");
         options.addArguments("--disable-infobars");
+        options.setExperimentalOption("useAutomationExtension", false);
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
