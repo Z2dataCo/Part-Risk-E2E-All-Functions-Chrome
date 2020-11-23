@@ -196,7 +196,7 @@ public class Test_Base {
     }
 
     public void Wait_Text_To_Be(WebElement element, String Text) {
-        WebDriverWait Wait = new WebDriverWait(driver, 50);
+        WebDriverWait Wait = new WebDriverWait(driver, 60);
         Wait.until(ExpectedConditions.textToBePresentInElement(element, Text));
 
     }
