@@ -42,7 +42,7 @@ public class P_2_Fun_MPN_View extends Test_Base {
         Assert.assertEquals(PartPageObj.Uploaded_Supplier.getText(), "Uploaded Supplier");
         Assert.assertEquals(PartPageObj.IPN.getText(), "IPN");
         Assert.assertEquals(PartPageObj.Part_Number.getText(), "Part Number");
-        Assert.assertEquals(PartPageObj.Supplier.getText(), "Supplier");
+        Assert.assertEquals(PartPageObj.Supplier.getText(), "Supplier"); //hna
         Assert.assertEquals(PartPageObj.Product.getText(), "Product");
         Assert.assertEquals(PartPageObj.Description.getText(), "Description");
         Assert.assertEquals(PartPageObj.Package.getText(), "Package");

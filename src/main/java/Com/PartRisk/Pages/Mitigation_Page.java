@@ -80,10 +80,10 @@ public class Mitigation_Page extends Page_Base {
     }
 
     public void Z2D_Click_on_DropinCrosses() throws InterruptedException {
-        Scroll_to_Element(View_Drop_Crosses_Button);
         boolean Intercepted = true;
         while (Intercepted) {
             try {
+                Scroll_to_Element(View_Drop_Crosses_Button);
                 Click_Button(View_Drop_Crosses_Button);
                 Thread.sleep(200);
                 Intercepted = false;

@@ -24,7 +24,7 @@ public class O_2_Fun_Count_Of_Exact_Match extends Test_Base {
         LandObj.Z2D_Open_Data_Management();
         Thread.sleep(4000);
         DManagementObj.Z2D_Search(Z2DataFolderName);
-        DManagementObj.SetFile();
+        DManagementObj.SetFile(); // hna
         Thread.sleep(1000);
         DManagementObj.Z2D_Open_BOM();
         Thread.sleep(2000);

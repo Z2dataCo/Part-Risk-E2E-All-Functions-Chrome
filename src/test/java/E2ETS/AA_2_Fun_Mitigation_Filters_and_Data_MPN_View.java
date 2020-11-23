@@ -29,7 +29,7 @@ public class AA_2_Fun_Mitigation_Filters_and_Data_MPN_View extends Test_Base {
         Wait_Element_Invisibility(LandObj.SpinnerZezo);
         while (MitigationObj.Added_Part_Label_List.size()!=0){
             MitigationObj.Z2D_Click_on_Close_Button(); }
-        MitigationObj.Z2D_Click_on_DropinCrosses();
+        MitigationObj.Z2D_Click_on_DropinCrosses();//hna intercepted
         Wait_Element_Invisibility(LandObj.SpinnerZezo);
         Wait_Element_Visible(MitigationObj.Suggested_Part_Label);
         String Crosses_Part_Label = MitigationObj.Suggested_Part_Label.getText();
