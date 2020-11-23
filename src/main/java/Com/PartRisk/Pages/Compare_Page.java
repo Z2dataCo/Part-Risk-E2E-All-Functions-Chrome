@@ -16,7 +16,7 @@ public class Compare_Page extends Page_Base {
     @FindBy(id = "part_autocom_1")
     public WebElement Compare2;
     @FindBy(xpath = "//*[@id=\"headerEl\"]/div/div/a[2]")
-    WebElement Differences;
+    public WebElement Differences;
     @FindBy(xpath = "//*[@id=\"headerEl\"]/div/div/a[3]")
     WebElement Similarities;
 
