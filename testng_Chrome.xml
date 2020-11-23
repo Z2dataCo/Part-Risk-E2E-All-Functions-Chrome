@@ -15,7 +15,7 @@
                     <include name="Data_Management"/>
                 </methods>
             </class>
-            <class name="E2ETS.C_1_Upload_BOM_and_Switcher">
+            <class name="E2ETS.AC_1_Upload_BOM_and_Switcher">
                 <methods>
                     <include name="Upload_BOM_and_Switcher"/>
                 </methods>
@@ -55,7 +55,7 @@
                     <include name="Search_for_Supplier"/>
                 </methods>
             </class>
-            <class name="E2ETS.ZB_1_PCN_Search">
+            <class name="E2ETS.AB_1_PCN_Search">
                 <methods>
                     <include name="PCN_Search"/>
                 </methods>
@@ -136,7 +136,7 @@
                     <include name="Obsolete_Part_IN_5_Years"/>
                 </methods>
             </class>
-            <class name="E2ETS.ZA_2_Fun_Mitigation_Filters_and_Data_MPN_View">
+            <class name="E2ETS.AA_2_Fun_Mitigation_Filters_and_Data_MPN_View">
                 <methods>
                     <include name="Mitigation_Filters_and_Data_MPN_View"/>
                 </methods>
@@ -146,12 +146,12 @@
                     <include name="All_ObsolescencePage"/>
                 </methods>
             </class>
-        <class name="E2ETS.ZB_1_PCN_Search">
+        <class name="E2ETS.AB_1_PCN_Search">
             <methods>
                 <include name="PCN_Search"/>
             </methods>
         </class>
-            <class name="E2ETS.ZA_2_Fun_Mitigation_Filters_and_Data_MPN_View">
+            <class name="E2ETS.AA_2_Fun_Mitigation_Filters_and_Data_MPN_View">
                 <methods>
                     <include name="Mitigation_Filters_and_Data_MPN_View"/>
                 </methods>

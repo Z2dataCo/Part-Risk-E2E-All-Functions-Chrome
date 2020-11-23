@@ -7,7 +7,7 @@ import io.qameta.allure.SeverityLevel;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class ZB_1_PCN_Search extends Test_Base {
+public class AB_1_PCN_Search extends Test_Base {
     Landing_Page LandObj;
     Data_Management_Page DManagementObj;
     Forecast_Page ForeCastObj;
