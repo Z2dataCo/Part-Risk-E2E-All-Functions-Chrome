@@ -56,6 +56,9 @@ public class Test_Base {
             ChromeOptions options = new ChromeOptions();
             options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
             options.setProxy(null);
+           // options.addArguments("--headless");
+           // options.addArguments("--disable-gpu");
+           // options.addArguments("--window-size=1400,800");
             options.addArguments("--disable-remote-fonts");
             options.addArguments("--enable-precache");
             options.addArguments("--start-maximized");
@@ -159,11 +162,11 @@ public class Test_Base {
         driver.get("https://parts.z2data.com/");
 
         if (ITestResult.SUCCESS == result.getStatus()) {
-            System.out.println("[Scenario PASSED]: " + result.getMethod().getMethodName());
+            System.out.println("Test Scenario: " + result.getMethod().getMethodName() + "  ==========> (Scenario Pass)");
         } else if (ITestResult.FAILURE == result.getStatus()) {
-            System.out.println("[Scenario FAIL]: "   + result.getMethod().getMethodName());
+            System.out.println("Test Scenario: " + result.getMethod().getMethodName() + "  ==========> (Scenario Fail)");
         } else {
-            System.out.println("Scenario SKIPPED]: " + result.getMethod().getMethodName());
+            System.out.println("Test Scenario: " + result.getMethod().getMethodName() + "  ==========> (Scenario Skip)");
         }
     }
 
@@ -193,13 +196,13 @@ public class Test_Base {
     }
 
     public void Wait_Text_To_Be(WebElement element, String Text) {
-        WebDriverWait Wait = new WebDriverWait(driver, 20);
+        WebDriverWait Wait = new WebDriverWait(driver, 50);
         Wait.until(ExpectedConditions.textToBePresentInElement(element, Text));
 
     }
 
     public void Wait_Text_Not_To_be(WebElement element, String Text) {
-        WebDriverWait Wait = new WebDriverWait(driver, 30);
+        WebDriverWait Wait = new WebDriverWait(driver, 50);
         Wait.until(ExpectedConditions.not(ExpectedConditions.textToBePresentInElement(element, Text)));
     }
 
@@ -207,7 +210,6 @@ public class Test_Base {
     public void WaitElement() {
         Refresh();
         WaitAllElement();
-
     }
 
     public static void DeleteCookies() {
