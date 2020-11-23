@@ -56,6 +56,9 @@ public class Test_Base {
             ChromeOptions options = new ChromeOptions();
             options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
             options.setProxy(null);
+           // options.addArguments("--headless");
+           // options.addArguments("--disable-gpu");
+           // options.addArguments("--window-size=1400,800");
             options.addArguments("--disable-remote-fonts");
             options.addArguments("--enable-precache");
             options.addArguments("--start-maximized");
@@ -193,13 +196,13 @@ public class Test_Base {
     }
 
     public void Wait_Text_To_Be(WebElement element, String Text) {
-        WebDriverWait Wait = new WebDriverWait(driver, 20);
+        WebDriverWait Wait = new WebDriverWait(driver, 50);
         Wait.until(ExpectedConditions.textToBePresentInElement(element, Text));
 
     }
 
     public void Wait_Text_Not_To_be(WebElement element, String Text) {
-        WebDriverWait Wait = new WebDriverWait(driver, 30);
+        WebDriverWait Wait = new WebDriverWait(driver, 50);
         Wait.until(ExpectedConditions.not(ExpectedConditions.textToBePresentInElement(element, Text)));
     }
 

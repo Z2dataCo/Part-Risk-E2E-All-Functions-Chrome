@@ -35,8 +35,7 @@ public class AB_1_PCN_Search extends Test_Base {
         PCN_ManagerObj.Z2D_Search(Z2DataPCNID);
         Wait_Element_Invisibility(LandObj.SpinnerZezo);
         Wait_Element_Visible(PCN_ManagerObj.Results_Table);
-        Wait_Text_Not_To_be(PCN_ManagerObj.Showing_Of_Total,Before_Search);
-        WaitAllElement();
+        Wait_Text_To_Be(PCN_ManagerObj.Showing_Of_Total,"Showing 1-3 of");
         String Search_Result = PCN_ManagerObj.First_Search_Result.getText();
         Assert.assertTrue(Search_Result.contains(Z2DataPCNID));
 
