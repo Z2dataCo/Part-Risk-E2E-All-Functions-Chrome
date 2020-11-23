@@ -91,7 +91,6 @@
                         <suiteXmlFile>testng_Chrome.xml</suiteXmlFile>
                         <suiteXmlFile>testng_Edge.xml</suiteXmlFile>
                         <suiteXmlFile>testng_Firefox.xml</suiteXmlFile>
-                        <suiteXmlFile>testng_Opera.xml</suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
             </plugin>

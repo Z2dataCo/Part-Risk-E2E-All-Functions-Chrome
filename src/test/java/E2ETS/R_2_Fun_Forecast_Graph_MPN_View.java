@@ -18,7 +18,7 @@ public class R_2_Fun_Forecast_Graph_MPN_View extends Test_Base {
     @Test(priority = 18)
     @Severity(value = SeverityLevel.NORMAL)
     @Description("Validate affecting Forecast Graph by filtering the Status & Check table's data ")
-    public void Status_with_Forecast_Graph_MPN_View() throws Exception {
+    public void Forecast_Graph_MPN_View() throws Exception {
         LandObj = new Landing_Page(driver);
         DManagementObj = new Data_Management_Page(driver);
         ForeCastObj = new Forecast_Page(driver);
