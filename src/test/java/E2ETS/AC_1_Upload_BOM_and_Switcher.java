@@ -31,9 +31,9 @@ public class AC_1_Upload_BOM_and_Switcher extends Test_Base {
         LandObj.Z2D_Upload_BOM(Z2DataSwitcherStepFilePath);
         Wait_Element_Visible(UpBOMObj.Next);
         //Wait_Element_Visible(LandObj.Remove_File);
-        Wait_Text_Not_To_be(LandObj.Remove_File,"Cancel upload");
-       // Wait_Element_Clickable(UpBOMObj.Next); // hna
-        UpBOMObj.Z2D_Click_Next();
+      //  Wait_Text_Not_To_be(LandObj.Remove_File,"Cancel upload");
+        if (LandObj.Remove_File.isDisplayed()){
+            UpBOMObj.Z2D_Click_Next();}
         Wait_for_Element_to_Disappear(LandObj.GeneralSpinner);
         UpBOMObj.Z2D_Select_Type();
         WaitAllElement();
