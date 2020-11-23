@@ -67,8 +67,8 @@ public class Landing_Page extends Page_Base {
     @FindBy(xpath = "//*[@id=\"btnautoSearch\"]/i")
     WebElement btn_search;
 
-    @FindBy(xpath = "//*[@id=\"bomdropzone\"]/div[2]/a")
-    public WebElement Remove_File;
+    @FindBy(xpath = "//a[contains(text(),'Remove file')]")
+    public WebElement Progress;
 
 
     public Landing_Page(WebDriver driver) {
@@ -174,4 +174,6 @@ public class Landing_Page extends Page_Base {
     public void Z2D_Logout() {
         Click_Button(Logout);
     }
+
+
 }

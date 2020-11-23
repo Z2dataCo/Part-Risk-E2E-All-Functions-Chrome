@@ -206,9 +206,14 @@ public class Test_Base {
         Wait.until(ExpectedConditions.not(ExpectedConditions.textToBePresentInElement(element, Text)));
     }
 
+    public void Wait_Attribute(WebElement element,String Attribute , String Text) {
+        WebDriverWait Wait = new WebDriverWait(driver, 50);
+        Wait.until(ExpectedConditions.attributeToBe(element,Attribute,Text));
+    }
+
     @BeforeMethod
     public void WaitElement() {
-        Refresh();
+       Refresh();
         WaitAllElement();
 
     }
