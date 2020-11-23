@@ -1,5 +1,6 @@
 package Com.PartRisk.Pages;
 
+import org.openqa.selenium.ElementNotInteractableException;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -96,7 +97,14 @@ public class Mitigation_Page extends Page_Base {
         Thread.sleep(1000);
         Click_Button(Add_Part_Button);}
     public void Z2D_Click_on_Close_Button() throws InterruptedException {
-        Click_Button(Card_Close_Button);
-        Thread.sleep(200);}
+        boolean Intercepted = true;
+        while (Intercepted) {
+            try { Click_Button(Card_Close_Button);
+                Thread.sleep(200);
+                Intercepted = false; }
+            catch (ElementNotInteractableException e) {
+                Intercepted = true; }
+        }
+        }
     public void Z2D_Click_on_View_Replacement_Button(){Click_Button(View_Replacement_Button);}
 }
