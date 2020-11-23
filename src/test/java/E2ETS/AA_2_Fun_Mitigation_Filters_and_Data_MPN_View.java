@@ -16,7 +16,7 @@ public class AA_2_Fun_Mitigation_Filters_and_Data_MPN_View extends Test_Base {
     Forecast_Page ForeCastObj;
     Mitigation_Page MitigationObj;
 
-    @Test(priority = 29)
+    @Test(priority = 29,timeOut = 120000)
     @Severity(SeverityLevel.NORMAL)
     @Description("Check Mitigation Filters & Data in MPN View")
     public void Mitigation_Filters_and_Data_MPN_View() throws InterruptedException {
