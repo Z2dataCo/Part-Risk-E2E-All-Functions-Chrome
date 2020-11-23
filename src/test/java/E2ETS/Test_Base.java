@@ -162,11 +162,11 @@ public class Test_Base {
         driver.get("https://parts.z2data.com/");
 
         if (ITestResult.SUCCESS == result.getStatus()) {
-            System.out.println("[Scenario PASSED]: " + result.getMethod().getMethodName());
+            System.out.println("[SCENARIO PASSED]:" + result.getMethod().getMethodName());
         } else if (ITestResult.FAILURE == result.getStatus()) {
-            System.out.println("[Scenario FAIL]: "   + result.getMethod().getMethodName());
+            System.out.println("[SCENARIO FAIL]:"   + result.getMethod().getMethodName());
         } else {
-            System.out.println("Scenario SKIPPED]: " + result.getMethod().getMethodName());
+            System.out.println("SCENARIO SKIPPED]:" + result.getMethod().getMethodName());
         }
     }
 

@@ -33,7 +33,7 @@ public class D_1_PCN_Manager extends Test_Base {
         }
 
         PCN_ManagerObj.Z2D_Open_Inbox_Tab();
-       Wait_Element_Invisibility(LandObj.SpinnerZezo);
+        Wait_Element_Invisibility(LandObj.SpinnerZezo);
         if (PCN_ManagerObj.Inbox_Tab_Filter_Table.isDisplayed()) {
             Assert.assertTrue((PCN_ManagerObj.Inbox_Tab_Filter_Table.isDisplayed()));
         } else {
@@ -49,13 +49,12 @@ public class D_1_PCN_Manager extends Test_Base {
         }
         WaitAllElement();
         PCN_ManagerObj.Z2D_PCNs_First_PCN_Notification();
-
         if (PCN_ManagerObj.PCNs_First_PCN_Notification_PCN_ID.isDisplayed()) {
             Assert.assertEquals(PCN_ManagerObj.PCNs_First_PCN_Notification_PCN_ID.getText(), "Z2 PCN_ID");
         } else {
             System.out.println("Assertion for PCNs Tab First PCN Notification Z2 PCN_ID is Failed");
         }
-        Thread.sleep(1000);
+        WaitAllElement();
         PCN_ManagerObj.Z2D_Open_Impacted_Parts_Tab();
         Wait_Element_Invisibility(LandObj.SpinnerZezo);
         if (PCN_ManagerObj.Impacted_Parts_Tab_Filter_Table.isDisplayed()) {
