@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Firefox E2ETS Test Suite">
-    <parameter name="Browser" value="Firefox" />
+    <parameter name="Browser" value="Firefox"/>
     <test verbose="2" name="Firefox Main Function E2ETS">
         <classes>
             <class name="E2ETS.AB_1_PCN_Search">
@@ -68,6 +68,11 @@
     </test>
     <test verbose="2" name="Firefox Sub Function E2ETS">
         <classes>
+            <class name="E2ETS.K_2_Fun_Filters_For_Compliance">
+                <methods>
+                    <include name="Filters_For_Compliance"/>
+                </methods>
+            </class>
             <class name="E2ETS.L_2_Fun_Search_Part_Number">
                 <methods>
                     <include name="Search_with_Part_Number"/>
@@ -100,17 +105,12 @@
             </class>
             <class name="E2ETS.R_2_Fun_Forecast_Graph_MPN_View">
                 <methods>
-                    <include name="Status_with_Forecast_Graph_MPN_View"/>
+                    <include name="Forecast_Graph_MPN_View"/>
                 </methods>
             </class>
             <class name="E2ETS.S_2_Fun_Forecast_Graph_IPN_View">
                 <methods>
                     <include name="ForeCast_Graph_IPN_View"/>
-                </methods>
-            </class>
-            <class name="E2ETS.T_2_Fun_Filters_For_Compliance">
-                <methods>
-                    <include name="Filters_For_Compliance"/>
                 </methods>
             </class>
             <class name="E2ETS.U_2_Fun_Create_Report">
