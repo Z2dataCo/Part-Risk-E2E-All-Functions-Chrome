@@ -162,11 +162,11 @@ public class Test_Base {
         driver.get("https://parts.z2data.com/");
 
         if (ITestResult.SUCCESS == result.getStatus()) {
-            System.out.println("Test Scenario: " + result.getMethod().getMethodName() + "  ==========> (Scenario Pass)");
+            System.out.println("[Scenario PASSED]: " + result.getMethod().getMethodName());
         } else if (ITestResult.FAILURE == result.getStatus()) {
-            System.out.println("Test Scenario: " + result.getMethod().getMethodName() + "  ==========> (Scenario Fail)");
+            System.out.println("[Scenario FAIL]: "   + result.getMethod().getMethodName());
         } else {
-            System.out.println("Test Scenario: " + result.getMethod().getMethodName() + "  ==========> (Scenario Skip)");
+            System.out.println("Scenario SKIPPED]: " + result.getMethod().getMethodName());
         }
     }
 
@@ -210,6 +210,7 @@ public class Test_Base {
     public void WaitElement() {
         Refresh();
         WaitAllElement();
+
     }
 
     public static void DeleteCookies() {
