@@ -1,5 +1,6 @@
 package Com.PartRisk.Pages;
 
+import org.openqa.selenium.ElementNotInteractableException;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -42,10 +43,13 @@ public class PCN_Manager_Page extends Page_Base {
     @FindBy(xpath = "//td[contains(text(),'Z2 PCN_ID')]")
     public WebElement PCNs_First_PCN_Notification_PCN_ID;
 
-    @FindBy(xpath = "//div[@class='z2-boxstyle1-header-left']//a")
+    @FindBy(xpath = "/html[1]/body[1]/div[5]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/h4[1]/a[1]")
     public WebElement PCNs_Notification_Back;
 
-    @FindBy(linkText = "Impacted Parts")
+
+
+
+    @FindBy(xpath = "//a[contains(text(),'Impacted Parts')]")
     public WebElement Impacted_Parts_Tab;
 
     @FindBy(xpath = "//*[@id=\"DivAlertsFilterPCN\"]/div[1]/div[2]/div[1]/div")
@@ -92,10 +96,22 @@ public class PCN_Manager_Page extends Page_Base {
 
     public void Z2D_Back_from_PCN_Notification() {
         Click_Button(PCNs_Notification_Back);
+
     }
 
     public void Z2D_Open_Impacted_Parts_Tab() {
         Click_Button(Impacted_Parts_Tab);
+        boolean Intercepted = true;
+        while (Intercepted) {
+            try {
+                Click_Button(Impacted_Parts_Tab);
+                Intercepted = false;
+            } catch (ElementNotInteractableException e) {
+                Intercepted = true;
+            }
+
+        }
+
     }
 
     public void Z2D_PCNs_First_PCN_Notification() {

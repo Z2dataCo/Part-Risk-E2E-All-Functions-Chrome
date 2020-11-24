@@ -50,6 +50,16 @@ public class Mitigation_Page extends Page_Base {
 
     public void Z2D_Select_Switcher() {
         Click_Button(Switchers);
+       // boolean Intercepted = true;
+       // while (Intercepted) {
+            //try {
+               // Click_Button(Switchers);
+             //   Intercepted = false;
+           // } catch (Exception e) {
+            //    Intercepted = true;
+         //   }
+       // }
+
     }
 
     public void Z2D_Open_Drop_INCrosses() throws InterruptedException {
