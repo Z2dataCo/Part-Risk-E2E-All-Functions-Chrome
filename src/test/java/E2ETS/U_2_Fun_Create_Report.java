@@ -9,6 +9,7 @@ import io.qameta.allure.Description;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import org.openqa.selenium.StaleElementReferenceException;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -20,6 +21,7 @@ public class U_2_Fun_Create_Report extends Test_Base {
     Report_Page ReportPageObj;
     Data_Management_Page DManagementObj;
     Landing_Page LandObj;
+    Actions act;
 
     @Test(priority = 21)
     @Severity(SeverityLevel.CRITICAL)
@@ -29,10 +31,12 @@ public class U_2_Fun_Create_Report extends Test_Base {
         DManagementObj = new Data_Management_Page(driver);
         DashboardPageObj = new Dashboard_Page(driver);
         ReportPageObj = new Report_Page(driver);
+        act = new Actions(driver);
         LandObj.Z2D_Open_Data_Management();
         Wait_Element_Visible(DManagementObj.Search_Text_Input);
         DManagementObj.Z2D_Type_Folder_Name(Z2DataFolderName);
-        DManagementObj.Z2D_Select_Folder();
+        Wait_Element_Clickable(DManagementObj.Search_Result);
+        act.moveToElement(DManagementObj.Search_Result).click().build().perform();
         boolean staleElement = true;
         while (staleElement) {
             try {
