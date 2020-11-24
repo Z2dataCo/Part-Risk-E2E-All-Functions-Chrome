@@ -33,14 +33,12 @@ public class U_2_Fun_Create_Report extends Test_Base {
         ReportPageObj = new Report_Page(driver);
         act = new Actions(driver);
         LandObj.Z2D_Open_Data_Management();
-        Wait_for_Element_to_Disappear(LandObj.GeneralSpinner);
+        Wait_Element_Clickable(DManagementObj.Search_Text_Input);
         DManagementObj.Z2D_Type_Folder_Name(Z2DataFolderName);
-        Wait_Element_Clickable(DManagementObj.Search_Result);
-        act.moveToElement(DManagementObj.Search_Result).click().build().perform();
         boolean staleElement = true;
         while (staleElement) {
             try {
-                DManagementObj.Z2D_Open_BOM();
+                DManagementObj.Z2D_Select_Folder();
                 staleElement = false;
             } catch (StaleElementReferenceException e) {
                 staleElement = true;
