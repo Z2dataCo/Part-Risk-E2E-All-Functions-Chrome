@@ -28,7 +28,7 @@ public class Q_2_Fun_IPN_View extends Test_Base {
         Wait_for_Element_to_Disappear(LandObj.GeneralSpinner);
         DManagementObj.Z2D_Search(Z2DataFolderName);
         act.moveToElement(DManagementObj.Test_Folder).click().build().perform();
-        Wait_Element_Clickable(DManagementObj.Select_BOM);
+       Thread.sleep(1000);
         DManagementObj.Z2D_Open_BOM();
         Switch_Tabs();
         WaitAllElement();

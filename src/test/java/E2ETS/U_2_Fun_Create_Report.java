@@ -33,7 +33,7 @@ public class U_2_Fun_Create_Report extends Test_Base {
         ReportPageObj = new Report_Page(driver);
         act = new Actions(driver);
         LandObj.Z2D_Open_Data_Management();
-        Wait_Element_Visible(DManagementObj.Search_Text_Input);
+        Wait_for_Element_to_Disappear(LandObj.GeneralSpinner);
         DManagementObj.Z2D_Type_Folder_Name(Z2DataFolderName);
         Wait_Element_Clickable(DManagementObj.Search_Result);
         act.moveToElement(DManagementObj.Search_Result).click().build().perform();
@@ -46,7 +46,6 @@ public class U_2_Fun_Create_Report extends Test_Base {
                 staleElement = true;
             }
         }
-        Implicitly();
         Switch_Tabs();
         Implicitly();
         DashboardPageObj.Z2D_Open_Reports();
