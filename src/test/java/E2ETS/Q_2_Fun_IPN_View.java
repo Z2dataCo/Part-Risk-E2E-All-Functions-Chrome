@@ -6,6 +6,7 @@ import Com.PartRisk.Pages.Parts_Page;
 import io.qameta.allure.Description;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -13,6 +14,7 @@ public class Q_2_Fun_IPN_View extends Test_Base {
     Parts_Page PartPageObj;
     Data_Management_Page DManagementObj;
     Landing_Page LandObj;
+    Actions act;
 
     @Test(priority = 17)
     @Severity(SeverityLevel.CRITICAL)
@@ -21,16 +23,15 @@ public class Q_2_Fun_IPN_View extends Test_Base {
         LandObj = new Landing_Page(driver);
         DManagementObj = new Data_Management_Page(driver);
         PartPageObj = new Parts_Page(driver);
+        act = new Actions(driver);
         LandObj.Z2D_Open_Data_Management();
         Wait_Element_Visible(DManagementObj.Search_Text_Input);
         DManagementObj.Z2D_Search(Z2DataFolderName);
-        Thread.sleep(3000);
-        DManagementObj.SetFile();
-        Thread.sleep(1000);
+        act.moveToElement(DManagementObj.Test_Folder).click().build().perform();
+        Wait_Element_Clickable(DManagementObj.Select_BOM);
         DManagementObj.Z2D_Open_BOM();
-        Thread.sleep(2000);
         Switch_Tabs();
-        Thread.sleep(1000);
+        WaitAllElement();
         DManagementObj.Z2D_Open_Parts();
         Wait_for_Element_to_Disappear(DManagementObj.Spinner);
         PartPageObj.Z2D_Select_Switcher();

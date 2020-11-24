@@ -26,13 +26,13 @@ public class P_2_Fun_MPN_View extends Test_Base {
         LandObj.Z2D_Open_Data_Management();
         Wait_for_Element_to_Disappear(LandObj.GeneralSpinner);
         DManagementObj.Z2D_Search(Z2DataFolderName);
-        Thread.sleep(1000);
+        Wait_Element_Clickable(DManagementObj.Test_Folder);
         action.moveToElement(DManagementObj.Test_Folder).click().perform();
+        Wait_Element_Clickable(DManagementObj.Select_BOM);
         DManagementObj.Z2D_Open_BOM();
         Switch_Tabs();
         Wait_Element_Clickable(DManagementObj.Parts);
         DManagementObj.Z2D_Open_Parts();
-        Thread.sleep(3000);
         //  PartPageObj.Chek_AVX();
         Wait_for_Element_to_Disappear(DManagementObj.Spinner);
         // PartPageObj.ChekFuses();
