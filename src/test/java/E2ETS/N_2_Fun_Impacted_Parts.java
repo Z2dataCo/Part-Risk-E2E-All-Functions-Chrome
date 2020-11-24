@@ -25,8 +25,7 @@ public class N_2_Fun_Impacted_Parts extends Test_Base {
         PCN_ManagerObj = new PCN_Manager_Page(driver);
         impacted_PartsPageObj = new Impacted_Parts_Page(driver);
         LandObj.Z2D_Open_PCN_Manager();
-        Thread.sleep(3000);
-        Wait_Element_Clickable(PCN_ManagerObj.Impacted_Parts_Tab);
+        Wait_for_Element_to_Disappear(LandObj.GeneralSpinner);
         act.moveToElement(PCN_ManagerObj.Impacted_Parts_Tab).click().build().perform();
         Wait_for_Element_to_Disappear(LandObj.GeneralSpinner);
         impacted_PartsPageObj.Z2D_Select_Supplier();
