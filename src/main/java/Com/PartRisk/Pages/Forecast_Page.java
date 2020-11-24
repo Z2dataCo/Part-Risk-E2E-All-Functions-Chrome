@@ -53,18 +53,18 @@ public class Forecast_Page extends Page_Base {
     }
 
     public void Z2D_Select_Switcher() throws InterruptedException {
-      // Thread.sleep(1000);
-       // boolean Intercepted = true;
-        //while (Intercepted) {
-           // try {
-             //   Click_Button(Forecast_Switchers);
-               // Intercepted = false;
-            //} catch (ElementClickInterceptedException e) {
-             //   Intercepted = true;
-            //}
+       Thread.sleep(1000);
+        boolean Intercepted = true;
+        while (Intercepted) {
+            try {
+                Click_Button(Forecast_Switchers);
+                Intercepted = false;
+            } catch (ElementClickInterceptedException e) {
+                Intercepted = true;
+            }
 
         }
-    //}
+    }
 
     public void Z2D_Click_on_Graph() {
         Click_Button(Graph2);
