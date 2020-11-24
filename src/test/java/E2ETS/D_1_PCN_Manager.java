@@ -5,12 +5,14 @@ import Com.PartRisk.Pages.PCN_Manager_Page;
 import io.qameta.allure.Description;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class D_1_PCN_Manager extends Test_Base {
     PCN_Manager_Page PCN_ManagerObj;
     Landing_Page LandObj;
+    Actions act;
 
     @Test(priority = 4)
     @Severity(SeverityLevel.NORMAL)
@@ -18,6 +20,8 @@ public class D_1_PCN_Manager extends Test_Base {
     public void PCN_Manager() throws InterruptedException {
         LandObj = new Landing_Page(driver);
         PCN_ManagerObj = new PCN_Manager_Page(driver);
+
+
 
         LandObj.Z2D_Open_PCN_Manager();
         Wait_for_Element_to_Disappear(LandObj.GeneralSpinner);
@@ -31,7 +35,7 @@ public class D_1_PCN_Manager extends Test_Base {
         } else {
             System.out.println("Assertion Dashboard Cards is Failed");
         }
-
+        WaitAllElement();
         PCN_ManagerObj.Z2D_Open_Inbox_Tab();
         Wait_Element_Invisibility(LandObj.SpinnerZezo);
         if (PCN_ManagerObj.Inbox_Tab_Filter_Table.isDisplayed()) {
@@ -39,7 +43,7 @@ public class D_1_PCN_Manager extends Test_Base {
         } else {
             System.out.println("Assertion for Inbox Tab Filter Table is Failed");
         }
-
+        WaitAllElement();
         PCN_ManagerObj.Z2D_Open_PCNs_Tab();
         Wait_Element_Invisibility(LandObj.SpinnerZezo);
         if (PCN_ManagerObj.PCNs_Tab_Filter_Table.isDisplayed()) {
@@ -54,15 +58,15 @@ public class D_1_PCN_Manager extends Test_Base {
         } else {
             System.out.println("Assertion for PCNs Tab First PCN Notification Z2 PCN_ID is Failed");
         }
-        WaitAllElement();
-        PCN_ManagerObj.Z2D_Open_Impacted_Parts_Tab(); // hna
+        Thread.sleep(3000);
+        PCN_ManagerObj.Z2D_Back_from_PCN_Notification();
+        PCN_ManagerObj.Z2D_Open_Impacted_Parts_Tab();
         Wait_Element_Invisibility(LandObj.SpinnerZezo);
         if (PCN_ManagerObj.Impacted_Parts_Tab_Filter_Table.isDisplayed()) {
             Assert.assertTrue((PCN_ManagerObj.Impacted_Parts_Tab_Filter_Table.isDisplayed()));
         } else {
             System.out.println("Assertion for Impacted Parts Tab Filter Table is Failed");
         }
-
     }
 
 }
