@@ -1,6 +1,7 @@
 package Com.PartRisk.Pages;
 
 import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import java.util.List;
 
@@ -27,6 +28,8 @@ public class Mitigation_Page extends Page_Base {
     public WebElement Selected_Part_Number;
     @FindBy(xpath = "//tbody//tr[10]/td[4]//div[1]/a")
     public WebElement View_Drop_Crosses_Button;
+    @FindBy(xpath = "//tbody//tr[8]/td[4]//div[1]//span")
+    public WebElement Recommendation_Option;
     @FindBy(xpath = "//tbody//tr[10]/td[4]//div[2]/a")
     public WebElement View_Replacement_Button;
     @FindBy(xpath = "//div[@id='dropbg']//table[2]/tbody/tr[1]/td[2]/div")
@@ -46,6 +49,7 @@ public class Mitigation_Page extends Page_Base {
     public Mitigation_Page(WebDriver driver) {
         super(driver);
         jse = (JavascriptExecutor) driver;
+        action = new Actions(driver);
     }
 
     public void Z2D_Select_Switcher() {
@@ -79,17 +83,17 @@ public class Mitigation_Page extends Page_Base {
         Click_Button(End_Of_Life_Parts);
     }
 
-    public void Z2D_Click_on_DropinCrosses() throws InterruptedException {
+    public void Z2D_Click_on_DropinCrosses() {
         boolean Intercepted = true;
         while (Intercepted) {
+
             try {
-                Scroll_to_Element(View_Drop_Crosses_Button);
                 Click_Button(View_Drop_Crosses_Button);
                 Thread.sleep(200);
                 Intercepted = false;
-            } catch (ElementClickInterceptedException e) {
-                Intercepted = true;
             }
+            catch (ElementClickInterceptedException | InterruptedException e) {
+                Intercepted = true; }
         }
     }
 
@@ -111,6 +115,11 @@ public class Mitigation_Page extends Page_Base {
         }
     }
 
+
+    public void Z2D_Scroll() throws InterruptedException {
+        Scroll_to_Element(Recommendation_Option);
+        Thread.sleep(200);
+    }
     public void Z2D_Click_on_View_Replacement_Button() {
         boolean Intercepted = true;
         while (Intercepted) {

@@ -7,6 +7,7 @@ import Com.PartRisk.Pages.Mitigation_Page;
 import io.qameta.allure.Description;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -16,7 +17,7 @@ public class AA_2_Fun_Mitigation_Filters_and_Data_MPN_View extends Test_Base {
     Forecast_Page ForeCastObj;
     Mitigation_Page MitigationObj;
 
-    @Test(priority = 29,timeOut = 120000)
+    @Test(priority = 29)
     @Severity(SeverityLevel.NORMAL)
     @Description("Check Mitigation Filters & Data in MPN View")
     public void Mitigation_Filters_and_Data_MPN_View() throws InterruptedException {
@@ -27,8 +28,10 @@ public class AA_2_Fun_Mitigation_Filters_and_Data_MPN_View extends Test_Base {
 
         DManagementObj.Z2D_Move_to_Mitigation_Bom(driver);
         Wait_Element_Invisibility(LandObj.SpinnerZezo);
+        MitigationObj.Z2D_Scroll();
         while (MitigationObj.Added_Part_Label_List.size()!=0){
-            MitigationObj.Z2D_Click_on_Close_Button(); }
+            MitigationObj.Z2D_Click_on_Close_Button();}
+        Wait_Element_Clickable(MitigationObj.View_Drop_Crosses_Button);
         MitigationObj.Z2D_Click_on_DropinCrosses();//hna intercepted
         Wait_Element_Invisibility(LandObj.SpinnerZezo);
         Wait_Element_Visible(MitigationObj.Suggested_Part_Label);
