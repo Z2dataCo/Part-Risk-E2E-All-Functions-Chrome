@@ -79,9 +79,9 @@ public class AC_1_Upload_BOM_and_Switcher extends Test_Base {
         UpBOMObj.Z2D_Click_Forecast_Tab();
         Assert.assertEquals(UpBOMObj.Forecast_Tab.getText(), "Forecast");
         Wait_for_Element_to_Disappear(DManagementObj.Spinner);
-        ForecastObj.Z2D_Select_Switcher();
+        PartsObj.Z2D_Select_Switcher();
         Wait_for_Element_to_Disappear(DManagementObj.Spinner);
-        ForecastObj.Z2D_Select_Switcher();
+        PartsObj.Z2D_Select_Switcher();
         Wait_for_Element_to_Disappear(DManagementObj.Spinner);
 
         Wait_Element_Visible(UpBOMObj.Compliance_Tab);
