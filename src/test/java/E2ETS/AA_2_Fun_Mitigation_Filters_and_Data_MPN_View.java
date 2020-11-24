@@ -64,6 +64,7 @@ public class AA_2_Fun_Mitigation_Filters_and_Data_MPN_View extends Test_Base {
 
         String NRND_Parts = MitigationObj.NRND_Parts.getText();
         System.out.println("NRND_Filter_Value : " + NRND_Parts);
+        Wait_Element_Clickable(MitigationObj.NRND_Parts);
         MitigationObj.Z2D_Click_on_NRND_Filter();
         Wait_Element_Invisibility(LandObj.SpinnerZezo);
         Wait_Text_To_Be(ForeCastObj.TotalValue,"226");
@@ -73,6 +74,7 @@ public class AA_2_Fun_Mitigation_Filters_and_Data_MPN_View extends Test_Base {
 
         String End_of_Life_Parts = MitigationObj.End_Of_Life_Parts.getText();
         System.out.println("End_Of_Life_Parts : " + End_of_Life_Parts);
+        Wait_Element_Clickable(MitigationObj.End_Of_Life_Parts);
         MitigationObj.Z2D_Click_on_EndofLife_Filter();
         Wait_for_Element_to_Disappear(ForeCastObj.Spinner);
         Wait_Text_To_Be(ForeCastObj.TotalValue,"248");

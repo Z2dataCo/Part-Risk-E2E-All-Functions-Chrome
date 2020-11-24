@@ -85,13 +85,10 @@ public class Mitigation_Page extends Page_Base {
         Click_Button(Active_Parts);
     }
 
-    public void Z2D_Click_on_NRND_Filter() {
-        Click_Button(NRND_Parts);
-    }
+    public void Z2D_Click_on_NRND_Filter() { Click_Button(NRND_Parts); }
 
-    public void Z2D_Click_on_EndofLife_Filter() {
-        Click_Button(End_Of_Life_Parts);
-    }
+    public void Z2D_Click_on_EndofLife_Filter() { Click_Button(End_Of_Life_Parts); }
+
 
     public void Z2D_Click_on_DropinCrosses() {
         boolean Intercepted = true;
