@@ -42,7 +42,7 @@ public class AB_1_PCN_Search extends Test_Base {
         PCN_ManagerObj.Z2D_Search(Z2DataMPNID);
         Wait_Element_Invisibility(LandObj.SpinnerZezo);
         Wait_Element_Visible(PCN_ManagerObj.Results_Table);
-        Wait_Text_Not_To_be(PCN_ManagerObj.Showing_Of_Total,Before_Search);
+        Wait_Text_Not_To_be(PCN_ManagerObj.Showing_Of_Total,"Showing 1-21 of");
         PCN_ManagerObj.Z2D_Open_First_Search_Result();
         Wait_Element_Invisibility(LandObj.SpinnerZezo);
         Wait_Text_To_Be(PCN_ManagerObj.FSP_Text,"FSP Power Solution GmbH");
