@@ -9,6 +9,7 @@ import io.qameta.allure.Description;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import org.openqa.selenium.StaleElementReferenceException;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -20,6 +21,7 @@ public class U_2_Fun_Create_Report extends Test_Base {
     Report_Page ReportPageObj;
     Data_Management_Page DManagementObj;
     Landing_Page LandObj;
+    Actions act;
 
     @Test(priority = 21)
     @Severity(SeverityLevel.CRITICAL)
@@ -43,7 +45,6 @@ public class U_2_Fun_Create_Report extends Test_Base {
                 staleElement = true;
             }
         }
-        Implicitly();
         Switch_Tabs();
         Implicitly();
         DashboardPageObj.Z2D_Open_Reports();
