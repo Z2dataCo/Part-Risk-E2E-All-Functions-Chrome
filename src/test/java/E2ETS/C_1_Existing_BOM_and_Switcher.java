@@ -4,6 +4,8 @@ import Com.PartRisk.Pages.*;
 import io.qameta.allure.Description;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
+import org.openqa.selenium.StaleElementReferenceException;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -26,60 +28,69 @@ public class C_1_Existing_BOM_and_Switcher extends Test_Base {
         MitigationObj = new Mitigation_Page(driver);
         PartsObj = new Parts_Page(driver);
         ForecastObj = new Forecast_Page(driver);
-        Actions action = new Actions(driver);
 
         LandObj.Z2D_Open_Data_Management();
-        Wait_for_Element_to_Disappear(DManagementObj.Spinner);
-        DManagementObj.Z2D_Search(Z2DataFolderName);
-        Thread.sleep(1000);
-        action.moveToElement(DManagementObj.Test_Folder).click().perform();
+        Wait_Element_Clickable(DManagementObj.Search_Text_Input);
+        DManagementObj.Z2D_Type_Folder_Name(Z2DataFolderName);
+        boolean staleElement = true;
+        while (staleElement) {
+            try {
+                DManagementObj.Z2D_Select_Folder();
+                staleElement = false;
+            } catch (StaleElementReferenceException e) {
+                staleElement = true;
+            }
+        }
         DManagementObj.Z2D_Open_BOM();
         Switch_Tabs();
-
-        Wait_Element_Visible(UpBOMObj.Dashboard_Tab);
+        Wait_for_Element_to_Disappear(DManagementObj.Spinner);
+        Wait_Element_Clickable(UpBOMObj.High_Risk_Card);
+        Assert.assertTrue(UpBOMObj.High_Risk_Card.isDisplayed());
+        Assert.assertTrue(UpBOMObj.Compliance_Card.isDisplayed());
+        Assert.assertTrue(UpBOMObj.Market_Availability_Card.isDisplayed());
         Assert.assertEquals(UpBOMObj.Dashboard_Tab.getText(), "Dashboard");
-        Wait_for_Element_to_Disappear(DManagementObj.Spinner);
 
-        Wait_Element_Visible(UpBOMObj.Scrub_Tab);
         UpBOMObj.Z2D_Click_Scrub_Tab();
+        Wait_Element_Invisibility(LandObj.SpinnerZezo);
+        Wait_Element_Clickable(UpBOMObj.Total_Card);
+        Assert.assertTrue(UpBOMObj.Total_Card.isDisplayed());
+        Assert.assertTrue(UpBOMObj.Exact_Matches.isDisplayed());
         Assert.assertEquals(UpBOMObj.Scrub_Tab.getText(), "Scrub");
-        Wait_for_Element_to_Disappear(DManagementObj.Spinner);
 
-        Wait_Element_Visible(UpBOMObj.Parts_Tab);
         UpBOMObj.Z2D_Click_Parts_Tab();
-        Assert.assertEquals(UpBOMObj.Parts_Tab.getText(), "Parts");
-        Wait_for_Element_to_Disappear(DManagementObj.Spinner);
-        PartsObj.Z2D_Select_Switcher();
-        Wait_for_Element_to_Disappear(DManagementObj.Spinner);
-        PartsObj.Z2D_Select_Switcher();
-        Wait_for_Element_to_Disappear(DManagementObj.Spinner);
+        Wait_Element_Invisibility(LandObj.SpinnerZezo);
+        Wait_Element_Clickable(UpBOMObj.First_CheckBox);
+        Assert.assertTrue(UpBOMObj.First_Table_Data.isDisplayed());
 
-        Wait_Element_Visible(UpBOMObj.Forecast_Tab);
         UpBOMObj.Z2D_Click_Forecast_Tab();
-        Assert.assertEquals(UpBOMObj.Forecast_Tab.getText(), "Forecast");
-        Wait_for_Element_to_Disappear(DManagementObj.Spinner);
+        Wait_Element_Invisibility(LandObj.SpinnerZezo);
+        Wait_Element_Clickable(ForecastObj.First_Filter);
+        Assert.assertTrue(ForecastObj.First_Filter.isDisplayed());
+        Assert.assertTrue(ForecastObj.Second_Filter.isDisplayed());
         ForecastObj.Z2D_Select_Switcher();
-        Wait_for_Element_to_Disappear(DManagementObj.Spinner);
-        ForecastObj.Z2D_Select_Switcher();
-        Wait_for_Element_to_Disappear(DManagementObj.Spinner);
+        Wait_Element_Invisibility(LandObj.SpinnerZezo);
+        Wait_Element_Clickable(ForecastObj.First_Filter);
+        Assert.assertTrue(ForecastObj.First_Filter.isDisplayed());
+        Assert.assertTrue(ForecastObj.Second_Filter.isDisplayed());
 
-        Wait_Element_Visible(UpBOMObj.Compliance_Tab);
         UpBOMObj.Z2D_Click_Compliance_Tab();
-        Assert.assertEquals(UpBOMObj.Compliance_Tab.getText(), "Compliance");
-        Wait_for_Element_to_Disappear(DManagementObj.Spinner);
+        Wait_Element_Invisibility(LandObj.SpinnerZezo);
+        Wait_Element_Clickable(UpBOMObj.First_CheckBox_Comp);
+        Assert.assertTrue(UpBOMObj.First_Table_Data_Comp.isDisplayed());
 
-        Wait_Element_Visible(UpBOMObj.Mitigation_Tab);
         UpBOMObj.Z2D_Click_Mitigation_Tab();
-        Assert.assertEquals(UpBOMObj.Mitigation_Tab.getText(), "Mitigation");
-        Wait_for_Element_to_Disappear(DManagementObj.Spinner);
-        MitigationObj.Z2D_Select_Switcher();
-        Wait_for_Element_to_Disappear(DManagementObj.Spinner);
-        MitigationObj.Z2D_Select_Switcher();
-        Wait_for_Element_to_Disappear(DManagementObj.Spinner);
+        Wait_Element_Invisibility(LandObj.SpinnerZezo);
+        Wait_Element_Clickable(UpBOMObj.Total_Card_Mitigation);
+        Assert.assertTrue(UpBOMObj.Total_Card_Mitigation.isDisplayed());
+        Assert.assertTrue(UpBOMObj.Unknown_Card.isDisplayed());
+        ForecastObj.Z2D_Select_Switcher();
+        Wait_Element_Invisibility(LandObj.SpinnerZezo);
+        Assert.assertTrue(MitigationObj.Active_Parts.isDisplayed());
+        Assert.assertTrue(MitigationObj.NRND_Parts.isDisplayed());
 
-        Wait_Element_Visible(UpBOMObj.Reports_Tab);
         UpBOMObj.Z2D_Click_Reports_Tab();
-        Assert.assertEquals(UpBOMObj.Reports_Tab.getText(), "Reports");
-        Wait_for_Element_to_Disappear(DManagementObj.Spinner);
+        Wait_Element_Invisibility(LandObj.SpinnerZezo);
+        Wait_Element_Clickable(UpBOMObj.Preview_Button);
+        Assert.assertTrue(UpBOMObj.First_Report.isDisplayed());
     }
 }

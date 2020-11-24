@@ -26,19 +26,19 @@ public class Upload_BOM_Page extends Page_Base {
     public WebElement BOM_Text;
     @FindBy(xpath = "//*[@id=\"DivUploadBomMapCols\"]/div[3]/table/thead/tr/td[2]/a/span")
     public WebElement MPN_MSG;
-    @FindBy(xpath = "//body/div[@id='main_start_page']/app-root[1]/div[3]/app-risk-manager[1]/div[2]/div[1]/div[1]/ul[1]/li[1]/a[1]")
+    @FindBy(xpath = "//a[contains(text(),'Dashboard')]")
     public WebElement Dashboard_Tab;
-    @FindBy(xpath = "//body/div[@id='main_start_page']/app-root[1]/div[3]/app-risk-manager[1]/div[2]/div[1]/div[1]/ul[1]/li[2]/a[1]")
+    @FindBy(xpath = "//a[contains(text(),'Scrub')]")
     public WebElement Scrub_Tab;
-    @FindBy(xpath = "//body/div[@id='main_start_page']/app-root[1]/div[3]/app-risk-manager[1]/div[2]/div[1]/div[1]/ul[1]/li[3]/a[1]")
+    @FindBy(xpath = "//a[contains(text(),'Parts')]")
     public WebElement Parts_Tab;
-    @FindBy(linkText = "Forecast")
+    @FindBy(xpath = "//a[contains(text(),'Forecast')]")
     public WebElement Forecast_Tab;
-    @FindBy(xpath = "//body/div[@id='main_start_page']/app-root[1]/div[3]/app-risk-manager[1]/div[2]/div[1]/div[1]/ul[1]/li[5]/a[1]")
+    @FindBy(xpath = "//a[contains(text(),'Compliance')]")
     public WebElement Compliance_Tab;
-    @FindBy(xpath = "//body/div[@id='main_start_page']/app-root[1]/div[3]/app-risk-manager[1]/div[2]/div[1]/div[1]/ul[1]/li[6]/a[1]")
+    @FindBy(xpath = "//a[contains(text(),'Mitigation')]")
     public WebElement Mitigation_Tab;
-    @FindBy(xpath = "//body/div[@id='main_start_page']/app-root[1]/div[3]/app-risk-manager[1]/div[2]/div[1]/div[1]/ul[1]/li[7]/a[1]")
+    @FindBy(xpath = "//a[contains(text(),'Reports')]")
     public WebElement Reports_Tab;
     @FindBy(xpath = "//*[@id=\"z2page-head-bar\"]/div/h1/span")
     public WebElement Assert_For_Part_Number;
@@ -52,6 +52,43 @@ public class Upload_BOM_Page extends Page_Base {
     WebElement Selected_Folder;
     @FindBy(xpath = "//*[@id=\"DivUploadBomMapCols\"]/div[3]/table/thead/tr/td[3]")
     public WebElement Column2;
+    @FindBy(xpath = "//*[@id=\"dashboard_content\"]//app-dashboard-risk/div/div[1]/div[1]")
+    public WebElement High_Risk_Card;
+    @FindBy(xpath = "//*[@id=\"dashboard_content\"]//app-dashboard-risk/div/div[2]/div[1]")
+    public WebElement Compliance_Card;
+    @FindBy(xpath = "//*[@id=\"dashboard_content\"]//app-dashboard-risk/div/div[3]/div[1]")
+    public WebElement Market_Availability_Card;
+    @FindBy(xpath = "//*[@id=\"scrub_content\"]/div/div[1]/div[1]/div/div[1]/div[2]/div[1]/div[1]/span")
+    public WebElement Total_Card;
+    @FindBy(xpath = "//*[@id=\"scrub_content\"]/div/div[1]/div[1]/div/div[2]/div[1]")
+    public WebElement Exact_Matches;
+    @FindBy(xpath = "//*[@id=\"partsMPNTabTBodyTblId\"]/tr[1]/td[4]/div")
+    public WebElement First_Table_Data;
+    @FindBy(xpath = "//*[@id=\"partsMPNTabTBodyTblId\"]/tr[1]/td[1]/input")
+    public WebElement First_CheckBox;
+    @FindBy(xpath = "//*[@id=\"riskProductCompliance\"]/div[4]//tbody/tr[1]/td[1]/input")
+    public WebElement First_CheckBox_Comp;
+    @FindBy(xpath = "//*[@id=\"riskProductCompliance\"]/div[4]//tbody/tr[1]/td[4]/div")
+    public WebElement First_Table_Data_Comp;
+    @FindBy(xpath = "//div[contains(text(),'Total')]")
+    public WebElement Total_Card_Mitigation;
+    @FindBy(xpath = "//*[@id=\"RemainMainPage\"]/app-risk-manager/app-risk-mitigation/app-riskmitigationipn/div[1]/div[1]/div/div/div[2]/div[1]")
+    public WebElement Unknown_Card;
+    @FindBy(xpath = "//*[@id=\"z2-2cols-sub-2cols-left\"]/div/app-myreports/div[3]/div[2]/div/div[2]/button[1]")
+    public WebElement Preview_Button;
+    @FindBy(xpath = "//*[@id=\"z2-2cols-sub-2cols-left\"]/div//div[3]/div[2]/div/div[1]/h3")
+    public WebElement First_Report;
+
+
+
+
+
+
+
+
+
+
+
 
     public Upload_BOM_Page(WebDriver driver) {
         super(driver);
