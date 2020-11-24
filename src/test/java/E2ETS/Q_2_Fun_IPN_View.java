@@ -25,7 +25,7 @@ public class Q_2_Fun_IPN_View extends Test_Base {
         PartPageObj = new Parts_Page(driver);
         act = new Actions(driver);
         LandObj.Z2D_Open_Data_Management();
-        Wait_Element_Visible(DManagementObj.Search_Text_Input);
+        Wait_for_Element_to_Disappear(LandObj.GeneralSpinner);
         DManagementObj.Z2D_Search(Z2DataFolderName);
         act.moveToElement(DManagementObj.Test_Folder).click().build().perform();
         Wait_Element_Clickable(DManagementObj.Select_BOM);
