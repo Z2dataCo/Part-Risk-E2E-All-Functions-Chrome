@@ -6,7 +6,6 @@ import Com.PartRisk.Pages.Parts_Page;
 import io.qameta.allure.Description;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
-import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -25,21 +24,15 @@ public class P_2_Fun_MPN_View extends Test_Base {
         PartPageObj = new Parts_Page(driver);
         Actions action = new Actions(driver);
         LandObj.Z2D_Open_Data_Management();
-        Wait_Element_Clickable(DManagementObj.Search_Text_Input);
-        DManagementObj.Z2D_Type_Folder_Name(Z2DataFolderName);
-        boolean staleElement = true;
-        while (staleElement) {
-            try {
-                DManagementObj.Z2D_Select_Folder();
-                staleElement = false;
-            } catch (StaleElementReferenceException e) {
-                staleElement = true;
-            }
-        }
+        Wait_for_Element_to_Disappear(DManagementObj.Spinner);
+        DManagementObj.Z2D_Search(Z2DataFolderName);
+        Thread.sleep(1000);
+        action.moveToElement(DManagementObj.Test_Folder).click().perform();
         DManagementObj.Z2D_Open_BOM();
         Switch_Tabs();
         Wait_Element_Clickable(DManagementObj.Parts);
         DManagementObj.Z2D_Open_Parts();
+        Thread.sleep(3000);
         //  PartPageObj.Chek_AVX();
         Wait_for_Element_to_Disappear(DManagementObj.Spinner);
         // PartPageObj.ChekFuses();

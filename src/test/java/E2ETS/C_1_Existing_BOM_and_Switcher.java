@@ -91,6 +91,6 @@ public class C_1_Existing_BOM_and_Switcher extends Test_Base {
         UpBOMObj.Z2D_Click_Reports_Tab();
         Wait_Element_Invisibility(LandObj.SpinnerZezo);
         Wait_Element_Clickable(UpBOMObj.Preview_Button);
-        Assert.assertTrue(UpBOMObj.First_Report.isDisplayed());
+        Assert.assertTrue(UpBOMObj.First_Report.isDisplayed()); 
     }
 }

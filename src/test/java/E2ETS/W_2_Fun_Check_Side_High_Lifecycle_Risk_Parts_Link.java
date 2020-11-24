@@ -4,7 +4,6 @@ import Com.PartRisk.Pages.*;
 import io.qameta.allure.Description;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
-import org.openqa.selenium.StaleElementReferenceException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -25,17 +24,11 @@ public class W_2_Fun_Check_Side_High_Lifecycle_Risk_Parts_Link extends Test_Base
         DManagementObj = new Data_Management_Page(driver);
         ObsoL_Opj = new Obsolescence_Page(driver);
         LandOpj.Z2D_Open_Data_Management();//hna
-        Wait_Element_Clickable(DManagementObj.Search_Text_Input);
-        DManagementObj.Z2D_Type_Folder_Name(Z2DataFolderName);
-        boolean staleElement = true;
-        while (staleElement) {
-            try {
-                DManagementObj.Z2D_Select_Folder();
-                staleElement = false;
-            } catch (StaleElementReferenceException e) {
-                staleElement = true;
-            }
-        }
+        Wait_Element_Visible(DManagementObj.Search_Text_Input);
+        DManagementObj.Z2D_Search(Z2DataFolderName);
+        Thread.sleep(3000);
+        DManagementObj.SetFile();
+        Thread.sleep(1000);
         DManagementObj.Z2D_Open_BOM();
         Thread.sleep(2000);
         if (!(" TAP_BOM_Proud_Test" == driver.getPageSource())) {
