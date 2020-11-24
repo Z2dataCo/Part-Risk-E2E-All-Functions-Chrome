@@ -8,16 +8,13 @@ import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.edge.EdgeOptions;
-import org.openqa.selenium.firefox.FirefoxBinary;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.firefox.FirefoxOptions;
-import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.ITestResult;
-import org.testng.annotations.*;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
 
 import java.io.File;
 import java.text.SimpleDateFormat;
@@ -49,46 +46,26 @@ public class Test_Base {
 
     @SuppressWarnings("unused")
     @BeforeSuite
-    @Parameters("Browser")
-    public static void SetUp(@Optional("Chrome") String Browser) throws Exception {
+    public static void SetUp() {
+        ChromeOptions options = new ChromeOptions();
+        options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
+        options.setProxy(null);
+        //options.addArguments("--headless");
+        // options.addArguments("--disable-gpu");
+        // options.addArguments("--window-size=1400,800");
+        options.addArguments("--disable-remote-fonts");
+        options.addArguments("--enable-precache");
+        options.addArguments("--start-maximized");
+        options.addArguments("--disable-extensions");
+        options.addArguments("--disable-modal-animations");
+        options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("--no-sandbox");
+        options.addArguments("--disable-infobars");
+        options.setExperimentalOption("useAutomationExtension", false);
+        WebDriverManager.chromedriver().setup();
+        driver = new ChromeDriver(options);
+        driver.manage().window().maximize();
 
-        if (Browser.equalsIgnoreCase("Chrome")) {
-            ChromeOptions options = new ChromeOptions();
-            options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
-            options.setProxy(null);
-           // options.addArguments("--headless");
-           // options.addArguments("--disable-gpu");
-           // options.addArguments("--window-size=1400,800");
-            options.addArguments("--disable-remote-fonts");
-            options.addArguments("--enable-precache");
-            options.addArguments("--start-maximized");
-            options.addArguments("--disable-extensions");
-            options.addArguments("--disable-modal-animations");
-            WebDriverManager.chromedriver().setup();
-            driver = new ChromeDriver(options);
-            driver.manage().window().maximize();
-        } else if (Browser.equalsIgnoreCase("Firefox")) {
-
-            WebDriverManager.firefoxdriver().setup();
-            File pathBinary = new File("C:\\Program Files\\Mozilla Firefox\\firefox.exe");
-            FirefoxBinary firefoxBinary = new FirefoxBinary(pathBinary);
-            DesiredCapabilities desired = DesiredCapabilities.firefox();
-            FirefoxOptions options = new FirefoxOptions();
-            desired.setCapability(FirefoxOptions.FIREFOX_OPTIONS, options.setBinary(firefoxBinary));
-            driver = new FirefoxDriver();
-            driver.manage().window().maximize();
-        } else if (Browser.equalsIgnoreCase("Edge")) {
-            WebDriverManager.edgedriver().setup();
-            ChromeOptions chromeOptions = new ChromeOptions();
-            chromeOptions.setBinary(
-                    "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe");
-            EdgeOptions edgeOptions = new EdgeOptions().merge(chromeOptions);
-            driver = new EdgeDriver();
-            driver.manage().window().maximize();
-
-        } else {
-            throw new Exception("Browser is not correct");
-        }
         //driver.navigate().to("https://test.z2data.com/");
         driver.get("https://parts.z2data.com");
         login();
@@ -164,7 +141,7 @@ public class Test_Base {
         if (ITestResult.SUCCESS == result.getStatus()) {
             System.out.println("[SCENARIO PASSED]:" + result.getMethod().getMethodName());
         } else if (ITestResult.FAILURE == result.getStatus()) {
-            System.out.println("[SCENARIO FAIL]:"   + result.getMethod().getMethodName());
+            System.out.println("[SCENARIO FAIL]:" + result.getMethod().getMethodName());
         } else {
             System.out.println("SCENARIO SKIPPED]:" + result.getMethod().getMethodName());
         }
