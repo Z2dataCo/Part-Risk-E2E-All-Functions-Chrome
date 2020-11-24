@@ -9,7 +9,6 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class V_2_Fun_Create_Folder_Data_Management extends Test_Base {
-
     Landing_Page LandObj;
     Data_Management_Page DManagementObj;
 
@@ -21,11 +20,11 @@ public class V_2_Fun_Create_Folder_Data_Management extends Test_Base {
         LandObj = new Landing_Page(driver);
         DManagementObj = new Data_Management_Page(driver);
         LandObj.Z2D_Open_Data_Management();
-        Wait_Element_Clickable(DManagementObj.Create_Folder);
+        Wait_for_Element_to_Disappear(LandObj.GeneralSpinner);
         DManagementObj.Z2D_Create_Folder();
         DManagementObj.Z2D_Folder_Name(Z2DataFakerFolder);
         DManagementObj.Z2D_Submit_Folder();
-        Thread.sleep(2000);
+      Thread.sleep(2000);
         String istRow = DManagementObj.istRow.getText();
         if (driver.getPageSource().contains(Z2DataFakerFolder)){
             Assert.assertEquals(istRow,Z2DataFakerFolder);

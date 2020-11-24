@@ -6,6 +6,7 @@ import Com.PartRisk.Pages.Scrub_Page;
 import io.qameta.allure.Description;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -22,22 +23,27 @@ public class O_2_Fun_Count_Of_Exact_Match extends Test_Base {
         LandObj = new Landing_Page(driver);
         ScrubPageObj = new Scrub_Page(driver);
         LandObj.Z2D_Open_Data_Management();
-        Thread.sleep(4000);
-        DManagementObj.Z2D_Search(Z2DataFolderName);
-        DManagementObj.SetFile(); // hna
-        Thread.sleep(1000);
+        Wait_Element_Clickable(DManagementObj.Search_Text_Input);
+        DManagementObj.Z2D_Type_Folder_Name(Z2DataFolderName);
+        boolean staleElement = true;
+        while (staleElement) {
+            try {
+                DManagementObj.Z2D_Select_Folder();
+                staleElement = false;
+            } catch (StaleElementReferenceException e) {
+                staleElement = true;
+            }
+        }
         DManagementObj.Z2D_Open_BOM();
-        Thread.sleep(2000);
         Switch_Tabs();
         Wait_for_Element_to_Disappear(DManagementObj.Spinner);
         DManagementObj.Z2D_Open_Scrub();
-        Thread.sleep(10000);
+        Wait_for_Element_to_Disappear(LandObj.GeneralSpinner);
         int FixedNum = Integer.parseInt(ScrubPageObj.FixedNumber.getText());
         if (ScrubPageObj.Last.isEnabled()) {
             int tableRows = DManagementObj.Table_Rows.size();
-            Thread.sleep(3000);
+           Wait_Element_Clickable(ScrubPageObj.Last);
             ScrubPageObj.Z2D_Last_Pagination();
-            Thread.sleep(3000);
             int PaginationSize = Integer.parseInt(ScrubPageObj.LastPage.getText());
             int Pagination = PaginationSize - 1;
             int SupTotal = Pagination * tableRows;

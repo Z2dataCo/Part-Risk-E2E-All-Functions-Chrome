@@ -23,16 +23,18 @@ public class I_1_Compare extends Test_Base {
         CompareObj = new Compare_Page(driver);
         act = new Actions(driver);
         LandObj.Z2D_Open_Compare_Page();
-        WaitElement();
+        Wait_for_Element_to_Disappear(LandObj.GeneralSpinner);
         Wait_Element_Visible(CompareObj.Compare1);
         CompareObj.Z2D_Input_Compare_1(Z2DataCompare_1);
         Wait_Element_Clickable(CompareObj.Value_Compare1);
         act.moveToElement(CompareObj.Value_Compare1).click().build().perform();
+        Thread.sleep(2000);
         Wait_Element_Visible(CompareObj.Compare2);
         CompareObj.Z2D_Input_Compare_2(Z2DataCompare_2);
         Wait_Element_Clickable(CompareObj.Value_Compare2);
+        Thread.sleep(1000);
         act.moveToElement(CompareObj.Value_Compare2).click().build().perform();
-        Wait_Element_Clickable(CompareObj.Differences);
+        WaitAllElement();
         CompareObj.Z2D_Select_Differences();
         CompareObj.Z2D_Select_Similarities();
     }
