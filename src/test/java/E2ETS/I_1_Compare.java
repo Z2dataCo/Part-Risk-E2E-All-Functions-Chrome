@@ -33,7 +33,7 @@ public class I_1_Compare extends Test_Base {
             try {
                 act.moveToElement(CompareObj.Value_Compare1).click().build().perform();;
                 staleElement = false;
-            } catch (ElementClickInterceptedException e) {
+            } catch (StaleElementReferenceException e) {
                 staleElement = true;
             }
         }
@@ -46,7 +46,7 @@ public class I_1_Compare extends Test_Base {
             try {
                 act.moveToElement(CompareObj.Value_Compare2).click().build().perform();;
                 staleElement1 = false;
-            } catch (ElementClickInterceptedException e) {
+            } catch (StaleElementReferenceException e) {
                 staleElement1 = true;
             }
         }
