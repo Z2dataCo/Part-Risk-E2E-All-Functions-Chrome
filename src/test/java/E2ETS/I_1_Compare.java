@@ -5,6 +5,7 @@ import Com.PartRisk.Pages.Landing_Page;
 import io.qameta.allure.Description;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
+import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
@@ -32,7 +33,7 @@ public class I_1_Compare extends Test_Base {
             try {
                 act.moveToElement(CompareObj.Value_Compare1).click().build().perform();;
                 staleElement = false;
-            } catch (StaleElementReferenceException e) {
+            } catch (ElementClickInterceptedException e) {
                 staleElement = true;
             }
         }
@@ -45,7 +46,7 @@ public class I_1_Compare extends Test_Base {
             try {
                 act.moveToElement(CompareObj.Value_Compare2).click().build().perform();;
                 staleElement1 = false;
-            } catch (StaleElementReferenceException e) {
+            } catch (ElementClickInterceptedException e) {
                 staleElement1 = true;
             }
         }
