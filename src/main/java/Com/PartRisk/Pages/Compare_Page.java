@@ -4,6 +4,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import java.util.List;
+
 public class Compare_Page extends Page_Base {
     @FindBy(id = "part_autocom_0")
     public WebElement Compare1;
@@ -19,6 +21,14 @@ public class Compare_Page extends Page_Base {
     public WebElement Differences;
     @FindBy(xpath = "//*[@id=\"headerEl\"]/div/div/a[3]")
     WebElement Similarities;
+    @FindBy(xpath = "//tbody//tr/td[2]//span[@class='similarit-val'] | //tbody//tr/td[2]//span[@class='z2tag min-width-35 text-center float-none d-inline-block similarit-val z2tag-orange']")
+    public WebElement First_Part_Similarities;
+    @FindBy(xpath = "//tbody//tr/td[3]//span[@class='similarit-val'] | //tbody//tr/td[3]//span[@class='z2tag min-width-35 text-center float-none d-inline-block similarit-val z2tag-orange']")
+    public WebElement Second_Part_Similarities;
+  //  @FindBy(xpath = "//tbody//tr/td[2]//span[@class='notsimilarit-val'] | //tbody//tr/td[2]//span[@class='notsimilarit-val rohs-compliant float-center'] | //tbody//tr/td[3]//span[@class='z2partscore notsimilarit-val z2partscore-medium']")
+   // public WebElement First_Part_Differences;
+   // @FindBy(xpath = "//tbody//tr/td[3]//span[@class='notsimilarit-val'] | //tbody//tr/td[3]//span[@class='notsimilarit-val rohs-compliant float-center'] | //tbody//tr/td[3]//span[@class='z2partscore notsimilarit-val z2partscore-medium']")
+  //  public WebElement Second_Part_Differences;
 
 
     public Compare_Page(WebDriver driver) {
