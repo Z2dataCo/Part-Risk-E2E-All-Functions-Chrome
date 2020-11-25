@@ -170,7 +170,7 @@ public class Y_2_Fun_Obsolescence extends Test_Base {
             try {
                 DManagementObj.SetFile();
                 staleElement = false;
-            } catch (StaleElementReferenceException e) {
+            } catch (org.openqa.selenium.WebDriverException e) {
                 staleElement = true;
             }
         }

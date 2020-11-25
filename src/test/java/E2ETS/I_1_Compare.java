@@ -30,9 +30,10 @@ public class I_1_Compare extends Test_Base {
         boolean staleElement = true;
         while (staleElement) {
             try {
-                act.moveToElement(CompareObj.Value_Compare1).click().build().perform();;
+                act.moveToElement(CompareObj.Value_Compare1).click().build().perform();
+                ;
                 staleElement = false;
-            } catch (StaleElementReferenceException e) {
+            } catch (Exception e) {
                 staleElement = true;
             }
         }
@@ -44,11 +45,11 @@ public class I_1_Compare extends Test_Base {
             try {
                 act.moveToElement(CompareObj.Value_Compare2).click().build().perform();
                 staleElement1 = false;
-            } catch (StaleElementReferenceException e) {
+            } catch (Exception e) {
                 staleElement1 = true;
             }
         }
-        Wait_Element_Visible(CompareObj.Differences);
+        WaitAllElement();
         CompareObj.Z2D_Select_Differences();
         CompareObj.Z2D_Select_Similarities();
     }
