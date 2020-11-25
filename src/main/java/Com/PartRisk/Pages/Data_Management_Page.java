@@ -63,7 +63,7 @@ public class Data_Management_Page extends Page_Base {
     @FindBy(xpath = "//*[@id='divSearchFolders']//li[2]/a")
     public WebElement Search_Result;
     @FindBy(xpath = "//tbody/tr[2]//td[2]/a[1]")
-    WebElement Select_BOM;
+   public WebElement Select_BOM;
     @FindBy(xpath = "//a[contains(text(),'TAP_BOM_Proud_Test')]")
     public WebElement Select_Proud_Test_BOM;
     @FindBy(xpath = "//a[contains(text(),'Parts')]")

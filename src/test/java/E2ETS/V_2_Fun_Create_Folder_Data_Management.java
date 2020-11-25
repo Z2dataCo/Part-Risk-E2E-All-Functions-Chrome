@@ -25,7 +25,7 @@ public class V_2_Fun_Create_Folder_Data_Management extends Test_Base {
         DManagementObj.Z2D_Create_Folder();
         DManagementObj.Z2D_Folder_Name(Z2DataFakerFolder);
         DManagementObj.Z2D_Submit_Folder();
-        Thread.sleep(2000);
+        Thread.sleep(4000);
         String istRow = DManagementObj.istRow.getText();
         if (driver.getPageSource().contains(Z2DataFakerFolder)){
             Assert.assertEquals(istRow,Z2DataFakerFolder);
