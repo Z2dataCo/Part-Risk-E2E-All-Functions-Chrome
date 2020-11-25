@@ -6,6 +6,7 @@ import Com.PartRisk.Pages.PCN_Manager_Page;
 import io.qameta.allure.Description;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -25,9 +26,15 @@ public class N_2_Fun_Impacted_Parts extends Test_Base {
         PCN_ManagerObj = new PCN_Manager_Page(driver);
         impacted_PartsPageObj = new Impacted_Parts_Page(driver);
         LandObj.Z2D_Open_PCN_Manager();
-        Thread.sleep(3000);
-        Wait_Element_Clickable(PCN_ManagerObj.Impacted_Parts_Tab);
-        act.moveToElement(PCN_ManagerObj.Impacted_Parts_Tab).click().build().perform();
+        boolean staleElement = true;
+        while (staleElement) {
+            try {
+                act.moveToElement(PCN_ManagerObj.Impacted_Parts_Tab).click().build().perform();
+                staleElement = false;
+            } catch (StaleElementReferenceException e) {
+                staleElement = true;
+            }
+        }
         Wait_for_Element_to_Disappear(LandObj.GeneralSpinner);
         impacted_PartsPageObj.Z2D_Select_Supplier();
         Assert.assertEquals(impacted_PartsPageObj.btnSearch.getText(), "Search");
