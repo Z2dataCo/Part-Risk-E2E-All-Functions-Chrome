@@ -15,7 +15,7 @@ import org.testng.annotations.Test;
 
 public class U_2_Fun_Create_Report extends Test_Base {
     Faker faker = new Faker();
-    String Name = faker.name().firstName();
+    String Name = faker.name().firstName() + "1";
     Dashboard_Page DashboardPageObj;
     Report_Page ReportPageObj;
     Data_Management_Page DManagementObj;
@@ -42,9 +42,8 @@ public class U_2_Fun_Create_Report extends Test_Base {
                 staleElement = true;
             }
         }
-        Implicitly();
         Switch_Tabs();
-        Implicitly();
+        WaitAllElement();
         DashboardPageObj.Z2D_Open_Reports();
         ReportPageObj = new Report_Page(driver);
         ReportPageObj.Z2D_Open_Create_Report();

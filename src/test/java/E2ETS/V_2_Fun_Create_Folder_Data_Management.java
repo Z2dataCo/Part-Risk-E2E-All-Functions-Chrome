@@ -25,14 +25,9 @@ public class V_2_Fun_Create_Folder_Data_Management extends Test_Base {
         DManagementObj.Z2D_Create_Folder();
         DManagementObj.Z2D_Folder_Name(Z2DataFakerFolder);
         DManagementObj.Z2D_Submit_Folder();
-        Thread.sleep(2000);
+        Wait_for_Element_to_Disappear(LandObj.GeneralSpinner);
         String istRow = DManagementObj.istRow.getText();
-        if (driver.getPageSource().contains(Z2DataFakerFolder)){
-            Assert.assertEquals(istRow,Z2DataFakerFolder);
-        }else{
-            Thread.sleep(3000);
-        }
-        Assert.assertEquals(istRow,Z2DataFakerFolder);
+        Assert.assertEquals(istRow, Z2DataFakerFolder);
         Wait_Element_Invisibility(DManagementObj.Toast_Container);
         if (istRow.equals(Z2DataFakerFolder)) {
             DManagementObj.DeleteBom();

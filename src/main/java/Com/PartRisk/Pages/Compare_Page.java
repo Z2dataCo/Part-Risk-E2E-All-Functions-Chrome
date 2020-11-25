@@ -1,8 +1,11 @@
 package Com.PartRisk.Pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+
+import java.util.List;
 
 public class Compare_Page extends Page_Base {
     @FindBy(id = "part_autocom_0")
