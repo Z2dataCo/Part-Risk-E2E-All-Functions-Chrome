@@ -6,6 +6,7 @@ import Com.PartRisk.Pages.PCN_Manager_Page;
 import io.qameta.allure.Description;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
+import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
@@ -26,12 +27,13 @@ public class N_2_Fun_Impacted_Parts extends Test_Base {
         PCN_ManagerObj = new PCN_Manager_Page(driver);
         impacted_PartsPageObj = new Impacted_Parts_Page(driver);
         LandObj.Z2D_Open_PCN_Manager();
+        WaitAllElement();
         boolean staleElement = true;
         while (staleElement) {
             try {
-                act.moveToElement(PCN_ManagerObj.Impacted_Parts_Tab).click().build().perform();
+            PCN_ManagerObj.Z2D_Open_Impacted_Parts_Tab();
                 staleElement = false;
-            } catch (StaleElementReferenceException e) {
+            } catch (ElementClickInterceptedException e) {
                 staleElement = true;
             }
         }
