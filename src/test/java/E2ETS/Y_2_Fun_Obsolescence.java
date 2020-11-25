@@ -27,8 +27,15 @@ public class Y_2_Fun_Obsolescence extends Test_Base {
         LandOpj.Z2D_Open_Data_Management();
         Wait_Element_Visible(DManagementObj.Search_Text_Input);
         DManagementObj.Z2D_Search(Z2DataFolderName);
-        Thread.sleep(1000);
-        DManagementObj.SetFile();
+        boolean staleElement = true;
+        while (staleElement) {
+            try {
+                DManagementObj.SetFile();
+                staleElement = false;
+            } catch (StaleElementReferenceException e) {
+                staleElement = true;
+            }
+        }
         if (!(" TAP_BOM_Proud_Test" == driver.getPageSource())) {
             DManagementObj.Z2D_Move_To_Prod_BOM(driver);
         } else {
@@ -111,10 +118,17 @@ public class Y_2_Fun_Obsolescence extends Test_Base {
         DManagementObj = new Data_Management_Page(driver);
         ObsoL_Opj = new Obsolescence_Page(driver);
         LandOpj.Z2D_Open_Data_Management();
-        Wait_Element_Visible(DManagementObj.Search_Text_Input);
-        Thread.sleep(1000);
         DManagementObj.Z2D_Search(Z2DataFolderName);
-        DManagementObj.Z2D_Select_Folder();
+        boolean staleElement = true;
+        while (staleElement) {
+            try {
+                DManagementObj.SetFile();
+                staleElement = false;
+            } catch (StaleElementReferenceException e) {
+                staleElement = true;
+            }
+
+        }
         if (!(" TAP_BOM_Proud_Test" == driver.getPageSource())) {
             DManagementObj.Z2D_Move_To_Prod_BOM(driver);
         } else {
@@ -150,6 +164,7 @@ public class Y_2_Fun_Obsolescence extends Test_Base {
         DManagementObj = new Data_Management_Page(driver);
         ObsoL_Opj = new Obsolescence_Page(driver);
         LandOpj.Z2D_Open_Data_Management();
+        DManagementObj.Z2D_Search(Z2DataFolderName);
         boolean staleElement = true;
         while (staleElement) {
             try {
