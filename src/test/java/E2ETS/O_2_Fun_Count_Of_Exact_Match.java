@@ -30,7 +30,7 @@ public class O_2_Fun_Count_Of_Exact_Match extends Test_Base {
             try {
                 DManagementObj.SetFile();
                 staleElement = false;
-            } catch (StaleElementReferenceException e) {
+            } catch (Exception e) {
                 staleElement = true;
             }
         }
