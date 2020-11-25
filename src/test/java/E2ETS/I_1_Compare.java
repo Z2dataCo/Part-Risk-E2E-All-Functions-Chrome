@@ -5,8 +5,10 @@ import Com.PartRisk.Pages.Landing_Page;
 import io.qameta.allure.Description;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
+import org.openqa.selenium.By;
 import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.util.List;
@@ -37,10 +39,25 @@ public class I_1_Compare extends Test_Base {
         Wait_Element_Clickable(CompareObj.Differences);
         CompareObj.Z2D_Select_Differences();
         CompareObj.Z2D_Select_Similarities();
-        Thread.sleep(2000);
-        String First_Part_Data = CompareObj.First_Part_Similarities.getText();
-        System.out.println(First_Part_Data);
-        String Second_Part_Data = CompareObj.Second_Part_Similarities.getText();
-        System.out.println(Second_Part_Data);
+
+       for (int i = 1;i<=8;i++){
+           if (driver.findElement(By.xpath("//*[@class='tbodyfeatureParts-6']//tr["+ i +"]/td[2]/span")).getAttribute("class").equals("similarit-val")) {
+               Assert.assertEquals(
+               driver.findElement(By.xpath("//*[@class='tbodyfeatureParts-6']//tr["+ i +"]/td[2]/span")).getText(),
+               driver.findElement(By.xpath("//*[@class='tbodyfeatureParts-6']//tr["+ i +"]/td[3]/span")).getText());
+               System.out.println("Similarities : ");
+               System.out.println(driver.findElement(By.xpath("//*[@class='tbodyfeatureParts-6']//tr["+ i +"]/td[2]/span")).getText());
+               System.out.println(driver.findElement(By.xpath("//*[@class='tbodyfeatureParts-6']//tr["+ i +"]/td[3]/span")).getText());
+           }
+           else{
+               Assert.assertNotEquals(
+               driver.findElement(By.xpath("//*[@class='tbodyfeatureParts-6']//tr["+ i +"]/td[2]/span")).getText(),
+               driver.findElement(By.xpath("//*[@class='tbodyfeatureParts-6']//tr["+ i +"]/td[3]/span")).getText());
+               System.out.println("Differences : ");
+               System.out.println(driver.findElement(By.xpath("//*[@class='tbodyfeatureParts-6']//tr["+ i +"]/td[2]/span")).getText());
+               System.out.println(driver.findElement(By.xpath("//*[@class='tbodyfeatureParts-6']//tr["+ i +"]/td[3]/span")).getText());
+           }
+
+       }
     }
 }
