@@ -27,7 +27,7 @@ public class I_1_Compare extends Test_Base {
         LandObj.Z2D_Open_Compare_Page();
         Wait_Element_Visible(CompareObj.Compare1);
         CompareObj.Z2D_Input_Compare_1(Z2DataCompare_1);
-        Wait_Element_Clickable(CompareObj.Value_Compare1);
+        Wait_Element_Visible(CompareObj.Value_Compare1);
         boolean staleElement = true;
         while (staleElement) {
             try {
@@ -50,7 +50,6 @@ public class I_1_Compare extends Test_Base {
                 staleElement1 = true;
             }
         }
-
         Wait_Element_Visible(CompareObj.Differences);
         CompareObj.Z2D_Select_Differences();
         CompareObj.Z2D_Select_Similarities();
