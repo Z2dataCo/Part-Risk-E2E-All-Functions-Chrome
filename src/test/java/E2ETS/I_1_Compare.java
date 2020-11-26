@@ -24,18 +24,17 @@ public class I_1_Compare extends Test_Base {
     @Severity(SeverityLevel.CRITICAL)
     @Description("Validate To Compare Between Item")
     public void Compare_Parts() throws InterruptedException {
-
         LandObj = new Landing_Page(driver);
         CompareObj = new Compare_Page(driver);
         act = new Actions(driver);
         LandObj.Z2D_Open_Compare_Page();
+        Wait_for_Element_to_Disappear(LandObj.GeneralSpinner);
         CompareObj.Z2D_Input_Compare_1(Z2DataCompare_1);
         Wait_Element_Visible(CompareObj.Value_Compare1);
         boolean staleElement = true;
         while (staleElement) {
             try {
                 act.moveToElement(CompareObj.Value_Compare1).click().build().perform();
-                ;
                 staleElement = false;
             } catch (Exception e) {
                 staleElement = true;
