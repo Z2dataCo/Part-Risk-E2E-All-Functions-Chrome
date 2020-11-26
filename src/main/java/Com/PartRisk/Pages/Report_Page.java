@@ -40,6 +40,19 @@ public class Report_Page extends Page_Base {
     @FindBy(xpath = "//*[@id=\"z2-2cols-sub-2cols-left\"]/div/app-createreport/app-run-create-reports/div[1]/div[1]/div[1]/button[3]")
     WebElement Preview;
 
+    @FindBy (xpath = "//*[@id=\"z2-2cols-leftpanel\"]/ul/li[2]/a/div[2]")
+    WebElement CusReport;
+
+    @FindBy(xpath = "//*[@id=\"z2-2cols-sub-2cols-left\"]/div/app-myreports/div[3]/div[2]/div/div[2]/div/div/i")
+    public WebElement reportlist;
+
+    @FindBy(xpath = "//*[@id=\"z2-2cols-sub-2cols-left\"]/div/app-myreports/div[3]/div[2]/div/div[2]/div/div/popover-container/div[2]/div/div[1]/div[1]/a[2]/div[2]")
+    public WebElement DeleteReport;
+
+    @FindBy(xpath = "//*[@id=\"z2-2cols-sub-2cols-left\"]/div/app-myreports/div[3]/div[2]/div/div[1]/h3")
+    public WebElement FirstRow;
+
+
     public Report_Page(WebDriver driver) {
         super(driver);
     }
@@ -94,4 +107,17 @@ public class Report_Page extends Page_Base {
     public void Z2D_Open_Obsolete_5Years() {
         Click_Button(ObsoleteParts_5Y);
     }
+
+    public void Openlsit (){
+        Click_Button(reportlist);
+    }
+
+    public void Delete_Report(){
+        Click_Button(DeleteReport);
+    }
+
+    public void CustomReport(){
+        Click_Button(CusReport);
+    }
+
 }

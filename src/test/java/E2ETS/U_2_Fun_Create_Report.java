@@ -60,7 +60,7 @@ public class U_2_Fun_Create_Report extends Test_Base {
         String ActualResult = Name;
         if (!(ExpectedResult == ActualResult)) {
             WaitAllElement();
-            Assert.assertEquals(ActualResult, ExpectedResult); // hna
+            Assert.assertEquals(ActualResult, ExpectedResult);
             //System.out.println("This Is Actual Result: " + ActualResult);
             ReportPageObj.Z2D_Preview_Report();
             Wait_Element_Clickable(ReportPageObj.Close_Preview);
@@ -73,9 +73,10 @@ public class U_2_Fun_Create_Report extends Test_Base {
             Assert.assertTrue(ReportPageObj.Download_Btn.getText().contains("Download"));
             Thread.sleep(2000);
             ReportPageObj.Z2D_Download_Report();
-            Thread.sleep(3000);
-            ReportPageObj.Z2D_Close_Preview();
             Wait_for_Element_to_Disappear(DManagementObj.Spinner);
+            ReportPageObj.Z2D_Close_Preview();
+            WaitAllElement();
+
         } else {
             Assert.assertEquals(ActualResult, ExpectedResult);
             //System.out.println("This Is Actual Result: " + ActualResult);
@@ -90,9 +91,16 @@ public class U_2_Fun_Create_Report extends Test_Base {
             Assert.assertTrue(ReportPageObj.Download_Btn.getText().contains("Download"));
             Thread.sleep(2000);
             ReportPageObj.Z2D_Download_Report();
-            Thread.sleep(3000);
             ReportPageObj.Z2D_Close_Preview();
-            Wait_for_Element_to_Disappear(DManagementObj.Spinner);
         }
+
+        ReportPageObj.CustomReport();
+        ReportPageObj.Openlsit();
+        Wait_Element_Clickable(ReportPageObj.DeleteReport);
+        ReportPageObj.Delete_Report();
+        Thread.sleep(3000);
+        Assert.assertNotEquals(ReportPageObj.FirstRow.getText(), Name);
+        System.out.println(Name);
+        System.out.println(ReportPageObj.FirstRow.getText());
     }
 }
