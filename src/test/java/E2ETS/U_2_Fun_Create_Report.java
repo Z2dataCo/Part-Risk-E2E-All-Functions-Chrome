@@ -38,7 +38,7 @@ public class U_2_Fun_Create_Report extends Test_Base {
             try {
                 DManagementObj.Z2D_Open_BOM();
                 staleElement = false;
-            } catch (StaleElementReferenceException e) {
+            } catch (Exception e) {
                 staleElement = true;
             }
         }
@@ -93,14 +93,22 @@ public class U_2_Fun_Create_Report extends Test_Base {
             ReportPageObj.Z2D_Download_Report();
             ReportPageObj.Z2D_Close_Preview();
         }
-
-        ReportPageObj.CustomReport();
-        ReportPageObj.Openlsit();
+        boolean staleElement1 = true;
+        while (staleElement1) {
+            try {
+                ReportPageObj.CustomReport();
+                staleElement1 = false;
+            } catch (Exception e) {
+                staleElement1 = true;
+            }
+        }
+        Wait_Element_Clickable(ReportPageObj.reportlist);
+        ReportPageObj.Openlist();
         Wait_Element_Clickable(ReportPageObj.DeleteReport);
         ReportPageObj.Delete_Report();
         Thread.sleep(3000);
-        Assert.assertNotEquals(ReportPageObj.FirstRow.getText(), Name);
-        System.out.println(Name);
-        System.out.println(ReportPageObj.FirstRow.getText());
+        Assert.assertNotEquals(ReportPageObj.FirstRow.getText(), Name,"Verify to delete Report");
+        System.out.println("Report: " + Name + " Is Deleted");
+
     }
 }

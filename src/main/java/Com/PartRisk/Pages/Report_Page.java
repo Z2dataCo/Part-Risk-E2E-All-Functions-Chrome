@@ -41,7 +41,7 @@ public class Report_Page extends Page_Base {
     WebElement Preview;
 
     @FindBy (xpath = "//*[@id=\"z2-2cols-leftpanel\"]/ul/li[2]/a/div[2]")
-    WebElement CusReport;
+   public WebElement CusReport;
 
     @FindBy(xpath = "//*[@id=\"z2-2cols-sub-2cols-left\"]/div/app-myreports/div[3]/div[2]/div/div[2]/div/div/i")
     public WebElement reportlist;
@@ -108,7 +108,7 @@ public class Report_Page extends Page_Base {
         Click_Button(ObsoleteParts_5Y);
     }
 
-    public void Openlsit (){
+    public void Openlist (){
         Click_Button(reportlist);
     }
 
