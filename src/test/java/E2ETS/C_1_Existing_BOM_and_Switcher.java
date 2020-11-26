@@ -67,6 +67,7 @@ public class C_1_Existing_BOM_and_Switcher extends Test_Base {
         Wait_Element_Clickable(ForecastObj.First_Filter);
         Assert.assertTrue(ForecastObj.First_Filter.isDisplayed());
         Assert.assertTrue(ForecastObj.Second_Filter.isDisplayed());
+        Wait_Element_Visible(ForecastObj.Forecast_Switchers);
         ForecastObj.Z2D_Select_Switcher();
         Wait_Element_Invisibility(LandObj.SpinnerZezo);
         Wait_Element_Clickable(ForecastObj.First_Filter);
@@ -83,6 +84,7 @@ public class C_1_Existing_BOM_and_Switcher extends Test_Base {
         Wait_Element_Clickable(UpBOMObj.Total_Card_Mitigation);
         Assert.assertTrue(UpBOMObj.Total_Card_Mitigation.isDisplayed());
         Assert.assertTrue(UpBOMObj.Unknown_Card.isDisplayed());
+        Wait_Element_Visible(ForecastObj.Forecast_Switchers);
         ForecastObj.Z2D_Select_Switcher();
         Wait_Element_Invisibility(LandObj.SpinnerZezo);
         Assert.assertTrue(MitigationObj.Active_Parts.isDisplayed());
