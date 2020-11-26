@@ -32,7 +32,7 @@ public class Y_2_Fun_Obsolescence extends Test_Base {
             try {
                 DManagementObj.SetFile();
                 staleElement = false;
-            } catch (StaleElementReferenceException e) {
+            } catch (Exception e) {
                 staleElement = true;
             }
         }
