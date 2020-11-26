@@ -157,28 +157,28 @@ public class Test_Base {
     }
 
     public void Wait_Element_Clickable(WebElement element) {
-        WebDriverWait WebWait = new WebDriverWait(driver, 80);
+        WebDriverWait WebWait = new WebDriverWait(driver, 100);
         WebWait.until(ExpectedConditions.elementToBeClickable(element));
     }
 
     public void Wait_Element_Visible(WebElement element) {
-        WebDriverWait WebWait = new WebDriverWait(driver, 80);
+        WebDriverWait WebWait = new WebDriverWait(driver, 1000);
         WebWait.until(ExpectedConditions.visibilityOf(element));
     }
 
     public void Wait_Element_Invisibility(WebElement element) {
-        WebDriverWait Wait = new WebDriverWait(driver, 80);
+        WebDriverWait Wait = new WebDriverWait(driver, 100);
         Wait.until(ExpectedConditions.invisibilityOf(element));
     }
 
     public void Wait_Text_To_Be(WebElement element, String Text) {
-        WebDriverWait Wait = new WebDriverWait(driver, 80);
+        WebDriverWait Wait = new WebDriverWait(driver, 100);
         Wait.until(ExpectedConditions.textToBePresentInElement(element, Text));
 
     }
 
     public void Wait_Text_Not_To_be(WebElement element, String Text) {
-        WebDriverWait Wait = new WebDriverWait(driver, 80);
+        WebDriverWait Wait = new WebDriverWait(driver, 100);
         Wait.until(ExpectedConditions.not(ExpectedConditions.textToBePresentInElement(element, Text)));
     }
 
