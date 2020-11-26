@@ -5,10 +5,13 @@ import Com.PartRisk.Pages.Login_Page;
 import io.qameta.allure.Description;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
+import org.apache.maven.plugins.annotations.Execute;
 import org.testng.Assert;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
+
+import java.sql.Time;
 
 
 public class M_2_Fun_Search_IPN extends Test_Base {
@@ -29,5 +32,6 @@ public class M_2_Fun_Search_IPN extends Test_Base {
         Wait_Element_Clickable(LandObj.IPN_Value);
         LandObj.Z2D_IPN_Value();
         Assert.assertTrue(driver.getCurrentUrl().contains("IPN"));
+
     }
 }

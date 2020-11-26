@@ -43,7 +43,7 @@ public class Test_Base {
     public String Z2DataPCNID = "PD22748X";
     public String Z2DataMPNID = "FSP012-FHEN2";
 
-
+    public static final String ANSI_RED_BACKGROUND = "\u001B[41m";
     @SuppressWarnings("unused")
     @BeforeSuite
     public static void SetUp() {
