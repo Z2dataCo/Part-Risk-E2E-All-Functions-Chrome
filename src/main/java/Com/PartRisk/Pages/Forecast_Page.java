@@ -62,7 +62,6 @@ public class Forecast_Page extends Page_Base {
             } catch (ElementClickInterceptedException e) {
                 Intercepted = true;
             }
-
         }
     }
 
