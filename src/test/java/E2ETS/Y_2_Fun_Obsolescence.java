@@ -25,6 +25,7 @@ public class Y_2_Fun_Obsolescence extends Test_Base {
         DManagementObj = new Data_Management_Page(driver);
         ObsoL_Opj = new Obsolescence_Page(driver);
         LandOpj.Z2D_Open_Data_Management();
+        Wait_for_Element_to_Disappear(LandOpj.GeneralSpinner);
         Wait_Element_Visible(DManagementObj.Search_Text_Input);
         DManagementObj.Z2D_Search(Z2DataFolderName);
         boolean staleElement = true;
