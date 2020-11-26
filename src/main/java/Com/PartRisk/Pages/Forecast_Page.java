@@ -57,9 +57,9 @@ public class Forecast_Page extends Page_Base {
         boolean Intercepted = true;
         while (Intercepted) {
             try {
-                action.moveToElement(Forecast_Switchers).click().perform();
+                Click_Button(Forecast_Switchers);
                 Intercepted = false;
-            } catch (Exception e) {
+            } catch (ElementClickInterceptedException e) {
                 Intercepted = true;
             }
 
