@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 
 import java.awt.*;
 
-public class AC_1_Upload_BOM_and_Switcher extends Test_Base {
+/*public class AC_1_Upload_BOM_and_Switcher extends Test_Base {
     Landing_Page LandObj;
     Upload_BOM_Page UpBOMObj;
     Data_Management_Page DManagementObj;
@@ -103,4 +103,4 @@ public class AC_1_Upload_BOM_and_Switcher extends Test_Base {
         Assert.assertEquals(UpBOMObj.Reports_Tab.getText(), "Reports");
         Wait_for_Element_to_Disappear(DManagementObj.Spinner);
     }
-}
+}*/
