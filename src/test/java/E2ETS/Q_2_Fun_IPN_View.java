@@ -41,7 +41,7 @@ public class Q_2_Fun_IPN_View extends Test_Base {
         DManagementObj.Z2D_Open_Parts();
         Wait_for_Element_to_Disappear(DManagementObj.Spinner);
         PartPageObj.Z2D_Select_Switcher();
-        Wait_Element_Invisibility(PartPageObj.IPN_Table_Header);
+        Wait_Element_Visible(PartPageObj.IPN_Table_Header);
         //PartPageObj.ChekFuses();
         Wait_for_Element_to_Disappear(DManagementObj.Spinner);
         Assert.assertTrue(PartPageObj.IPN_Table_Header.getText().contains("IPN"));
