@@ -8,11 +8,6 @@
                     <include name="PCN_Search"/>
                 </methods>
             </class>
-            <class name="E2ETS.AC_1_Upload_BOM_and_Switcher">
-                <methods>
-                    <include name="Upload_BOM_and_Switcher"/>
-                </methods>
-            </class>
             <class name="E2ETS.A_1_Parametric_Search">
                 <methods>
                     <include name="Parametric_Search"/>
