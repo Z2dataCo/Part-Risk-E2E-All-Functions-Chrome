@@ -56,13 +56,15 @@ public class Landing_Page extends Page_Base {
     public WebElement Adv_Crosses_Value;
     @FindBy(xpath = "//*[@id=\"scopeOptionDiv\"]/ul/li[2]/a")
     WebElement IPN;
-    @FindBy(xpath = "//body/div[3]/div[1]/ul[1]/li[6]/a[1]")
+    @FindBy(linkText = "Compare")
+    //@FindBy(xpath = "/html/body/div[4]/div[1]/ul/li[6]/a")
     public WebElement Compare_Tab;
-    @FindBy(xpath = "//body/div[3]/div[1]/ul[1]/li[7]/a[1]")
+    @FindBy(xpath = "/html[1]/body[1]/div[4]/div[1]/ul[1]/li[7]/a[1]")
     public WebElement More_Tab;
     @FindBy(xpath = "//a[contains(text(),'Suppliers')]")
     public WebElement Suppliers;
-    @FindBy(xpath = "//body/div[3]/div[1]/ul[1]/li[3]/a[1]")
+    @FindBy(linkText = "PCN Manager")
+    //@FindBy(xpath = "/html/body/div[4]/div[1]/ul/li[3]/a")
     public WebElement PCN_Manager_Tab;
     @FindBy(xpath = "//*[@id=\"btnautoSearch\"]/i")
     WebElement btn_search;
