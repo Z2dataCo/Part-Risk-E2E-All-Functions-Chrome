@@ -1,14 +1,5 @@
 package E2ETS;
 
-import Com.PartRisk.Pages.*;
-import io.qameta.allure.Description;
-import io.qameta.allure.Severity;
-import io.qameta.allure.SeverityLevel;
-import org.testng.Assert;
-import org.testng.annotations.Test;
-
-import java.awt.*;
-
 /*public class AC_1_Upload_BOM_and_Switcher extends Test_Base {
     Landing_Page LandObj;
     Upload_BOM_Page UpBOMObj;

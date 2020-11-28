@@ -17,9 +17,10 @@ public class V_2_Fun_Create_Folder_Data_Management extends Test_Base {
     @Severity(SeverityLevel.CRITICAL)
     @Description("Validate To Create Folder In Data Management")
     public void Create_Folder_in_Data_Management() throws InterruptedException {
-
         LandObj = new Landing_Page(driver);
         DManagementObj = new Data_Management_Page(driver);
+
+        Wait_Element_Visible(LandObj.Data_Management_Tab);
         LandObj.Z2D_Open_Data_Management();
         Wait_Element_Clickable(DManagementObj.Create_Folder);
         DManagementObj.Z2D_Create_Folder();

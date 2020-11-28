@@ -7,7 +7,6 @@ import Com.PartRisk.Pages.Obsolescence_Page;
 import io.qameta.allure.Description;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
-import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -26,9 +25,8 @@ public class S_2_Fun_Forecast_Graph_IPN_View extends Test_Base {
         DManagementObj = new Data_Management_Page(driver);
         ForeCastObj = new Forecast_Page(driver);
         ObsoL_Opj = new Obsolescence_Page(driver);
-
-
         DManagementObj.Z2D_Move_to_Forecast_Bom(driver);
+
         Wait_Element_Invisibility(LandObj.SpinnerZezo);
         Wait_Element_Clickable(ForeCastObj.Forecast_Switchers);
         ForeCastObj.Z2D_Select_Switcher();

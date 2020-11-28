@@ -7,7 +7,6 @@ import io.qameta.allure.Description;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import org.openqa.selenium.StaleElementReferenceException;
-import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -23,6 +22,8 @@ public class P_2_Fun_MPN_View extends Test_Base {
         LandObj = new Landing_Page(driver);
         DManagementObj = new Data_Management_Page(driver);
         PartPageObj = new Parts_Page(driver);
+
+        Wait_Element_Visible(LandObj.Data_Management_Tab);
         LandObj.Z2D_Open_Data_Management();
         Wait_for_Element_to_Disappear(DManagementObj.Spinner);
         DManagementObj.Z2D_Search(Z2DataFolderName);

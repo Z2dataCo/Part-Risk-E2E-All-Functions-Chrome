@@ -18,6 +18,8 @@ public class H_1_Advanced_Crosses extends Test_Base {
     public void Advanced_Crosses() throws InterruptedException {
         LandObj = new Landing_Page(driver);
         AdvCrosObj = new Advanced_Crosses_Page(driver);
+
+        Wait_Element_Visible(LandObj.DDL_Type_Of_Search);
         LandObj.Z2D_Open_DDL_Menu();
         LandObj.Z2D_Adv_Crosses();
         LandObj.Z2D_input_Search(Z2DataAdvCrosses);

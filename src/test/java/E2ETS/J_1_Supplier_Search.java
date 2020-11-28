@@ -7,7 +7,6 @@ import io.qameta.allure.Description;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import org.openqa.selenium.ElementClickInterceptedException;
-import org.openqa.selenium.StaleElementReferenceException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -23,6 +22,8 @@ public class J_1_Supplier_Search extends Test_Base {
         LandObj = new Landing_Page(driver);
         SuppliersObj = new Suppliers_Page(driver);
         DManagementObj = new Data_Management_Page(driver);
+
+        Wait_Element_Visible(LandObj.More_Tab);
         LandObj.Z2D_More_Menu();
         LandObj.Z2D_Select_Supplier();
         boolean staleElement = true;

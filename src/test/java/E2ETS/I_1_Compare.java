@@ -5,15 +5,10 @@ import Com.PartRisk.Pages.Landing_Page;
 import io.qameta.allure.Description;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
-import org.openqa.selenium.ElementClickInterceptedException;
-import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.By;
-import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
-import java.util.List;
 
 public class I_1_Compare extends Test_Base {
     Compare_Page CompareObj;
@@ -28,6 +23,8 @@ public class I_1_Compare extends Test_Base {
         LandObj = new Landing_Page(driver);
         CompareObj = new Compare_Page(driver);
         act = new Actions(driver);
+
+        Wait_Element_Visible(LandObj.Compare_Tab);
         LandObj.Z2D_Open_Compare_Page();
         CompareObj.Z2D_Input_Compare_1(Z2DataCompare_1);
         Wait_Element_Visible(CompareObj.Value_Compare1);

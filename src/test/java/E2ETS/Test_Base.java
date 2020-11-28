@@ -37,7 +37,7 @@ public class Test_Base {
     public String Z2DataSupplier = "Toshiba";
     public String Z2DataFolderName = "TAP_BOM";
     //public String Z2DataFilePath = System.getProperty("user.dir") + "\\src\\test\\resources\\BOMs\\TABOM1.xlsx";
-    public String Z2DataSwitcherStepFilePath = System.getProperty("user.dir") + "\\src\\test\\resources\\BOMs\\TABOM2.xlsx";
+    //public String Z2DataSwitcherStepFilePath = System.getProperty("user.dir") + "\\src\\test\\resources\\BOMs\\TABOM2.xlsx";
     Faker faker = new Faker();
     public String Z2DataFakerFolder = faker.name().firstName() + "1";
     public String Z2DataPCNID = "PD22748X";
@@ -50,9 +50,9 @@ public class Test_Base {
         ChromeOptions options = new ChromeOptions();
         options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
         options.setProxy(null);
-        options.addArguments("--headless");
+        /*options.addArguments("--headless");
         options.addArguments("--disable-gpu");
-        options.addArguments("--window-size=1400,800");
+        options.addArguments("--window-size=1400,800");*/
         options.addArguments("--disable-remote-fonts");
         options.addArguments("--enable-precache");
         options.addArguments("--start-maximized");
@@ -66,7 +66,7 @@ public class Test_Base {
         driver.manage().window().maximize();
 
         //driver.navigate().to("https://test.z2data.com/");
-        driver.get("https://parts.z2data.com");
+        driver.navigate().to("https://parts.z2data.com");
         login();
         DeleteCookies();
         WaitAllElement();
@@ -122,8 +122,8 @@ public class Test_Base {
     }
 
     @AfterMethod
-    public void Back_To_Landing(ITestResult result) throws InterruptedException {
-        String filename = new SimpleDateFormat("ddMMhhmm").format(new Date());
+    public void Back_To_Landing(ITestResult result)  {
+        String filename = new SimpleDateFormat("ddMMyyHHmm").format(new Date());
         if (ITestResult.FAILURE == result.getStatus()) {
             try {
                 TakesScreenshot ts = (TakesScreenshot) driver;
@@ -135,14 +135,16 @@ public class Test_Base {
 
         }
         WaitAllElement();
-        //driver.navigate().to("https://parts.z2data.com/");
+        String URL = driver.getCurrentUrl();
+    //navigate().to("https://parts.z2data.com/");
+
 
         if (ITestResult.SUCCESS == result.getStatus()) {
-            System.out.println("[SCENARIO PASSED]:" + result.getMethod().getMethodName());
+            System.out.println(URL + "[SCENARIO PASSED]:" + result.getMethod().getMethodName());
         } else if (ITestResult.FAILURE == result.getStatus()) {
-            System.out.println("[SCENARIO FAIL]:" + result.getMethod().getMethodName());
+            System.out.println(URL + "[SCENARIO FAIL]:" + result.getMethod().getMethodName());
         } else {
-            System.out.println("SCENARIO SKIPPED]:" + result.getMethod().getMethodName());
+            System.out.println(URL + "SCENARIO SKIPPED]:" + result.getMethod().getMethodName());
         }
     }
 

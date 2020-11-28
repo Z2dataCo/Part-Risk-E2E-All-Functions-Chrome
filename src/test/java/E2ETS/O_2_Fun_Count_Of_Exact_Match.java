@@ -6,7 +6,6 @@ import Com.PartRisk.Pages.Scrub_Page;
 import io.qameta.allure.Description;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
-import org.openqa.selenium.StaleElementReferenceException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -22,6 +21,8 @@ public class O_2_Fun_Count_Of_Exact_Match extends Test_Base {
         DManagementObj = new Data_Management_Page(driver);
         LandObj = new Landing_Page(driver);
         ScrubPageObj = new Scrub_Page(driver);
+
+        Wait_Element_Visible(LandObj.Data_Management_Tab);
         LandObj.Z2D_Open_Data_Management();
         Wait_Element_Visible(DManagementObj.Search_Text_Input);
         DManagementObj.Z2D_Search(Z2DataFolderName);

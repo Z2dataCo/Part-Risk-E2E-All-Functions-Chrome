@@ -21,8 +21,7 @@ public class D_1_PCN_Manager extends Test_Base {
         LandObj = new Landing_Page(driver);
         PCN_ManagerObj = new PCN_Manager_Page(driver);
 
-
-
+        Wait_Element_Visible(LandObj.PCN_Manager_Tab);
         LandObj.Z2D_Open_PCN_Manager();
         Wait_for_Element_to_Disappear(LandObj.GeneralSpinner);
         Wait_Element_Visible(PCN_ManagerObj.Dashboard_Tab_Total_PCNs);
