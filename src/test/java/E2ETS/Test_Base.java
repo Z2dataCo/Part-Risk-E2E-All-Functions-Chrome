@@ -115,11 +115,11 @@ public class Test_Base {
 
 
         if (ITestResult.SUCCESS == result.getStatus()) {
-            System.out.println(URL + "[SCENARIO PASSED]:" + result.getMethod().getMethodName());
+            System.out.println("[Good Job Scenario Pass]:" + result.getMethod().getMethodName() + URL);
         } else if (ITestResult.FAILURE == result.getStatus()) {
-            System.out.println(URL + "[SCENARIO FAIL]:" + result.getMethod().getMethodName());
+            System.out.println("[Check Again Scenario Fail]:" + result.getMethod().getMethodName() + URL);
         } else {
-            System.out.println(URL + "SCENARIO SKIPPED]:" + result.getMethod().getMethodName());
+            System.out.println("Previous Fail then this Scenario Skipped]:" + result.getMethod().getMethodName() + URL);
         }
     }
 
