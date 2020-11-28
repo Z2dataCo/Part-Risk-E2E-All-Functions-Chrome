@@ -20,7 +20,6 @@ public class V_2_Fun_Create_Folder_Data_Management extends Test_Base {
         LandObj = new Landing_Page(driver);
         DManagementObj = new Data_Management_Page(driver);
 
-        Wait_Element_Visible(LandObj.Data_Management_Tab);
         LandObj.Z2D_Open_Data_Management();
         Wait_Element_Clickable(DManagementObj.Create_Folder);
         DManagementObj.Z2D_Create_Folder();

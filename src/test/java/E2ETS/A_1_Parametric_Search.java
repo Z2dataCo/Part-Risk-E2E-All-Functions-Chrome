@@ -16,7 +16,6 @@ public class A_1_Parametric_Search extends Test_Base {
     public void Parametric_Search() {
         LandObj = new Landing_Page(driver);
 
-        Wait_Element_Visible(LandObj.Parametric_Menu);
         LandObj.ParametricSearch();
         Assert.assertTrue(driver.getCurrentUrl().contains("/keysearch?ProductId=12292"));
     }

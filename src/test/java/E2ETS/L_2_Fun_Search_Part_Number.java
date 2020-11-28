@@ -17,7 +17,6 @@ public class L_2_Fun_Search_Part_Number extends Test_Base {
     public void Search_with_Part_Number() {
         LandObj = new Landing_Page(driver);
 
-        Wait_Element_Visible(LandObj.Search_Input);
         LandObj.Z2D_input_Search(Z2DataPartNumber);
         LandObj.Z2D_Click_Search();
         Wait_Element_Clickable(LandObj.Supp_ChkBox);

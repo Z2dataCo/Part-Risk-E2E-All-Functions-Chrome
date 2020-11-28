@@ -21,7 +21,6 @@ public class M_2_Fun_Search_IPN extends Test_Base {
         LogObj = new Login_Page(driver);
         LandObj = new Landing_Page(driver);
 
-        Wait_Element_Visible(LandObj.DDL_Type_Of_Search);
         LandObj.Z2D_Open_DDL_Menu();
         LandObj.Z2D_IPN_DDL();
         Thread.sleep(1000);

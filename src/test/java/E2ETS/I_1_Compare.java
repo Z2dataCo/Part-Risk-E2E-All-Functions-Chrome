@@ -24,7 +24,6 @@ public class I_1_Compare extends Test_Base {
         CompareObj = new Compare_Page(driver);
         act = new Actions(driver);
 
-        Wait_Element_Visible(LandObj.Compare_Tab);
         LandObj.Z2D_Open_Compare_Page();
         CompareObj.Z2D_Input_Compare_1(Z2DataCompare_1);
         Wait_Element_Visible(CompareObj.Value_Compare1);

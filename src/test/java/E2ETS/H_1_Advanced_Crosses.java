@@ -19,8 +19,8 @@ public class H_1_Advanced_Crosses extends Test_Base {
         LandObj = new Landing_Page(driver);
         AdvCrosObj = new Advanced_Crosses_Page(driver);
 
-        Wait_Element_Visible(LandObj.DDL_Type_Of_Search);
         LandObj.Z2D_Open_DDL_Menu();
+        Wait_Element_Clickable(LandObj.Adv_Crosses_Value);
         LandObj.Z2D_Adv_Crosses();
         LandObj.Z2D_input_Search(Z2DataAdvCrosses);
         LandObj.Z2D_Adv_Product();

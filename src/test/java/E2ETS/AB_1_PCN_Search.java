@@ -26,7 +26,6 @@ public class AB_1_PCN_Search extends Test_Base {
         MitigationObj = new Mitigation_Page(driver);
         PCN_ManagerObj = new PCN_Manager_Page(driver);
 
-        Wait_Element_Visible(LandObj.PCN_Manager_Tab);
         LandObj.Z2D_Open_PCN_Manager();
         Wait_Element_Invisibility(LandObj.SpinnerZezo);
         Wait_Element_Visible(PCN_ManagerObj.Dashboard_Tab_Total_PCNs);

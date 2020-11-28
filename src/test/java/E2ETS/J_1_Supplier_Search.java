@@ -23,7 +23,6 @@ public class J_1_Supplier_Search extends Test_Base {
         SuppliersObj = new Suppliers_Page(driver);
         DManagementObj = new Data_Management_Page(driver);
 
-        Wait_Element_Visible(LandObj.More_Tab);
         LandObj.Z2D_More_Menu();
         LandObj.Z2D_Select_Supplier();
         boolean staleElement = true;

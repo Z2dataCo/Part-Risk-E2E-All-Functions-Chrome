@@ -23,7 +23,6 @@ public class P_2_Fun_MPN_View extends Test_Base {
         DManagementObj = new Data_Management_Page(driver);
         PartPageObj = new Parts_Page(driver);
 
-        Wait_Element_Visible(LandObj.Data_Management_Tab);
         LandObj.Z2D_Open_Data_Management();
         Wait_for_Element_to_Disappear(DManagementObj.Spinner);
         DManagementObj.Z2D_Search(Z2DataFolderName);

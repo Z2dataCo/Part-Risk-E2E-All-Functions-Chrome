@@ -27,7 +27,6 @@ public class C_1_Existing_BOM_and_Switcher extends Test_Base {
         PartsObj = new Parts_Page(driver);
         ForecastObj = new Forecast_Page(driver);
 
-        Wait_Element_Visible(LandObj.Data_Management_Tab);
         LandObj.Z2D_Open_Data_Management();
         Wait_Element_Clickable(DManagementObj.Search_Text_Input);
         DManagementObj.Z2D_Type_Folder_Name(Z2DataFolderName);

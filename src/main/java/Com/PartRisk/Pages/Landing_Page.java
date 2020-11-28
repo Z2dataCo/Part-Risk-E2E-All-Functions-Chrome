@@ -53,7 +53,7 @@ public class Landing_Page extends Page_Base {
     @FindBy(xpath = "//*[@id=\"ca1_Semiconductors\"]/ul/li[1]/ul/li/div[1]/div/div/a")
     WebElement SupElement;
     @FindBy(xpath = "//*[@id=\"scopeOptionDiv\"]/ul/li[6]/a")
-    WebElement Adv_Crosses_Value;
+    public WebElement Adv_Crosses_Value;
     @FindBy(xpath = "//*[@id=\"scopeOptionDiv\"]/ul/li[2]/a")
     WebElement IPN;
     @FindBy(xpath = "//body/div[3]/div[1]/ul[1]/li[6]/a[1]")

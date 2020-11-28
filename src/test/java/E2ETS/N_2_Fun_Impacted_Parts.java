@@ -26,7 +26,6 @@ public class N_2_Fun_Impacted_Parts extends Test_Base {
         PCN_ManagerObj = new PCN_Manager_Page(driver);
         impacted_PartsPageObj = new Impacted_Parts_Page(driver);
 
-        Wait_Element_Visible(LandObj.PCN_Manager_Tab);
         LandObj.Z2D_Open_PCN_Manager();
         WaitAllElement();
         boolean staleElement = true;
