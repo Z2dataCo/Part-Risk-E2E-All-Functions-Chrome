@@ -1,6 +1,5 @@
 package E2ETS;
 
-import Com.PartRisk.Pages.Landing_Page;
 import Com.PartRisk.Pages.Login_Page;
 import com.github.javafaker.Faker;
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -28,7 +27,6 @@ public class Test_Base {
     public static String Z2DataUsername = "Z2D.PR1@z2data.com";
     public static String Z2DataPassword = "Z2D.PR1@z2data.com";
     public static Login_Page LogObj;
-    public static Landing_Page page;
     public String Z2DataPartNumber = "bav99";
     public String Z2DataAdvCrosses = "bav";
     public String Z2DataIPN = "0.9902785216";
@@ -95,29 +93,6 @@ public class Test_Base {
 
     public static void WaitAllElement() {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-
-    }
-
-    public static void ClickLogOut() throws InterruptedException {
-        page = new Landing_Page(driver);
-        Thread.sleep(2000);
-        page.Z2D_Click_My_Account();
-        page.Z2D_Logout();
-    }
-
-    public static void Wait_for_Element_to_Disappear2(WebElement element) throws Exception {
-        for (int second = 0; ; second++) {
-            if (second >= 60) fail("timeout");
-            try {
-                if (element.isDisplayed()) break;
-            } catch (Exception e) {
-            }
-            Thread.sleep(200);
-        }
-
-    }
-
-    private static void fail(String timeout) {
 
     }
 
