@@ -40,7 +40,7 @@ public class I_1_Compare extends Test_Base {
                 staleElement = true;
             }
         }
-        Thread.sleep(5000);
+        Thread.sleep(7000);
         Wait_Element_Visible(CompareObj.Compare2);
         CompareObj.Z2D_Input_Compare_2(Z2DataCompare_2);
         boolean staleElement1 = true;

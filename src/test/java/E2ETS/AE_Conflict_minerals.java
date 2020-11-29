@@ -39,8 +39,6 @@ public class AE_Conflict_minerals extends Test_Base {
         ReportOpj.Open_ConflictMinerals();
         ReportOpj.OpenConMetals();
         Assert.assertEquals(ReportOpj.Tungsten.getText(),"Tungsten");
-
-
     }
 
 }
