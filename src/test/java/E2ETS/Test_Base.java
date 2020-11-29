@@ -44,15 +44,16 @@ public class Test_Base {
     public String Z2DataMPNID = "FSP012-FHEN2";
 
     public static final String ANSI_RED_BACKGROUND = "\u001B[41m";
+
     @SuppressWarnings("unused")
     @BeforeSuite
     public static void SetUp() {
         ChromeOptions options = new ChromeOptions();
         options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
         options.setProxy(null);
-      //  options.addArguments("--headless");
-        //options.addArguments("--disable-gpu");
-        //options.addArguments("--window-size=1400,800");
+        options.addArguments("--headless");
+        options.addArguments("--disable-gpu");
+        options.addArguments("--window-size=1400,800");
         options.addArguments("--disable-remote-fonts");
         options.addArguments("--enable-precache");
         options.addArguments("--start-maximized");
