@@ -111,7 +111,7 @@ public class Test_Base {
         }
         WaitAllElement();
         String URL = driver.getCurrentUrl();
-    //navigate().to("https://parts.z2data.com/");
+        driver.navigate().to("https://parts.z2data.com/");
 
 
         if (ITestResult.SUCCESS == result.getStatus()) {

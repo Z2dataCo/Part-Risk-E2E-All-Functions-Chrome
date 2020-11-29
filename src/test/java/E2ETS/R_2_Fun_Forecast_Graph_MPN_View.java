@@ -22,8 +22,8 @@ public class R_2_Fun_Forecast_Graph_MPN_View extends Test_Base {
         LandObj = new Landing_Page(driver);
         DManagementObj = new Data_Management_Page(driver);
         ForeCastObj = new Forecast_Page(driver);
-        DManagementObj.Z2D_Move_To_Prod_BOM(driver);
 
+        DManagementObj.Z2D_Move_To_Prod_BOM(driver);
         Wait_Element_Invisibility(LandObj.SpinnerZezo);
         Wait_Element_Clickable(ForeCastObj.Graph2);
         ForeCastObj.Z2D_Click_on_Forecast_Tab();

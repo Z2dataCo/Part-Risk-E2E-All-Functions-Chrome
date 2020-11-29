@@ -19,8 +19,8 @@ public class G_1_Create_Alert_LifeCycle_Litigation extends Test_Base {
     public void Create_Alert_LifeCycle_Litigation() throws InterruptedException {
         LandObj = new Landing_Page(driver);
         DManagementObj = new Data_Management_Page(driver);
-        DManagementObj.Z2D_Move_To_Prod_BOM(driver);
 
+        DManagementObj.Z2D_Move_To_Prod_BOM(driver);
         Wait_Element_Clickable(DManagementObj.Followed_Text);
         if (DManagementObj.Followed_Text.getText().equals("Followed")) {
             DManagementObj.Z2D_Click_Followed_Btn();
