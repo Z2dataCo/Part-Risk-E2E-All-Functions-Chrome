@@ -12,7 +12,7 @@ public class Y_2_Fun_Obsolescence extends Test_Base {
     Data_Management_Page DManagementObj;
     Landing_Page LandObj;
     Dashboard_Page DashboardObj;
-    Report_Page ReportObj;
+    Reports_Page ReportObj;
     Obsolescence_Page Obsolescence_Obj;
 
     @Test(priority = 25)
@@ -21,7 +21,7 @@ public class Y_2_Fun_Obsolescence extends Test_Base {
     public void Check_Side_Panel_High_Risk() throws InterruptedException {
         LandObj = new Landing_Page(driver);
         DashboardObj = new Dashboard_Page(driver);
-        ReportObj = new Report_Page(driver);
+        ReportObj = new Reports_Page(driver);
         DManagementObj = new Data_Management_Page(driver);
         Obsolescence_Obj = new Obsolescence_Page(driver);
 
@@ -115,7 +115,7 @@ public class Y_2_Fun_Obsolescence extends Test_Base {
     public void Obsolete_Parts_in_3_Years() throws InterruptedException {
         LandObj = new Landing_Page(driver);
         DashboardObj = new Dashboard_Page(driver);
-        ReportObj = new Report_Page(driver);
+        ReportObj = new Reports_Page(driver);
         DManagementObj = new Data_Management_Page(driver);
         Obsolescence_Obj = new Obsolescence_Page(driver);
 
@@ -162,7 +162,7 @@ public class Y_2_Fun_Obsolescence extends Test_Base {
     public void Obsolete_Part_IN_5_Years() throws InterruptedException {
         LandObj = new Landing_Page(driver);
         DashboardObj = new Dashboard_Page(driver);
-        ReportObj = new Report_Page(driver);
+        ReportObj = new Reports_Page(driver);
         DManagementObj = new Data_Management_Page(driver);
         Obsolescence_Obj = new Obsolescence_Page(driver);
 

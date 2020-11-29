@@ -2,9 +2,10 @@ package Com.PartRisk.Pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 
-public class Report_Page extends Page_Base {
+public class Reports_Page extends Page_Base {
     @FindBy(xpath = "//span[contains(text(),'Z2 Part Number')]")
     public WebElement Check_Box1;
     @FindBy(xpath = "//span[contains(text(),'Product Name')]")
@@ -39,9 +40,23 @@ public class Report_Page extends Page_Base {
     WebElement Confirm_Report;
     @FindBy(xpath = "//*[@id=\"z2-2cols-sub-2cols-left\"]/div/app-createreport/app-run-create-reports/div[1]/div[1]/div[1]/button[3]")
     WebElement Preview;
+    @FindBy(xpath = "//*[@id=\"z2-2cols-leftpanel\"]/ul/li[7]/a")
+    public WebElement Conflict_Minerals_Tab;
+    @FindBy(xpath = "//a[contains(text(),'Smelters Report')]")
+    public WebElement Smelters_Report_button;
+    @FindBy(xpath = "//*[@id=\"dropbg\"]/div/div/div[1]/div[1]/div[1]/div[1]")
+    public WebElement Smelters_Window_Title;
+    @FindBy(xpath = "//*[@id=\"dropbg\"]/div/div/div[2]/div[1]/div/button")
+    public WebElement Export_Button;
+    @FindBy(xpath = "//*[@id=\"dropbg\"]/div/div/div[2]/div[1]/div/div/a[1]")
+    public WebElement Export_Selection;
 
-    public Report_Page(WebDriver driver) {
+
+
+
+    public Reports_Page(WebDriver driver) {
         super(driver);
+        action = new Actions(driver);
     }
 
     public void Z2D_Open_Create_Report() {
@@ -94,4 +109,13 @@ public class Report_Page extends Page_Base {
     public void Z2D_Open_Obsolete_5Years() {
         Click_Button(ObsoleteParts_5Y);
     }
+
+    public void Z2D_Open_Smelters_Report(){action.moveToElement(Conflict_Minerals_Tab).click().perform();
+    Click_Button(Smelters_Report_button);}
+
+    public void Z2D_Export_Report_Excel(){Click_Button(Export_Button);
+    action.moveToElement(Export_Selection).click().perform();}
+
+
+
 }

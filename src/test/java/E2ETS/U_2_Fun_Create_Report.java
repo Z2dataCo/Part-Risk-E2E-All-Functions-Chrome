@@ -3,7 +3,7 @@ package E2ETS;
 import Com.PartRisk.Pages.Dashboard_Page;
 import Com.PartRisk.Pages.Data_Management_Page;
 import Com.PartRisk.Pages.Landing_Page;
-import Com.PartRisk.Pages.Report_Page;
+import Com.PartRisk.Pages.Reports_Page;
 import com.github.javafaker.Faker;
 import io.qameta.allure.Description;
 import io.qameta.allure.Severity;
@@ -17,7 +17,7 @@ public class U_2_Fun_Create_Report extends Test_Base {
     Faker faker = new Faker();
     String Name = faker.name().firstName() + "1";
     Dashboard_Page DashboardPageObj;
-    Report_Page ReportPageObj;
+    Reports_Page ReportPageObj;
     Data_Management_Page DManagementObj;
     Landing_Page LandObj;
 
@@ -28,7 +28,7 @@ public class U_2_Fun_Create_Report extends Test_Base {
         LandObj = new Landing_Page(driver);
         DManagementObj = new Data_Management_Page(driver);
         DashboardPageObj = new Dashboard_Page(driver);
-        ReportPageObj = new Report_Page(driver);
+        ReportPageObj = new Reports_Page(driver);
 
         LandObj.Z2D_Open_Data_Management();
         Wait_Element_Visible(DManagementObj.Search_Text_Input);
@@ -46,7 +46,7 @@ public class U_2_Fun_Create_Report extends Test_Base {
         Switch_Tabs();
         WaitAllElement();
         DashboardPageObj.Z2D_Open_Reports();
-        ReportPageObj = new Report_Page(driver);
+        ReportPageObj = new Reports_Page(driver);
         ReportPageObj.Z2D_Open_Create_Report();
         Wait_Element_Clickable(ReportPageObj.Check_Box1);
         Wait_Element_Clickable(ReportPageObj.Check_Box2);

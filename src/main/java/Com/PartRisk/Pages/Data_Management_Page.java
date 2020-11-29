@@ -291,6 +291,12 @@ public class Data_Management_Page extends Page_Base {
         Thread.sleep(200);
     }
 
+    public void Z2D_Move_to_Reports_Bom(WebDriver driver) throws InterruptedException {
+        driver.get("https://parts.z2data.com/RiskManager/Report?BomId=119090");
+        Thread.sleep(200);
+    }
+
+
 
     public void SetFile(){
         Click_Button(Test_Folder);

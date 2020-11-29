@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 
 public class Z_2_Fun_All_Obsolescence extends Test_Base {
     Data_Management_Page DManagementObj;
-    Report_Page ReportObj;
+    Reports_Page ReportObj;
     Landing_Page LandObj;
     Obsolescence_Page ObsolescenceObj;
     Dashboard_Page DashboardObj;
@@ -21,7 +21,7 @@ public class Z_2_Fun_All_Obsolescence extends Test_Base {
     public void All_ObsolescencePage() throws InterruptedException {
         LandObj = new Landing_Page(driver);
         DashboardObj = new Dashboard_Page(driver);
-        ReportObj = new Report_Page(driver);
+        ReportObj = new Reports_Page(driver);
         DManagementObj = new Data_Management_Page(driver);
         ObsolescenceObj = new Obsolescence_Page(driver);
 
