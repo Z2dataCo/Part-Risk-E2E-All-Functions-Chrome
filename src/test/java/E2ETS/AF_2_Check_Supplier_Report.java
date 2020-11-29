@@ -57,7 +57,7 @@ public class AF_2_Check_Supplier_Report extends Test_Base{
         Wait_Element_Invisibility(LandObj.SpinnerZezo);
         String Fourth_Filter = ReportPageObj.Fourth_Filter.getText();
         System.out.println(Fourth_Filter);
-        Wait_Element_Clickable(ReportPageObj.Fourth_Filter);
+        Wait_Text_To_be(ReportPageObj.Info_Total,"50");
         String Info_Total4 = ReportPageObj.Info_Total.getText();
         System.out.println(Info_Total4);
         Assert.assertTrue(Fourth_Filter.contains(Info_Total4));
