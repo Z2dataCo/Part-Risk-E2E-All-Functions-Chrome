@@ -15,7 +15,10 @@ public class Dashboard_Page extends Page_Base {
     public WebElement HighRisk;
 
     @FindBy(xpath = "//*[@id=\"dashboard_content\"]/div/div/div[2]/app-dashboard-bominfo/table[1]/tbody/tr[1]/td[2]/span")
-    public  WebElement IPNs_Count;
+    public WebElement IPNs_Count;
+
+
+
 
 
     public Dashboard_Page(WebDriver driver) {
@@ -30,7 +33,9 @@ public class Dashboard_Page extends Page_Base {
         Click_Button(Reports);
     }
 
-    public void Z2Data_HighRisk(){
+    public void Z2Data_HighRisk() {
         Click_Button(HighRisk);
     }
+
+
 }

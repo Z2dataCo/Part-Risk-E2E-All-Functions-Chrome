@@ -52,6 +52,15 @@ public class Report_Page extends Page_Base {
     @FindBy(xpath = "//*[@id=\"z2-2cols-sub-2cols-left\"]/div/app-myreports/div[3]/div[2]/div/div[1]/h3")
     public WebElement FirstRow;
 
+    @FindBy(xpath = "//*[@id=\"z2-2cols-leftpanel\"]/ul/li[7]/a")
+    public WebElement ConflictMinerals;
+
+    @FindBy(xpath = "//*[@id=\"E486C921-1091-4106-AF87-9FA806D3C9CD\"]/div/div[4]/div/div/div/a")
+    public WebElement ConflictMetals;
+
+    @FindBy(xpath ="//*[@id=\"dropbg\"]/div/div/div[2]/div[2]/table/thead/tr/th[6]" )
+    public WebElement Tungsten;
+
 
     public Report_Page(WebDriver driver) {
         super(driver);
@@ -118,6 +127,13 @@ public class Report_Page extends Page_Base {
 
     public void CustomReport(){
         Click_Button(CusReport);
+
+    }
+    public void Open_ConflictMinerals() {
+        Click_Button(ConflictMinerals);
+    }
+    public void OpenConMetals(){
+        Click_Button(ConflictMetals);
     }
 
 }
