@@ -54,8 +54,8 @@ public class U_2_Fun_Create_Report extends Test_Base {
         ReportPageObj.Z2D_Confirm_Report();
         Wait_for_Element_to_Disappear(LandObj.GeneralSpinner);
         Select index = new Select(ReportPageObj.DDL_Report);
-        Thread.sleep(3500);
         String ExpectedResult = index.getOptions().get(1).getText();
+        Wait_for_Element_to_Disappear(LandObj.GeneralSpinner);
         String ActualResult = Name;
         if (!(ExpectedResult == ActualResult)) {
             WaitAllElement();
@@ -106,7 +106,7 @@ public class U_2_Fun_Create_Report extends Test_Base {
         Wait_Element_Clickable(ReportPageObj.DeleteReport);
         ReportPageObj.Delete_Report();
         Thread.sleep(3000);
-        Assert.assertNotEquals(ReportPageObj.FirstRow.getText(), Name,"Verify to delete Report");
+        Assert.assertNotEquals(ReportPageObj.FirstRow.getText(), Name, "Verify to delete Report");
         System.out.println("Report: " + Name + " Is Deleted");
 
     }
