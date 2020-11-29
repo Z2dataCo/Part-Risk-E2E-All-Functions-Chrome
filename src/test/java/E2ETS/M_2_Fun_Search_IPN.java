@@ -22,14 +22,13 @@ public class M_2_Fun_Search_IPN extends Test_Base {
     @Test(priority = 13)
     @Severity(SeverityLevel.NORMAL)
     @Description("Validate To Search By IPN")
-    public void Search_by_IPN() throws InterruptedException {
+    public void Search_by_IPN(){
         LogObj = new Login_Page(driver);
         LandObj = new Landing_Page(driver);
         LandObj.Z2D_Open_DDL_Menu();
         LandObj.Z2D_IPN_DDL();
-        Thread.sleep(1000);
         LandObj.Z2D_input_Search(Z2DataIPN);
-        Wait_Element_Clickable(LandObj.IPN_Value);
+        Wait_Element_Visible(LandObj.IPN_Value);
         LandObj.Z2D_IPN_Value();
         Assert.assertTrue(driver.getCurrentUrl().contains("IPN"));
 
