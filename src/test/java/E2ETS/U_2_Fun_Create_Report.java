@@ -45,7 +45,6 @@ public class U_2_Fun_Create_Report extends Test_Base {
         Switch_Tabs();
         WaitAllElement();
         DashboardPageObj.Z2D_Open_Reports();
-        ReportPageObj = new Report_Page(driver);
         ReportPageObj.Z2D_Open_Create_Report();
         Wait_Element_Clickable(ReportPageObj.Check_Box1);
         Wait_Element_Clickable(ReportPageObj.Check_Box2);
@@ -53,7 +52,7 @@ public class U_2_Fun_Create_Report extends Test_Base {
         ReportPageObj.Z2D_Save_Report();
         ReportPageObj.Z2D_Enter_Report_Name(Name);
         ReportPageObj.Z2D_Confirm_Report();
-        Implicitly();
+        Wait_for_Element_to_Disappear(LandObj.GeneralSpinner);
         Select index = new Select(ReportPageObj.DDL_Report);
         Thread.sleep(3500);
         String ExpectedResult = index.getOptions().get(1).getText();
