@@ -1,6 +1,5 @@
 package E2ETS;
 
-import Com.PartRisk.Pages.Landing_Page;
 import Com.PartRisk.Pages.Login_Page;
 import com.github.javafaker.Faker;
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -28,7 +27,6 @@ public class Test_Base {
     public static String Z2DataUsername = "Z2D.PR1@z2data.com";
     public static String Z2DataPassword = "Z2D.PR1@z2data.com";
     public static Login_Page LogObj;
-    public static Landing_Page page;
     public String Z2DataPartNumber = "bav99";
     public String Z2DataAdvCrosses = "bav";
     public String Z2DataIPN = "0.9902785216";
@@ -37,7 +35,7 @@ public class Test_Base {
     public String Z2DataSupplier = "Toshiba";
     public String Z2DataFolderName = "TAP_BOM";
     //public String Z2DataFilePath = System.getProperty("user.dir") + "\\src\\test\\resources\\BOMs\\TABOM1.xlsx";
-    public String Z2DataSwitcherStepFilePath = System.getProperty("user.dir") + "\\src\\test\\resources\\BOMs\\TABOM2.xlsx";
+    //public String Z2DataSwitcherStepFilePath = System.getProperty("user.dir") + "\\src\\test\\resources\\BOMs\\TABOM2.xlsx";
     Faker faker = new Faker();
     public String Z2DataFakerFolder = faker.name().firstName() + "1";
     public String Z2DataPCNID = "PD22748X";
@@ -50,9 +48,9 @@ public class Test_Base {
         ChromeOptions options = new ChromeOptions();
         options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
         options.setProxy(null);
-        //options.addArguments("--headless");
-        // options.addArguments("--disable-gpu");
-        // options.addArguments("--window-size=1400,800");
+        options.addArguments("--headless");
+        options.addArguments("--disable-gpu");
+        options.addArguments("--window-size=1400,800");
         options.addArguments("--disable-remote-fonts");
         options.addArguments("--enable-precache");
         options.addArguments("--start-maximized");
@@ -61,13 +59,12 @@ public class Test_Base {
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--no-sandbox");
         options.addArguments("--disable-infobars");
-        options.setExperimentalOption("useAutomationExtension", false);
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
 
         //driver.navigate().to("https://test.z2data.com/");
-        driver.get("https://parts.z2data.com");
+        driver.navigate().to("https://parts.z2data.com");
         login();
         DeleteCookies();
         WaitAllElement();
@@ -99,32 +96,9 @@ public class Test_Base {
 
     }
 
-    public static void ClickLogOut() throws InterruptedException {
-        page = new Landing_Page(driver);
-        Thread.sleep(2000);
-        page.Z2D_Click_My_Account();
-        page.Z2D_Logout();
-    }
-
-    public static void Wait_for_Element_to_Disappear2(WebElement element) throws Exception {
-        for (int second = 0; ; second++) {
-            if (second >= 60) fail("timeout");
-            try {
-                if (element.isDisplayed()) break;
-            } catch (Exception e) {
-            }
-            Thread.sleep(200);
-        }
-
-    }
-
-    private static void fail(String timeout) {
-
-    }
-
     @AfterMethod
-    public void Back_To_Landing(ITestResult result) throws InterruptedException {
-        String filename = new SimpleDateFormat("ddMMhhmm").format(new Date());
+    public void Back_To_Landing(ITestResult result)  {
+        String filename = new SimpleDateFormat("ddMMyyHHmm").format(new Date());
         if (ITestResult.FAILURE == result.getStatus()) {
             try {
                 TakesScreenshot ts = (TakesScreenshot) driver;
@@ -136,14 +110,16 @@ public class Test_Base {
 
         }
         WaitAllElement();
-        driver.get("https://parts.z2data.com/");
+        String URL = driver.getCurrentUrl();
+    //navigate().to("https://parts.z2data.com/");
+
 
         if (ITestResult.SUCCESS == result.getStatus()) {
-            System.out.println("[SCENARIO PASSED]:" + result.getMethod().getMethodName());
+            System.out.println("[Good Job Scenario Pass]:" + result.getMethod().getMethodName() + URL);
         } else if (ITestResult.FAILURE == result.getStatus()) {
-            System.out.println("[SCENARIO FAIL]:" + result.getMethod().getMethodName());
+            System.out.println("[Check Again Scenario Fail]:" + result.getMethod().getMethodName() + URL);
         } else {
-            System.out.println("SCENARIO SKIPPED]:" + result.getMethod().getMethodName());
+            System.out.println("Previous Fail then this Scenario Skipped]:" + result.getMethod().getMethodName() + URL);
         }
     }
 
@@ -158,28 +134,28 @@ public class Test_Base {
     }
 
     public void Wait_Element_Clickable(WebElement element) {
-        WebDriverWait WebWait = new WebDriverWait(driver, 60);
+        WebDriverWait WebWait = new WebDriverWait(driver, 100);
         WebWait.until(ExpectedConditions.elementToBeClickable(element));
     }
 
     public void Wait_Element_Visible(WebElement element) {
-        WebDriverWait WebWait = new WebDriverWait(driver, 60);
+        WebDriverWait WebWait = new WebDriverWait(driver, 1000);
         WebWait.until(ExpectedConditions.visibilityOf(element));
     }
 
     public void Wait_Element_Invisibility(WebElement element) {
-        WebDriverWait Wait = new WebDriverWait(driver, 60);
+        WebDriverWait Wait = new WebDriverWait(driver, 100);
         Wait.until(ExpectedConditions.invisibilityOf(element));
     }
 
     public void Wait_Text_To_Be(WebElement element, String Text) {
-        WebDriverWait Wait = new WebDriverWait(driver, 60);
+        WebDriverWait Wait = new WebDriverWait(driver, 100);
         Wait.until(ExpectedConditions.textToBePresentInElement(element, Text));
 
     }
 
     public void Wait_Text_Not_To_be(WebElement element, String Text) {
-        WebDriverWait Wait = new WebDriverWait(driver, 50);
+        WebDriverWait Wait = new WebDriverWait(driver, 100);
         Wait.until(ExpectedConditions.not(ExpectedConditions.textToBePresentInElement(element, Text)));
     }
 

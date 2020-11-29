@@ -1,6 +1,5 @@
 package Com.PartRisk.Pages;
 
-import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.ElementNotInteractableException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -78,16 +77,6 @@ public class Upload_BOM_Page extends Page_Base {
     public WebElement Preview_Button;
     @FindBy(xpath = "//*[@id=\"z2-2cols-sub-2cols-left\"]/div//div[3]/div[2]/div/div[1]/h3")
     public WebElement First_Report;
-
-
-
-
-
-
-
-
-
-
 
 
     public Upload_BOM_Page(WebDriver driver) {

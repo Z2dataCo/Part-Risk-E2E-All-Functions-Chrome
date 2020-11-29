@@ -26,7 +26,7 @@ public class Landing_Page extends Page_Base {
     @FindBy(id = "txtMainBarSearch")
     public WebElement Search_Input;
     @FindBy(linkText = "Data Management")
-    public WebElement Data_Management;
+    public WebElement Data_Management_Tab;
     @FindBy(xpath = "//*[@id=\"ui-id-3\"]")
     public WebElement Value;
     @FindBy(xpath = "/html[1]/body[1]/ul[2]/li[2]/a[1]")
@@ -41,29 +41,31 @@ public class Landing_Page extends Page_Base {
     @FindBy(xpath = "//body/div[@id='dropbg']/div[1]/div[2]/div[2]/a[3]/span[1]")
     public WebElement Logout;
     @FindBy(xpath = "//*[@id=\"main-search-bar\"]/div[1]")
-    WebElement DDL_Type_Of_Search;
+    public WebElement DDL_Type_Of_Search;
     @FindBy(xpath = "//div[@id='dropbg']//a[contains(text(),'Part Number')]")
     WebElement Part_Number;
     @FindBy(xpath = "//button[@id='btnautoSearch']")
     WebElement Search_Btn;
     @FindBy(xpath = "/html/body/div[3]/div[1]/ul/li[1]/a")
-    WebElement Parametric_Menu;
+    public WebElement Parametric_Menu;
     @FindBy(xpath = "/html/body/div[3]/div[1]/ul/li[1]/div/div/div[1]/ul/li[1]/a")
     WebElement Product;
     @FindBy(xpath = "//*[@id=\"ca1_Semiconductors\"]/ul/li[1]/ul/li/div[1]/div/div/a")
     WebElement SupElement;
     @FindBy(xpath = "//*[@id=\"scopeOptionDiv\"]/ul/li[6]/a")
-    WebElement Adv_Crosses_Value;
+    public WebElement Adv_Crosses_Value;
     @FindBy(xpath = "//*[@id=\"scopeOptionDiv\"]/ul/li[2]/a")
     WebElement IPN;
-    @FindBy(xpath = "//body/div[3]/div[1]/ul[1]/li[6]/a[1]")
-    WebElement Compare_Tab;
-    @FindBy(xpath = "//body/div[3]/div[1]/ul[1]/li[7]/a[1]")
-    WebElement More_Tab;
+    @FindBy(linkText = "Compare")
+    //@FindBy(xpath = "/html/body/div[4]/div[1]/ul/li[6]/a")
+    public WebElement Compare_Tab;
+    @FindBy(xpath = "/html[1]/body[1]/div[4]/div[1]/ul[1]/li[7]/a[1]")
+    public WebElement More_Tab;
     @FindBy(xpath = "//a[contains(text(),'Suppliers')]")
-    WebElement Suppliers;
-    @FindBy(xpath = "//body/div[3]/div[1]/ul[1]/li[3]/a[1]")
-    WebElement PCN_Manager_Tab;
+    public WebElement Suppliers;
+    @FindBy(linkText = "PCN Manager")
+    //@FindBy(xpath = "/html/body/div[4]/div[1]/ul/li[3]/a")
+    public WebElement PCN_Manager_Tab;
     @FindBy(xpath = "//*[@id=\"btnautoSearch\"]/i")
     WebElement btn_search;
 
@@ -120,7 +122,7 @@ public class Landing_Page extends Page_Base {
     }
 
     public void Z2D_Open_Data_Management() {
-        Click_Button(Data_Management);
+        Click_Button(Data_Management_Tab);
     }
 
     public void Z2D_Open_DDL_Menu() {

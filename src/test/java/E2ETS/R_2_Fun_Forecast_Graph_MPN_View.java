@@ -22,8 +22,8 @@ public class R_2_Fun_Forecast_Graph_MPN_View extends Test_Base {
         LandObj = new Landing_Page(driver);
         DManagementObj = new Data_Management_Page(driver);
         ForeCastObj = new Forecast_Page(driver);
-
         DManagementObj.Z2D_Move_To_Prod_BOM(driver);
+
         Wait_Element_Invisibility(LandObj.SpinnerZezo);
         Wait_Element_Clickable(ForeCastObj.Graph2);
         ForeCastObj.Z2D_Click_on_Forecast_Tab();
@@ -37,6 +37,7 @@ public class R_2_Fun_Forecast_Graph_MPN_View extends Test_Base {
         ForeCastObj.Z2D_Get_Table_Data(driver, "Active");
         String TotalFilterValue = ForeCastObj.TotalValue.getText();
         //System.out.println("Total Filter Value : " + TotalFilterValue);
+        Wait_Text_To_Be(ForeCastObj.TotalValue,ActiveFilterValue);
         Assert.assertEquals(TotalFilterValue, ActiveFilterValue);
 
         String EOLFilterValue = ForeCastObj.Second_Filter.getText();
@@ -47,6 +48,7 @@ public class R_2_Fun_Forecast_Graph_MPN_View extends Test_Base {
         ForeCastObj.Z2D_Get_Table_Data(driver, "EOL");
         String TotalFilterValue2 = ForeCastObj.TotalValue.getText();
         //System.out.println("TotalFilterValue2 : " + TotalFilterValue2);
+        Wait_Text_To_Be(ForeCastObj.TotalValue,EOLFilterValue);
         Assert.assertEquals(TotalFilterValue2, EOLFilterValue);
 
         String UnknownFilterValue = ForeCastObj.Third_Filter.getText();
@@ -57,6 +59,7 @@ public class R_2_Fun_Forecast_Graph_MPN_View extends Test_Base {
         ForeCastObj.Z2D_Get_Table_Data(driver, "Unknown");
         String TotalFilterValue3 = ForeCastObj.TotalValue.getText();
         //System.out.println("TotalFilterValue3 : " + TotalFilterValue3);
+        Wait_Text_To_Be(ForeCastObj.TotalValue,UnknownFilterValue);
         Assert.assertEquals(TotalFilterValue3, UnknownFilterValue);
     }
 }

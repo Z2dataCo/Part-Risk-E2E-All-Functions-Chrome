@@ -16,6 +16,7 @@ public class L_2_Fun_Search_Part_Number extends Test_Base {
     @Description("Validate To Search By Part Number")
     public void Search_with_Part_Number() {
         LandObj = new Landing_Page(driver);
+
         LandObj.Z2D_input_Search(Z2DataPartNumber);
         LandObj.Z2D_Click_Search();
         Wait_Element_Clickable(LandObj.Supp_ChkBox);

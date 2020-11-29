@@ -3,6 +3,7 @@ package Com.PartRisk.Pages;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
+
 import java.util.List;
 
 public class Mitigation_Page extends Page_Base {
@@ -12,9 +13,7 @@ public class Mitigation_Page extends Page_Base {
     WebElement Drop_Crosses;
     @FindBy(xpath = "//*[@id=\"dropbg\"]/div/div/div[2]/table[2]/tbody/tr[2]/td[1]/button")
     WebElement Add_Crosses;
-    // @FindBy(xpath = "//*[@id=\"RemainMainPage\"]/app-risk-manager/app-risk-mitigation/app-riskmitigationipn/div[1]/div[1]/div/div/div[1]")
-    // WebElement Total_Filter;
-    @FindBy(className = "nav-link active")
+    @FindBy(xpath = "//a[contains(text(),'Mitigation')]")
     public WebElement Mitigation_Tab;
     // @FindBy(xpath = "//div[@class='z2-scorecard scorecard-parts']/div[1]/div[2]/div[1]")
     // public WebElement Total_Parts;

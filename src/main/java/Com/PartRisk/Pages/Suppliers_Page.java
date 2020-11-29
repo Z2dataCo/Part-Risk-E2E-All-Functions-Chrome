@@ -1,5 +1,6 @@
 package Com.PartRisk.Pages;
 
+import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -23,7 +24,14 @@ public class Suppliers_Page extends Page_Base {
     }
 
     public void Z2D_Click_Search() {
-        Click_Button(Search_Btn);
+        boolean Intercepted = true;
+        while (Intercepted) {
+            try {
+                Click_Button(Search_Btn);
+                Intercepted = false;
+            } catch (ElementClickInterceptedException e) {
+                Intercepted = true;
+            }
+        }
     }
-
 }

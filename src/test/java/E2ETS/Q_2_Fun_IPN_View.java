@@ -6,6 +6,7 @@ import Com.PartRisk.Pages.Parts_Page;
 import io.qameta.allure.Description;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -21,20 +22,27 @@ public class Q_2_Fun_IPN_View extends Test_Base {
         LandObj = new Landing_Page(driver);
         DManagementObj = new Data_Management_Page(driver);
         PartPageObj = new Parts_Page(driver);
+
         LandObj.Z2D_Open_Data_Management();
         Wait_Element_Visible(DManagementObj.Search_Text_Input);
         DManagementObj.Z2D_Search(Z2DataFolderName);
-        Thread.sleep(3000);
-        DManagementObj.SetFile();
-        Thread.sleep(1000);
+        boolean staleElement = true;
+        while (staleElement) {
+            try {
+                DManagementObj.SetFile();
+                staleElement = false;
+            } catch (StaleElementReferenceException e) {
+                staleElement = true;
+            }
+        }
         DManagementObj.Z2D_Open_BOM();
-        Thread.sleep(2000);
+
         Switch_Tabs();
-        Thread.sleep(1000);
+        Wait_Element_Clickable(DManagementObj.Parts);
         DManagementObj.Z2D_Open_Parts();
         Wait_for_Element_to_Disappear(DManagementObj.Spinner);
         PartPageObj.Z2D_Select_Switcher();
-        Wait_Element_Invisibility(PartPageObj.IPN_Table_Header);
+        Wait_Element_Visible(PartPageObj.IPN_Table_Header);
         //PartPageObj.ChekFuses();
         Wait_for_Element_to_Disappear(DManagementObj.Spinner);
         Assert.assertTrue(PartPageObj.IPN_Table_Header.getText().contains("IPN"));

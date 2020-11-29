@@ -18,6 +18,7 @@ public class B_1_Data_Management extends Test_Base {
     public void Data_Management() {
         DManagementObj = new Data_Management_Page(driver);
         LandObj = new Landing_Page(driver);
+
         LandObj.Z2D_Open_Data_Management();
         Wait_Element_Visible(DManagementObj.Table_Name);
         Wait_Element_Clickable(DManagementObj.Table_Name);

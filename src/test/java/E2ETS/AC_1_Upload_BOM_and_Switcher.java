@@ -1,15 +1,6 @@
 package E2ETS;
 
-import Com.PartRisk.Pages.*;
-import io.qameta.allure.Description;
-import io.qameta.allure.Severity;
-import io.qameta.allure.SeverityLevel;
-import org.testng.Assert;
-import org.testng.annotations.Test;
-
-import java.awt.*;
-
-public class AC_1_Upload_BOM_and_Switcher extends Test_Base {
+/*public class AC_1_Upload_BOM_and_Switcher extends Test_Base {
     Landing_Page LandObj;
     Upload_BOM_Page UpBOMObj;
     Data_Management_Page DManagementObj;
@@ -17,7 +8,7 @@ public class AC_1_Upload_BOM_and_Switcher extends Test_Base {
     Parts_Page PartsObj;
     Forecast_Page ForecastObj;
 
-    @Test(priority = 31)
+    @Test(priority = 31,enabled = false)
     @Severity(SeverityLevel.CRITICAL)
     @Description("Validate User Upload BOM")
     public void Upload_BOM_and_Switcher() throws AWTException, InterruptedException {
@@ -103,4 +94,4 @@ public class AC_1_Upload_BOM_and_Switcher extends Test_Base {
         Assert.assertEquals(UpBOMObj.Reports_Tab.getText(), "Reports");
         Wait_for_Element_to_Disappear(DManagementObj.Spinner);
     }
-}
+}*/

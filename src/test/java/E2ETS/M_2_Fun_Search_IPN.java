@@ -6,8 +6,6 @@ import io.qameta.allure.Description;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import org.testng.Assert;
-import org.testng.annotations.Optional;
-import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 
@@ -22,6 +20,7 @@ public class M_2_Fun_Search_IPN extends Test_Base {
     public void Search_by_IPN() throws InterruptedException {
         LogObj = new Login_Page(driver);
         LandObj = new Landing_Page(driver);
+
         LandObj.Z2D_Open_DDL_Menu();
         LandObj.Z2D_IPN_DDL();
         Thread.sleep(1000);

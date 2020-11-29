@@ -21,13 +21,21 @@ public class O_2_Fun_Count_Of_Exact_Match extends Test_Base {
         DManagementObj = new Data_Management_Page(driver);
         LandObj = new Landing_Page(driver);
         ScrubPageObj = new Scrub_Page(driver);
+
         LandObj.Z2D_Open_Data_Management();
-        Thread.sleep(4000);
+        Wait_Element_Visible(DManagementObj.Search_Text_Input);
         DManagementObj.Z2D_Search(Z2DataFolderName);
-        DManagementObj.SetFile(); // hna
-        Thread.sleep(1000);
+        boolean staleElement = true;
+        while (staleElement) {
+            try {
+                DManagementObj.SetFile();
+                staleElement = false;
+            } catch (Exception e) {
+                staleElement = true;
+            }
+        }
+        Wait_Element_Clickable(DManagementObj.Select_BOM);
         DManagementObj.Z2D_Open_BOM();
-        Thread.sleep(2000);
         Switch_Tabs();
         Wait_for_Element_to_Disappear(DManagementObj.Spinner);
         DManagementObj.Z2D_Open_Scrub();
