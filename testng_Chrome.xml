@@ -155,6 +155,11 @@
                     <include name="Mitigation_Filters_and_Data_MPN_View"/>
                 </methods>
             </class>
+            <class name="E2ETS.AD_1_CheckDashBoardData">
+                <methods>
+                    <include name="DashBoardData"/>
+                </methods>
+            </class>
         </classes>
     </test>
 </suite>

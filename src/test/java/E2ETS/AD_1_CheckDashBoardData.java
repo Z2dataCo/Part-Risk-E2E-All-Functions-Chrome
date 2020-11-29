@@ -5,6 +5,9 @@ import Com.PartRisk.Pages.Landing_Page;
 import Com.PartRisk.Pages.Parts_Page;
 import Com.PartRisk.Pages.Scrub_Page;
 import io.cucumber.java.jv.Lan;
+import io.qameta.allure.Description;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 import okhttp3.MultipartBody;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
@@ -19,7 +22,9 @@ public class AD_1_CheckDashBoardData extends Test_Base {
     Scrub_Page ScrubPageObj;
     Parts_Page Parts_Obj;
 
-    @Test
+    @Test(priority = 32)
+    @Severity(SeverityLevel.NORMAL)
+    @Description("")
     public void DashBoardData() throws InterruptedException {
         LandOpj = new Landing_Page(driver);
         DManagementObj = new Data_Management_Page(driver);
