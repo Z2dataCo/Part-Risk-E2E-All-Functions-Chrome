@@ -35,7 +35,7 @@ public class S_2_Fun_Forecast_Graph_IPN_View extends Test_Base {
         //System.out.println("Multi_Source_Filter_Value : " + Multi_Source_Filter_Value);
         ForeCastObj.Z2D_Click_on_First_Filter();
         Wait_Element_Invisibility(LandObj.SpinnerZezo);
-        Wait_Text_To_Be(ForeCastObj.TotalValue,Multi_Source_Filter_Value);
+        Wait_Text_To_be(ForeCastObj.TotalValue,Multi_Source_Filter_Value);
         String TotalFilterValue = ForeCastObj.TotalValue.getText();
         //System.out.println("Total Filter Value : " + TotalFilterValue);
         Assert.assertEquals(TotalFilterValue, Multi_Source_Filter_Value);
@@ -52,7 +52,7 @@ public class S_2_Fun_Forecast_Graph_IPN_View extends Test_Base {
         //System.out.println("Single_Source_Filter_Value : " + Single_Source_Filter_Value);
         ForeCastObj.Z2D_Click_on_Second_Filter();
         Wait_Element_Invisibility(LandObj.SpinnerZezo);
-        Wait_Text_To_Be(ForeCastObj.TotalValue,Single_Source_Filter_Value);
+        Wait_Text_To_be(ForeCastObj.TotalValue,Single_Source_Filter_Value);
         String TotalFilterValue2 = ForeCastObj.TotalValue.getText();
         //System.out.println("Total Filter Value : " + TotalFilterValue2);
         Assert.assertEquals(TotalFilterValue2, Single_Source_Filter_Value);
@@ -69,7 +69,7 @@ public class S_2_Fun_Forecast_Graph_IPN_View extends Test_Base {
         //System.out.println("NA_Source_Filter_Value : " + NA_Source_Filter_Value);
         ForeCastObj.Z2D_Click_on_Fifth_Filter();
         Wait_Element_Invisibility(LandObj.SpinnerZezo);
-        Wait_Text_To_Be(ForeCastObj.TotalValue,NA_Source_Filter_Value);
+        Wait_Text_To_be(ForeCastObj.TotalValue,NA_Source_Filter_Value);
         String TotalFilterValue3 = ForeCastObj.TotalValue.getText();
         //System.out.println("Total Filter Value : " + TotalFilterValue3);
         Assert.assertEquals(TotalFilterValue3, NA_Source_Filter_Value);

@@ -31,7 +31,7 @@ public class K_2_Fun_Filters_For_Compliance extends Test_Base {
         CompliancePageObj.Z2D_Click_on_First_Filter();
         Wait_Element_Invisibility(LandObj.SpinnerZezo);
         String FirstTotal = CompliancePageObj.First_Filter_Total.getText();
-        Wait_Text_To_Be(CompliancePageObj.Total_Filter_Results,FirstTotal);
+        Wait_Text_To_be(CompliancePageObj.Total_Filter_Results,FirstTotal);
         String AllTotal = CompliancePageObj.Total_Filter_Results.getText();
         Assert.assertEquals(FirstTotal, AllTotal);
 
@@ -39,7 +39,7 @@ public class K_2_Fun_Filters_For_Compliance extends Test_Base {
         CompliancePageObj.Z2D_Click_on_Second_Filter();
         Wait_Element_Invisibility(LandObj.SpinnerZezo);
         String SecTotal = CompliancePageObj.Second_Filter_Total.getText();
-        Wait_Text_To_Be(CompliancePageObj.Showing_Of,"Showing 1-0 of");
+        Wait_Text_To_be(CompliancePageObj.Showing_Of,"Showing 1-0 of");
         String AllTotal2 = CompliancePageObj.Total_Filter_Results.getText();
         Assert.assertEquals(AllTotal2,SecTotal);
     }

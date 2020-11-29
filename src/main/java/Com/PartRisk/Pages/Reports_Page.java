@@ -50,8 +50,18 @@ public class Reports_Page extends Page_Base {
     public WebElement Export_Button;
     @FindBy(xpath = "//*[@id=\"dropbg\"]/div/div/div[2]/div[1]/div/div/a[1]")
     public WebElement Export_Selection;
-
-
+    @FindBy(xpath = "//a[contains(text(),'CM Compliance by Supplier')]")
+    public WebElement Supplier_Report_Button;
+    @FindBy(xpath = "//*[@id=\"dropbg\"]/div/div/div[2]/div[1]/div[1]/div[2]/div")
+    public WebElement First_Filter;
+    @FindBy(xpath = "//*[@id=\"dropbg\"]/div/div/div[2]/div[1]/div[2]/div[2]/div")
+    public WebElement Second_Filter;
+    @FindBy(xpath = "//*[@id=\"dropbg\"]/div/div/div[2]/div[1]/div[3]/div[2]/div")
+    public WebElement Third_Filter;
+    @FindBy(xpath = "//*[@id=\"dropbg\"]/div/div/div[2]/div[1]/div[4]/div[2]/div")
+    public WebElement Fourth_Filter;
+    @FindBy(xpath = "//*[@id=\"dropbg\"]/div/div/div[2]/div[2]/app-z2pagination/span/span[2]")
+    public WebElement Info_Total;
 
 
     public Reports_Page(WebDriver driver) {
@@ -110,12 +120,20 @@ public class Reports_Page extends Page_Base {
         Click_Button(ObsoleteParts_5Y);
     }
 
-    public void Z2D_Open_Smelters_Report(){action.moveToElement(Conflict_Minerals_Tab).click().perform();
-    Click_Button(Smelters_Report_button);}
+    public void Z2D_Open_Smelters_Report(){
+        action.moveToElement(Conflict_Minerals_Tab).click().perform();
+        Click_Button(Smelters_Report_button);}
 
     public void Z2D_Export_Report_Excel(){Click_Button(Export_Button);
     action.moveToElement(Export_Selection).click().perform();}
 
+    public void Z2D_Open_Supplier_Report(){
+        action.moveToElement(Conflict_Minerals_Tab).click().perform();
+        Click_Button(Supplier_Report_Button);}
+
+    public void Z2D_Click_on_2nd_Filter(){ Click_Button(Second_Filter); }
+    public void Z2D_Click_on_3rd_Filter(){ Click_Button(Third_Filter); }
+    public void Z2D_Click_on_4th_Filter(){ Click_Button(Fourth_Filter); }
 
 
 }
