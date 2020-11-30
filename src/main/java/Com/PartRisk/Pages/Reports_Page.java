@@ -46,9 +46,9 @@ public class Reports_Page extends Page_Base {
     public WebElement Smelters_Report_button;
     @FindBy(xpath = "//*[@id=\"dropbg\"]/div/div/div[1]/div[1]/div[1]/div[1]")
     public WebElement Report_Window_Title;
-    @FindBy(xpath = "//*[@id=\"dropbg\"]/div/div/div[2]/div[1]/div/button")
+    @FindBy(xpath = "//*[@id=\"dropbg\"]/div/div/div[2]/div[1]/div//button")
     public WebElement Export_Button;
-    @FindBy(xpath = "//*[@id=\"dropbg\"]/div/div/div[2]/div[1]/div/div/a[1]")
+    @FindBy(xpath = "//*[@id=\"dropbg\"]/div/div/div[2]/div[1]/div/div//a[1]")
     public WebElement Export_Selection;
     @FindBy(xpath = "//a[contains(text(),'CM Compliance by Supplier')]")
     public WebElement Supplier_Report_Button;
@@ -129,7 +129,7 @@ public class Reports_Page extends Page_Base {
         Click_Button(Smelters_Report_button);}
 
     public void Z2D_Export_Report_Excel(){Click_Button(Export_Button);
-    action.moveToElement(Export_Selection).click().perform();}
+    action.moveToElement(Export_Selection).click().build().perform();}
 
     public void Z2D_Open_Supplier_Report(){
         action.moveToElement(Conflict_Minerals_Tab).click().perform();
