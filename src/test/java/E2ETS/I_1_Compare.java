@@ -29,9 +29,10 @@ public class I_1_Compare extends Test_Base {
         CompareObj.Z2D_Input_Compare_1(Z2DataCompare_1);
         Wait_Element_Visible(CompareObj.Value_Compare1);
         act.moveToElement(CompareObj.Value_Compare1).click().perform();
-        Wait_Element_Visible(CompareObj.Compare2);
+        Wait_Element_Clickable(CompareObj.Compare2);
         CompareObj.Z2D_Input_Compare_2(Z2DataCompare_2);
-        act.moveToElement(CompareObj.Value_Compare2).click().build().perform();
+        Wait_Element_Visible(CompareObj.Value_Compare2);
+        act.moveToElement(CompareObj.Value_Compare2).click().perform();
         WaitAllElement();
         CompareObj.Z2D_Select_Differences();
         CompareObj.Z2D_Select_Similarities();
