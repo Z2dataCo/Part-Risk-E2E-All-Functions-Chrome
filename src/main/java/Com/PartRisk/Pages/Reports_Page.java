@@ -45,13 +45,18 @@ public class Reports_Page extends Page_Base {
     @FindBy(xpath = "//a[contains(text(),'Smelters Report')]")
     public WebElement Smelters_Report_button;
     @FindBy(xpath = "//*[@id=\"dropbg\"]/div/div/div[1]/div[1]/div[1]/div[1]")
-    public WebElement Smelters_Window_Title;
+    public WebElement Report_Window_Title;
     @FindBy(xpath = "//*[@id=\"dropbg\"]/div/div/div[2]/div[1]/div/button")
     public WebElement Export_Button;
     @FindBy(xpath = "//*[@id=\"dropbg\"]/div/div/div[2]/div[1]/div/div/a[1]")
     public WebElement Export_Selection;
     @FindBy(xpath = "//a[contains(text(),'CM Compliance by Supplier')]")
     public WebElement Supplier_Report_Button;
+    @FindBy(xpath = "//a[contains(text(),'MPN Conflict Minerals Report')]")
+    public WebElement Compliance_By_MPN_Report_Button;
+    @FindBy(xpath = "//a[contains(text(),'Conflict Minerals Metal')]")
+    public WebElement Minerals_Metal_Report_Button;
+
     @FindBy(xpath = "//*[@id=\"dropbg\"]/div/div/div[2]/div[1]/div[1]/div[2]/div")
     public WebElement First_Filter;
     @FindBy(xpath = "//*[@id=\"dropbg\"]/div/div/div[2]/div[1]/div[2]/div[2]/div")
@@ -60,9 +65,8 @@ public class Reports_Page extends Page_Base {
     public WebElement Third_Filter;
     @FindBy(xpath = "//*[@id=\"dropbg\"]/div/div/div[2]/div[1]/div[4]/div[2]/div")
     public WebElement Fourth_Filter;
-    @FindBy(xpath = "//*[@id=\"dropbg\"]/div/div/div[2]/div[2]/app-z2pagination/span/span[2]")
+    @FindBy(xpath = "//*[@id=\"dropbg\"]/div/div/div[2]/div[2]//app-z2pagination/span/span[2]")
     public WebElement Info_Total;
-
 
     public Reports_Page(WebDriver driver) {
         super(driver);
@@ -130,6 +134,14 @@ public class Reports_Page extends Page_Base {
     public void Z2D_Open_Supplier_Report(){
         action.moveToElement(Conflict_Minerals_Tab).click().perform();
         Click_Button(Supplier_Report_Button);}
+
+    public void Z2D_Open_Compliance_MPN_Report(){
+        action.moveToElement(Conflict_Minerals_Tab).click().perform();
+        Click_Button(Compliance_By_MPN_Report_Button);}
+
+    public void Z2D_Open_Minerals_Metal_Report(){
+        action.moveToElement(Conflict_Minerals_Tab).click().perform();
+        Click_Button(Minerals_Metal_Report_Button);}
 
     public void Z2D_Click_on_2nd_Filter(){ Click_Button(Second_Filter); }
     public void Z2D_Click_on_3rd_Filter(){ Click_Button(Third_Filter); }

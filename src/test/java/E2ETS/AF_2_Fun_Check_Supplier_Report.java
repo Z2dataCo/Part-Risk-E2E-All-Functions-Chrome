@@ -3,14 +3,13 @@ package E2ETS;
 import Com.PartRisk.Pages.Data_Management_Page;
 import Com.PartRisk.Pages.Landing_Page;
 import Com.PartRisk.Pages.Reports_Page;
-import io.cucumber.java.eo.Se;
 import io.qameta.allure.Description;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class AF_2_Check_Supplier_Report extends Test_Base{
+public class AF_2_Fun_Check_Supplier_Report extends Test_Base{
     Data_Management_Page DManagementObj;
     Reports_Page ReportPageObj;
     Landing_Page LandObj;
@@ -25,8 +24,8 @@ public class AF_2_Check_Supplier_Report extends Test_Base{
         DManagementObj.Z2D_Move_to_Reports_Bom(driver);
         ReportPageObj.Z2D_Open_Supplier_Report();
         Wait_Element_Invisibility(LandObj.SpinnerZezo);
-        Wait_Element_Visible(ReportPageObj.Smelters_Window_Title);
-        Assert.assertTrue(ReportPageObj.Smelters_Window_Title.getText().contains("Conflict Mineral Compliance by Supplier"));
+        Wait_Element_Visible(ReportPageObj.Report_Window_Title);
+        Assert.assertTrue(ReportPageObj.Report_Window_Title.getText().contains("Conflict Mineral Compliance by Supplier"));
 
         String First_Filter = ReportPageObj.First_Filter.getText();
         Wait_Text_To_be(ReportPageObj.Info_Total,First_Filter.replace(" Suppliers" ,""));
