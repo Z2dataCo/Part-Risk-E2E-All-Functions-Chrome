@@ -59,7 +59,7 @@ public class Landing_Page extends Page_Base {
     @FindBy(linkText = "Compare")
     //@FindBy(xpath = "/html/body/div[4]/div[1]/ul/li[6]/a")
     public WebElement Compare_Tab;
-    @FindBy(xpath = "/html[1]/body[1]/div[4]/div[1]/ul[1]/li[7]/a[1]")
+    @FindBy(xpath = "//a[contains(text(),'More')]")
     public WebElement More_Tab;
     @FindBy(xpath = "//a[contains(text(),'Suppliers')]")
     public WebElement Suppliers;
