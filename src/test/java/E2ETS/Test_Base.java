@@ -159,6 +159,10 @@ public class Test_Base {
         Wait.until(ExpectedConditions.not(ExpectedConditions.textToBePresentInElement(element, Text)));
     }
 
+    public void Invisbility_oF_New(List <WebElement> elements ) {
+        WebDriverWait Wait = new WebDriverWait(driver, 100);
+        Wait.until(ExpectedConditions.invisibilityOfAllElements(elements));
+    }
     @BeforeMethod
     public void WaitElement() {
         Refresh();
