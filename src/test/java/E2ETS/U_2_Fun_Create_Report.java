@@ -30,23 +30,8 @@ public class U_2_Fun_Create_Report extends Test_Base {
         DashboardPageObj = new Dashboard_Page(driver);
         ReportPageObj = new Reports_Page(driver);
 
-        LandObj.Z2D_Open_Data_Management();
-        Wait_Element_Visible(DManagementObj.Search_Text_Input);
-        DManagementObj.Z2D_Type_Folder_Name(Z2DataFolderName);
-        DManagementObj.Z2D_Select_Folder();
-        boolean staleElement = true;
-        while (staleElement) {
-            try {
-                DManagementObj.Z2D_Open_BOM();
-                staleElement = false;
-            } catch (StaleElementReferenceException e) {
-                staleElement = true;
-            }
-        }
-        Switch_Tabs();
-        WaitAllElement();
-        DashboardPageObj.Z2D_Open_Reports();
-        ReportPageObj = new Reports_Page(driver);
+
+        DManagementObj.Z2D_Move_to_Reports_Bom(driver);
         ReportPageObj.Z2D_Open_Create_Report();
         Wait_Element_Clickable(ReportPageObj.Check_Box1);
         Wait_Element_Clickable(ReportPageObj.Check_Box2);
@@ -54,7 +39,26 @@ public class U_2_Fun_Create_Report extends Test_Base {
         ReportPageObj.Z2D_Save_Report();
         ReportPageObj.Z2D_Enter_Report_Name(Name);
         ReportPageObj.Z2D_Confirm_Report();
-        Implicitly();
+        Wait_Element_Invisibility(DManagementObj.Toast_Container);
+        ReportPageObj.Z2D_Click_on_Saved_Reports_List();
+        String Saved_Report = ReportPageObj.First_Report_Name.getText();
+        Assert.assertEquals(Saved_Report, Name);
+        ReportPageObj.Z2D_Preview_Report();
+        Wait_Element_Invisibility(LandObj.SpinnerZezo);
+        Wait_Element_Visible(ReportPageObj.Report_Window_Title);
+        Assert.assertEquals(ReportPageObj.Report_Window_Title.getText(), ("Report Preview"));
+        Assert.assertEquals(ReportPageObj.Download_Btn.getText(), ("Download"));
+        ReportPageObj.Z2D_Download_Report();
+        Wait_Element_Clickable(ReportPageObj.Close_Preview);
+        ReportPageObj.Z2D_Close_Preview();
+    }}
+
+
+
+
+
+
+       /* Implicitly();
         Select index = new Select(ReportPageObj.DDL_Report);
         Thread.sleep(3500);
         String ExpectedResult = index.getOptions().get(1).getText();
@@ -95,5 +99,4 @@ public class U_2_Fun_Create_Report extends Test_Base {
             ReportPageObj.Z2D_Close_Preview();
             Wait_for_Element_to_Disappear(DManagementObj.Spinner);
         }
-    }
-}
+    }}*/

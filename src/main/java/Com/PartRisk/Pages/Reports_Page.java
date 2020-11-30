@@ -10,7 +10,7 @@ public class Reports_Page extends Page_Base {
     public WebElement Check_Box1;
     @FindBy(xpath = "//span[contains(text(),'Product Name')]")
     public WebElement Check_Box2;
-    @FindBy(xpath = "//*[@id=\"z2-2cols-sub-2cols-left\"]/div/app-createreport/app-run-create-reports/div[1]/div[1]/div[2]/select")
+    @FindBy(xpath = "//*[@placeholder='Saved Reports']")
     public WebElement DDL_Report;
     @FindBy(xpath = "//*[@id=\"z2-2cols-sub-2cols-left\"]/div/app-createreport/app-run-create-reports/div[1]/div[1]/div[2]/select/option[2]")
     public WebElement Index0;
@@ -38,7 +38,7 @@ public class Reports_Page extends Page_Base {
     WebElement Report_Name;
     @FindBy(xpath = "//body/div[@id='dropbg']/div[1]/div[1]/div[2]/button[1]")
     WebElement Confirm_Report;
-    @FindBy(xpath = "//*[@id=\"z2-2cols-sub-2cols-left\"]/div/app-createreport/app-run-create-reports/div[1]/div[1]/div[1]/button[3]")
+    @FindBy(xpath = "//*[@class='pull-left width-80-per']/button[3]")
     WebElement Preview;
     @FindBy(xpath = "//*[@id=\"z2-2cols-leftpanel\"]/ul/li[7]/a")
     public WebElement Conflict_Minerals_Tab;
@@ -56,7 +56,6 @@ public class Reports_Page extends Page_Base {
     public WebElement Compliance_By_MPN_Report_Button;
     @FindBy(xpath = "//a[contains(text(),'Conflict Minerals Metal')]")
     public WebElement Minerals_Metal_Report_Button;
-
     @FindBy(xpath = "//*[@id=\"dropbg\"]/div/div/div[2]/div[1]/div[1]/div[2]/div")
     public WebElement First_Filter;
     @FindBy(xpath = "//*[@id=\"dropbg\"]/div/div/div[2]/div[1]/div[2]/div[2]/div")
@@ -67,6 +66,9 @@ public class Reports_Page extends Page_Base {
     public WebElement Fourth_Filter;
     @FindBy(xpath = "//*[@id=\"dropbg\"]/div/div/div[2]/div[2]//app-z2pagination/span/span[2]")
     public WebElement Info_Total;
+    @FindBy(xpath = "//*[@placeholder='Saved Reports']/option[2]")
+    public WebElement First_Report_Name;
+
 
     public Reports_Page(WebDriver driver) {
         super(driver);
@@ -79,9 +81,7 @@ public class Reports_Page extends Page_Base {
 
     public void Z2D_Select_Parameter() throws InterruptedException {
         Click_Button(Check_Box1);
-        Thread.sleep(1000);
         Click_Button(Check_Box2);
-        Thread.sleep(2000);
     }
 
     public void Z2D_Save_Report() {
@@ -146,6 +146,6 @@ public class Reports_Page extends Page_Base {
     public void Z2D_Click_on_2nd_Filter(){ Click_Button(Second_Filter); }
     public void Z2D_Click_on_3rd_Filter(){ Click_Button(Third_Filter); }
     public void Z2D_Click_on_4th_Filter(){ Click_Button(Fourth_Filter); }
-
+    public void Z2D_Click_on_Saved_Reports_List(){action.moveToElement(DDL_Report).click().perform();}
 
 }
