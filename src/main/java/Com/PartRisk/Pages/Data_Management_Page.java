@@ -296,6 +296,10 @@ public class Data_Management_Page extends Page_Base {
         Thread.sleep(200);
     }
 
+    public void Z2D_Move_to_Scrub_Bom(WebDriver driver) throws InterruptedException {
+        driver.get("https://parts.z2data.com/RiskManager/Scrub?BomId=119090");
+        Thread.sleep(200);
+    }
 
 
     public void SetFile(){

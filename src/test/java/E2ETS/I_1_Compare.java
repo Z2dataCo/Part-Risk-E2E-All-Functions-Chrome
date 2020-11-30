@@ -26,7 +26,6 @@ public class I_1_Compare extends Test_Base {
 
         LandObj.Z2D_Open_Compare_Page();
         CompareObj.Z2D_Input_Compare_1(Z2DataCompare_1);
-        Wait_Element_Visible(CompareObj.Value_Compare1);
         boolean staleElement = true;
         while (staleElement) {
             try {
@@ -39,7 +38,6 @@ public class I_1_Compare extends Test_Base {
         }
         Thread.sleep(4000);
         Wait_Element_Visible(CompareObj.Compare2);
-        CompareObj.Z2D_Input_Compare_2(Z2DataCompare_2);
         boolean staleElement1 = true;
         while (staleElement1) {
             try {

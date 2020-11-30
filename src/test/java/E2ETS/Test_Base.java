@@ -48,9 +48,9 @@ public class Test_Base {
         ChromeOptions options = new ChromeOptions();
         options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
         options.setProxy(null);
-        options.addArguments("--headless");
-        options.addArguments("--disable-gpu");
-        options.addArguments("--window-size=1400,800");
+        //options.addArguments("--headless");
+       // options.addArguments("--disable-gpu");
+      //  options.addArguments("--window-size=1400,800");
         options.addArguments("--disable-remote-fonts");
         options.addArguments("--enable-precache");
         options.addArguments("--start-maximized");
@@ -159,7 +159,7 @@ public class Test_Base {
         Wait.until(ExpectedConditions.not(ExpectedConditions.textToBePresentInElement(element, Text)));
     }
 
-    public void Invisbility_oF_New(List <WebElement> elements ) {
+    public void Wait_Invisibility_oF_List(List <WebElement> elements ) {
         WebDriverWait Wait = new WebDriverWait(driver, 100);
         Wait.until(ExpectedConditions.invisibilityOfAllElements(elements));
     }

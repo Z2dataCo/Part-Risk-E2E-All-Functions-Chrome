@@ -25,7 +25,7 @@ public class AH_Fun_Check_Minerals_Metal_Report extends Test_Base {
 
         DManagementObj.Z2D_Move_to_Reports_Bom(driver);
         ReportPageObj.Z2D_Open_Minerals_Metal_Report();
-        Invisbility_oF_New(LandObj.SpinnerZezo2);
+        Wait_Invisibility_oF_List(LandObj.SpinnerZezo2);
         Wait_Element_Visible(ReportPageObj.Report_Window_Title);
         Assert.assertEquals(ReportPageObj.Report_Window_Title.getText(),("Conflict Minerals Metal"));
         Wait_Element_Visible(ReportPageObj.Export_Button);
