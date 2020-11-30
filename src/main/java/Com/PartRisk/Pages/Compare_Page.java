@@ -7,7 +7,7 @@ import org.openqa.selenium.support.FindBy;
 public class Compare_Page extends Page_Base {
     @FindBy(id = "part_autocom_0")
     public WebElement Compare1;
-    @FindBy(xpath = "//body[1]/div[5]/app-root[1]/div[3]/app-compare[1]/div[1]/div[1]/app-compareparts[1]/div[2]/div[1]/table[1]/thead[1]/tr[1]/th[2]/div[1]/app-part-autocomplete[1]/div[1]/div[1]/ul[1]/li[1]/a[1]")
+    @FindBy(xpath = "//li[1]//a[@class='z2tableA-singline ui-menu-item-wrapper'][1]")
     public WebElement Value_Compare1;
     @FindBy(xpath = "//body[1]/div[5]/app-root[1]/div[3]/app-compare[1]/div[1]/div[1]/app-compareparts[1]/div[2]/div[1]/table[1]/thead[1]/tr[1]/th[3]/div[1]/app-part-autocomplete[1]/div[1]/div[1]/ul[1]/li[1]/a[1]")
     public WebElement Value_Compare2;
