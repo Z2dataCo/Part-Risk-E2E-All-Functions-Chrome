@@ -40,7 +40,7 @@ public class Test_Base {
     public String Z2DataFakerFolder = faker.name().firstName() + "1";
     public String Z2DataPCNID = "PD22748X";
     public String Z2DataMPNID = "FSP012-FHEN2";
-    public String subject = faker.file().fileName();
+    public String subject = "Title Of Issue";
     public String area = " Issue Description ";
 
 
@@ -117,11 +117,11 @@ public class Test_Base {
 
 
         if (ITestResult.SUCCESS == result.getStatus()) {
-            System.out.println("[Good Job Scenario Pass]:" + result.getMethod().getMethodName() + URL );
+            System.out.println("[Good Job Scenario Pass]:" + result.getMethod().getMethodName() + URL);
         } else if (ITestResult.FAILURE == result.getStatus()) {
-            System.out.println("[Check Again Scenario Fail]:" + result.getMethod().getMethodName() + URL );
+            System.out.println("[Check Again Scenario Fail]:" + result.getMethod().getMethodName() + URL);
         } else {
-            System.out.println("Previous Fail then this Scenario Skipped]:" + result.getMethod().getMethodName() + URL );
+            System.out.println("Previous Fail then this Scenario Skipped]:" + result.getMethod().getMethodName() + URL);
         }
     }
 
@@ -161,10 +161,11 @@ public class Test_Base {
         Wait.until(ExpectedConditions.not(ExpectedConditions.textToBePresentInElement(element, Text)));
     }
 
-    public void Wait_Invisibility_oF_List(List <WebElement> elements ) {
+    public void Wait_Invisibility_oF_List(List<WebElement> elements) {
         WebDriverWait Wait = new WebDriverWait(driver, 100);
         Wait.until(ExpectedConditions.invisibilityOfAllElements(elements));
     }
+
     @BeforeMethod
     public void WaitElement() {
         Refresh();
