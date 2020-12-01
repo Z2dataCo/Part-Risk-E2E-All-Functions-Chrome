@@ -3,11 +3,6 @@
 <suite name="Chrome E2E Test Scenarios Suite">
     <test name="Chrome Main_Function E2ETS" verbose="5" >
         <classes>
-            <class name="E2ETS.AI_2_Fun_Conflict_minerals">
-                <methods>
-                    <include name="Check_Report_Gold_Tantalum_Tin_Tungsten_Cobalt"/>
-                </methods>
-            </class>
             <class name="E2ETS.A_1_Parametric_Search">
                 <methods>
                     <include name="Parametric_Search"/>
