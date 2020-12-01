@@ -2,16 +2,46 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
     <test verbose="2" preserve-order="true"
-          name="D:/IdeaProjects/Part Risk E2E All Functions Chrome/src/test/java/E2ETS">
+          name="D:/IdeaProjects/Part-Risk-E2E-All-Functions-Chrome/src/test/java/E2ETS">
         <classes>
             <class name="E2ETS.AB_1_PCN_Search">
                 <methods>
                     <include name="PCN_Search"/>
                 </methods>
             </class>
-            <class name="E2ETS.AC_1_Upload_BOM_and_Switcher">
+            <class name="E2ETS.AD_1_CheckDashBoardData">
                 <methods>
-                    <include name="Upload_BOM_and_Switcher"/>
+                    <include name="DashBoardData"/>
+                </methods>
+            </class>
+            <class name="E2ETS.AJ_1_Submit_Ticket">
+                <methods>
+                    <include name="User_Submit_Ticket"/>
+                </methods>
+            </class>
+            <class name="E2ETS.AE_2_Fun_Check_Smelters_Report">
+                <methods>
+                    <include name="Check_Smelters_Report"/>
+                </methods>
+            </class>
+            <class name="E2ETS.AF_2_Fun_Check_Supplier_Report">
+                <methods>
+                    <include name="Check_Supplier_Report"/>
+                </methods>
+            </class>
+            <class name="E2ETS.AG_2_Fun_Check_Compliance_MPN_Report">
+                <methods>
+                    <include name="Check_Compliance_Report"/>
+                </methods>
+            </class>
+            <class name="E2ETS.AH_2_Fun_Check_Minerals_Metal_Report">
+                <methods>
+                    <include name="Check_Minerals_Report"/>
+                </methods>
+            </class>
+            <class name="E2ETS.AI_2_Fun_Conflict_minerals">
+                <methods>
+                    <include name="Check_Report_Gold_Tantalum_Tin_Tungsten_Cobalt"/>
                 </methods>
             </class>
             <class name="E2ETS.A_1_Parametric_Search">

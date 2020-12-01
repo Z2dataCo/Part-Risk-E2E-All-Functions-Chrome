@@ -9,7 +9,7 @@ import io.qameta.allure.SeverityLevel;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class AH_Fun_Check_Minerals_Metal_Report extends Test_Base {
+public class AH_2_Fun_Check_Minerals_Metal_Report extends Test_Base {
     Data_Management_Page DManagementObj;
     Reports_Page ReportPageObj;
     Landing_Page LandObj;

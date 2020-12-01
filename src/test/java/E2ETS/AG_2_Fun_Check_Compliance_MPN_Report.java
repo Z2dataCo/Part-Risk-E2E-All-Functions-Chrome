@@ -9,7 +9,7 @@ import io.qameta.allure.SeverityLevel;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class AG_Fun_Check_Compliance_MPN_Report extends Test_Base{
+public class AG_2_Fun_Check_Compliance_MPN_Report extends Test_Base{
 
     Data_Management_Page DManagementObj;
     Reports_Page ReportPageObj;

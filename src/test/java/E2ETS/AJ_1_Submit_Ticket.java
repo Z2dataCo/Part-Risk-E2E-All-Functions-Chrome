@@ -4,7 +4,7 @@ import Com.PartRisk.Pages.Submit_Ticket_Page;
 import com.github.javafaker.Faker;
 import org.testng.annotations.Test;
 
-public class AD_1_Submit_Ticket extends Test_Base {
+public class AJ_1_Submit_Ticket extends Test_Base {
     Submit_Ticket_Page Submit;
      @Test(priority = 35,enabled = false)
     public void User_Submit_Ticket() {
