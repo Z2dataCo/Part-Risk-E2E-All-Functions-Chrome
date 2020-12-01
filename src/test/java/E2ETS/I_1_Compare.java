@@ -52,6 +52,7 @@ public class I_1_Compare extends Test_Base {
                 staleElement1 = true;
             }
         }
+        Wait_for_Element_to_Disappear(LandObj.GeneralSpinner);
         WaitAllElement();
         CompareObj.Z2D_Select_Differences();
         CompareObj.Z2D_Select_Similarities();
