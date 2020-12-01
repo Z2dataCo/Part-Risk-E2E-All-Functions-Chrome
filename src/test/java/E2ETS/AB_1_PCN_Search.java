@@ -15,7 +15,7 @@ public class AB_1_PCN_Search extends Test_Base {
     PCN_Manager_Page PCN_ManagerObj;
 
 
-    @Test(priority = 30)
+    @Test(priority = 29)
     @Severity(SeverityLevel.NORMAL)
     @Description("Check MPN Search Functionality using PCN Id & MPN ")
     public void PCN_Search() throws InterruptedException {

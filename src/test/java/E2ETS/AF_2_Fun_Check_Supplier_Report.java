@@ -13,7 +13,7 @@ public class AF_2_Fun_Check_Supplier_Report extends Test_Base{
     Data_Management_Page DManagementObj;
     Reports_Page ReportPageObj;
     Landing_Page LandObj;
-    @Test(priority = 32)
+    @Test(priority = 33)
     @Severity(SeverityLevel.NORMAL)
     @Description("Check Conflict Minerals Reports : Suppliers Reports")
     public void Check_Supplier_Report() throws InterruptedException {

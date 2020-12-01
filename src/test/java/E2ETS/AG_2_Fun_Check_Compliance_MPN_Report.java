@@ -15,7 +15,7 @@ public class AG_2_Fun_Check_Compliance_MPN_Report extends Test_Base{
     Reports_Page ReportPageObj;
     Landing_Page LandObj;
 
-    @Test(priority = 33)
+    @Test(priority = 34)
     @Severity(SeverityLevel.NORMAL)
     @Description("Check Conflict Minerals Reports : Compliance MPN Reports")
     public void Check_Compliance_Report() throws InterruptedException {
