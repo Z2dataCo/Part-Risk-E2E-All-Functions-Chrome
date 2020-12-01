@@ -4,6 +4,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import java.util.List;
+
 public class Parts_Page extends Page_Base {
     @FindBy(xpath = "//body/div[@id='main_start_page']/app-root[1]/div[3]/app-risk-manager[1]/app-risk-parts[1]/app-riskpartsmpn[1]/div[2]/div[1]/div[2]/div[1]/app-z2pagination[1]/span[1]/span[2]")
     public WebElement Number_Of_Parts;
@@ -77,6 +79,12 @@ public class Parts_Page extends Page_Base {
     WebElement Fuses_Filter;
     @FindBy(xpath = "//*[@id=\"RemainMainPage\"]/app-risk-manager/div[2]/div/div/div/div/label/div")
     public WebElement Parts_Switchers;
+
+    @FindBy(xpath = "//*[@id=\"partsMPNTabTblId\"]/tbody/tr")
+    public List <WebElement> Rowsnum;
+
+    @FindBy(xpath = "//*[@id=\"Information\"]/app-z2pagination/span/span[2]")
+    public WebElement fixednumber;
 
     public Parts_Page(WebDriver driver) {
         super(driver);

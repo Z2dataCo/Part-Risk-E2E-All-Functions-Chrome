@@ -30,7 +30,7 @@ public class J_1_Supplier_Search extends Test_Base {
             try {
                 SuppliersObj.Z2D_Enter_Supplier(Z2DataSupplier);
                 staleElement = false;
-            } catch (ElementClickInterceptedException e) {
+            } catch (Exception e) {
                 staleElement = true;
             }
         }

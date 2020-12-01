@@ -43,6 +43,7 @@ public class Test_Base {
     public String subject = "Title Of Issue";
     public String area = " Issue Description ";
 
+    public static final String ANSI_RED_BACKGROUND = "\u001B[41m";
 
     @SuppressWarnings("unused")
     @BeforeSuite

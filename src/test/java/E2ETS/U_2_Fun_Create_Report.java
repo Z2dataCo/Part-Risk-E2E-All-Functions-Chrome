@@ -8,8 +8,6 @@ import com.github.javafaker.Faker;
 import io.qameta.allure.Description;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
-import org.openqa.selenium.StaleElementReferenceException;
-import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -57,14 +55,28 @@ public class U_2_Fun_Create_Report extends Test_Base {
         ReportPageObj.Z2D_Download_Report();
         Wait_Element_Clickable(ReportPageObj.Close_Preview);
         ReportPageObj.Z2D_Close_Preview();
-    }}
 
+    boolean staleElement1 = true;
+        while (staleElement1) {
+        try {
+            ReportPageObj.CustomReport();
+            staleElement1 = false;
+        } catch (Exception e) {
+            staleElement1 = true;
+        }
+    }
+    Wait_Element_Clickable(ReportPageObj.reportlist);
+        ReportPageObj.Openlist();
+    Wait_Element_Clickable(ReportPageObj.DeleteReport);
+        ReportPageObj.Delete_Report();
+        Thread.sleep(3000);
+        Assert.assertNotEquals(ReportPageObj.FirstRow.getText(), Name, "Verify to delete Report");
+        System.out.println("Report: " + Name + " Is Deleted");
 
+}
+}
 
-
-
-
-       /* Implicitly();
+  /*   Implicitly();
         Select index = new Select(ReportPageObj.DDL_Report);
         Thread.sleep(3500);
         String ExpectedResult = index.getOptions().get(1).getText();
@@ -103,6 +115,6 @@ public class U_2_Fun_Create_Report extends Test_Base {
             ReportPageObj.Z2D_Download_Report();
             Thread.sleep(3000);
             ReportPageObj.Z2D_Close_Preview();
-            Wait_for_Element_to_Disappear(DManagementObj.Spinner);
-        }
-    }}*/
+      `      Wait_for_Element_to_Disappear(DManagementObj.Spinner);
+`}}
+*/
