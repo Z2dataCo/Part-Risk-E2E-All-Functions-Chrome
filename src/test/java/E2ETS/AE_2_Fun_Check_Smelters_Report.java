@@ -12,7 +12,7 @@ public class AE_2_Fun_Check_Smelters_Report extends Test_Base{
     Reports_Page ReportPageObj;
     Landing_Page LandObj;
 
-    @Test()
+    @Test(priority = 31)
     @Severity(SeverityLevel.NORMAL)
     @Description("Check Conflict Minerals Reports : Smelters Reports & Exporting As Excel")
 
