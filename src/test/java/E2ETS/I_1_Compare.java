@@ -28,33 +28,48 @@ public class I_1_Compare extends Test_Base {
         Wait_Element_Clickable(CompareObj.Compare1);
         CompareObj.Z2D_Input_Compare_1(Z2DataCompare_1);
         Wait_Element_Visible(CompareObj.Value_Compare1);
-        act.moveToElement(CompareObj.Value_Compare1).click().perform();
+        boolean staleElement = true;
+        while (staleElement) {
+            try {
+                act.moveToElement(CompareObj.Value_Compare1).click().build().perform();
+                staleElement = false;
+            } catch (Exception e) {
+                staleElement = true;
+            }
+        }
         Wait_Element_Clickable(CompareObj.Compare2);
         CompareObj.Z2D_Input_Compare_2(Z2DataCompare_2);
         Wait_Element_Visible(CompareObj.Value_Compare2);
-        act.moveToElement(CompareObj.Value_Compare2).click().perform();
-        WaitAllElement();
+        boolean staleElement1 = true;
+        while (staleElement1) {
+            try {
+                act.moveToElement(CompareObj.Value_Compare2).click().build().perform();
+                staleElement1 = false;
+            } catch (Exception e) {
+                staleElement1 = true;
+            }
+        }
+        Wait_for_Element_to_Disappear(LandObj.GeneralSpinner);
         CompareObj.Z2D_Select_Differences();
         CompareObj.Z2D_Select_Similarities();
 
-       for (int i = 1;i<=8;i++){
-           if (driver.findElement(By.xpath("//*[@class='tbodyfeatureParts-6']//tr["+ i +"]/td[2]/span")).getAttribute("class").equals("similarit-val")) {
-               Assert.assertEquals(
-               driver.findElement(By.xpath("//*[@class='tbodyfeatureParts-6']//tr["+ i +"]/td[2]/span")).getText(),
-               driver.findElement(By.xpath("//*[@class='tbodyfeatureParts-6']//tr["+ i +"]/td[3]/span")).getText());
-               System.out.println("Similarities : ");
-               System.out.println(driver.findElement(By.xpath("//*[@class='tbodyfeatureParts-6']//tr["+ i +"]/td[2]/span")).getText());
-               System.out.println(driver.findElement(By.xpath("//*[@class='tbodyfeatureParts-6']//tr["+ i +"]/td[3]/span")).getText());
-           }
-           else{
-               Assert.assertNotEquals(
-               driver.findElement(By.xpath("//*[@class='tbodyfeatureParts-6']//tr["+ i +"]/td[2]/span")).getText(),
-               driver.findElement(By.xpath("//*[@class='tbodyfeatureParts-6']//tr["+ i +"]/td[3]/span")).getText());
-               System.out.println("Differences : ");
-               System.out.println(driver.findElement(By.xpath("//*[@class='tbodyfeatureParts-6']//tr["+ i +"]/td[2]/span")).getText());
-               System.out.println(driver.findElement(By.xpath("//*[@class='tbodyfeatureParts-6']//tr["+ i +"]/td[3]/span")).getText());
-           }
+        for (int i = 1; i <= 8; i++) {
+            if (driver.findElement(By.xpath("//*[@class='tbodyfeatureParts-6']//tr[" + i + "]/td[2]/span")).getAttribute("class").equals("similarit-val")) {
+                Assert.assertEquals(
+                        driver.findElement(By.xpath("//*[@class='tbodyfeatureParts-6']//tr[" + i + "]/td[2]/span")).getText(),
+                        driver.findElement(By.xpath("//*[@class='tbodyfeatureParts-6']//tr[" + i + "]/td[3]/span")).getText());
+                System.out.println("Similarities : ");
+                System.out.println(driver.findElement(By.xpath("//*[@class='tbodyfeatureParts-6']//tr[" + i + "]/td[2]/span")).getText());
+                System.out.println(driver.findElement(By.xpath("//*[@class='tbodyfeatureParts-6']//tr[" + i + "]/td[3]/span")).getText());
+            } else {
+                Assert.assertNotEquals(
+                        driver.findElement(By.xpath("//*[@class='tbodyfeatureParts-6']//tr[" + i + "]/td[2]/span")).getText(),
+                        driver.findElement(By.xpath("//*[@class='tbodyfeatureParts-6']//tr[" + i + "]/td[3]/span")).getText());
+                System.out.println("Differences : ");
+                System.out.println(driver.findElement(By.xpath("//*[@class='tbodyfeatureParts-6']//tr[" + i + "]/td[2]/span")).getText());
+                System.out.println(driver.findElement(By.xpath("//*[@class='tbodyfeatureParts-6']//tr[" + i + "]/td[3]/span")).getText());
+            }
 
-       }
+        }
     }
 }
