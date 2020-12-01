@@ -57,9 +57,15 @@ public class Y_2_Fun_Obsolescence extends Test_Base {
         //System.out.println("Actual Result  " + AllOfRow);
         //System.out.println("Expected Result  " + Count);
         Assert.assertEquals(Count, AllOfRow);
-        Thread.sleep(2000);
-        Obsolescence_Obj.Z2D_NRND_Parts();
-        Thread.sleep(2000);
+        boolean staleElement1 = true;
+        while (staleElement1) {
+            try {
+                Obsolescence_Obj.Z2D_NRND_Parts();
+                staleElement1 = false;
+            } catch (Exception e) {
+                staleElement1 = true;
+            }
+        }
         Wait_for_Element_to_Disappear(DManagementObj.Spinner);
         int CountOfTable0 = Obsolescence_Obj.Table_Size.size();
         int Count0 = Integer.parseInt(Obsolescence_Obj.Fixed_Number.getText());
