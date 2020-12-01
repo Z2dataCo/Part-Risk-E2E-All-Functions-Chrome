@@ -50,6 +50,8 @@ public class S_2_Fun_Forecast_Graph_IPN_View extends Test_Base {
 
         String Single_Source_Filter_Value = ForeCastObj.Second_Filter.getText();
         //System.out.println("Single_Source_Filter_Value : " + Single_Source_Filter_Value);
+        Wait_Element_Clickable(ForeCastObj.Second_Filter);
+
         ForeCastObj.Z2D_Click_on_Second_Filter();
         Wait_Element_Invisibility(LandObj.SpinnerZezo);
         Wait_Text_To_be(ForeCastObj.TotalValue,Single_Source_Filter_Value);

@@ -41,6 +41,7 @@ public class K_2_Fun_Filters_For_Compliance extends Test_Base {
         String SecTotal = CompliancePageObj.Second_Filter_Total.getText();
         Wait_Text_To_be(CompliancePageObj.Showing_Of,"Showing 1-0 of");
         String AllTotal2 = CompliancePageObj.Total_Filter_Results.getText();
+        WaitAllElement();
         Assert.assertEquals(AllTotal2,SecTotal);
     }
 }

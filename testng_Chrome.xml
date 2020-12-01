@@ -144,6 +144,11 @@
                     <include name="All_ObsolescencePage"/>
                 </methods>
             </class>
+            <class name="E2ETS.AD_1_CheckDashBoardData">
+                <methods>
+                    <include name="DashBoardData"/>
+                </methods>
+            </class>
         </classes>
     </test>
 </suite>

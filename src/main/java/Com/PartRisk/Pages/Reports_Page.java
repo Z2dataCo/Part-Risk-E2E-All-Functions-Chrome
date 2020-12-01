@@ -71,6 +71,29 @@ public class Reports_Page extends Page_Base {
 
 
     public Reports_Page(WebDriver driver) {
+    @FindBy (xpath = "//*[@id=\"z2-2cols-leftpanel\"]/ul/li[2]/a/div[2]")
+   public WebElement CusReport;
+
+    @FindBy(xpath = "//*[@id=\"z2-2cols-sub-2cols-left\"]/div/app-myreports/div[3]/div[2]/div/div[2]/div/div/i")
+    public WebElement reportlist;
+
+    @FindBy(xpath = "//*[@id=\"z2-2cols-sub-2cols-left\"]/div/app-myreports/div[3]/div[2]/div/div[2]/div/div/popover-container/div[2]/div/div[1]/div[1]/a[2]/div[2]")
+    public WebElement DeleteReport;
+
+    @FindBy(xpath = "//*[@id=\"z2-2cols-sub-2cols-left\"]/div/app-myreports/div[3]/div[2]/div/div[1]/h3")
+    public WebElement FirstRow;
+
+    @FindBy(xpath = "//*[@id=\"z2-2cols-leftpanel\"]/ul/li[7]/a")
+    public WebElement ConflictMinerals;
+
+    @FindBy(xpath = "//*[@id=\"E486C921-1091-4106-AF87-9FA806D3C9CD\"]/div/div[4]/div/div/div/a")
+    public WebElement ConflictMetals;
+
+    @FindBy(xpath ="//*[@id=\"dropbg\"]/div/div/div[2]/div[2]/table/thead/tr/th[6]" )
+    public WebElement Tungsten;
+
+
+    public Reports_Page(WebDriver driver) {
         super(driver);
         action = new Actions(driver);
     }
@@ -147,5 +170,25 @@ public class Reports_Page extends Page_Base {
     public void Z2D_Click_on_3rd_Filter(){ Click_Button(Third_Filter); }
     public void Z2D_Click_on_4th_Filter(){ Click_Button(Fourth_Filter); }
     public void Z2D_Click_on_Saved_Reports_List(){action.moveToElement(DDL_Report).click().perform();}
+
+
+    public void Openlist (){
+        Click_Button(reportlist);
+    }
+
+    public void Delete_Report(){
+        Click_Button(DeleteReport);
+    }
+
+    public void CustomReport(){
+        Click_Button(CusReport);
+
+    }
+    public void Open_ConflictMinerals() {
+        Click_Button(ConflictMinerals);
+    }
+    public void OpenConMetals(){
+        Click_Button(ConflictMetals);
+    }
 
 }
