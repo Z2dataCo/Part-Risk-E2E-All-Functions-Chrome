@@ -28,14 +28,14 @@ public class C_1_Existing_BOM_and_Switcher extends Test_Base {
         ForecastObj = new Forecast_Page(driver);
 
         LandObj.Z2D_Open_Data_Management();
-        Wait_Element_Clickable(DManagementObj.Search_Text_Input);
+        Wait_for_Element_to_Disappear(LandObj.GeneralSpinner);
         DManagementObj.Z2D_Type_Folder_Name(Z2DataFolderName);
         boolean staleElement = true;
         while (staleElement) {
             try {
                 DManagementObj.Z2D_Select_Folder();
                 staleElement = false;
-            } catch (StaleElementReferenceException e) {
+            } catch (Exception e) {
                 staleElement = true;
             }
         }
@@ -91,6 +91,6 @@ public class C_1_Existing_BOM_and_Switcher extends Test_Base {
         UpBOMObj.Z2D_Click_Reports_Tab();
         Wait_Element_Invisibility(LandObj.SpinnerZezo);
         Wait_Element_Clickable(UpBOMObj.Preview_Button);
-        Assert.assertTrue(UpBOMObj.First_Report.isDisplayed()); 
+        Assert.assertTrue(UpBOMObj.First_Report.isDisplayed());
     }
 }

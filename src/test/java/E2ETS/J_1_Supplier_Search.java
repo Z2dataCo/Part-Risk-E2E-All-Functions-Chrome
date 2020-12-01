@@ -36,7 +36,6 @@ public class J_1_Supplier_Search extends Test_Base {
         }
         SuppliersObj.Z2D_Click_Search();
         Wait_for_Element_to_Disappear(DManagementObj.Spinner);
-        Wait_Element_Visible(SuppliersObj.SuppName);
         Assert.assertTrue(SuppliersObj.SuppName.getText().contains("Toshiba"));
 
     }
