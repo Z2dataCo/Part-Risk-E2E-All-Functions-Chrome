@@ -4,6 +4,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
+import org.sikuli.hotkey.Keys;
+
+import java.util.List;
 
 public class Reports_Page extends Page_Base {
     @FindBy(xpath = "//span[contains(text(),'Z2 Part Number')]")
@@ -147,5 +150,7 @@ public class Reports_Page extends Page_Base {
     public void Z2D_Click_on_3rd_Filter(){ Click_Button(Third_Filter); }
     public void Z2D_Click_on_4th_Filter(){ Click_Button(Fourth_Filter); }
     public void Z2D_Click_on_Saved_Reports_List(){action.moveToElement(DDL_Report).click().perform();}
+    public void Z2D_Re_Click_on_Saved_Reports_List(){action.sendKeys(Keys.ESC);
+        action.moveToElement(DDL_Report).click().perform();}
 
 }

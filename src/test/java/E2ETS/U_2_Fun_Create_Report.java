@@ -41,9 +41,14 @@ public class U_2_Fun_Create_Report extends Test_Base {
         ReportPageObj.Z2D_Confirm_Report();
         Wait_Element_Invisibility(DManagementObj.Toast_Container);
         ReportPageObj.Z2D_Click_on_Saved_Reports_List();
-        Wait_Text_To_be(ReportPageObj.First_Report_Name,Name);
+        if (ReportPageObj.First_Report_Name.isDisplayed()){
         String Saved_Report = ReportPageObj.First_Report_Name.getText();
-        Assert.assertEquals(Saved_Report, Name);
+        Assert.assertEquals(Saved_Report, Name);}
+        else {
+            ReportPageObj.Z2D_Re_Click_on_Saved_Reports_List();
+            String Saved_Report = ReportPageObj.First_Report_Name.getText();
+            Assert.assertEquals(Saved_Report, Name);}
+
         ReportPageObj.Z2D_Preview_Report();
         Wait_Element_Invisibility(LandObj.SpinnerZezo);
         Wait_Element_Visible(ReportPageObj.Report_Window_Title);
