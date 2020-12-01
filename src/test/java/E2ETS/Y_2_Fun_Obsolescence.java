@@ -24,7 +24,6 @@ public class Y_2_Fun_Obsolescence extends Test_Base {
         ReportObj = new Reports_Page(driver);
         DManagementObj = new Data_Management_Page(driver);
         Obsolescence_Obj = new Obsolescence_Page(driver);
-
         LandObj.Z2D_Open_Data_Management();
         Wait_Element_Visible(DManagementObj.Search_Text_Input);
         DManagementObj.Z2D_Search(Z2DataFolderName);
