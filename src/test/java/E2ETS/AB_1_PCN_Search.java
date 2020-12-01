@@ -35,7 +35,7 @@ public class AB_1_PCN_Search extends Test_Base {
         PCN_ManagerObj.Z2D_Search(Z2DataPCNID);
         Wait_Element_Invisibility(LandObj.SpinnerZezo);
         Wait_Element_Visible(PCN_ManagerObj.Results_Table);
-        Wait_Text_To_Be(PCN_ManagerObj.Showing_Of_Total, "Showing 1-3 of");
+        Wait_Text_To_be(PCN_ManagerObj.Showing_Of_Total, "Showing 1-3 of");
         String Search_Result = PCN_ManagerObj.First_Search_Result.getText();
         Assert.assertTrue(Search_Result.contains(Z2DataPCNID));
 
@@ -45,7 +45,7 @@ public class AB_1_PCN_Search extends Test_Base {
         Wait_Text_Not_To_be(PCN_ManagerObj.Showing_Of_Total, "Showing 1-21 of");
         PCN_ManagerObj.Z2D_Open_First_Search_Result();
         Wait_Element_Invisibility(LandObj.SpinnerZezo);
-        Wait_Text_To_Be(PCN_ManagerObj.FSP_Text, "FSP Power Solution GmbH");
+        Wait_Text_To_be(PCN_ManagerObj.FSP_Text, "FSP Power Solution GmbH");
         PCN_ManagerObj.Z2D_Move_To_Impacted_MPN();
         String Impacted_MPN_Data = PCN_ManagerObj.Impacted_MPN_Results.getText();
         Assert.assertTrue(Impacted_MPN_Data.contains(Z2DataMPNID));

@@ -3,13 +3,12 @@ package E2ETS;
 import Com.PartRisk.Pages.Dashboard_Page;
 import Com.PartRisk.Pages.Data_Management_Page;
 import Com.PartRisk.Pages.Landing_Page;
-import Com.PartRisk.Pages.Report_Page;
+import Com.PartRisk.Pages.Reports_Page;
 import com.github.javafaker.Faker;
 import io.qameta.allure.Description;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import org.openqa.selenium.StaleElementReferenceException;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -18,10 +17,9 @@ public class U_2_Fun_Create_Report extends Test_Base {
     Faker faker = new Faker();
     String Name = faker.name().firstName() + "1";
     Dashboard_Page DashboardPageObj;
-    Report_Page ReportPageObj;
+    Reports_Page ReportPageObj;
     Data_Management_Page DManagementObj;
     Landing_Page LandObj;
-    Actions act;
 
     @Test(priority = 21)
     @Severity(SeverityLevel.CRITICAL)
@@ -30,26 +28,10 @@ public class U_2_Fun_Create_Report extends Test_Base {
         LandObj = new Landing_Page(driver);
         DManagementObj = new Data_Management_Page(driver);
         DashboardPageObj = new Dashboard_Page(driver);
-        ReportPageObj = new Report_Page(driver);
+        ReportPageObj = new Reports_Page(driver);
 
-        LandObj.Z2D_Open_Data_Management();
-        Wait_Element_Clickable(DManagementObj.Search_Text_Input);
-        DManagementObj.Z2D_Type_Folder_Name(Z2DataFolderName);
-        Wait_Element_Clickable(DManagementObj.Search_Result);
-        DManagementObj.Z2D_Select_Folder();
-        boolean staleElement = true;
-        while (staleElement) {
-            try {
-                DManagementObj.Z2D_Open_BOM();
-                staleElement = false;
-            } catch (StaleElementReferenceException e) {
-                staleElement = true;
-            }
-        }
-        Switch_Tabs();
-        WaitAllElement();
-        DashboardPageObj.Z2D_Open_Reports();
-        ReportPageObj = new Report_Page(driver);
+
+        DManagementObj.Z2D_Move_to_Reports_Bom(driver);
         ReportPageObj.Z2D_Open_Create_Report();
         Wait_Element_Clickable(ReportPageObj.Check_Box1);
         Wait_Element_Clickable(ReportPageObj.Check_Box2);
@@ -57,7 +39,26 @@ public class U_2_Fun_Create_Report extends Test_Base {
         ReportPageObj.Z2D_Save_Report();
         ReportPageObj.Z2D_Enter_Report_Name(Name);
         ReportPageObj.Z2D_Confirm_Report();
-        Implicitly();
+        Wait_Element_Invisibility(DManagementObj.Toast_Container);
+        ReportPageObj.Z2D_Click_on_Saved_Reports_List();
+        String Saved_Report = ReportPageObj.First_Report_Name.getText();
+        Assert.assertEquals(Saved_Report, Name);
+        ReportPageObj.Z2D_Preview_Report();
+        Wait_Element_Invisibility(LandObj.SpinnerZezo);
+        Wait_Element_Visible(ReportPageObj.Report_Window_Title);
+        Assert.assertEquals(ReportPageObj.Report_Window_Title.getText(), ("Report Preview"));
+        Assert.assertEquals(ReportPageObj.Download_Btn.getText(), ("Download"));
+        ReportPageObj.Z2D_Download_Report();
+        Wait_Element_Clickable(ReportPageObj.Close_Preview);
+        ReportPageObj.Z2D_Close_Preview();
+    }}
+
+
+
+
+
+
+       /* Implicitly();
         Select index = new Select(ReportPageObj.DDL_Report);
         Thread.sleep(3500);
         String ExpectedResult = index.getOptions().get(1).getText();
@@ -98,5 +99,4 @@ public class U_2_Fun_Create_Report extends Test_Base {
             ReportPageObj.Z2D_Close_Preview();
             Wait_for_Element_to_Disappear(DManagementObj.Spinner);
         }
-    }
-}
+    }}*/

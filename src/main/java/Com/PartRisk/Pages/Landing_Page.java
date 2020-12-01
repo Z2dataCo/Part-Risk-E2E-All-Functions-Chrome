@@ -35,6 +35,9 @@ public class Landing_Page extends Page_Base {
     public WebElement Supp_ChkBox;
     @FindBy(id = "progressDiv")
     public WebElement SpinnerZezo;
+    @FindBy(xpath = "//div[@id='dropbg']//div[@style='border-radius: 3px; background-color: rgba(0, 18, 59, 0.6);']")
+    public List<WebElement> SpinnerZezo2;
+
     @FindBy(xpath = "//div//div[@class='usericon']")
     public WebElement MY_Account;
     //@FindBy(xpath = "/html[1]/body[1]/div[9]/div[1]/div[2]/div[2]/a[3]")
@@ -59,7 +62,7 @@ public class Landing_Page extends Page_Base {
     @FindBy(linkText = "Compare")
     //@FindBy(xpath = "/html/body/div[4]/div[1]/ul/li[6]/a")
     public WebElement Compare_Tab;
-    @FindBy(xpath = "/html[1]/body[1]/div[4]/div[1]/ul[1]/li[7]/a[1]")
+    @FindBy(xpath = "//a[contains(text(),'More')]")
     public WebElement More_Tab;
     @FindBy(xpath = "//a[contains(text(),'Suppliers')]")
     public WebElement Suppliers;

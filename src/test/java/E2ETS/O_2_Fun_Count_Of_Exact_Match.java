@@ -22,30 +22,13 @@ public class O_2_Fun_Count_Of_Exact_Match extends Test_Base {
         LandObj = new Landing_Page(driver);
         ScrubPageObj = new Scrub_Page(driver);
 
-        LandObj.Z2D_Open_Data_Management();
-        Wait_Element_Visible(DManagementObj.Search_Text_Input);
-        DManagementObj.Z2D_Search(Z2DataFolderName);
-        boolean staleElement = true;
-        while (staleElement) {
-            try {
-                DManagementObj.SetFile();
-                staleElement = false;
-            } catch (Exception e) {
-                staleElement = true;
-            }
-        }
-        Wait_Element_Clickable(DManagementObj.Select_BOM);
-        DManagementObj.Z2D_Open_BOM();
-        Switch_Tabs();
-        Wait_for_Element_to_Disappear(DManagementObj.Spinner);
-        DManagementObj.Z2D_Open_Scrub();
-        Thread.sleep(10000);
+        DManagementObj.Z2D_Move_to_Scrub_Bom(driver);
+        Wait_Invisibility_oF_List(LandObj.SpinnerZezo2);
         int FixedNum = Integer.parseInt(ScrubPageObj.FixedNumber.getText());
         if (ScrubPageObj.Last.isEnabled()) {
             int tableRows = DManagementObj.Table_Rows.size();
-            Thread.sleep(3000);
+            Wait_Element_Clickable(ScrubPageObj.Last);
             ScrubPageObj.Z2D_Last_Pagination();
-            Thread.sleep(3000);
             int PaginationSize = Integer.parseInt(ScrubPageObj.LastPage.getText());
             int Pagination = PaginationSize - 1;
             int SupTotal = Pagination * tableRows;
