@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 
 public class AJ_1_Submit_Ticket extends Test_Base {
     Submit_Ticket_Page Submit;
-     @Test(priority = 35,enabled = false)
+     @Test(priority = 35)
     public void User_Submit_Ticket() {
         Submit = new Submit_Ticket_Page(driver);
         Submit.Z2D_Open_Submit_Ticket();

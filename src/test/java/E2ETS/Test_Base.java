@@ -40,7 +40,7 @@ public class Test_Base {
     public String Z2DataFakerFolder = faker.name().firstName() + "1";
     public String Z2DataPCNID = "PD22748X";
     public String Z2DataMPNID = "FSP012-FHEN2";
-    public String subject = "Title Of Issue";
+    public String subject = "Title Of Issue (Test Automation)";
     public String area = " Issue Description ";
 
 
