@@ -77,7 +77,7 @@ public class Data_Management_Page extends Page_Base {
     @FindBy(xpath = "//button[contains(text(),'Create Alert')]")
     WebElement Submit_Btn;
     @FindBy(xpath = "//*[@id=\"dropbg\"]/div/div/div[2]/form/button")
-    WebElement Create_Folder_Btn;
+    public WebElement Create_Folder_Btn;
     @FindBy(xpath = "//tbody/tr[20]/td[2]/a[1]")
     WebElement BOM_Folder;
     @FindBy(xpath = "//tbody/tr[1]/td[2]/a[1]")

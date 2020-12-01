@@ -17,6 +17,7 @@ public class V_2_Fun_Create_Folder_Data_Management extends Test_Base {
     @Severity(SeverityLevel.CRITICAL)
     @Description("Validate To Create Folder In Data Management")
     public void Create_Folder_in_Data_Management() throws InterruptedException {
+
         LandObj = new Landing_Page(driver);
         DManagementObj = new Data_Management_Page(driver);
 
@@ -24,6 +25,7 @@ public class V_2_Fun_Create_Folder_Data_Management extends Test_Base {
         Wait_Element_Clickable(DManagementObj.Create_Folder);
         DManagementObj.Z2D_Create_Folder();
         DManagementObj.Z2D_Folder_Name(Z2DataFakerFolder);
+        Wait_Element_Clickable(DManagementObj.Create_Folder_Btn);
         DManagementObj.Z2D_Submit_Folder();
         Wait_for_Element_to_Disappear(LandObj.GeneralSpinner);
         String istRow = DManagementObj.istRow.getText();
