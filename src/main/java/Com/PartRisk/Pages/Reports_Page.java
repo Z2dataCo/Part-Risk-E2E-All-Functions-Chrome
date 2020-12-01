@@ -69,8 +69,11 @@ public class Reports_Page extends Page_Base {
     @FindBy(xpath = "//*[@placeholder='Saved Reports']/option[2]")
     public WebElement First_Report_Name;
 
-
     public Reports_Page(WebDriver driver) {
+        super(driver);
+        action = new Actions(driver);
+    }
+
     @FindBy (xpath = "//*[@id=\"z2-2cols-leftpanel\"]/ul/li[2]/a/div[2]")
    public WebElement CusReport;
 
@@ -93,10 +96,6 @@ public class Reports_Page extends Page_Base {
     public WebElement Tungsten;
 
 
-    public Reports_Page(WebDriver driver) {
-        super(driver);
-        action = new Actions(driver);
-    }
 
     public void Z2D_Open_Create_Report() {
         Click_Button(Create_Report);
