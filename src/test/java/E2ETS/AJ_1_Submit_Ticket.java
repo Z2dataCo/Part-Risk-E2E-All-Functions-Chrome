@@ -1,5 +1,5 @@
 package E2ETS;
-
+/*
 import Com.PartRisk.Pages.Submit_Ticket_Page;
 import org.testng.annotations.Test;
 
@@ -13,4 +13,4 @@ public class AJ_1_Submit_Ticket extends Test_Base {
         SubmitObj.Z2D_Enter_Issue_Data(subject,area);
         SubmitObj.Z2D_Close_Ticket();
     }
-}
+}*/

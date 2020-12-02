@@ -63,11 +63,6 @@
                     <include name="DashBoardData"/>
                 </methods>
             </class>
-            <class name="E2ETS.AJ_1_Submit_Ticket">
-                <methods>
-                    <include name="User_Submit_Ticket"/>
-                </methods>
-            </class>
         </classes>
     </test>
     <test name="Chrome Sub_Function" verbose="5">
