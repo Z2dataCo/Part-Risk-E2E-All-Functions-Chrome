@@ -26,10 +26,10 @@ public class K_2_Fun_Filters_For_Compliance extends Test_Base {
         ForeCastObj = new Forecast_Page(driver);
 
         DManagementObj.Z2D_Move_to_Compliance_Bom(driver);
-        Wait_Element_Invisibility(LandObj.SpinnerZezo);
+        Wait_Invisibility_oF_List(LandObj.SpinnerZezo2);
         Wait_Element_Clickable(CompliancePageObj.First_Check_Box_Filter);
         CompliancePageObj.Z2D_Click_on_First_Filter();
-        Wait_Element_Invisibility(LandObj.SpinnerZezo);
+        Wait_Invisibility_oF_List(LandObj.SpinnerZezo2);
         String FirstTotal = CompliancePageObj.First_Filter_Total.getText();
         Wait_Text_To_be(CompliancePageObj.Total_Filter_Results,FirstTotal);
         String AllTotal = CompliancePageObj.Total_Filter_Results.getText();
@@ -37,7 +37,7 @@ public class K_2_Fun_Filters_For_Compliance extends Test_Base {
 
         Wait_Element_Clickable(CompliancePageObj.Second_Check_Box_Filter);
         CompliancePageObj.Z2D_Click_on_Second_Filter();
-        Wait_Element_Invisibility(LandObj.SpinnerZezo);
+        Wait_Invisibility_oF_List(LandObj.SpinnerZezo2);
         String SecTotal = CompliancePageObj.Second_Filter_Total.getText();
         Wait_Text_To_be(CompliancePageObj.Showing_Of,"Showing 1-0 of");
         String AllTotal2 = CompliancePageObj.Total_Filter_Results.getText();

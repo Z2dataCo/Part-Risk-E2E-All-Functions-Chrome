@@ -33,6 +33,7 @@ public class R_2_Fun_Forecast_Graph_MPN_View extends Test_Base {
         //System.out.println("ActiveFilterValue" + ActiveFilterValue);
         ForeCastObj.Z2D_Click_on_First_Filter();
         Wait_Element_Invisibility(LandObj.SpinnerZezo);
+        Wait_Element_Visible(ForeCastObj.First_Row_Text);
         Wait_Text_To_be(ForeCastObj.First_Row_Text,"Active");
         ForeCastObj.Z2D_Get_Table_Data(driver, "Active");
         String TotalFilterValue = ForeCastObj.TotalValue.getText();
@@ -44,6 +45,7 @@ public class R_2_Fun_Forecast_Graph_MPN_View extends Test_Base {
         //System.out.println("EOLFilterValue" + EOLFilterValue);
         ForeCastObj.Z2D_Click_on_Second_Filter();
         Wait_Element_Invisibility(LandObj.SpinnerZezo);
+        Wait_Element_Visible(ForeCastObj.First_Row_Text);
         Wait_Text_To_be(ForeCastObj.First_Row_Text,"EOL");
         ForeCastObj.Z2D_Get_Table_Data(driver, "EOL");
         String TotalFilterValue2 = ForeCastObj.TotalValue.getText();
@@ -55,6 +57,7 @@ public class R_2_Fun_Forecast_Graph_MPN_View extends Test_Base {
         //System.out.println("UnknownFilterValue" + UnknownFilterValue);
         ForeCastObj.Z2D_Click_on_Third_Filter();
         Wait_Element_Invisibility(LandObj.SpinnerZezo);
+        Wait_Element_Visible(ForeCastObj.First_Row_Text);
         Wait_Text_To_be(ForeCastObj.First_Row_Text,"Unknown");
         ForeCastObj.Z2D_Get_Table_Data(driver, "Unknown");
         String TotalFilterValue3 = ForeCastObj.TotalValue.getText();
