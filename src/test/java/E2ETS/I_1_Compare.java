@@ -36,6 +36,7 @@ public class I_1_Compare extends Test_Base {
             }
         }
         Wait_for_Element_to_Disappear(LandObj.GeneralSpinner);
+        Wait_Element_Visible(CompareObj.Left_First_Row_Data);
         CompareObj.Z2D_Input_Compare_2(Z2DataCompare_2);
         boolean staleElement1 = true;
         while (staleElement1) {
@@ -47,6 +48,7 @@ public class I_1_Compare extends Test_Base {
             }
         }
         Wait_for_Element_to_Disappear(LandObj.GeneralSpinner);
+        Wait_Element_Visible(CompareObj.Right_First_Row_Data);
         CompareObj.Z2D_Select_Differences();
         CompareObj.Z2D_Select_Similarities();
 

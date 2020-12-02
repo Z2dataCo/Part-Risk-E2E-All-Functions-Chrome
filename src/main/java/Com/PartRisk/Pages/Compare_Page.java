@@ -19,6 +19,10 @@ public class Compare_Page extends Page_Base {
     public WebElement Differences;
     @FindBy(xpath = "//*[@id=\"headerEl\"]/div/div/a[3]")
     WebElement Similarities;
+    @FindBy(xpath = "//*[@class='tbodyfeatureParts-0']//tr[1]/td[2]/span")
+    public WebElement Left_First_Row_Data;
+    @FindBy(xpath = "//*[@class='tbodyfeatureParts-0']//tr[1]/td[3]/span")
+    public WebElement Right_First_Row_Data;
 
 
     public Compare_Page(WebDriver driver) {
