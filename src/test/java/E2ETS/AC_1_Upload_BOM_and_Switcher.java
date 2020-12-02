@@ -8,7 +8,7 @@ package E2ETS;
     Parts_Page PartsObj;
     Forecast_Page ForecastObj;
 
-    @Test(priority = 31,enabled = false)
+    @Test(priority = 30,enabled = false)
     @Severity(SeverityLevel.CRITICAL)
     @Description("Validate User Upload BOM")
     public void Upload_BOM_and_Switcher() throws AWTException, InterruptedException {

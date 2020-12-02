@@ -34,13 +34,11 @@ public class Test_Base {
     public String Z2DataCompare_2 = "bav20";
     public String Z2DataSupplier = "Toshiba";
     public String Z2DataFolderName = "TAP_BOM";
-    //public String Z2DataFilePath = System.getProperty("user.dir") + "\\src\\test\\resources\\BOMs\\TABOM1.xlsx";
-    //public String Z2DataSwitcherStepFilePath = System.getProperty("user.dir") + "\\src\\test\\resources\\BOMs\\TABOM2.xlsx";
     Faker faker = new Faker();
     public String Z2DataFakerFolder = faker.name().firstName() + "1";
     public String Z2DataPCNID = "PD22748X";
     public String Z2DataMPNID = "FSP012-FHEN2";
-    public String subject = "Title Of Issue";
+    public String subject = "Title Of Issue (Test Automation)";
     public String area = " Issue Description ";
 
 
@@ -70,7 +68,6 @@ public class Test_Base {
         login();
         DeleteCookies();
         WaitAllElement();
-        //JavascriptExecutor js = (JavascriptExecutor) driver;
     }
 
     public static void Switch_Tabs() {

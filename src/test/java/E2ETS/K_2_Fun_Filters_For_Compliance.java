@@ -16,7 +16,7 @@ public class K_2_Fun_Filters_For_Compliance extends Test_Base {
     Landing_Page LandObj;
     Forecast_Page ForeCastObj;
 
-    @Test(priority = 20 , timeOut = 120000)
+    @Test(priority = 11 , timeOut = 120000)
     @Severity(value = SeverityLevel.NORMAL)
     @Description("Validate Filter on Compliance Page &  Check table's data")
     public void Filters_For_Compliance() throws InterruptedException {

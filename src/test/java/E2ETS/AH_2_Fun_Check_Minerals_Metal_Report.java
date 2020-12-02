@@ -13,7 +13,7 @@ public class AH_2_Fun_Check_Minerals_Metal_Report extends Test_Base {
     Data_Management_Page DManagementObj;
     Reports_Page ReportPageObj;
     Landing_Page LandObj;
-    @Test(priority = 34)
+    @Test(priority = 35)
     @Severity(SeverityLevel.NORMAL)
     @Description("Check Conflict Minerals Reports : Minerals Chemical Reports & Exporting As Excel")
 
