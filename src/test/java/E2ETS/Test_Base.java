@@ -128,10 +128,6 @@ public class Test_Base {
         driver.quit();
     }
 
-    public void Implicitly() {
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-    }
-
     public void Wait_Element_Clickable(WebElement element) {
         WebDriverWait WebWait = new WebDriverWait(driver, 100);
         WebWait.until(ExpectedConditions.elementToBeClickable(element));
