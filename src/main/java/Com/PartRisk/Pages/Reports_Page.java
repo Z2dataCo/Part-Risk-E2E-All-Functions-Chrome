@@ -1,5 +1,6 @@
 package Com.PartRisk.Pages;
 
+import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -123,7 +124,14 @@ public class Reports_Page extends Page_Base {
     }
 
     public void Z2D_Preview_Report() {
-        Click_Button(Preview);
+        boolean Intercepted = true;
+        while (Intercepted) {
+            try {
+                Click_Button(Preview);
+                Intercepted = false; }
+            catch (ElementClickInterceptedException e) {
+                Intercepted = true; }
+        }
     }
 
     public void Z2D_Close_Preview() {
